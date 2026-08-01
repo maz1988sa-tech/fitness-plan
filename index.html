@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e8eaed">
+<title>خطة مهند — 4 أسابيع | GET MOVING</title>
+<style>
+/* ===== Theme: silver studio / bold mono — derived from reference poster ===== */
+:root{
+  --bg1:#c9ccd1; --bg2:#eef0f3; --card:#ffffff; --ink:#101113; --ink2:#5b5f66;
+  --line:#e3e5e9; --soft:#f4f5f7; --dark:#17181b; --dark2:#2a2c30;
+  --ok:#178a4c; --okbg:#e6f4ec; --warn:#b45309; --warnbg:#fdf1e0; --bad:#b3261e; --badbg:#fdecea;
+  --acc:#101113; --r:18px; --shadow:0 10px 28px rgba(16,17,19,.12);
+  --font:'SF Arabic','Segoe UI','Helvetica Neue',Tahoma,'Noto Naskh Arabic UI',sans-serif;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:var(--font); color:var(--ink); background:linear-gradient(160deg,var(--bg1),var(--bg2) 55%);
+  min-height:100vh; font-size:15.5px; line-height:1.55;
+}
+body::before{ /* diagonal split like the poster */
+  content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:linear-gradient(160deg,rgba(255,255,255,0) 45%,rgba(255,255,255,.55) 45.2%);
+}
+#app{max-width:980px; margin:0 auto; padding:14px 14px 90px}
+/* ===== Typography ===== */
+h1,h2,h3{margin:.2em 0 .35em; line-height:1.25}
+.display{
+  font-weight:900; letter-spacing:.5px; text-transform:uppercase;
+  font-size:clamp(26px,6vw,40px); color:var(--ink);
+}
+.display .ghost{color:#fff; text-shadow:0 2px 14px rgba(0,0,0,.18)}
+.en-tag{ /* small english motif like GET MOVING */
+  display:inline-block; direction:ltr; font-weight:900; letter-spacing:2.5px; font-size:11px;
+  text-transform:uppercase; color:var(--ink2); transform:skewX(-8deg);
+}
+.sub{color:var(--ink2); font-size:13.5px}
+/* ===== Header ===== */
+header.top{display:flex; align-items:center; justify-content:space-between; padding:6px 2px 10px}
+.brand{display:flex; flex-direction:column; gap:2px}
+.brand b{font-size:19px; font-weight:900}
+.savebox{display:flex; align-items:center; gap:8px}
+.savedot{font-size:11px; color:var(--ink2); text-align:left; direction:ltr}
+/* ===== Cards ===== */
+.card{background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); padding:16px; margin:12px 0; border:1px solid rgba(255,255,255,.6)}
+.card.flat{box-shadow:none; border:1px solid var(--line)}
+.card h2{font-size:18px; font-weight:900; display:flex; align-items:center; gap:8px}
+.card h3{font-size:15.5px; font-weight:800}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+.grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:8px}
+@media(max-width:560px){.grid4{grid-template-columns:repeat(2,1fr)} .grid3{grid-template-columns:1fr 1fr}}
+/* ===== Buttons ===== */
+.btn{
+  appearance:none; border:0; cursor:pointer; font-family:inherit; font-weight:800; font-size:15px;
+  border-radius:14px; padding:12px 18px; background:var(--soft); color:var(--ink);
+  transition:transform .06s ease, box-shadow .15s ease, background .15s; user-select:none;
+}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--dark); color:#fff; box-shadow:0 8px 20px rgba(16,17,19,.28)}
+.btn.big{width:100%; padding:16px; font-size:18px; border-radius:16px}
+.btn.ok{background:var(--ok); color:#fff}
+.btn.ghost{background:transparent; border:1.5px solid var(--line)}
+.btn.danger{background:var(--badbg); color:var(--bad)}
+.btn.small{padding:7px 12px; font-size:13px; border-radius:10px}
+.btn[disabled]{opacity:.45; pointer-events:none}
+.btnrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+/* ===== Chips / badges ===== */
+.chip{display:inline-flex; align-items:center; gap:5px; background:var(--soft); border:1px solid var(--line); border-radius:99px; padding:3px 10px; font-size:12px; font-weight:700; color:var(--ink2)}
+.chip.dark{background:var(--dark); color:#fff; border-color:var(--dark)}
+.chip.ok{background:var(--okbg); color:var(--ok); border-color:transparent}
+.chip.warn{background:var(--warnbg); color:var(--warn); border-color:transparent}
+.chip.spicy{background:#fdecec; color:#c0392b; border-color:transparent}
+.tg{background:#111; color:#fff; font-size:10.5px; letter-spacing:.8px; direction:ltr; border-radius:6px; padding:2px 7px; font-weight:800; display:inline-block}
+/* ===== Nav (bottom) ===== */
+nav.tabs{
+  position:fixed; bottom:0; right:0; left:0; z-index:50; display:flex; justify-content:space-around;
+  background:rgba(255,255,255,.92); backdrop-filter:blur(14px); border-top:1px solid var(--line);
+  padding:6px 4px calc(6px + env(safe-area-inset-bottom));
+}
+nav.tabs button{
+  flex:1; max-width:120px; border:0; background:none; font-family:inherit; cursor:pointer; padding:6px 2px;
+  display:flex; flex-direction:column; align-items:center; gap:3px; color:var(--ink2); font-size:11px; font-weight:800; border-radius:12px;
+}
+nav.tabs button .ic{font-size:19px; line-height:1}
+nav.tabs button.active{color:var(--ink)}
+nav.tabs button.active .ic{transform:translateY(-1px)}
+nav.tabs button.active::after{content:""; width:18px; height:3px; border-radius:3px; background:var(--ink); margin-top:1px}
+/* ===== Sections ===== */
+.view{display:none; animation:fade .18s ease}
+.view.active{display:block}
+@keyframes fade{from{opacity:0; transform:translateY(4px)}to{opacity:1; transform:none}}
+/* ===== Stats tiles ===== */
+.tile{background:var(--card); border-radius:14px; padding:10px 12px; border:1px solid var(--line); text-align:center}
+.tile .v{font-size:20px; font-weight:900; direction:ltr}
+.tile .l{font-size:11px; color:var(--ink2); font-weight:700}
+/* ===== Exercise rows ===== */
+.exrow{border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:8px 0; background:#fff}
+.exrow .t{display:flex; justify-content:space-between; align-items:center; gap:8px; cursor:pointer}
+.exrow .t b{font-size:14.5px}
+.exrow .meta{font-size:12.5px; color:var(--ink2); margin-top:2px}
+.exrow .body{display:none; border-top:1px dashed var(--line); margin-top:9px; padding-top:9px; font-size:13.5px}
+.exrow.open .body{display:block}
+.done-x{color:var(--ok); font-weight:900}
+/* ===== Tables ===== */
+table.mini{width:100%; border-collapse:collapse; font-size:13px}
+table.mini th{font-size:11.5px; color:var(--ink2); font-weight:800; padding:5px 6px; border-bottom:1px solid var(--line); text-align:right}
+table.mini td{padding:6px; border-bottom:1px solid var(--soft); text-align:right}
+table.mini td.num{direction:ltr; text-align:left; font-weight:700}
+/* ===== Inputs ===== */
+input[type=number],input[type=text],input[type=date],select,textarea{
+  width:100%; font-family:inherit; font-size:15px; padding:10px 12px; border:1.5px solid var(--line);
+  border-radius:12px; background:#fff; color:var(--ink); outline:none;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+label.f{display:block; font-size:12.5px; font-weight:800; color:var(--ink2); margin:8px 0 4px}
+.inrow{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+.inrow3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
+/* toggle */
+.tgl{position:relative; width:46px; height:26px; flex:none}
+.tgl input{opacity:0; width:0; height:0}
+.tgl span{position:absolute; inset:0; background:#d6d9de; border-radius:99px; transition:.18s; cursor:pointer}
+.tgl span::before{content:""; position:absolute; width:20px; height:20px; border-radius:50%; background:#fff; top:3px; right:3px; transition:.18s; box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.tgl input:checked + span{background:var(--ok)}
+.tgl input:checked + span::before{transform:translateX(-20px)}
+.setline{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 2px; border-bottom:1px solid var(--soft)}
+/* ===== Session (workout mode) ===== */
+#sessionOverlay{
+  position:fixed; inset:0; z-index:100; background:linear-gradient(165deg,#1b1c1f,#0d0e10 60%); color:#fff;
+  display:none; flex-direction:column; overflow-y:auto; padding:14px 14px 26px;
+}
+#sessionOverlay.on{display:flex}
+#sessionOverlay .shead{display:flex; justify-content:space-between; align-items:center; gap:8px}
+#sessionOverlay .stime{direction:ltr; font-weight:900; font-size:15px; color:#cfd2d6}
+.scard{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:14px; margin:10px 0}
+.scard h3{color:#fff}
+.snum{direction:ltr; font-weight:900}
+.bigtimer{
+  text-align:center; font-weight:900; font-size:64px; direction:ltr; letter-spacing:2px; line-height:1;
+  font-variant-numeric:tabular-nums; margin:4px 0;
+}
+.resting .bigtimer{color:#7ee2a8}
+.restdone{animation:pulse .6s ease 4}
+@keyframes pulse{0%,100%{background:rgba(126,226,168,.08)}50%{background:rgba(126,226,168,.35)}}
+.sbtn{background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2)}
+.sbtn.primary{background:#fff; color:#111}
+.sgrid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
+.sgrid .f{color:#aeb2b8}
+#sessionOverlay input{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2); color:#fff; text-align:center; direction:ltr; font-weight:800}
+.setdots{display:flex; gap:6px; margin:6px 0}
+.setdots i{width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.2)}
+.setdots i.d{background:#7ee2a8}
+.setdots i.cur{outline:2px solid #fff; outline-offset:2px}
+/* ===== Meals ===== */
+.meal{border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:8px 0; background:#fff}
+.meal .mt{display:flex; justify-content:space-between; gap:8px; align-items:flex-start}
+.meal .macro{display:flex; gap:6px; flex-wrap:wrap; margin-top:6px}
+.mtag{font-size:11px; background:var(--soft); border-radius:8px; padding:2px 8px; font-weight:800; color:var(--ink2); direction:ltr}
+/* ===== Calendar ===== */
+.wkband{display:flex; gap:6px; overflow-x:auto; padding:4px 0; scrollbar-width:none}
+.wkband::-webkit-scrollbar{display:none}
+.dayb{flex:none; width:64px; border:1.5px solid var(--line); background:#fff; border-radius:14px; padding:8px 4px; text-align:center; cursor:pointer; font-family:inherit}
+.dayb small{display:block; font-size:10px; color:var(--ink2); font-weight:700}
+.dayb b{font-size:15px}
+.dayb.today{border-color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.dayb.selected{background:var(--dark); color:#fff}
+.dayb.selected small{color:#cfd2d6}
+.dayb .st{font-size:10px; font-weight:800}
+.dayb .st.done{color:var(--ok)}
+/* ===== Progress charts ===== */
+.chartbox{background:#fff; border:1px solid var(--line); border-radius:14px; padding:10px}
+svg.chart{width:100%; height:150px; display:block; direction:ltr}
+/* ===== Misc ===== */
+.hr{height:1px; background:var(--line); margin:12px 0}
+.note{font-size:12.5px; color:var(--ink2); background:var(--soft); border-radius:10px; padding:8px 10px; margin-top:8px}
+.warnnote{font-size:12.5px; color:var(--warn); background:var(--warnbg); border-radius:10px; padding:8px 10px; margin-top:8px}
+.okline{color:var(--ok); font-weight:800}
+a.ext{color:var(--ink); font-weight:800; text-decoration:underline; text-underline-offset:3px}
+.center{text-align:center}
+.mut{color:var(--ink2)}
+.spacer{height:8px}
+.progressbar{height:8px; background:var(--soft); border-radius:99px; overflow:hidden}
+.progressbar i{display:block; height:100%; background:var(--dark); border-radius:99px; transition:width .3s}
+.progressbar.g i{background:var(--ok)}
+dialog{border:0; border-radius:18px; padding:0; max-width:480px; width:92vw; box-shadow:0 24px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,10,12,.5); backdrop-filter:blur(3px)}
+.dlgin{padding:18px}
+.toast{
+  position:fixed; bottom:84px; right:50%; transform:translateX(50%); background:var(--dark); color:#fff;
+  padding:10px 18px; border-radius:99px; font-weight:800; font-size:13.5px; z-index:200; box-shadow:var(--shadow);
+  opacity:0; pointer-events:none; transition:opacity .25s;
+}
+.toast.on{opacity:1}
+.offlinebanner{background:var(--warnbg); color:var(--warn); font-size:12.5px; font-weight:700; border-radius:12px; padding:8px 12px; margin:8px 0; display:none}
+@media print{nav.tabs,#startFab{display:none}}
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <div class="brand">
+      <span class="en-tag">GET MOVING</span>
+      <b>خطة مهند — ٤ أسابيع</b>
+      <span class="savedot" id="savedAt">—</span>
+    </div>
+    <div class="savebox">
+      <button class="btn small" id="btnManualSave">حفظ</button>
+    </div>
+  </header>
+
+  <div class="offlinebanner" id="storageWarn">⚠️ التخزين المحلي غير متاح في هذا العرض (وضع معاينة). افتح الملف مباشرة في متصفحك حتى تُحفظ بياناتك.</div>
+
+  <!-- ============ TODAY ============ -->
+  <section class="view" id="v-today"></section>
+
+  <!-- ============ CALENDAR / PLAN ============ -->
+  <section class="view" id="v-plan"></section>
+
+  <!-- ============ MEALS ============ -->
+  <section class="view" id="v-meals"></section>
+
+  <!-- ============ LIBRARY ============ -->
+  <section class="view" id="v-lib"></section>
+
+  <!-- ============ MORE (progress / check-in / settings / sources) ============ -->
+  <section class="view" id="v-more">
+    <div class="card">
+      <h2>المزيد</h2>
+      <div class="grid2">
+        <button class="btn" data-go="progress">📈 التقدم</button>
+        <button class="btn" data-go="checkin">📝 التشيك-إن الأسبوعي</button>
+        <button class="btn" onclick="showView('lib')">🏋️ مكتبة التمارين</button>
+        <button class="btn" data-go="settings">⚙️ الإعدادات والبيانات</button>
+        <button class="btn" data-go="sources">📚 المصادر والمنهجية</button>
+      </div>
+    </div>
+    <div id="moreBody"></div>
+  </section>
+
+  <div class="spacer"></div>
+</div>
+
+<!-- ============ WORKOUT SESSION OVERLAY ============ -->
+<div id="sessionOverlay"></div>
+
+<!-- Rest-complete audio is generated via WebAudio (no external files). -->
+
+<div class="toast" id="toast"></div>
+
+<dialog id="dlg"><div class="dlgin" id="dlgBody"></div></dialog>
+
+<nav class="tabs" id="tabs">
+  <button data-view="today" class="active"><span class="ic">🏠</span>اليوم</button>
+  <button data-view="workout" id="tabWorkout"><span class="ic">🏋️</span>التمرين</button>
+  <button data-view="plan"><span class="ic">📅</span>الخطة</button>
+  <button data-view="meals"><span class="ic">🍽️</span>الوجبات</button>
+  <button data-view="more"><span class="ic">☰</span>المزيد</button>
+</nav>
+<script>
+/* =====================================================================
+   DATA — menu (وجبات اللياقة TFM, extracted from official menu qrco.de/bbeE4R
+   on 01/08/2026), Technogym exercise library, 28-day plan
+   ===================================================================== */
+'use strict';
+
+/* ---------- TFM menu: macros as printed. scope:'protein' = القيم للمصدر البروتيني فقط،
+   scope:'full' = القيم لكامل الطبق (كما هو مطبوع في المنيو) ---------- */
+const MENU = {
+  /* وجبات الدجاج */
+  tika:{ar:'دجاج فت تكا',en:'Fit Tikka Chicken',cat:'chicken',price:26,kcal:205,p:39,f:5,c:1,scope:'protein',best:1},
+  kotshi:{ar:'دجاج فت كوتشي',en:'Fit Kotchi Chicken',cat:'chicken',price:26,kcal:196.5,p:37,f:4.5,c:2,scope:'protein',best:1},
+  mashwi:{ar:'دجاج فت المشوي',en:'Fit Grilled Chicken',cat:'chicken',price:26,kcal:163.5,p:32,f:3.5,c:1,scope:'protein',best:1},
+  dragon:{ar:'دجاج فت دراقون',en:'Fit Dragon Chicken',cat:'chicken',price:26,kcal:206,p:34,f:6,c:4,scope:'protein',spicy:1,best:1},
+  shish:{ar:'دجاج فت شيش',en:'Fit Shish Chicken',cat:'chicken',price:26,kcal:201,p:37,f:5,c:2,scope:'protein',spicy:1},
+  fajitaCh:{ar:'دجاج فت فاهيتا',en:'Fit Fajita Chicken',cat:'chicken',price:26,kcal:200.5,p:38,f:4.5,c:2,scope:'protein'},
+  bbqCh:{ar:'دجاج فت باربكيو',en:'Fit BBQ Chicken',cat:'chicken',price:26,kcal:209,p:35,f:5,c:6,scope:'protein'},
+  mongolianCh:{ar:'دجاج فت منقولين',en:'Fit Mongolian Chicken',cat:'chicken',price:26,kcal:209,p:35,f:5,c:6,scope:'protein',soy:1},
+  samurai:{ar:'دجاج فت ساموراي',en:'Fit Samurai Chicken',cat:'chicken',price:26,kcal:198,p:34,f:6,c:2,scope:'protein',sesame:1},
+  masala:{ar:'دجاج فت ماسالا',en:'Fit Masala Chicken',cat:'chicken',price:26,kcal:235,p:39,f:7,c:4,scope:'protein',spicy:1,best:1},
+  curry:{ar:'دجاج فت كاري',en:'Fit Curry Chicken',cat:'chicken',price:26,kcal:226,p:39,f:6,c:4,scope:'protein',milk:1,spicy:1},
+  mushCh:{ar:'دجاج فت الفطر',en:'Fit Mushroom Chicken',cat:'chicken',price:26,kcal:230,p:39,f:6,c:5,scope:'protein',milk:1},
+  asian:{ar:'دجاج فت اسيوي',en:'Fit Asian Chicken',cat:'chicken',price:26,kcal:218,p:39,f:6,c:5,scope:'protein',spicy:1},
+  okra:{ar:'دجاج فت بامية',en:'Fit Okra Chicken',cat:'chicken',price:27,kcal:180,p:25,f:4.5,c:10,scope:'protein',note:'100غ بامية + 100غ دجاج'},
+  molokh:{ar:'دجاج فت ملوخية',en:'Fit Molokhia Chicken',cat:'chicken',price:27,kcal:211.5,p:37,f:3.5,c:8,scope:'protein'},
+  /* وجبات اللحم */
+  steakBeef:{ar:'فت ستيك بيف',en:'Fit Beef Steak',cat:'beef',price:40,kcal:197,p:36,f:5,c:2,scope:'protein'},
+  steakDeBeef:{ar:'فت ستيك دي بيف',en:'Fit Steak de Beef',cat:'beef',price:40,kcal:227,p:37,f:7,c:4,scope:'protein'},
+  mongolianBeef:{ar:'فت منقولين بيف',en:'Fit Mongolian Beef',cat:'beef',price:38,kcal:223,p:36,f:7,c:4,scope:'protein',soy:1,best:1},
+  chiliBeef:{ar:'فت تشيلي بيف',en:'Fit Chili Beef',cat:'beef',price:38,kcal:230,p:36,f:6,c:8,scope:'protein',spicy:1,best:1},
+  meatballs:{ar:'فت كرات اللحم',en:'Fit Meatballs',cat:'beef',price:38,kcal:240,p:38,f:8,c:4,scope:'protein'},
+  /* المأكولات البحرية */
+  salmon:{ar:'فت سالمون',en:'Fit Salmon',cat:'seafood',price:44,kcal:207,p:36,f:7,c:0,scope:'protein',best:1},
+  shrimpG:{ar:'فت الروبيان المشوي',en:'Fit Grilled Shrimp',cat:'seafood',price:44,kcal:101,p:20,f:1.5,c:2,scope:'protein'},
+  sweetShrimp:{ar:'فت سويت شريمب',en:'Fit Sweet Shrimp',cat:'seafood',price:44,kcal:114,p:21,f:2.5,c:2,scope:'protein',spicy:1},
+  fishFillet:{ar:'فت سمك الفيلة',en:'Fit Fish Fillet',cat:'seafood',price:30,kcal:141,p:33,f:1,c:0,scope:'protein'},
+  /* باستا (كامل الطبق) */
+  fettCh:{ar:'فيتوشيني الدجاج',en:'Chicken Fettuccine',cat:'pasta',price:35,kcal:582,p:40,f:6,c:92,scope:'full'},
+  /* برقر (القيم للمصدر البروتيني؛ يقدم مع بطاطس مشوي وصوص، والخبز اختيار: بر / بطاطس / خس كيتو) */
+  burgerCh:{ar:'برقر دجاج مشوي',en:'Grilled Chicken Burger',cat:'burger',price:25,kcal:164,p:19,f:8,c:4,scope:'protein',best:1,note:'مع بطاطس مشوي وصوص — اختر الخبز: بر / بطاطس / خس كيتو'},
+  burgerBeef:{ar:'برقر لحم',en:'Beef Burger',cat:'burger',price:33,kcal:228,p:26,f:12,c:4,scope:'protein',best:1,note:'مع بطاطس مشوي وصوص — اختر الخبز: بر / بطاطس / خس كيتو'},
+  /* راب وشاورما (كامل الطبق) */
+  shawarma:{ar:'شاورما دجاج',en:'Chicken Shawarma',cat:'wrap',price:35,kcal:380,p:40,f:8,c:37,scope:'full',best:1,note:'تقدم مع بطاطس مشوي وثومية ومخللات'},
+  tikaWrap:{ar:'تكا راب',en:'Tikka Wrap',cat:'wrap',price:21,kcal:253,p:25,f:5,c:27,scope:'full',best:1},
+  chickenWrap:{ar:'تشكن راب',en:'Chicken Wrap',cat:'wrap',price:19,kcal:242,p:23,f:6,c:24,scope:'full'},
+  fajitaWrap:{ar:'فاهيتا راب',en:'Fajita Wrap',cat:'wrap',price:19,kcal:250,p:24,f:6,c:25,scope:'full'},
+  steakWrap:{ar:'ستيك راب',en:'Steak Wrap',cat:'wrap',price:22,kcal:206,p:13,f:6,c:25,scope:'full'},
+  salmonWrap:{ar:'سالمون راب',en:'Salmon Wrap',cat:'wrap',price:25,kcal:241,p:24,f:5,c:25,scope:'full'},
+  shrimpWrap:{ar:'شريمب راب',en:'Shrimp Wrap',cat:'wrap',price:25,kcal:213,p:17,f:5,c:25,scope:'full'},
+  /* سلطات (كامل الطبق) */
+  sultana:{ar:'السلطانة',en:'Sultana Salad',cat:'salad',price:30,kcal:177,p:26,f:5,c:7,scope:'full',lc:1},
+  chichawi:{ar:'شيشاوي',en:'Chichawi Salad',cat:'salad',price:30,kcal:185,p:26,f:5,c:9,scope:'full',lc:1},
+  shrimpawi:{ar:'شريمباوي',en:'Shrimpawi Salad',cat:'salad',price:37,kcal:169,p:24,f:5,c:7,scope:'full',lc:1},
+  caesar:{ar:'سلطة السيزر',en:'Caesar Salad',cat:'salad',price:23,kcal:159,p:24,f:3,c:9,scope:'full'},
+  green:{ar:'سلطة خضراء',en:'Green Salad',cat:'salad',price:16,kcal:53,p:4,f:1,c:7,scope:'full'},
+  /* سناكات (كامل الطبق) */
+  fruitCut:{ar:'سناك قطع فواكة',en:'Fruit Cuts',cat:'snack',price:11,kcal:104,p:1,f:0,c:25,scope:'full'},
+  fruitCold:{ar:'سناك فواكة بارد',en:'Cold Fruit Cup',cat:'snack',price:11,kcal:141,p:3,f:1,c:30,scope:'full'},
+  oatStraw:{ar:'سناك شوفان فراولة',en:'Strawberry Oats',cat:'snack',price:15,kcal:155.5,p:9,f:3.5,c:22,scope:'full'},
+  oatPist:{ar:'سناك شوفان بيساتشو',en:'Pistachio Oats',cat:'snack',price:15,kcal:189,p:11,f:5,c:25,scope:'full'},
+  oatPB:{ar:'سناك شوفان بينت بتر',en:'Peanut Butter Oats',cat:'snack',price:15,kcal:216,p:12,f:8,c:24,scope:'full'},
+  oatFruit:{ar:'سناك شوفان فواكة',en:'Fruit Oats',cat:'snack',price:15,kcal:216,p:12,f:8,c:24,scope:'full'},
+  oatDate:{ar:'سناك شوفان تمر',en:'Date Oats',cat:'snack',price:15,kcal:216,p:12,f:8,c:24,scope:'full'},
+  oatChoc:{ar:'سناك شوفان دارك تشوكلت',en:'Dark Chocolate Oats',cat:'snack',price:15,kcal:267,p:14,f:11,c:28,scope:'full'},
+  nuts:{ar:'سناك مكسرات',en:'Mixed Nuts',cat:'snack',price:10,kcal:198,p:0,f:14,c:18,scope:'full',note:'القيم كما هي مطبوعة في المنيو'},
+  /* عصائر */
+  oj:{ar:'عصير برتقال',en:'Orange Juice',cat:'drink',price:15,kcal:161,p:3,f:1,c:35,scope:'full'},
+  lemonMint:{ar:'عصير ليمون نعناع',en:'Lemon Mint Juice',cat:'drink',price:15,kcal:90,p:1,f:1,c:20,scope:'full'},
+  /* مصادر الكارب (تُطلب كجانب مع الوجبة) */
+  riceWhite:{ar:'رز أبيض',en:'White Rice',cat:'carb',kcal:166,p:6,f:0.4,c:35,scope:'full'},
+  riceYellow:{ar:'رز أصفر',en:'Yellow Rice',cat:'carb',kcal:166,p:6,f:0.4,c:35,scope:'full'},
+  riceKabsa:{ar:'رز كبسة',en:'Kabsa Rice',cat:'carb',kcal:186,p:7,f:0.8,c:38,scope:'full'},
+  pastaRed:{ar:'مكرونة حمراء',en:'Red Pasta',cat:'carb',kcal:230,p:8.5,f:1,c:50,scope:'full'},
+  pastaWhite:{ar:'مكرونة بيضاء',en:'White Pasta',cat:'carb',kcal:261,p:11,f:1,c:52,scope:'full'},
+  pastaPesto:{ar:'مكرونة بيستو',en:'Pesto Pasta',cat:'carb',kcal:269,p:13,f:1,c:52,scope:'full'},
+  potatoGrilled:{ar:'بطاطس مشوي',en:'Grilled Potato',cat:'carb',kcal:117,p:3,f:0.1,c:26,scope:'full'},
+  potatoMash:{ar:'بطاطس مهروسة',en:'Mashed Potato',cat:'carb',kcal:137,p:5,f:1,c:27,scope:'full'},
+  breadBur:{ar:'خبز بر',en:'Whole-wheat Bun',cat:'carb',kcal:176,p:8,f:2.8,c:32,scope:'full'},
+  breadPotato:{ar:'خبز بطاطس',en:'Potato Bun',cat:'carb',kcal:210,p:5.6,f:6.3,c:33,scope:'full'},
+  lettuceKeto:{ar:'خس كيتو',en:'Keto Lettuce Wrap',cat:'carb',kcal:10,p:0.8,f:0.2,c:1.2,scope:'full'},
+  /* البدائل اللو كارب (بديل الأرز/المكرونة) */
+  fitZero:{ar:'فت زيرو',en:'Fit Zero',cat:'lowcarb',kcal:42,p:3.6,f:0.4,c:7.9,scope:'full',note:'خيار، خس، بروكلي، قرنبيط، ليمون'},
+  fitOne:{ar:'فت ون',en:'Fit One',cat:'lowcarb',kcal:42,p:1.6,f:0.4,c:9.4,scope:'full',note:'خضار مشوية (كوسة، جزر، قرنبيط)'},
+  fitTwo:{ar:'فت تو',en:'Fit Two',cat:'lowcarb',kcal:38,p:2.9,f:0.4,c:7.5,scope:'full',note:'قرنبيط مهروس (بديل الأرز)'},
+  fitTres:{ar:'فت تريس',en:'Fit Tres',cat:'lowcarb',kcal:38,p:1.9,f:0.2,c:8.7,scope:'full',note:'ملفوف مهروس (بديل الأرز)'},
+  fitQuatro:{ar:'فت كواترو',en:'Fit Quatro',cat:'lowcarb',kcal:38,p:1.5,f:0.1,c:8.1,scope:'full',note:'فلفل بارد وكوسة وجزر بصوص طماطم'},
+  /* صوصات */
+  sHot:{ar:'صوص حار',en:'Hot Sauce',cat:'sauce',price:3,kcal:25,p:1,f:1,c:3,scope:'full'},
+  sTahini:{ar:'صوص طحينة',en:'Tahini Sauce',cat:'sauce',price:3,kcal:35,p:2,f:1.5,c:3,scope:'full'},
+  sLemon:{ar:'صوص ليمون',en:'Lemon Sauce',cat:'sauce',price:3,kcal:12,p:0,f:0,c:3,scope:'full'},
+  sVin:{ar:'صوص فينقريد',en:'Vinaigrette',cat:'sauce',price:3,kcal:40,p:2,f:2.5,c:3,scope:'full'},
+  sTartar:{ar:'صوص تارتار',en:'Tartar Sauce',cat:'sauce',price:3,kcal:35,p:2,f:2.5,c:1,scope:'full'},
+  sPom:{ar:'صوص دبس رمان',en:'Pomegranate Molasses',cat:'sauce',price:3,kcal:24,p:0,f:0,c:6,scope:'full'},
+  sRanch:{ar:'صوص رانش',en:'Ranch Sauce',cat:'sauce',price:3,kcal:35,p:1,f:2.5,c:2,scope:'full'},
+  sTFM:{ar:'صوص وجبات اللياقة',en:'TFM Sauce',cat:'sauce',price:3,kcal:34,p:1,f:2.5,c:2,scope:'full'},
+  sAioli:{ar:'صوص قارلك ايولي',en:'Garlic Aioli',cat:'sauce',price:3,kcal:35,p:2,f:1.5,c:3,scope:'full'}
+};
+const CAT_AR = {chicken:'دجاج',beef:'لحم',seafood:'بحري',pasta:'باستا',burger:'برقر',wrap:'راب',salad:'سلطة',snack:'سناك',drink:'عصير',carb:'كارب',lowcarb:'لو كارب',sauce:'صوص'};
+
+/* ---------- خطة الوجبات: دورة 14 يوم تُكرر مرتين (تنويع كامل مع سهولة الطلب).
+   كل عنصر: {id, dbl:بروتين إضافي, slot} — القيم تُحسب تلقائياً ---------- */
+function MI(id,opt){ return Object.assign({id:id},opt||{}); }
+const MEAL_CYCLE = [
+ /* اليوم 1 — أحد تدريب */
+ {slots:{
+   b:[MI('oatStraw')],
+   l:[MI('tika',{dbl:1}),MI('riceYellow'),MI('sHot')],
+   pre:[MI('fruitCut'),MI('oj')],
+   d:[MI('salmon'),MI('potatoGrilled'),MI('green'),MI('sLemon')],
+   x:[MI('oatChoc')]
+ }, why:'يوم دفع: كارب حول التمرين، بروتين مضاعف بالغداء، عشاء خفيف الدسم.'},
+ /* اليوم 2 — اثنين تدريب */
+ {slots:{
+   b:[MI('oatDate')],
+   l:[MI('kotshi',{dbl:1}),MI('pastaRed'),MI('sTFM')],
+   pre:[MI('fruitCold')],
+   d:[MI('steakBeef'),MI('potatoMash'),MI('green'),MI('sRanch')],
+   x:[MI('nuts')]
+ }, why:'يوم سحب: مكرونة قبل التمرين بساعتين تدعم الأداء، وستيك مسائي عالي البروتين.'},
+ /* اليوم 3 — ثلاثاء تدريب (أرجل) */
+ {slots:{
+   b:[MI('oatPB')],
+   l:[MI('masala',{dbl:1}),MI('riceKabsa')],
+   pre:[MI('oj'),MI('fruitCut')],
+   d:[MI('fishFillet'),MI('fitTwo'),MI('green'),MI('sTahini')],
+   x:[MI('oatChoc')]
+ }, why:'يوم الأرجل الأعلى جهداً: أعلى كارب غداءً، وعشاء خفيف سهل الهضم.'},
+ /* اليوم 4 — أربعاء تدريب (ذراعين) */
+ {slots:{
+   b:[MI('oatStraw')],
+   l:[MI('fajitaCh',{dbl:1}),MI('riceYellow'),MI('sHot')],
+   pre:[MI('fruitCold')],
+   d:[MI('mongolianBeef'),MI('potatoGrilled'),MI('caesar'),MI('sPom')],
+   x:[MI('nuts')]
+ }, why:'يوم الذراعين: توزيع متوازن، بروتين مرتفع في الوجبتين.'},
+ /* اليوم 5 — خميس تدريب */
+ {slots:{
+   b:[MI('oatPist')],
+   l:[MI('mashwi',{dbl:1}),MI('riceKabsa'),MI('sTFM')],
+   pre:[MI('oj'),MI('fruitCut')],
+   d:[MI('molokh'),MI('riceWhite'),MI('sLemon')],
+   x:[MI('oatChoc')]
+ }, why:'إغلاق أسبوع التدريب: مشوي دبل خفيف الدهون + ملوخية غنية بالبروتين.'},
+ /* اليوم 6 — جمعة راحة (مرنة/اجتماعية) */
+ {slots:{
+   b:[MI('oatStraw')],
+   l:[MI('shawarma'),MI('green'),MI('sHot')],
+   d:[MI('mashwi',{dbl:1}),MI('riceWhite'),MI('sTFM')],
+   x:[MI('oatChoc')]
+ }, why:'الجمعة الاجتماعية: شاورما من نفس المطعم بدل وجبة عشوائية، مع تعويض البروتين مساءً.'},
+ /* اليوم 7 — سبت راحة */
+ {slots:{
+   b:[MI('oatFruit')],
+   l:[MI('asian',{dbl:1}),MI('riceYellow'),MI('sHot')],
+   pre:[MI('fruitCut')],
+   d:[MI('sultana'),MI('fitZero')],
+   x:[MI('oatDate')]
+ }, why:'راحة: كارب أقل مساءً (سلطة لو كارب) مع بقاء البروتين مرتفعاً.'},
+ /* اليوم 8 — أحد تدريب */
+ {slots:{
+   b:[MI('oatDate')],
+   l:[MI('dragon',{dbl:1}),MI('riceYellow')],
+   pre:[MI('fruitCold'),MI('oj')],
+   d:[MI('steakDeBeef'),MI('potatoMash'),MI('green'),MI('sRanch')],
+   x:[MI('nuts')]
+ }, why:'تنويع الأسبوع الثاني مع نفس البنية الناجحة.'},
+ /* اليوم 9 — اثنين تدريب */
+ {slots:{
+   b:[MI('oatStraw')],
+   l:[MI('mongolianCh',{dbl:1}),MI('pastaWhite')],
+   pre:[MI('fruitCut'),MI('oj')],
+   d:[MI('fishFillet'),MI('fitTwo'),MI('caesar'),MI('sLemon')],
+   x:[MI('oatChoc')]
+ }, why:'باستا حول التمرين + عشاء سمك خفيف مع سيزر غنية بالبروتين.'},
+ /* اليوم 10 — ثلاثاء تدريب (أرجل) */
+ {slots:{
+   b:[MI('oatPB')],
+   l:[MI('curry',{dbl:1}),MI('riceWhite')],
+   pre:[MI('oj'),MI('fruitCut')],
+   d:[MI('meatballs'),MI('potatoGrilled'),MI('green'),MI('sHot')],
+   x:[MI('oatChoc')]
+ }, why:'أعلى سعرات الأسبوع في يوم الأرجل — حيث تحتاجها.'},
+ /* اليوم 11 — أربعاء تدريب (ذراعين) */
+ {slots:{
+   b:[MI('oatStraw')],
+   l:[MI('samurai',{dbl:1}),MI('riceKabsa')],
+   pre:[MI('fruitCold'),MI('oj')],
+   d:[MI('salmon'),MI('fitOne'),MI('green'),MI('sTartar')],
+   x:[MI('oatChoc')]
+ }, why:'سالمون غني بأوميقا-3 مع خضار مشوية — عشاء خفيف عالي الجودة.'},
+ /* اليوم 12 — خميس تدريب */
+ {slots:{
+   b:[MI('oatPist')],
+   l:[MI('mushCh',{dbl:1}),MI('pastaRed')],
+   pre:[MI('oj'),MI('fruitCut')],
+   d:[MI('chichawi'),MI('shrimpG'),MI('sLemon')],
+   x:[MI('oatChoc')]
+ }, why:'عشاء سلطة لو كارب + روبيان مشوي: بروتين عالٍ وسعرات منخفضة.'},
+ /* اليوم 13 — جمعة راحة (يوم الرفيه) */
+ {slots:{
+   b:[MI('fruitCold')],
+   l:[MI('fettCh'),MI('green')],
+   d:[MI('mashwi',{dbl:1}),MI('fitZero'),MI('sTFM')],
+   x:[MI('oatFruit')]
+ }, why:'فيتوشيني الدجاج وجبة الرفيه المحسوبة — نفس المطعم، لا خروج عن الخطة.'},
+ /* اليوم 14 — سبت راحة */
+ {slots:{
+   b:[MI('oatFruit')],
+   l:[MI('chickenWrap'),MI('caesar'),MI('sTahini')],
+   pre:[MI('fruitCut'),MI('oj')],
+   d:[MI('shrimpawi'),MI('shrimpG')],
+   x:[MI('oatDate')]
+ }, why:'يوم خفيف سهل: راب + سلطات بروتينية، استعداد لبداية أسبوع جديد.'}
+];
+const SLOT_AR = {b:'الفطور',l:'الغداء',pre:'قبل التمرين',d:'العشاء',x:'سناك مرن (عند الجوع)'};
+const SLOT_ORDER = ['b','l','pre','d','x'];
+
+/* ---------- Technogym exercise library ----------
+   لم تُحدد موديلات النادي بعد، لذلك الأسماء بصيغة الخط + الوظيفة (مثل Technogym Selection Chest Press)
+   وفق خطوط تكنوجيم الرسمية الحالية: Selection / Pure Strength / Cable Station / Excite / Skill. */
+const EX = {
+  chestPress:{ar:'ضغط صدر بالجهاز',en:'Chest Press',tg:'Technogym Selection — Chest Press',tgc:'أجهزة أثقال (Selection)',mus:'صدر، كتف أمامي، ترايسبس',
+    setup:['اضبط المقعد بحيث تكون المقابض عند منتصف الصدر','ظهرك ولوحا كتفك ملتصقان بالمسند','قبضة بعرض أوسع قليلاً من الكتفين'],
+    rom:'انزل حتى إحساس إطالة مريح في الصدر ثم ادفع بالكامل دون خطف',start:[30,40],load:'stack',
+    alt:'Pure Strength Incline Press أو ضغط دمبل على بنش', yt:'Technogym chest press machine tutorial'},
+  inclinePressM:{ar:'ضغط صدر مائل',en:'Incline Chest Press',tg:'Technogym Selection / Pure Strength — Incline Chest Press',tgc:'أجهزة أثقال',mus:'صدر علوي، كتف أمامي، ترايسبس',
+    setup:['المقعد بحيث تبدأ المقابض عند أعلى الصدر','لا ترفع كتفيك أثناء الدفع'],
+    rom:'مدى كامل بتحكم، توقف قبل قفل المرفق بقوة',start:[25,35],load:'stack',
+    alt:'ضغط دمبل مائل 30°', yt:'Technogym incline chest press tutorial'},
+  pecFly:{ar:'تجميع صدر (فراشة/كيبل)',en:'Pec Fly / Cable Crossover',tg:'Technogym Selection Pectoral أو Cable Station',tgc:'جهاز/كيبل',mus:'صدر',
+    setup:['المقابض عند مستوى منتصف الصدر','انحناءة بسيطة ثابتة في المرفق'],
+    rom:'افتح حتى إطالة مريحة وضم مع عصرة ثانية',start:[15,25],load:'cable',
+    alt:'تجميع دمبل على بنش مستوٍ', yt:'Technogym cable crossover chest fly tutorial'},
+  shoulderPress:{ar:'ضغط كتف بالجهاز',en:'Shoulder Press',tg:'Technogym Selection — Shoulder Press',tgc:'أجهزة أثقال (Selection)',mus:'كتف أمامي وجانبي، ترايسبس',
+    setup:['المقعد بحيث تكون المقابض بمستوى الأذن تقريباً','أسفل الظهر ملاصق للمسند'],
+    rom:'ادفع للأعلى دون تقويس الظهر، وانزل بتحكم لمستوى الأذن',start:[20,30],load:'stack',
+    alt:'ضغط دمبل جالس', yt:'Technogym shoulder press machine tutorial'},
+  latRaise:{ar:'رفرفة جانبية دمبل',en:'Dumbbell Lateral Raise',tg:'دمبل (منطقة الأوزان الحرة Technogym)',tgc:'أوزان حرة',mus:'كتف جانبي',
+    setup:['انحنِ للأمام قليلاً جداً وثبت الجذع','ارفع للجانب حتى مستوى الكتف'],
+    rom:'قيادة الحركة بالمرفق، نزول بطيء 2-3 ثوان',start:[6,8],load:'db',
+    alt:'رفرفة جانبية كيبل ذراع واحدة', yt:'dumbbell lateral raise proper form'},
+  latRaiseCable:{ar:'رفرفة جانبية كيبل',en:'Cable Lateral Raise',tg:'Technogym Cable Station (بكرة منخفضة)',tgc:'كيبل',mus:'كتف جانبي',
+    setup:['البكرة بأدنى وضع، أمسك المقبض باليد البعيدة','ميل بسيط بعيداً عن الجهاز'],
+    rom:'ارفع للجانب حتى مستوى الكتف، نزول بطيء',start:[5,10],load:'cable',
+    alt:'رفرفة دمبل جانبية', yt:'cable lateral raise tutorial'},
+  facePull:{ar:'فيس بول (سحب للوجه)',en:'Face Pull',tg:'Technogym Cable Station + حبل',tgc:'كيبل',mus:'كتف خلفي، ترابيس وسطى',
+    setup:['البكرة أعلى من مستوى الرأس قليلاً','اسحب الحبل باتجاه جبهتك مع فتح المرفقين'],
+    rom:'اعصر لوحي الكتف في النهاية ثانية واحدة',start:[10,15],load:'cable',
+    alt:'رفرفة خلفية بجهاز Reverse Fly', yt:'face pull cable tutorial'},
+  latPulldown:{ar:'سحب أمامي واسع',en:'Lat Pulldown',tg:'Technogym Selection — Lat Machine',tgc:'أجهزة أثقال (Selection)',mus:'ظهر (لاتس)، بايسبس',
+    setup:['ثبت الركبتين تحت الوسادة','قبضة أوسع من الكتفين، صدر مرفوع'],
+    rom:'اسحب البار لأعلى الصدر مع تحريك المرفقين للأسفل والخلف، صعود بتحكم كامل',start:[40,50],load:'stack',
+    alt:'Vertical Traction أو سحب كيبل بقبضة V', yt:'Technogym lat machine pulldown tutorial'},
+  vertTraction:{ar:'سحب عمودي (قبضة ضيقة)',en:'Vertical Traction',tg:'Technogym Selection — Vertical Traction',tgc:'أجهزة أثقال (Selection)',mus:'ظهر، بايسبس',
+    setup:['اضبط المقعد بحيث تصل للمقابض بذراع ممدودة','اسحب حتى يلامس المرفقان الجانبين'],
+    rom:'حافظ على الصدر مرفوعاً طوال الحركة',start:[40,50],load:'stack',
+    alt:'سحب أمامي بقبضة ضيقة', yt:'Technogym vertical traction tutorial'},
+  seatedRow:{ar:'تجديف جالس',en:'Seated Row',tg:'Technogym Selection — Low Row / Cable Row',tgc:'أجهزة أثقال / كيبل',mus:'ظهر وسطي، ترابيس، بايسبس',
+    setup:['الصدر ملاصق للمسند إن وجد','اسحب المقبض لأسفل البطن'],
+    rom:'اعصر لوحي الكتف ثم مدد الذراعين كاملاً بتحكم',start:[40,50],load:'stack',
+    alt:'تجديف كيبل جالس بقبضة V', yt:'Technogym low row machine tutorial'},
+  reverseFly:{ar:'رفرفة خلفية بالجهاز',en:'Reverse Fly',tg:'Technogym Selection — Delts / Reverse Fly',tgc:'أجهزة أثقال',mus:'كتف خلفي، ظهر علوي',
+    setup:['الصدر ملاصق للمسند','المقابض أمامك بمستوى الكتف'],
+    rom:'افتح الذراعين للخلف بقوس واسع دون خطف',start:[20,30],load:'stack',
+    alt:'فيس بول بالكيبل', yt:'reverse fly machine tutorial'},
+  cableCurl:{ar:'مرجحة بايسبس كيبل (بار)',en:'Cable Bar Curl',tg:'Technogym Cable Station + بار مستقيم/EZ',tgc:'كيبل',mus:'بايسبس',
+    setup:['البكرة بأدنى وضع','المرفقان ثابتان بجانب الجسم'],
+    rom:'ارفع حتى أقصى قبض ونزول بطيء 2-3 ثوان',start:[15,20],load:'cable',
+    alt:'مرجحة بار EZ حر', yt:'cable bicep curl bar tutorial'},
+  dbCurl:{ar:'مرجحة بايسبس دمبل',en:'Dumbbell Curl',tg:'دمبل (منطقة الأوزان الحرة Technogym)',tgc:'أوزان حرة',mus:'بايسبس',
+    setup:['وقوف ثابت، مرفقان ملتصقان بالجانبين'],
+    rom:'ارفع مع لف الرسغ للخارج (سوبينيشن)، نزول بطيء كامل',start:[8,10],load:'db',
+    alt:'مرجحة جالس على بنش مائل', yt:'dumbbell bicep curl proper form'},
+  hammerCurl:{ar:'مرجحة هامر (مطرقة)',en:'Hammer Curl',tg:'دمبل (منطقة الأوزان الحرة Technogym)',tgc:'أوزان حرة',mus:'بايسبس، براكياليس، ساعد',
+    setup:['قبضة محايدة (الإبهام للأعلى)','مرفقان ثابتان'],
+    rom:'مدى كامل دون مرجحة الجذع',start:[8,10],load:'db',
+    alt:'هامر بحبل الكيبل', yt:'hammer curl dumbbell tutorial'},
+  preacherCurl:{ar:'مرجحة بايسبس بالجهاز',en:'Machine Arm Curl',tg:'Technogym Selection — Arm Curl',tgc:'أجهزة أثقال (Selection)',mus:'بايسبس',
+    setup:['اضبط المقعد بحيث يستقر أعلى الذراع كاملاً على الوسادة','محور الجهاز بمحاذاة المرفق'],
+    rom:'مدّ شبه كامل ثم قبض كامل — لا ترفع كتفيك',start:[15,25],load:'stack',
+    alt:'مرجحة بريتشر بار EZ', yt:'Technogym arm curl machine tutorial'},
+  inclineDbCurl:{ar:'مرجحة دمبل على بنش مائل',en:'Incline Dumbbell Curl',tg:'بنش مائل + دمبل',tgc:'أوزان حرة',mus:'بايسبس (الرأس الطويل) — إطالة قصوى',
+    setup:['البنش 45-60°','اترك الذراعين متدليتين خلف الجذع قليلاً'],
+    rom:'نزول بطيء حتى إطالة كاملة — أفضل تمرين إطالة للبايسبس',start:[6,8],load:'db',
+    alt:'مرجحة كيبل خلف الجسم', yt:'incline dumbbell curl tutorial'},
+  pushdown:{ar:'دفع ترايسبس بالحبل',en:'Rope Pushdown',tg:'Technogym Cable Station + حبل',tgc:'كيبل',mus:'ترايسبس',
+    setup:['البكرة بأعلى وضع','المرفقان ملتصقان بالجانبين'],
+    rom:'ادفع لأسفل وافصل طرفي الحبل في النهاية، عودة بتحكم',start:[15,25],load:'cable',
+    alt:'دفع بار مستقيم', yt:'triceps rope pushdown tutorial'},
+  overheadExt:{ar:'تمديد ترايسبس فوق الرأس (كيبل)',en:'Overhead Cable Extension',tg:'Technogym Cable Station + حبل',tgc:'كيبل',mus:'ترايسبس (الرأس الطويل)',
+    setup:['البكرة بوضع منخفض/متوسط، ظهرك للجهاز','المرفقان بجانب الرأس'],
+    rom:'إطالة عميقة خلف الرأس ثم مد كامل',start:[10,20],load:'cable',
+    alt:'تمديد دمبل واحد خلف الرأس', yt:'overhead cable triceps extension tutorial'},
+  armExtM:{ar:'تمديد ترايسبس بالجهاز',en:'Machine Arm Extension',tg:'Technogym Selection — Arm Extension',tgc:'أجهزة أثقال (Selection)',mus:'ترايسبس',
+    setup:['محور الجهاز بمحاذاة المرفق','ثبت أعلى الذراع على الوسادة'],
+    rom:'مد كامل مع عصرة، عودة بطيئة',start:[15,25],load:'stack',
+    alt:'دفع حبل كيبل', yt:'Technogym arm extension machine tutorial'},
+  dipsMachine:{ar:'متوازي بالجهاز (مساعد)',en:'Assisted Dip / Dip Machine',tg:'Technogym Selection — Dip أو متوازي مساعد',tgc:'أجهزة أثقال',mus:'ترايسبس، صدر سفلي',
+    setup:['جذع عمودي لاستهداف الترايسبس','انزل حتى زاوية 90° بالمرفق'],
+    rom:'لا تنزل لعمق يؤلم الكتف',start:[30,40],load:'stack',
+    alt:'دفع حبل + تمديد فوق الرأس', yt:'dip machine triceps tutorial'},
+  legPress:{ar:'دفع أرجل بالجهاز',en:'Leg Press',tg:'Technogym Selection / Pure Strength — Leg Press',tgc:'أجهزة أثقال',mus:'أرباع، مؤخرة، خلفيات',
+    setup:['قدماك بعرض الكتفين على منتصف المنصة','أسفل الظهر ملاصق للمسند دائماً'],
+    rom:'انزل حتى ركبة 90° أو أعمق قليلاً دون رفع الحوض',start:[80,100],load:'stack',
+    alt:'سكوات كأس بدمبل (Goblet)', yt:'Technogym leg press machine tutorial'},
+  legExt:{ar:'مد أرجل (أمامي)',en:'Leg Extension',tg:'Technogym Selection — Leg Extension',tgc:'أجهزة أثقال (Selection)',mus:'أرباع (كوادز)',
+    setup:['محور الجهاز بمحاذاة الركبة','الوسادة فوق الكاحل'],
+    rom:'مد كامل مع ثبات ثانية بالأعلى، نزول بطيء',start:[30,40],load:'stack',
+    alt:'سكوات بلغاري بدمبل', yt:'Technogym leg extension tutorial'},
+  legCurl:{ar:'ثني أرجل (خلفي) جالس',en:'Seated Leg Curl',tg:'Technogym Selection — Leg Curl',tgc:'أجهزة أثقال (Selection)',mus:'خلفيات الفخذ',
+    setup:['محور الجهاز بمحاذاة الركبة','ثبت الفخذين بالوسادة العلوية'],
+    rom:'اثنِ لأقصى مدى ثم عودة بتحكم كامل',start:[30,40],load:'stack',
+    alt:'رومانيان ددلفت بدمبل', yt:'Technogym leg curl machine tutorial'},
+  calfRaise:{ar:'سمانة (رفع كعبين)',en:'Calf Raise',tg:'على جهاز Leg Press أو جهاز سمانة Technogym',tgc:'أجهزة أثقال',mus:'سمانة',
+    setup:['مقدمة القدم على حافة المنصة'],
+    rom:'إطالة كاملة بالأسفل، وقوف على أطراف الأصابع مع ثبات ثانية',start:[60,80],load:'stack',
+    alt:'سمانة وقوف بدمبل على درجة', yt:'calf raise leg press tutorial'},
+  hipAbd:{ar:'إبعاد الفخذ (مؤخرة جانبية)',en:'Hip Abduction',tg:'Technogym Selection — Abductor',tgc:'أجهزة أثقال (Selection)',mus:'مؤخرة جانبية',
+    setup:['اجلس بظهر مستقيم والوسادتان خارج الركبتين'],
+    rom:'افتح لأقصى مدى مريح مع تحكم بالعودة',start:[30,40],load:'stack',
+    alt:'مشية جانبية بحزام مطاطي', yt:'hip abduction machine tutorial'},
+  gluteKickback:{ar:'دفعة مؤخرة كيبل',en:'Cable Glute Kickback',tg:'Technogym Cable Station + سوار كاحل',tgc:'كيبل',mus:'مؤخرة',
+    setup:['البكرة بأدنى وضع، السوار حول الكاحل','ثبت الجذع بميل بسيط للأمام'],
+    rom:'ادفع الرجل للخلف بعصرة مؤخرة دون تقويس الظهر',start:[10,15],load:'cable',
+    alt:'جسر مؤخرة (Hip Thrust) بدمبل', yt:'cable glute kickback tutorial'},
+  crunchM:{ar:'طحن بطن بالجهاز',en:'Abdominal Crunch',tg:'Technogym Selection — Abdominal Crunch',tgc:'أجهزة أثقال (Selection)',mus:'بطن',
+    setup:['اضبط المقعد بحيث يكون محور الحركة عند أسفل القفص الصدري'],
+    rom:'قرّب القفص من الحوض بتحكم — لا تسحب برقبتك',start:[25,35],load:'stack',
+    alt:'كرنش أرضي بطيء', yt:'Technogym abdominal crunch machine tutorial'},
+  plank:{ar:'بلانك',en:'Plank',tg:'سجادة تمرين',tgc:'وزن الجسم',mus:'جذع كامل',
+    setup:['مرفقان تحت الكتفين','جسم خط مستقيم — شد البطن والمؤخرة'],
+    rom:'ثبات دون هبوط الحوض',start:[30,45],load:'time',
+    alt:'بلانك على الركبتين', yt:'plank proper form tutorial'},
+  kneeRaise:{ar:'رفع ركب معلق',en:'Hanging Knee Raise',tg:'بار تعلق / كرسي كابتن',tgc:'وزن الجسم',mus:'بطن سفلي',
+    setup:['تعلق بثبات دون مرجحة'],
+    rom:'ارفع الركبتين نحو الصدر بلف بسيط للحوض',start:[8,12],load:'body',
+    alt:'رفع ركب على كرسي كابتن', yt:'hanging knee raise tutorial'},
+  /* كارديو Technogym */
+  cBike:{ar:'دراجة',en:'Bike',tg:'Technogym Excite Bike',tgc:'كارديو (Excite)',mus:'كارديو',cardio:1,
+    setup:['ارتفاع المقعد: ركبة شبه ممدودة بأسفل الدواسة'],rom:'إيقاع ثابت 80-95 لفة/دقيقة',start:[0,0],load:'cardio',
+    alt:'Excite Synchro (إليبتكال)', yt:'Technogym Excite bike workout'},
+  cRun:{ar:'مشي منحدر',en:'Incline Walk',tg:'Technogym Excite Run (تريدمل)',tgc:'كارديو (Excite)',mus:'كارديو',cardio:1,
+    setup:['ميل 5-8% وسرعة 5.5-6.5 كم/س','لا تتمسك بالمقابض'],rom:'تنفس تقدر معه على الكلام بجمل قصيرة (Zone 2)',start:[0,0],load:'cardio',
+    alt:'مشي خارجي سريع', yt:'Technogym Excite Run incline walking'},
+  cSynchro:{ar:'إليبتكال',en:'Elliptical',tg:'Technogym Excite Synchro',tgc:'كارديو (Excite)',mus:'كارديو',cardio:1,
+    setup:['مقاومة متوسطة، وضعية منتصبة'],rom:'حركة سلسة كاملة',start:[0,0],load:'cardio',
+    alt:'Excite Climb (درج)', yt:'Technogym Synchro elliptical workout'},
+  cIntervals:{ar:'فواصل قصيرة',en:'Intervals',tg:'Technogym Skillmill أو Skillrow',tgc:'كارديو (Skill)',mus:'كارديو/تكييف',cardio:1,
+    setup:['إحماء 3 دقائق سهل','6-8 جولات: 30 ثانية جهد متوسط-عالٍ / 90 ثانية مشي خفيف'],rom:'جهد 7-8 من 10 في الجولات — ليس أقصى جهد',start:[0,0],load:'cardio',
+    alt:'فواصل على Excite Bike بنفس التوقيت', yt:'Skillmill interval training workout'}
+};
+
+/* ---------- قوالب أيام التدريب ---------- */
+const WORKOUTS = {
+  push:{title:'دفع — صدر وكتف وترايسبس',en:'PUSH DAY',dur:'≈ 55-65 دقيقة',
+    warm:'5 دقائق Excite Bike خفيف + دوائر كتف ولوح كتف + سيت إحماء 50% ثم 70% لأول تمرين.',
+    blocks:[
+      {ex:'chestPress',sets:3,reps:'8-12',rest:90},
+      {ex:'inclinePressM',sets:3,reps:'8-12',rest:90},
+      {ex:'shoulderPress',sets:3,reps:'8-12',rest:90},
+      {ex:'latRaise',sets:3,reps:'12-15',rest:60},
+      {ex:'pushdown',sets:3,reps:'10-15',rest:60},
+      {ex:'overheadExt',sets:2,reps:'12-15',rest:60}
+    ],
+    cardio:{ex:'cBike',min:15,note:'Zone 2 — نبض تقريبي 115-130'}},
+  pull:{title:'سحب — ظهر وبايسبس',en:'PULL DAY',dur:'≈ 55-65 دقيقة',
+    warm:'5 دقائق مشي منحدر خفيف + سحب كيبل خفيف 15 تكرار + سيت إحماء لأول تمرين.',
+    blocks:[
+      {ex:'latPulldown',sets:3,reps:'8-12',rest:90},
+      {ex:'seatedRow',sets:3,reps:'8-12',rest:90},
+      {ex:'reverseFly',sets:3,reps:'12-15',rest:60},
+      {ex:'cableCurl',sets:3,reps:'10-12',rest:60},
+      {ex:'hammerCurl',sets:2,reps:'10-12',rest:60},
+      {ex:'crunchM',sets:3,reps:'12-15',rest:45}
+    ],
+    cardio:{ex:'cRun',min:15,note:'مشي منحدر Zone 2'}},
+  legs:{title:'أرجل وجذع',en:'LEG DAY',dur:'≈ 55-65 دقيقة',
+    warm:'5 دقائق دراجة + سكوات وزن جسم 2×10 + سيت إحماء 50% للدفع.',
+    blocks:[
+      {ex:'legPress',sets:3,reps:'10-12',rest:120},
+      {ex:'legExt',sets:3,reps:'12-15',rest:75},
+      {ex:'legCurl',sets:3,reps:'10-14',rest:75},
+      {ex:'calfRaise',sets:3,reps:'12-15',rest:60},
+      {ex:'hipAbd',sets:2,reps:'12-15',rest:60},
+      {ex:'plank',sets:3,reps:'30-45ث',rest:45}
+    ],
+    cardio:{ex:'cSynchro',min:10,note:'اختياري حسب الطاقة — خفيف جداً'}},
+  arms:{title:'ذراعين وأكتاف — يوم التخصيص',en:'ARMS DAY',dur:'≈ 50-60 دقيقة',
+    warm:'5 دقائق دراجة + مرجحة ودفع كيبل خفيف 15 تكرار لكل منهما.',
+    blocks:[
+      {ex:'dbCurl',sets:3,reps:'8-12',rest:75},
+      {ex:'armExtM',sets:3,reps:'8-12',rest:75},
+      {ex:'preacherCurl',sets:3,reps:'10-12',rest:60},
+      {ex:'pushdown',sets:3,reps:'10-15',rest:60},
+      {ex:'inclineDbCurl',sets:2,reps:'12-15',rest:60},
+      {ex:'overheadExt',sets:2,reps:'12-15',rest:60},
+      {ex:'latRaise',sets:3,reps:'12-20',rest:45},
+      {ex:'facePull',sets:2,reps:'15',rest:45}
+    ],
+    cardio:{ex:'cBike',min:15,note:'Zone 2'}},
+  upper:{title:'علوي شامل + إنهاء ذراعين',en:'UPPER DAY',dur:'≈ 55-65 دقيقة',
+    warm:'5 دقائق أي جهاز كارديو + إحماء الكتف بالكيبل + سيت إحماء لأول تمرين.',
+    blocks:[
+      {ex:'inclinePressM',sets:3,reps:'8-12',rest:90},
+      {ex:'vertTraction',sets:3,reps:'8-12',rest:90},
+      {ex:'seatedRow',sets:2,reps:'10-12',rest:75},
+      {ex:'pecFly',sets:2,reps:'12-15',rest:60},
+      {ex:'cableCurl',sets:2,reps:'12-15',rest:45},
+      {ex:'pushdown',sets:2,reps:'12-15',rest:45},
+      {ex:'kneeRaise',sets:3,reps:'10-15',rest:45}
+    ],
+    cardio:{ex:'cRun',min:15,note:'Zone 2 — وفي الأسبوعين 3-4 يمكن استبداله بالفواصل (cIntervals) إذا كان الاستشفاء ممتازاً'}},
+  restActive:{title:'راحة نشطة',en:'ACTIVE REST',dur:'30-40 دقيقة',
+    warm:'',blocks:[],cardio:{ex:'cRun',min:35,note:'مشي خارجي أو تريدمل خفيف + تمدد 10 دقائق. الهدف: خطوات وحركة، ليس إجهاداً.'}},
+  restFull:{title:'راحة كاملة',en:'REST DAY',dur:'—',
+    warm:'',blocks:[],cardio:null}
+};
+
+/* ---------- توليد خطة 28 يوم (تبدأ الأحد 2026-08-02) ---------- */
+const PLAN_START = '2026-08-02';
+const WEEK_PHASES = [
+  {n:1,name:'الأسبوع 1 — تقنية ومعايرة',rir:'3-4',note:'الهدف: إتقان الأداء ومعايرة الأوزان. لا تقترب من الفشل إطلاقاً.'},
+  {n:2,name:'الأسبوع 2 — تقدم محسوب',rir:'2-3',note:'زد الوزن أو التكرارات حيث سجلت أداءً سهلاً في الأسبوع الأول.'},
+  {n:3,name:'الأسبوع 3 — حمل منتج',rir:'1-2',note:'أعلى جهد في البرنامج على السيتات الأخيرة. نم جيداً واشرب ماءً كافياً.'},
+  {n:4,name:'الأسبوع 4 — تثبيت ومراجعة',rir:'2-3',note:'حافظ على الأوزان، وقلل سيتاً واحداً من تمارين العزل إذا كان الإرهاق مرتفعاً. أعد القياسات نهاية الأسبوع.'}
+];
+const DAY_TEMPLATE = ['push','pull','legs','arms','upper','restActive','restFull']; // أحد → سبت
+const DAY_AR = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+
+function buildPlan(){
+  const days=[]; const start=new Date(PLAN_START+'T00:00:00');
+  for(let i=0;i<28;i++){
+    const dt=new Date(start.getTime()+i*86400000);
+    const w=Math.floor(i/7), dow=i%7; // 0=أحد
+    const wk=DAY_TEMPLATE[dow];
+    const isTrain=['push','pull','legs','arms','upper'].includes(wk);
+    days.push({
+      idx:i+1, date:dt.toISOString().slice(0,10), dow, dayName:DAY_AR[dow],
+      week:w+1, phase:WEEK_PHASES[w], workout:wk, isTrain,
+      meals:MEAL_CYCLE[i%14],
+      steps: w<2 ? 8000 : 10000,
+      waterL: isTrain? 3.0 : 2.5,
+      sleepH:'7-8'
+    });
+  }
+  return days;
+}
+const PLAN = buildPlan();
+
+/* أهداف افتراضية (تُعاد للحساب من بيانات InBody في الإعدادات) */
+const DEFAULT_PROFILE = {
+  name:'مهند', sex:'male', age:38, heightCm:175, weightKg:80,
+  smm:null, bfm:null, pbf:null, bmi:null, visceral:null, bmr:null, inbodyScore:null, inbodyDate:'',
+  activityFactor:1.45, deficit:650, estimated:true
+};
+function calcTargets(p){
+  const bmr = p.bmr && p.bmr>800 ? p.bmr : Math.round(10*p.weightKg + 6.25*p.heightCm - 5*p.age + 5);
+  const tdee = Math.round(bmr * (p.activityFactor||1.45));
+  const kcalTrain = Math.max(1500, Math.round((tdee - (p.deficit||650))/25)*25);
+  const kcalRest = Math.max(1350, kcalTrain-200);
+  let protein = Math.round(p.weightKg*2.0/5)*5; protein=Math.min(Math.max(protein, Math.round(p.weightKg*1.6)), Math.round(p.weightKg*2.4));
+  return {bmr, tdee, kcalTrain, kcalRest, protein};
+}
+
+/* حساب ماكروز وجبات يوم */
+function mealItemMacros(mi){
+  const m=MENU[mi.id]; if(!m) return {kcal:0,p:0,f:0,c:0,ar:'?'};
+  const mult=mi.dbl?2:1;
+  return {kcal:m.kcal*mult, p:m.p*mult, f:m.f*mult, c:m.c*mult};
+}
+function dayMealTotals(mealDay, includeFlex){
+  let t={kcal:0,p:0,f:0,c:0};
+  SLOT_ORDER.forEach(s=>{
+    if(s==='x'&&!includeFlex) return;
+    (mealDay.slots[s]||[]).forEach(mi=>{const mm=mealItemMacros(mi); t.kcal+=mm.kcal;t.p+=mm.p;t.f+=mm.f;t.c+=mm.c;});
+  });
+  return t;
+}
+function ytLink(q){ return 'https://www.youtube.com/results?search_query='+encodeURIComponent(q); }
+const TG_LINKS = {
+  selection:'https://www.technogym.com/en-INT/category/selection/',
+  pure:'https://www.technogym.com/en-US/category/pure-strength/',
+  excite:'https://www.technogym.com/en-INT/excite-live-line/',
+  skill:'https://www.technogym.com/en-INT/category/skill/'
+};
+
+/* ---------- روابط مباشرة مُتحقق منها (01/08/2026):
+   tg = صفحة الجهاز الرسمية على technogym.com، v = فيديو يوتيوب مباشر، vt = عنوان الفيديو/القناة ---------- */
+const TG=(p)=>'https://www.technogym.com/'+p;
+const YTV=(id)=>'https://www.youtube.com/watch?v='+id;
+const EX_LINKS = {
+  chestPress:{tgUrl:TG('en-US/product/selection-700-chest-press_MNFC.html'),tgName:'Technogym Selection 700 Chest Press',ytv:YTV('n1Dyy3De1Rc'),ytt:'شرح جهاز ضغط الصدر Technogym — Travis Tarrant (4:07)'},
+  inclinePressM:{tgUrl:TG('en-US/product/pure-strength-incline-chest-press_MG1500-NBGJV0.html'),tgName:'Technogym Pure Strength Incline Chest Press',ytv:YTV('bbbiEEAEsP8'),ytt:'Technogym Incline Chest Press — شرح سريع (0:34)'},
+  pecFly:{tgUrl:TG('en-US/product/selection-700-dual-pectoral-percent2f-reverse-fly_MNNC.html'),tgName:'Technogym Selection 700 Dual Pectoral / Reverse Fly',ytv:YTV('re5b8m-FJio'),ytt:'شرح Pec Deck Fly على Technogym — Travis Tarrant (3:26)'},
+  shoulderPress:{tgUrl:TG('en-US/product/selection-700-shoulder-press_MNEC.html'),tgName:'Technogym Selection 700 Shoulder Press',ytv:YTV('WvLMauqrnK8'),ytt:'ضغط الكتف بالجهاز — Renaissance Periodization (0:13)'},
+  latRaise:{tgUrl:TG('en-US/product/dumbbell_A0001-UDB.html'),tgName:'Technogym Dumbbells (أوزان 1-36 كجم)',ytv:YTV('XPPfnSEATJA'),ytt:'الرفرفة الجانبية بالدمبل — NASM (0:19)'},
+  latRaiseCable:{tgUrl:TG('en-US/product/dual-adjustable-pulley-fitness_MB44.html'),tgName:'Technogym Dual Adjustable Pulley',ytv:YTV('Z5FA9aq3L6A'),ytt:'رفرفة جانبية بالكيبل — PureGym (0:15)'},
+  facePull:{tgUrl:TG('en-US/product/dual-adjustable-pulley-fitness_MB44.html'),tgName:'Technogym Dual Adjustable Pulley',ytv:YTV('0Po47vvj9g4'),ytt:'فيس بول بالكيبل — PureGym (0:15)'},
+  latPulldown:{tgUrl:TG('en-US/product/selection-700-lat-machine_MNLC.html'),tgName:'Technogym Selection 700 Lat Machine',ytv:YTV('SALxEARiMkw'),ytt:'السحب الأمامي: أخطاء وتصحيح — ATHLEAN-X (5:55)'},
+  vertTraction:{tgUrl:TG('en-US/product/selection-700-vertical-traction_MNGC.html'),tgName:'Technogym Selection 700 Vertical Traction',ytv:YTV('db_BT6FyTtE'),ytt:'Technogym Vertical Traction: الضبط والأداء (1:48)'},
+  seatedRow:{tgUrl:TG('en-US/product/selection-700-low-row_MNHC.html'),tgName:'Technogym Selection 700 Low Row',ytv:YTV('rADR-qRgx2A'),ytt:'شرح Technogym Low Row — Travis Tarrant (3:59)'},
+  reverseFly:{tgUrl:TG('en-US/product/selection-700-dual-pectoral-percent2f-reverse-fly_MNNC.html'),tgName:'Technogym Selection 700 Dual Pectoral / Reverse Fly',ytv:YTV('5YK4bgzXDp0'),ytt:'الرفرفة الخلفية بالجهاز — Renaissance Periodization (0:14)'},
+  cableCurl:{tgUrl:TG('en-US/product/dual-adjustable-pulley-fitness_MB44.html'),tgName:'Technogym Dual Adjustable Pulley + بار',ytv:YTV('2MUEL4nL6hA'),ytt:'مرجحة البايسبس بالكيبل — Colossus Fitness (1:13)'},
+  dbCurl:{tgUrl:TG('en-US/product/dumbbell_A0001-UDB.html'),tgName:'Technogym Dumbbells (أوزان 1-36 كجم)',ytv:YTV('XE_pHwbst04'),ytt:'مرجحة الدمبل: الأداء الصحيح — Fit Father Project (2:39)'},
+  hammerCurl:{tgUrl:TG('en-US/product/dumbbell_A0001-UDB.html'),tgName:'Technogym Dumbbells (أوزان 1-36 كجم)',ytv:YTV('OPqe0kCxmR8'),ytt:'مرجحة المطرقة — One Minute Tutorial (1:04)'},
+  preacherCurl:{tgUrl:TG('en-US/product/selection-900-arm-curl_MNRP.html'),tgName:'Technogym Selection Arm Curl',ytv:YTV('Ja6ZlIDONac'),ytt:'مرجحة البايسبس بالجهاز — Renaissance Periodization (0:17)'},
+  inclineDbCurl:{tgUrl:TG('en-US/product/adjustable-bench_PA04.html'),tgName:'Technogym Adjustable Bench + Dumbbells',ytv:YTV('soxrZlIl35U'),ytt:'مرجحة دمبل على بنش مائل — ScottHermanFitness (1:45)'},
+  pushdown:{tgUrl:TG('en-US/product/dual-adjustable-pulley-fitness_MB44.html'),tgName:'Technogym Dual Adjustable Pulley + حبل',ytv:YTV('-xa-6cQaZKY'),ytt:'دفع الترايسبس بالحبل — Renaissance Periodization (0:12)'},
+  overheadExt:{tgUrl:TG('en-US/product/dual-adjustable-pulley-fitness_MB44.html'),tgName:'Technogym Dual Adjustable Pulley + حبل',ytv:YTV('1u18yJELsh0'),ytt:'تمديد الترايسبس فوق الرأس بالكيبل — RP (0:12)'},
+  armExtM:{tgUrl:TG('en-US/product/selection-900-arm-extension_MNSP.html'),tgName:'Technogym Selection Arm Extension',ytv:YTV('4W31U8tTVAg'),ytt:'جهاز ضغط الترايسبس — شرح الاستخدام (1:03)'},
+  dipsMachine:{tgUrl:TG('en-INT/product/kneeling-easy-chin-dip_MB91.html'),tgName:'Technogym Kneeling Easy Chin/Dip',ytv:YTV('8zFcJWD9Y_E'),ytt:'جهاز المتوازي المساعد — Gold’s Gym (1:37)'},
+  legPress:{tgUrl:TG('en-US/product/selection-700-leg-press_MNAC.html'),tgName:'Technogym Selection 700 Leg Press',ytv:YTV('8ZrJ8Q9SNbY'),ytt:'شرح Technogym Leg Press — Travis Tarrant (3:14)'},
+  legExt:{tgUrl:TG('en-US/product/selection-700-leg-extension_MNJC.html'),tgName:'Technogym Selection 700 Leg Extension',ytv:YTV('2lvdnQg04PM'),ytt:'شرح Technogym Leg Extension — Travis Tarrant (4:07)'},
+  legCurl:{tgUrl:TG('en-US/product/selection-700-leg-curl_MNIC.html'),tgName:'Technogym Selection 700 Leg Curl',ytv:YTV('Orxowest56U'),ytt:'ثني الأرجل جالساً — Renaissance Periodization (0:11)'},
+  calfRaise:{tgUrl:TG('en-US/product/selection-700-leg-press_MNAC.html'),tgName:'على جهاز Technogym Leg Press',ytv:YTV('dhRz1Ns60Zg'),ytt:'سمانة على جهاز دفع الأرجل — PureGym (0:14)'},
+  hipAbd:{tgUrl:TG('en-US/product/selection-700-dual-abductor-adductor_MNOC.html'),tgName:'Technogym Selection 700 Dual Abductor/Adductor',ytv:YTV('G_8LItOiZ0Q'),ytt:'جهاز إبعاد الفخذ — PureGym (0:16)'},
+  gluteKickback:{tgUrl:TG('en-US/product/dual-adjustable-pulley-fitness_MB44.html'),tgName:'Technogym Dual Adjustable Pulley + سوار كاحل',ytv:YTV('dU1R-AHW4IM'),ytt:'دفعة المؤخرة بالكيبل — Kia Khadem (0:27)'},
+  crunchM:{tgUrl:TG('en-INT/product/selection-700-abdominal-crunch_MNBC.html'),tgName:'Technogym Selection 700 Abdominal Crunch',ytv:YTV('rha2lXRJau8'),ytt:'شرح جهاز البطن من Technogym (3:46)'},
+  plank:{tgUrl:null,tgName:null,ytv:YTV('A2b2EmIg0dA'),ytt:'البلانك الصحيح — E3 Rehab (4:00)'},
+  kneeRaise:{tgUrl:TG('en-INT/product/chin-up-dip-leg-raise_PA12.html'),tgName:'Technogym Chin Up / Dip / Leg Raise',ytv:YTV('KhPTiWP6lB4'),ytt:'رفع الركب المعلق — Brian Schmitt (5:13)'},
+  cBike:{tgUrl:TG('en-US/product/excite-bike_DFC-DGE.html'),tgName:'Technogym Excite+ Bike',ytv:YTV('iD8I5BAeR5Q'),ytt:'Excite Bike — قناة Technogym الرسمية (3:29)'},
+  cRun:{tgUrl:TG('en-US/product/excite-run_DFK-DGE.html'),tgName:'Technogym Excite+ Run',ytv:YTV('MJ1Jdu1QTUk'),ytt:'المشي المنحدر لحرق الدهون — Eric Roberts (1:19)'},
+  cSynchro:{tgUrl:TG('en-US/product/excite-synchro_DFH-DGE.html'),tgName:'Technogym Excite+ Synchro',ytv:YTV('j38LNpTLwzY'),ytt:'دليل الإليبتكال للمبتدئ — Naomi Kong (1:47)'},
+  cIntervals:{tgUrl:TG('en-US/product/skillmill_DJK0.html'),tgName:'Technogym Skillmill (أو Skillrow)',ytv:YTV('ziUe1CSYQAk'),ytt:'أقصى استفادة من Skillmill — Nuffield Health (2:53)'}
+};
+Object.keys(EX_LINKS).forEach(k=>{ if(EX[k]) Object.assign(EX[k], EX_LINKS[k]); });
+
+/* أوزان دمبل Technogym الرسمية (صفحة المنتج): 1-10 كجم بدرجة 1، ثم 12-36 كجم بدرجة 2 */
+const DB_WEIGHTS=[1,2,3,4,5,6,7,8,9,10,12,14,16,18,20,22,24,26,28,30,32,34,36];
+function snapDb(w){ let best=DB_WEIGHTS[0]; for(const x of DB_WEIGHTS){ if(Math.abs(x-w)<Math.abs(best-w)) best=x; } return best; }
+
+/* تعويض الأيام الملغاة: أي جلسة تالية من هذه الأنواع تصلح للتعويض */
+const COMP_OK = { push:['upper','push'], pull:['upper','pull'], legs:['legs'], arms:['push','pull','arms','upper'], upper:['push','pull','upper'] };
+</script>
+<script>
+/* ===================== Store & state ===================== */
+const SCHEMA_V=1;
+let memStore={}; let storageOK=true;
+try{ localStorage.setItem('__t','1'); localStorage.removeItem('__t'); }
+catch(e){ storageOK=false; }
+function rawGet(k){ if(!storageOK) return memStore[k]; try{return localStorage.getItem(k);}catch(e){return memStore[k];} }
+function rawSet(k,v){ if(!storageOK){memStore[k]=v; return;} try{localStorage.setItem(k,v);}catch(e){memStore[k]=v;} }
+
+const DEFAULT_STATE = () => ({
+  v:SCHEMA_V,
+  profile:Object.assign({},DEFAULT_PROFILE),
+  onboarded:false,
+  settings:{sound:true, vibrate:true, autoRest:true},
+  dayShift:Array(28).fill(0), // تأجيلات: كم يوماً انزاح كل يوم تدريبي
+  cancels:{},                 // baseIdx -> true (يوم ملغى)
+  comps:{},                   // baseIdx الهدف -> {from, workout} سيتات تعويض
+  lastPostpone:null,
+  workLogs:{},   // dayIdx -> {status:'done'|'partial', startedAt, durationSec, sets:{exId:[{w,r,rir,pain,note,skip}]}, replaced:{exId:altText}, cardioDone:bool, note}
+  mealLogs:{},   // dayIdx -> {itemKey:'done'|'swapped'|'skipped', _note}
+  weights:[],    // {date, kg}
+  waists:[],     // {date, cm}
+  bodyFats:[],   // {date, pct}
+  stepsLog:{},   // dayIdx -> number
+  checkins:[],   // {week, avgW, waist, done, hunger, energy, sleep, pain, adherence, notes, reco, date}
+  sessionActive:null, // crash recovery
+  savedAt:null
+});
+let S = DEFAULT_STATE();
+(function load(){
+  const raw=rawGet('mohanad_fit_v1');
+  if(raw){ try{ const d=JSON.parse(raw); if(d && d.v===SCHEMA_V) S=Object.assign(DEFAULT_STATE(),d); }catch(e){} }
+})();
+let saveTimer=null;
+function save(showToast){
+  S.savedAt=new Date().toISOString();
+  rawSet('mohanad_fit_v1', JSON.stringify(S));
+  document.getElementById('savedAt').textContent = storageOK? ('آخر حفظ: '+fmtTime(S.savedAt)) : 'وضع معاينة — لا يوجد حفظ';
+  if(showToast) toast('تم الحفظ ✓');
+}
+function queueSave(){ clearTimeout(saveTimer); saveTimer=setTimeout(()=>save(false),400); }
+function fmtTime(iso){ const d=new Date(iso); return d.toLocaleDateString('ar-SA-u-ca-gregory-nu-latn',{day:'numeric',month:'numeric'})+' '+d.toLocaleTimeString('ar-SA-u-nu-latn',{hour:'2-digit',minute:'2-digit'}); }
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('on'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('on'),1800); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function r1(n){ return Math.round(n*10)/10; }
+function r0(n){ return Math.round(n); }
+
+/* ===================== Helpers & schedule engine ===================== */
+function daysSinceStart(){
+  const start=new Date(PLAN_START+'T00:00:00'); const now=new Date();
+  return Math.floor((new Date(now.getFullYear(),now.getMonth(),now.getDate()) - start)/86400000);
+}
+function addDays(iso,n){ const d=new Date(iso+'T00:00:00'); d.setDate(d.getDate()+n); return d.toISOString().slice(0,10); }
+function effOffset(i){ return i + (S.dayShift[i]||0); }
+function effDate(i){ return addDays(PLAN_START, effOffset(i)); }
+function totalShift(){ return S.dayShift[27]||0; }
+function calDate(c){ return addDays(PLAN_START, c); }
+/* c = يوم تقويمي منذ البداية → أي يوم أساس يقع عليه؟ */
+function baseForCal(c){
+  for(let i=0;i<28;i++){ if(effOffset(i)===c) return i; if(effOffset(i)>c) return null; }
+  return null;
+}
+function todayCal(){ return Math.min(Math.max(daysSinceStart(),0), 27+totalShift()); }
+/* حل حالة اليوم: {kind:'day', i} | {kind:'gap', next} */
+function resolveCal(c){
+  const i=baseForCal(c);
+  if(i!=null) return {kind:'day', i};
+  let next=null; for(let j=0;j<28;j++){ if(effOffset(j)>c){ next=j; break; } }
+  return {kind:'gap', next};
+}
+function mealsForCal(c){ return MEAL_CYCLE[((c%14)+14)%14]; }
+function planDay(i){ return PLAN[i]; }
+function isCancelled(i){ return !!S.cancels[i]; }
+function pendingTrain(i){ const d=PLAN[i]; const lg=S.workLogs[i]; return d.isTrain && !isCancelled(i) && !(lg&&lg.status==='done'); }
+/* أجّل: هذا اليوم وكل ما بعده يتأخر يوماً واحداً */
+function postponeDay(i){
+  for(let j=i;j<28;j++) S.dayShift[j]=(S.dayShift[j]||0)+1;
+  S.lastPostpone=i;
+  save(true); toast('تم التأجيل — تمرين اليوم انتقل إلى '+fmtDateAr(effDate(i)));
+  render();
+}
+function undoPostpone(){
+  const i=S.lastPostpone; if(i==null) return;
+  for(let j=i;j<28;j++) S.dayShift[j]=Math.max(0,(S.dayShift[j]||0)-1);
+  S.lastPostpone=null; save(true); render();
+}
+/* ألغِ: اليوم يسقط (لا يُحسب تمريناً) ويُضاف تعويض لأقرب جلسة مناسبة */
+function cancelDay(i){
+  S.cancels[i]=true;
+  const okTypes=COMP_OK[PLAN[i].workout]||[];
+  for(let j=i+1;j<28;j++){
+    if(PLAN[j].isTrain && !isCancelled(j) && okTypes.includes(PLAN[j].workout)){
+      S.comps[j]={from:i, workout:PLAN[i].workout}; break;
+    }
+  }
+  save(true); toast('أُلغي اليوم — أُضيفت سيتات تعويض للجلسة المناسبة القادمة'); render();
+}
+function uncancelDay(i){
+  delete S.cancels[i];
+  for(const j in S.comps){ if(S.comps[j].from===i) delete S.comps[j]; }
+  save(true); render();
+}
+function confirmPostpone(i){
+  openDlg(`<h3>تأجيل تمرين «${esc(WORKOUTS[PLAN[i].workout].title)}»؟</h3>
+  <p class="sub">ينتقل هذا التمرين إلى اليوم التالي، وكل الأيام بعده تنزاح يوماً واحداً (تمتد نهاية الخطة يوماً). وجبات كل يوم تبقى على تاريخها.</p>
+  <div class="btnrow"><button class="btn primary" onclick="dlg.close();postponeDay(${i})">نعم، أجّل</button>
+  <button class="btn ghost" onclick="dlg.close()">تراجع</button></div>`);
+}
+function confirmCancel(i){
+  openDlg(`<h3>إلغاء تمرين «${esc(WORKOUTS[PLAN[i].workout].title)}»؟</h3>
+  <p class="sub">اليوم يُلغى نهائياً ولا يُحسب تمريناً، والجدول لا يتحرك. سيضيف التطبيق «سيتات تعويض» (+1 سيت على أول 3 تمارين) في أقرب جلسة تغطي نفس العضلات.</p>
+  <div class="btnrow"><button class="btn danger" onclick="dlg.close();cancelDay(${i})">ألغِ اليوم</button>
+  <button class="btn ghost" onclick="dlg.close()">تراجع</button></div>`);
+}
+/* أزرار إدارة اليوم */
+function dayManageHTML(i, dark){
+  if(!pendingTrain(i)) {
+    if(isCancelled(i)) return `<div class="warnnote">يوم ملغى — لا يُحسب تمريناً، والتعويض مضاف للجلسة المناسبة. <button class="btn small" onclick="uncancelDay(${i})">تراجع عن الإلغاء</button></div>`;
+    return '';
+  }
+  const st=dark?'style="background:rgba(255,255,255,.14);color:#fff"':'';
+  return `<div class="btnrow">
+    <button class="btn small" ${st} onclick="confirmPostpone(${i})">⏭️ ما أقدر اليوم — أجّله لبكرة</button>
+    <button class="btn small" ${st} onclick="confirmCancel(${i})">🗓️ ألغِ هذا اليوم (مع تعويض)</button>
+    ${S.lastPostpone!=null?`<button class="btn small ghost" ${st} onclick="undoPostpone()">↩️ تراجع عن آخر تأجيل</button>`:''}
+  </div>`;
+}
+function targets(){ return calcTargets(S.profile); }
+function fmtDateAr(iso){ const d=new Date(iso+'T00:00:00'); return d.toLocaleDateString('ar-SA-u-ca-gregory-nu-latn',{day:'numeric',month:'long'}); }
+function workoutSetCount(wk){ return WORKOUTS[wk].blocks.reduce((a,b)=>a+b.sets,0); }
+function dayWorkLog(i){ if(!S.workLogs[i]) S.workLogs[i]={sets:{},replaced:{},status:null,cardioDone:false}; return S.workLogs[i]; }
+function dayMealLog(i){ if(!S.mealLogs[i]) S.mealLogs[i]={}; return S.mealLogs[i]; }
+
+/* اقتراح وزن الجلسة القادمة بناء على آخر سجل */
+function lastPerf(exId, beforeIdx){
+  for(let i=(beforeIdx==null?27:beforeIdx-1); i>=0; i--){
+    const lg=S.workLogs[i]; if(lg && lg.sets && lg.sets[exId] && lg.sets[exId].length){ return {sets:lg.sets[exId], dayIdx:i}; }
+  }
+  return null;
+}
+function suggestLoad(exId, dayI){
+  const ex=EX[exId];
+  if(ex.cardio||ex.load==='time'||ex.load==='body') return null;
+  const prev=lastPerf(exId, dayI);
+  if(!prev){ return {lo:ex.start[0], hi:ex.start[1], why:'وزن بداية تحفظي — عايره في أول جلسة (احتياطي 3-4 تكرارات)'}; }
+  const done=prev.sets.filter(s=>!s.skip && s.w!=null);
+  if(!done.length) return {lo:ex.start[0], hi:ex.start[1], why:'لا يوجد سجل مكتمل — ابدأ من نطاق البداية'};
+  const maxW=Math.max(...done.map(s=>+s.w||0));
+  const pain=done.some(s=>s.pain);
+  const avgRIR=done.reduce((a,s)=>a+(s.rir==null?2:+s.rir),0)/done.length;
+  const block=findBlock(exId); const topReps=block? +String(block.reps).split('-').pop().replace(/[^0-9]/g,'')||12 : 12;
+  const hitTop=done.every(s=>(+s.r||0)>=topReps);
+  const inc = ex.load==='db'?2:(ex.load==='cable'?2.5:2.5);
+  const S1=(v)=> ex.load==='db'? snapDb(v):v;
+  if(pain) return {lo:S1(Math.max(2,r1(maxW*0.85))), hi:S1(r1(maxW*0.9)), why:'سجلت ألماً — خفف 10-15% وراقب، وبدّل التمرين إذا استمر'};
+  if(avgRIR<=0.5) return {lo:S1(r1(maxW*0.95)), hi:S1(maxW), why:'وصلت قريباً من الفشل — ثبّت أو خفف قليلاً وركز على الأداء'};
+  if(hitTop && avgRIR>=1.5){ const nw= ex.load==='db'? (DB_WEIGHTS[DB_WEIGHTS.indexOf(snapDb(maxW))+1]||snapDb(maxW)) : maxW+inc; return {lo:nw, hi:nw, why: ex.load==='db'? 'زد لدرجة الدمبل التالية المتوفرة (درجات Technogym: 1-10 كجم ثم قفزات 2 كجم)':'وصلت أعلى النطاق بسهولة — زد درجة واحدة (~'+inc+' كجم حسب درجات الجهاز)'}; }
+  return {lo:S1(maxW), hi:S1(maxW), why:'استمر بنفس الوزن وزد التكرارات داخل النطاق'};
+}
+function findBlock(exId){
+  for(const k in WORKOUTS){ const b=(WORKOUTS[k].blocks||[]).find(x=>x.ex===exId); if(b) return b; }
+  return null;
+}
+function loadTypeAr(t){
+  return {stack:'وزن المكدس (اختر الدرجة بالكجم)',plate:'أطباق: الوزن لكل جهة',db:'وزن الدمبل الواحد',cable:'درجة المكدس — نسب البكرات قد تغير المقاومة الفعلية',barbell:'الوزن الكلي شامل البار',body:'وزن الجسم',time:'بالثواني',cardio:''}[t]||'';
+}
+
+/* ===================== Router ===================== */
+const VIEWS=['today','plan','meals','lib','more'];
+let curView='today', moreSub=null,
+    selectedPlanDay=Math.min(Math.max(daysSinceStart(),0),27),
+    selectedMealDay=Math.min(Math.max(daysSinceStart(),0),27);
+document.getElementById('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  const v=b.dataset.view;
+  if(v==='workout'){ openWorkoutEntry(); return; }
+  showView(v);
+});
+function showView(v, sub){
+  curView=v; moreSub=sub||null;
+  document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('active', b.dataset.view===v));
+  VIEWS.forEach(x=>{ const el=document.getElementById('v-'+x); if(el) el.classList.toggle('active', x===v); });
+  render();
+  window.scrollTo({top:0});
+}
+function render(){
+  if(curView==='today') renderToday();
+  else if(curView==='plan') renderPlan();
+  else if(curView==='meals') renderMeals();
+  else if(curView==='lib') renderLib();
+  else if(curView==='more') renderMore();
+  save(false);
+}
+
+/* ===================== TODAY ===================== */
+function renderToday(){
+  const c=todayCal(), res=resolveCal(c), t=targets();
+  const todayStr=calDate(c);
+  const gap=res.kind==='gap';
+  const i=gap? res.next : res.i;
+  const d=planDay(i==null?27:i);
+  const w=WORKOUTS[d.workout];
+  const cancelled=!gap&&isCancelled(i);
+  const isTrainToday=!gap && d.isTrain && !cancelled;
+  const lg=!gap? S.workLogs[i]:null; const wDone=lg&&lg.status==='done';
+  const meals=mealsForCal(c);
+  const mlog=dayMealLog(c);
+  const mt=dayMealTotals(meals,true), mtCore=dayMealTotals(meals,false);
+  const kcalT=isTrainToday? t.kcalTrain : t.kcalRest;
+  const wLog=S.weights.find(x=>x.date===todayStr);
+  const before=daysSinceStart()<0;
+  const dayName=DAY_AR[new Date(todayStr+'T00:00:00').getDay()===0?0:new Date(todayStr+'T00:00:00').getDay()];
+  let html='';
+  const comp=!gap? S.comps[i]:null;
+  html+=`<div class="card" style="background:linear-gradient(150deg,#17181b,#2b2d31);color:#fff;border:0">
+    <span class="en-tag" style="color:#9aa0a8">${gap?'EXTRA REST':esc(w.en||'GET MOVING')}</span>
+    <h2 style="color:#fff;font-size:22px;margin-top:2px">${gap? 'يوم مؤجل — راحة إضافية' : d.dayName+' — يوم '+d.idx+' من 28'}</h2>
+    <div style="color:#c8ccd2;font-size:13px">${fmtDateAr(todayStr)} • ${esc(d.phase.name)}${totalShift()?` • الخطة ممتدة حتى ${fmtDateAr(effDate(27))}`:''}</div>
+    <div class="btnrow">
+      ${isTrainToday? `<button class="btn big" style="background:#fff;color:#111" onclick="startSession(${i})">${wDone?'🔁 إعادة فتح التمرين':'▶️ ابدأ التمرين'}</button>`
+        : gap? `<div class="note" style="background:rgba(255,255,255,.08);color:#dfe2e6">أجّلت التمرين — اليوم راحة، وتمرين «${esc(w.title)}» ينتظرك ${fmtDateAr(effDate(i))}. حافظ على خطواتك ووجباتك.</div>${S.lastPostpone!=null?`<button class="btn small" style="background:rgba(255,255,255,.14);color:#fff" onclick="undoPostpone()">↩️ تراجع عن التأجيل (أرجع تمرين اليوم)</button>`:''}`
+        : cancelled? `<div class="note" style="background:rgba(255,255,255,.08);color:#f3c6c3">هذا اليوم ملغى — التعويض مضاف للجلسة المناسبة القادمة.</div>`
+        : `<div class="note" style="background:rgba(255,255,255,.08);color:#dfe2e6">اليوم ${d.workout==='restActive'?'راحة نشطة: '+esc(WORKOUTS.restActive.cardio.note):'راحة كاملة — نوم جيد وماء كافٍ.'}</div>`}
+    </div>
+    ${!gap&&!wDone? dayManageHTML(i,true):''}
+    ${comp? `<div class="note" style="background:rgba(126,226,168,.12);color:#7ee2a8">💪 هذه الجلسة فيها سيتات تعويض عن يوم «${esc(WORKOUTS[comp.workout].title)}» الملغى (+1 سيت على أول 3 تمارين).</div>`:''}
+    ${before? `<div class="note" style="background:rgba(255,255,255,.08);color:#ffd9a8">الخطة تبدأ الأحد ${fmtDateAr(PLAN_START)} — استعرضها اليوم وجهز اشتراك الوجبات.</div>`:''}
+  </div>`;
+
+  if(isTrainToday){
+    html+=`<div class="card"><h2>🏋️ تمرين اليوم: ${esc(w.title)} ${wDone?'<span class="chip ok">مكتمل ✓</span>':''}</h2>
+    <div class="sub">${esc(w.dur)} • جهد مستهدف RIR ${d.phase.rir} • ${w.blocks.length} تمارين + كارديو${comp?' • +سيتات تعويض':''}</div>
+    <div class="spacer"></div>`;
+    w.blocks.forEach((b,bx)=>{
+      const ex=EX[b.ex]; const sg=suggestLoad(b.ex,i); const extra=compExtra(i,bx,b.ex);
+      html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')">
+        <div><b>${esc(ex.ar)}</b><div class="meta">${b.sets+extra}×${b.reps}${extra?' <span class="chip ok">+'+extra+' تعويض</span>':''} • راحة ${b.rest}ث ${sg?`• مقترح <span dir="ltr">${sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi}</span> كجم`:''}</div></div>
+        <span class="tg">TG</span></div>
+        <div class="body">${exDetailHTML(b.ex,b)}</div></div>`;
+    });
+    if(w.cardio){ const cx=EX[w.cardio.ex];
+      html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')"><div><b>🫀 ${esc(cx.ar)} — ${w.cardio.min} دقيقة</b><div class="meta">${esc(w.cardio.note)}</div></div><span class="tg">CARDIO</span></div><div class="body">${exDetailHTML(w.cardio.ex)}</div></div>`; }
+    html+=`</div>`;
+  }
+
+  /* وجبات اليوم (مثبتة على التاريخ حتى مع تأجيل التمارين) */
+  html+=`<div class="card"><h2>🍽️ وجبات اليوم <span class="chip">${r0(mtCore.kcal)}–${r0(mt.kcal)} kcal</span> <span class="chip dark">بروتين ${r0(mt.p)} غ</span></h2>
+  <div class="sub">الهدف: ~${kcalT} kcal • بروتين ${t.protein} غ${isTrainToday?' • يوم تدريب (كارب أعلى)':' • يوم راحة (كارب أقل — أخّر أو احذف سناك ما قبل التمرين)'}</div>`;
+  html+=mealsChecklistHTML(c,{meals:meals},mlog,true);
+  html+=`<div class="note">💡 ${esc(meals.why)}</div></div>`;
+
+  /* أهداف اليوم */
+  const steps=gap?8000:d.steps, water=isTrainToday?3.0:2.5;
+  html+=`<div class="card"><h2>🎯 أهداف اليوم</h2><div class="grid4">
+    <div class="tile"><div class="v">${steps.toLocaleString('en')}</div><div class="l">خطوات</div></div>
+    <div class="tile"><div class="v">${water} L</div><div class="l">ماء</div></div>
+    <div class="tile"><div class="v">7-8</div><div class="l">ساعات نوم</div></div>
+    <div class="tile"><div class="v">${kcalT}</div><div class="l">سعرات</div></div>
+  </div>
+  <div class="inrow" style="margin-top:10px">
+    <div><label class="f">وزن الصباح (كجم)</label><input type="number" step="0.1" inputmode="decimal" id="wIn" value="${wLog?wLog.kg:''}" placeholder="مثال: 80.4"></div>
+    <div><label class="f">خطوات اليوم</label><input type="number" id="stIn" inputmode="numeric" value="${S.stepsLog[todayStr]||''}" placeholder="من ساعتك/جوالك"></div>
+  </div>
+  <div class="btnrow"><button class="btn primary" onclick="saveDaily('${todayStr}')">حفظ قياسات اليوم</button></div></div>`;
+  document.getElementById('v-today').innerHTML=html;
+}
+function saveDaily(dateStr){
+  const w=parseFloat(document.getElementById('wIn').value);
+  const st=parseInt(document.getElementById('stIn').value);
+  if(w&&w>30&&w<250){ const ex=S.weights.find(x=>x.date===dateStr); if(ex) ex.kg=w; else S.weights.push({date:dateStr,kg:w}); S.weights.sort((a,b)=>a.date<b.date?-1:1); }
+  if(st&&st>0) S.stepsLog[dateStr]=st;
+  save(true); renderToday();
+}
+/* سيتات التعويض: +1 على أول 3 تمارين غير الجذع/الكارديو */
+function compExtra(dayI, blockIndex, exId){
+  if(!S.comps[dayI]) return 0;
+  const ex=EX[exId];
+  if(ex.cardio||ex.load==='time'||ex.load==='body'||exId==='crunchM') return 0;
+  return blockIndex<3? 1:0;
+}
+function exDetailHTML(exId, block){
+  const ex=EX[exId]; const sg=block? suggestLoad(exId, null):null;
+  let h=`<div><span class="chip dark">${esc(ex.tg)}</span> <span class="chip">${esc(ex.tgc)}</span></div>
+  <div class="sub" style="margin-top:6px"><b>العضلات:</b> ${esc(ex.mus)} • <span dir="ltr">${esc(ex.en)}</span></div>
+  <div style="margin-top:6px"><b>الضبط:</b><ul style="margin:4px 0 6px;padding-right:18px">${ex.setup.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+  <b>المدى والأداء:</b> ${esc(ex.rom)}</div>`;
+  if(!ex.cardio && ex.load!=='body' && ex.load!=='time'){
+    const dbNote= ex.load==='db'? ' درجات دمبل Technogym المتوفرة: 1-10 كجم (كل 1 كجم) ثم 12-36 كجم (كل 2 كجم).':'';
+    h+=`<div class="note">⚖️ ${esc(loadTypeAr(ex.load))} — بداية مقترحة <span dir="ltr">${ex.start[0]}–${ex.start[1]}</span> كجم، ثم عاير: أدِّ سيت تجريبياً واحتفظ بـ 3-4 تكرارات احتياطي.${dbNote}${ex.load==='stack'||ex.load==='cable'?' استخدم أقرب درجة متاحة على مكدس الجهاز نفسه.':''}</div>`;
+  }
+  h+=`<div class="sub" style="margin-top:6px"><b>البديل إذا كان الجهاز مشغولاً:</b> ${esc(ex.alt)}</div>`;
+  if(ex.ytv) h+=`<a class="btn small" style="display:block;text-align:right;margin-top:8px" target="_blank" rel="noopener noreferrer" href="${ex.ytv}">🎬 ${esc(ex.ytt||'فيديو الشرح المباشر')}</a>`;
+  h+=`<div class="btnrow">`;
+  if(ex.tgUrl) h+=`<a class="btn small ghost" target="_blank" rel="noopener noreferrer" href="${ex.tgUrl}">🏷️ صفحة الجهاز: ${esc(ex.tgName||'Technogym')}</a>`;
+  h+=`<a class="btn small ghost" target="_blank" rel="noopener noreferrer" href="${ytLink(ex.yt)}">🔎 فيديوهات إضافية</a></div>`;
+  return h;
+}
+
+/* ===================== MEALS checklist (مشترك) ===================== */
+function mealsChecklistHTML(i, d, mlog, compact){
+  let h='';
+  SLOT_ORDER.forEach(slot=>{
+    const items=d.meals.slots[slot]; if(!items||!items.length) return;
+    h+=`<div style="margin-top:10px"><b class="sub" style="color:var(--ink)">${SLOT_AR[slot]}</b>`;
+    items.forEach((mi,ix)=>{
+      const m=MENU[mi.id]; const mm=mealItemMacros(mi); const key=slot+'_'+ix;
+      const st=mlog[key];
+      h+=`<div class="meal"><div class="mt">
+        <div style="flex:1">
+          <b>${esc(m.ar)}${mi.dbl?' <span class="chip warn">بروتين إضافي ×2</span>':''}</b>
+          ${m.spicy?'<span class="chip spicy">حار 🌶️</span>':''}${m.milk?'<span class="chip">حليب</span>':''}${m.soy?'<span class="chip">صويا</span>':''}${m.sesame?'<span class="chip">سمسم</span>':''}
+          <div class="macro"><span class="mtag">${r0(mm.kcal)} kcal</span><span class="mtag">P ${r0(mm.p)}</span><span class="mtag">C ${r0(mm.c)}</span><span class="mtag">F ${r1(mm.f)}</span>${m.price?`<span class="mtag">${m.price*(mi.dbl?1:1)} ر.س</span>`:''}</div>
+          ${m.note?`<div class="sub" style="margin-top:4px">${esc(m.note)}</div>`:''}
+          ${m.scope==='protein'&&(m.cat==='chicken'||m.cat==='beef'||m.cat==='seafood')?`<div class="sub" style="margin-top:2px">القيم للمصدر البروتيني — أضف جانب الكارب المذكور</div>`:''}
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
+          <button class="btn small ${st==='done'?'ok':''}" onclick="markMeal(${i},'${key}','done')">${st==='done'?'✓ أُكلت':'أكلتها'}</button>
+          <button class="btn small ${st==='swapped'?'ok':'ghost'}" onclick="swapMeal(${i},'${key}','${mi.id}')">${st==='swapped'?'مُبدلة':'بدّل'}</button>
+        </div></div></div>`;
+    });
+    h+='</div>';
+  });
+  const note=mlog._note||'';
+  h+=`<label class="f">ماذا أكلت فعلياً (إن اختلف)؟</label><input type="text" value="${esc(note)}" onchange="dayMealLog(${i})._note=this.value;queueSave()" placeholder="مثال: بدلت العشاء بشيشاوي">`;
+  h+=`<div class="note">📦 طريقة الطلب: «الصوص على جنب» دائماً، و«بروتين إضافي» حيث مكتوب ×2. البدائل اللو كارب (فت زيرو/ون/تو) تُطلب بدل الأرز مباشرة.</div>`;
+  return h;
+}
+function markMeal(i,key,st){
+  const ml=dayMealLog(i);
+  ml[key] = ml[key]===st? null : st;
+  queueSave(); render();
+}
+function swapMeal(i,key,curId){
+  const cur=MENU[curId];
+  const alts=Object.keys(MENU).filter(k=>{
+    const m=MENU[k];
+    if(k===curId) return false;
+    if(cur.cat==='carb'||cur.cat==='lowcarb') return m.cat==='carb'||m.cat==='lowcarb';
+    if(cur.cat==='chicken'||cur.cat==='beef'||cur.cat==='seafood') return ['chicken','beef','seafood'].includes(m.cat);
+    return m.cat===cur.cat;
+  });
+  let h=`<h3>بدّل «${esc(cur.ar)}» بصنف من نفس الفئة</h3><div style="max-height:50vh;overflow:auto">`;
+  alts.forEach(k=>{ const m=MENU[k];
+    h+=`<div class="meal" style="cursor:pointer" onclick="applySwap(${i},'${key}','${k}')"><b>${esc(m.ar)}</b>
+    <div class="macro"><span class="mtag">${r0(m.kcal)} kcal</span><span class="mtag">P ${r0(m.p)}</span><span class="mtag">C ${r0(m.c)}</span>${m.price?`<span class="mtag">${m.price} ر.س</span>`:''}</div></div>`;
+  });
+  h+=`</div><div class="btnrow"><button class="btn" onclick="dlg.close()">إغلاق</button></div>`;
+  openDlg(h);
+}
+function applySwap(i,key,newId){
+  const ml=dayMealLog(i);
+  ml[key]='swapped'; ml[key+'_to']=newId;
+  const m=MENU[newId];
+  ml._note=((ml._note||'')+' | بدلت إلى '+m.ar).slice(-160);
+  dlg.close(); queueSave(); render(); toast('سُجل البديل: '+m.ar);
+}
+function openDlg(html){ if(dlg.open) dlg.close(); document.getElementById('dlgBody').innerHTML=html; dlg.showModal(); }
+const dlg=document.getElementById('dlg');
+
+/* ===================== PLAN (calendar) ===================== */
+function renderPlan(){
+  const c=todayCal(); const resv=resolveCal(c); const ti=resv.kind==='day'? resv.i : -1;
+  let html=`<div class="card"><h2>📅 خطة 28 يوم <span class="en-tag">4-WEEK PLAN</span></h2>
+  <div class="sub">من الأحد ${fmtDateAr(PLAN_START)} إلى ${fmtDateAr(effDate(27))} • تدريب الأحد–الخميس، راحة الجمعة والسبت${totalShift()?` • ممتدة ${totalShift()} يوم بسبب التأجيل`:''}</div>`;
+  WEEK_PHASES.forEach(ph=>{
+    html+=`<div style="margin-top:12px"><b>${esc(ph.name)}</b> <span class="chip">RIR ${ph.rir}</span><div class="sub">${esc(ph.note)}</div>
+    <div class="wkband" style="margin-top:6px">`;
+    PLAN.filter(d=>d.week===ph.n).forEach(d=>{
+      const i=d.idx-1; const lg=S.workLogs[i];
+      const done=lg&&lg.status==='done'; const canc=isCancelled(i);
+      const ed=effDate(i); const dn=DAY_AR[new Date(ed+'T00:00:00').getDay()];
+      html+=`<button class="dayb ${i===ti?'today':''} ${i===selectedPlanDay?'selected':''}" onclick="selectedPlanDay=${i};renderPlan()">
+        <small>${dn}${(S.dayShift[i]||0)>0?' ⏭':''}</small><b>${ed.slice(8)}</b>
+        <span class="st ${done?'done':''}" ${canc?'style="color:var(--bad)"':''}>${canc?'✗ ملغى':done?'✓':WORKOUTS[d.workout].title.split(' ')[0]}</span></button>`;
+    });
+    html+=`</div></div>`;
+  });
+  html+='</div>';
+  html+=planDayDetailHTML(selectedPlanDay);
+  document.getElementById('v-plan').innerHTML=html;
+}
+function planDayDetailHTML(i){
+  const d=planDay(i), w=WORKOUTS[d.workout], t=targets(), lg=S.workLogs[i];
+  const cal=effOffset(i); const meals=mealsForCal(cal);
+  const mt=dayMealTotals(meals,true);
+  const canc=isCancelled(i); const comp=S.comps[i];
+  const ed=effDate(i); const dn=DAY_AR[new Date(ed+'T00:00:00').getDay()];
+  let html=`<div class="card"><h2>${dn} ${fmtDateAr(ed)} — يوم ${d.idx}${(S.dayShift[i]||0)>0?' <span class="chip warn">مؤجل ⏭</span>':''}${canc?' <span class="chip" style="background:var(--badbg);color:var(--bad)">ملغى</span>':''}</h2>
+  <div class="sub">${esc(d.phase.name)} • ${d.isTrain? 'تدريب: '+esc(w.title):'راحة'}</div>
+  <div class="grid4" style="margin-top:8px">
+    <div class="tile"><div class="v">${d.isTrain&&!canc?t.kcalTrain:t.kcalRest}</div><div class="l">سعرات هدف</div></div>
+    <div class="tile"><div class="v">${t.protein}</div><div class="l">بروتين غ</div></div>
+    <div class="tile"><div class="v">${d.steps.toLocaleString('en')}</div><div class="l">خطوات</div></div>
+    <div class="tile"><div class="v">${d.waterL}L</div><div class="l">ماء</div></div>
+  </div>
+  ${dayManageHTML(i,false)}
+  ${comp? `<div class="note" style="background:var(--okbg);color:var(--ok)">💪 تشمل سيتات تعويض عن يوم «${esc(WORKOUTS[comp.workout].title)}» الملغى (+1 سيت على أول 3 تمارين).</div>`:''}`;
+  if(d.isTrain&&!canc){
+    html+=`<div class="hr"></div><h3>التمرين (${esc(w.dur)}) — RIR ${d.phase.rir}</h3>
+    <div class="note">🔥 الإحماء: ${esc(w.warm)}</div>`;
+    w.blocks.forEach((b,bx)=>{ const ex=EX[b.ex]; const sg=suggestLoad(b.ex,i); const extra=compExtra(i,bx,b.ex);
+      html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')">
+      <div><b>${esc(ex.ar)}</b><div class="meta">${b.sets+extra}×${b.reps}${extra?' <span class="chip ok">+'+extra+'</span>':''} • راحة ${b.rest}ث • مقترح <span dir="ltr">${sg? (sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi):'—'}</span> كجم</div></div><span class="tg">TG</span></div>
+      <div class="body">${exDetailHTML(b.ex,b)}</div></div>`; });
+    if(w.cardio){ const c=EX[w.cardio.ex]; html+=`<div class="note">🫀 كارديو: ${esc(c.ar)} ${w.cardio.min} دقيقة — ${esc(w.cardio.note)}</div>`; }
+    if(d.week===4) html+=`<div class="warnnote">أسبوع التثبيت: إذا كان مجموع إجابات الطاقة/النوم في التشيك-إن ضعيفاً، احذف السيت الأخير من تمارين العزل (ديلود خفيف).</div>`;
+    html+=`<div class="btnrow"><button class="btn primary" onclick="startSession(${i})">▶️ ابدأ هذا التمرين</button>${lg&&lg.status?`<span class="chip ok">آخر حالة: ${lg.status==='done'?'مكتمل':'جزئي'}</span>`:''}</div>`;
+  } else if(canc){
+    html+=`<div class="note">يوم ملغى — لا يُحسب ضمن التزامك التدريبي، ووجبات هذا التاريخ تبقى كما هي (اعتبره يوم راحة غذائياً).</div>`;
+  } else {
+    html+=`<div class="note">${d.workout==='restActive'? '🚶 '+esc(WORKOUTS.restActive.cardio.note) : '🛌 راحة كاملة — الأهم: نوم 7-8 ساعات وماء كافٍ وخطواتك اليومية.'}</div>`;
+  }
+  html+=`<div class="hr"></div><h3>وجبات ${fmtDateAr(ed)} <span class="chip">${r0(dayMealTotals(meals,false).kcal)}–${r0(mt.kcal)} kcal • P ${r0(mt.p)}</span></h3>`;
+  html+=mealsChecklistHTML(cal,{meals:meals},dayMealLog(cal),false);
+  html+=`</div>`;
+  return html;
+}
+
+/* ===================== MEALS view ===================== */
+function renderMeals(){
+  const ti=todayCal(); const lastCal=27+totalShift();
+  let html=`<div class="card"><h2>🍽️ خطة الوجبات — وجبات اللياقة TFM</h2>
+  <div class="sub">دورة تنويع 14 يوماً تتكرر مرتين • كل الأصناف من المنيو الرسمي بأسمائها الحرفية • القيم من بطاقات المنيو المطبوعة</div>
+  <div class="note">قاعدة الطلب الثابتة: الصوص على جنب • «بروتين إضافي» حيث علامة ×2 • بديل الأرز اللو كارب في أيام الراحة. الوجبات مثبتة على التاريخ حتى لو أجّلت تمريناً. عدّل أي صنف بزر «بدّل».</div>
+  <div class="wkband" style="margin-top:8px">`;
+  for(let c=0;c<=lastCal;c++){
+    const ds=calDate(c); const res=resolveCal(c);
+    const isT=res.kind==='day'&&PLAN[res.i].isTrain&&!isCancelled(res.i);
+    const dn=DAY_AR[new Date(ds+'T00:00:00').getDay()];
+    html+=`<button class="dayb ${c===ti?'today':''} ${c===selectedMealDay?'selected':''}" onclick="selectedMealDay=${c};renderMeals()">
+    <small>${dn}</small><b>${ds.slice(8)}</b><span class="st">${isT?'تمرين':'راحة'}</span></button>`;
+  }
+  html+='</div></div>';
+  const c=Math.min(selectedMealDay,lastCal); const meals=mealsForCal(c); const t=targets();
+  const res=resolveCal(c); const isT=res.kind==='day'&&PLAN[res.i].isTrain&&!isCancelled(res.i);
+  const ds=calDate(c); const dn=DAY_AR[new Date(ds+'T00:00:00').getDay()];
+  const core=dayMealTotals(meals,false), full=dayMealTotals(meals,true);
+  html+=`<div class="card"><h2>${dn} ${fmtDateAr(ds)} ${isT?'<span class="chip dark">تدريب</span>':'<span class="chip">راحة</span>'}</h2>
+  <div class="grid4" style="margin-top:6px">
+    <div class="tile"><div class="v">${r0(core.kcal)}</div><div class="l">أساسي kcal</div></div>
+    <div class="tile"><div class="v">${r0(full.kcal)}</div><div class="l">مع سناك الجوع</div></div>
+    <div class="tile"><div class="v">${r0(full.p)}</div><div class="l">بروتين غ</div></div>
+    <div class="tile"><div class="v">${isT?t.kcalTrain:t.kcalRest}</div><div class="l">الهدف kcal</div></div>
+  </div>
+  ${mealsChecklistHTML(c,{meals:meals},dayMealLog(c),false)}
+  <div class="note">💡 ${esc(meals.why)}</div></div>`;
+  /* دليل الأصناف الكامل */
+  html+=`<div class="card"><h2>📖 دليل المنيو الكامل</h2><div class="sub">كل الأصناف المتاحة للتبديل (الأسعار بالريال، القيم كما في المنيو)</div>`;
+  ['chicken','beef','seafood','pasta','burger','wrap','salad','snack','drink','carb','lowcarb','sauce'].forEach(cat=>{
+    const items=Object.keys(MENU).filter(k=>MENU[k].cat===cat);
+    if(!items.length) return;
+    html+=`<h3 style="margin-top:12px">${CAT_AR[cat]}</h3><table class="mini"><tr><th>الصنف</th><th>kcal</th><th>P</th><th>C</th><th>F</th><th>ر.س</th></tr>`;
+    items.forEach(k=>{ const m=MENU[k];
+      html+=`<tr><td>${esc(m.ar)}${m.lc?' <span class="chip ok">لو كارب</span>':''}${m.best?' ⭐':''}</td><td class="num">${m.kcal}</td><td class="num">${m.p}</td><td class="num">${m.c}</td><td class="num">${m.f}</td><td class="num">${m.price||'—'}</td></tr>`; });
+    html+='</table>';
+  });
+  html+=`<div class="note">القيم من بطاقات المنيو الرسمية (سُحبت في 01/08/2026). وجبات الدجاج/اللحم/البحري قيمها «للمصدر البروتيني فقط» — أضف جانب الكارب. إذا تغير المنيو أرسل لي النسخة الجديدة وسأحدث الخطة دون فقدان سجلاتك.</div></div>`;
+  document.getElementById('v-meals').innerHTML=html;
+}
+
+/* ===================== LIBRARY ===================== */
+function renderLib(){
+  let html=`<div class="card"><h2>📚 مكتبة التمارين <span class="en-tag">TECHNOGYM</span></h2>
+  <div class="sub">الأسماء بصيغة «الخط + الوظيفة» لأن موديلات ناديك لم تُؤكد بعد — أرسل صور الأجهزة وسأطابقها بدقة. روابط الفيديو تفتح بحث يوتيوب بالاسم الدقيق للجهاز والتمرين.</div></div>`;
+  const groups={'صدر':['chestPress','inclinePressM','pecFly'],'ظهر':['latPulldown','vertTraction','seatedRow','reverseFly','facePull'],
+  'كتف':['shoulderPress','latRaise','latRaiseCable'],'بايسبس':['dbCurl','cableCurl','preacherCurl','inclineDbCurl','hammerCurl'],
+  'ترايسبس':['pushdown','overheadExt','armExtM','dipsMachine'],'أرجل ومؤخرة':['legPress','legExt','legCurl','calfRaise','hipAbd','gluteKickback'],
+  'جذع وبطن':['crunchM','plank','kneeRaise'],'كارديو Technogym':['cRun','cBike','cSynchro','cIntervals']};
+  for(const g in groups){
+    html+=`<div class="card"><h3>${g}</h3>`;
+    groups[g].forEach(id=>{ const ex=EX[id];
+      html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')">
+      <div><b>${esc(ex.ar)}</b><div class="meta" dir="ltr" style="text-align:right">${esc(ex.en)}</div></div><span class="tg">TG</span></div>
+      <div class="body">${exDetailHTML(id)}</div></div>`; });
+    html+='</div>';
+  }
+  document.getElementById('v-lib').innerHTML=html;
+}
+</script>
+<script>
+/* ===================== WORKOUT SESSION ENGINE ===================== */
+let SES=null, sesTick=null;
+let audioCtx=null;
+function ensureAudio(){ if(!audioCtx){ try{ audioCtx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } if(audioCtx&&audioCtx.state==='suspended') audioCtx.resume(); }
+function beep(){
+  if(!S.settings.sound) return; ensureAudio(); if(!audioCtx) return;
+  try{
+    const now=audioCtx.currentTime;
+    [0,0.25,0.5].forEach((t,ix)=>{
+      const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+      o.connect(g); g.connect(audioCtx.destination);
+      o.frequency.value= ix===2? 1180:880; o.type='sine';
+      g.gain.setValueAtTime(0.0001,now+t); g.gain.exponentialRampToValueAtTime(0.35,now+t+0.02); g.gain.exponentialRampToValueAtTime(0.0001,now+t+0.22);
+      o.start(now+t); o.stop(now+t+0.24);
+    });
+  }catch(e){}
+}
+function buzz(){ if(S.settings.vibrate && navigator.vibrate){ try{navigator.vibrate([250,120,250]);}catch(e){} } }
+
+function openWorkoutEntry(){
+  ensureAudio();
+  if(S.sessionActive){ SES=S.sessionActive; showSession(); return; }
+  const c=todayCal(); const res=resolveCal(c);
+  if(res.kind==='day' && PLAN[res.i].isTrain && !isCancelled(res.i)){ startSession(res.i); return; }
+  /* يوم راحة/مؤجل: اختر يوم تمرين */
+  let h=`<h3>${res.kind==='gap'?'اليوم راحة (يوم مؤجل) ⏭':'اليوم يوم راحة 🛌'}</h3><p class="sub">تبي تفتح تمريناً من يوم آخر؟</p>`;
+  const anchor=res.kind==='gap'? res.next : res.i;
+  PLAN.forEach(x=>{ const j=x.idx-1;
+    if(x.isTrain && !isCancelled(j) && Math.abs(j-anchor)<=7){ const ed=effDate(j);
+      h+=`<button class="btn" style="margin:3px" onclick="dlg.close();startSession(${j})">${ed.slice(8,10)}/${ed.slice(5,7)} — ${esc(WORKOUTS[x.workout].title)}</button>`; }
+  });
+  h+=`<div class="btnrow"><button class="btn ghost" onclick="dlg.close()">إغلاق</button></div>`;
+  openDlg(h);
+}
+function startSession(dayI){
+  ensureAudio();
+  const d=planDay(dayI); if(!d.isTrain){ toast('هذا يوم راحة'); return; }
+  const lg=dayWorkLog(dayI);
+  SES={ dayI, wk:d.workout, exI:0, setI:0, startTs:Date.now(), pausedAt:null, pausedAccum:0,
+        restEndTs:null, restTotal:0, phase:'work', cardio:false, replaced:lg.replaced||{} };
+  S.sessionActive=SES; save(false);
+  showSession();
+}
+function sesBlocks(){ return WORKOUTS[SES.wk].blocks; }
+function curBlock(){ return sesBlocks()[SES.exI]; }
+function blkSets(bx){ const b=sesBlocks()[bx]; return b.sets + compExtra(SES.dayI, bx, b.ex); }
+function sesElapsed(){
+  const base=(SES.pausedAt||Date.now())-SES.startTs-SES.pausedAccum;
+  return Math.max(0,Math.floor(base/1000));
+}
+function fmtMMSS(s){ const m=Math.floor(s/60), x=s%60; return String(m).padStart(2,'0')+':'+String(x).padStart(2,'0'); }
+
+function showSession(){
+  document.getElementById('sessionOverlay').classList.add('on');
+  document.body.style.overflow='hidden';
+  clearInterval(sesTick); sesTick=setInterval(sessionTickRender,1000);
+  sessionRender();
+}
+function hideSession(){
+  document.getElementById('sessionOverlay').classList.remove('on');
+  document.body.style.overflow='';
+  clearInterval(sesTick); sesTick=null;
+  render();
+}
+function sessionTickRender(){
+  if(!SES) return;
+  const tEl=document.getElementById('sesTime'); if(tEl) tEl.textContent=fmtMMSS(sesElapsed());
+  if(SES.phase==='rest' && !SES.pausedAt){
+    const left=Math.ceil((SES.restEndTs-Date.now())/1000);
+    const rEl=document.getElementById('restLeft');
+    if(rEl) rEl.textContent=fmtMMSS(Math.max(0,left));
+    const pb=document.getElementById('restBar');
+    if(pb) pb.style.width=Math.max(0,Math.min(100,100*left/SES.restTotal))+'%';
+    if(left<=0){ SES.phase='work'; SES.restEndTs=null; beep(); buzz(); queueSave(); sessionRender(true); }
+  }
+}
+function sessionRender(restJustEnded){
+  if(!SES) return;
+  const d=planDay(SES.dayI), w=WORKOUTS[SES.wk], blocks=sesBlocks();
+  const lg=dayWorkLog(SES.dayI);
+  const total=blocks.reduce((a,b,ix)=>a+blkSets(ix),0);
+  const doneSets=Object.values(lg.sets).flat().filter(s=>s&&!s.skip).length;
+  let h=`<div class="shead">
+    <div><span class="en-tag" style="color:#8b9097">${esc(w.en)}</span><h3 style="margin:0;color:#fff">${esc(w.title)}</h3>
+    <div class="sub" style="color:#9aa0a8">${d.dayName} — يوم ${d.idx} • RIR ${d.phase.rir}</div></div>
+    <div style="text-align:left"><div class="stime" id="sesTime">${fmtMMSS(sesElapsed())}</div>
+    <div class="btnrow" style="margin:4px 0 0">
+      <button class="btn small sbtn" onclick="togglePause()">${SES.pausedAt?'▶️ استئناف':'⏸️ إيقاف'}</button>
+      <button class="btn small sbtn" onclick="confirmEnd()">⏹️ إنهاء</button>
+    </div></div></div>
+  <div class="progressbar g" style="margin:10px 0 2px"><i style="width:${r0(100*doneSets/total)}%"></i></div>
+  <div class="sub" style="color:#9aa0a8">${doneSets} من ${total} سيت</div>`;
+
+  if(SES.pausedAt){
+    h+=`<div class="scard center"><h3>⏸️ الجلسة موقوفة</h3><p class="sub" style="color:#aeb2b8">المؤقت متوقف — كمل وقت ما تكون جاهز.</p>
+    <button class="btn sbtn primary big" onclick="togglePause()">استئناف التمرين</button></div>`;
+    document.getElementById('sessionOverlay').innerHTML=h; return;
+  }
+
+  if(SES.cardio){
+    const c=EX[w.cardio.ex];
+    h+=`<div class="scard"><h3>🫀 الكارديو الختامي: ${esc(c.ar)} — ${w.cardio.min} دقيقة</h3>
+    <div class="sub" style="color:#aeb2b8">${esc(w.cardio.note)} • ${esc(c.tg)}</div>
+    <ul style="color:#c8ccd2">${c.setup.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+    <div class="btnrow">
+      <button class="btn sbtn primary" onclick="dayWorkLog(SES.dayI).cardioDone=true;finishSession()">✓ خلصت الكارديو — أنهِ الجلسة</button>
+      <button class="btn sbtn" onclick="finishSession()">تخطَّ الكارديو وأنهِ</button>
+    </div></div>`;
+    document.getElementById('sessionOverlay').innerHTML=h; return;
+  }
+
+  const b=curBlock(); const ex=EX[b.ex]; const sg=suggestLoad(b.ex,SES.dayI);
+  const sets=lg.sets[b.ex]||[];
+  const replaced=SES.replaced[b.ex];
+  h+=`<div class="scard ${SES.phase==='rest'?'resting':''} ${restJustEnded?'restdone':''}">
+    <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
+      <div><h3 style="margin:0">${esc(ex.ar)} ${replaced?`<span class="chip warn">بديل: ${esc(replaced)}</span>`:''}</h3>
+      <div class="sub" style="color:#aeb2b8">${esc(ex.tg)} • تمرين ${SES.exI+1}/${blocks.length}</div></div>
+      <span class="tg">TG</span></div>
+    <div class="setdots">${Array.from({length:blkSets(SES.exI)},(_,k)=>`<i class="${sets[k]&&!sets[k].skip?'d':''} ${k===SES.setI?'cur':''}"></i>`).join('')}</div>`;
+
+  if(SES.phase==='rest'){
+    const left=Math.max(0,Math.ceil((SES.restEndTs-Date.now())/1000));
+    h+=`<div class="center"><div class="sub" style="color:#7ee2a8;font-weight:800">استراحة — السيت القادم: ${SES.setI+1} من ${blkSets(SES.exI)}</div>
+    <div class="bigtimer" id="restLeft">${fmtMMSS(left)}</div>
+    <div class="progressbar" style="background:rgba(255,255,255,.12)"><i id="restBar" style="background:#7ee2a8;width:${r0(100*left/SES.restTotal)}%"></i></div>
+    <div class="btnrow" style="justify-content:center">
+      <button class="btn sbtn" onclick="adjRest(-15)">−15ث</button>
+      <button class="btn sbtn" onclick="adjRest(15)">+15ث</button>
+      <button class="btn sbtn primary" onclick="skipRest()">تخطَّ الاستراحة ←</button>
+    </div></div>`;
+  } else {
+    h+=`<div class="sub" style="color:#c8ccd2;margin-top:4px">السيت <b class="snum">${SES.setI+1}</b> من <b class="snum">${blkSets(SES.exI)}</b> • الهدف <b class="snum">${b.reps}</b> تكرار • راحة ${b.rest}ث • احتياطي RIR ${d.phase.rir}</div>
+    ${sg?`<div class="sub" style="color:#7ee2a8;margin-top:2px">وزن مقترح: <b class="snum">${sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi} كجم</b> — ${esc(sg.why)}</div>`:''}
+    <div class="sgrid" style="margin-top:10px">
+      <div><label class="f">الوزن الفعلي (كجم)</label><input type="number" step="0.5" inputmode="decimal" id="inW" value="${sets[SES.setI]?.w ?? (sg? sg.lo:'')}"></div>
+      <div><label class="f">التكرارات الفعلية</label><input type="number" inputmode="numeric" id="inR" value="${sets[SES.setI]?.r ?? ''}" placeholder="${b.reps}"></div>
+      <div><label class="f">RIR (احتياطي)</label><input type="number" inputmode="numeric" id="inRIR" value="${sets[SES.setI]?.rir ?? ''}" placeholder="${d.phase.rir}"></div>
+    </div>
+    <div class="btnrow" style="align-items:center">
+      <label style="display:flex;align-items:center;gap:6px;color:#c8ccd2;font-size:13px"><input type="checkbox" id="inPain" style="width:18px;height:18px" ${sets[SES.setI]?.pain?'checked':''}> ألم/انزعاج</label>
+      <input type="text" id="inNote" placeholder="ملاحظة (اختياري)" style="flex:1;min-width:120px" value="${esc(sets[SES.setI]?.note||'')}">
+    </div>
+    <div class="btnrow">
+      <button class="btn sbtn primary big" onclick="completeSet()">✓ أنهيت السيت — ابدأ الاستراحة</button>
+    </div>
+    <div class="btnrow">
+      <button class="btn small sbtn" onclick="skipExercise()">تخطَّ التمرين</button>
+      <button class="btn small sbtn" onclick="replaceExercise()">🔁 بدّل التمرين (الجهاز مشغول)</button>
+      <button class="btn small sbtn" onclick="showExInfo('${b.ex}')">ℹ️ طريقة الأداء</button>
+    </div>`;
+  }
+  h+=`</div>`;
+  /* قائمة بقية التمارين */
+  h+=`<div class="scard"><div class="sub" style="color:#9aa0a8;font-weight:800">بقية الجلسة</div>`;
+  blocks.forEach((bb,ix)=>{
+    const exx=EX[bb.ex]; const st=lg.sets[bb.ex]||[]; const dn=st.filter(s=>s&&!s.skip).length;
+    h+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.07);${ix===SES.exI?'color:#fff;font-weight:800':'color:#8b9097'}">
+    <span>${ix===SES.exI?'▸ ':''}${esc(exx.ar)}</span><span class="snum">${dn}/${blkSets(ix)}</span></div>`;
+  });
+  h+=`<div style="display:flex;justify-content:space-between;padding:6px 0;color:#8b9097"><span>🫀 ${esc(EX[w.cardio.ex].ar)}</span><span class="snum">${w.cardio.min}د</span></div></div>`;
+  h+=`<div class="sub center" style="color:#5f646b;margin-top:4px">الصوت ${S.settings.sound?'مفعل':'مطفأ'} • الاهتزاز ${S.settings.vibrate?'مفعل':'مطفأ'} — من الإعدادات</div>`;
+  document.getElementById('sessionOverlay').innerHTML=h;
+}
+function showExInfo(exId){
+  const ex=EX[exId];
+  openDlg(`<h3>${esc(ex.ar)}</h3>${exDetailHTML(exId)}<div class="btnrow"><button class="btn" onclick="dlg.close()">رجوع للتمرين</button></div>`);
+}
+function completeSet(){
+  const b=curBlock(); const lg=dayWorkLog(SES.dayI);
+  if(!lg.sets[b.ex]) lg.sets[b.ex]=[];
+  const w=parseFloat(document.getElementById('inW').value);
+  const r=parseInt(document.getElementById('inR').value);
+  const rir=document.getElementById('inRIR').value===''?null:parseInt(document.getElementById('inRIR').value);
+  const pain=document.getElementById('inPain').checked;
+  const note=document.getElementById('inNote').value.trim();
+  lg.sets[b.ex][SES.setI]={w:isNaN(w)?null:w, r:isNaN(r)?null:r, rir, pain, note, skip:false};
+  if(pain) toast('سُجل الألم — إذا كان حاداً أوقف التمرين وبدّله');
+  const lastSetOfEx=SES.setI>=blkSets(SES.exI)-1;
+  const lastEx=SES.exI>=sesBlocks().length-1;
+  if(lastSetOfEx && lastEx){ SES.cardio=true; queueSave(); sessionRender(); return; }
+  if(lastSetOfEx){ SES.exI++; SES.setI=0; } else { SES.setI++; }
+  SES.phase='rest'; SES.restTotal=b.rest; SES.restEndTs=Date.now()+b.rest*1000;
+  queueSave(); sessionRender();
+}
+function adjRest(dsec){ if(SES.phase!=='rest') return; SES.restEndTs+=dsec*1000; SES.restTotal=Math.max(15,SES.restTotal+dsec); queueSave(); sessionRender(); }
+function skipRest(){ SES.phase='work'; SES.restEndTs=null; queueSave(); sessionRender(); }
+function skipExercise(){
+  const b=curBlock(); const lg=dayWorkLog(SES.dayI);
+  if(!lg.sets[b.ex]) lg.sets[b.ex]=[];
+  for(let k=SES.setI;k<blkSets(SES.exI);k++){ if(!lg.sets[b.ex][k]) lg.sets[b.ex][k]={skip:true}; }
+  if(SES.exI>=sesBlocks().length-1){ SES.cardio=true; } else { SES.exI++; SES.setI=0; SES.phase='work'; }
+  queueSave(); sessionRender();
+}
+function replaceExercise(){
+  const b=curBlock(); const ex=EX[b.ex];
+  openDlg(`<h3>بدّل «${esc(ex.ar)}»</h3><p class="sub">البديل المقترح: <b>${esc(ex.alt)}</b> — بنفس السيتات والتكرارات.</p>
+  <div class="btnrow">
+    <button class="btn primary" onclick="SES.replaced['${b.ex}']=EX['${b.ex}'].alt;dayWorkLog(SES.dayI).replaced['${b.ex}']=EX['${b.ex}'].alt;dlg.close();queueSave();sessionRender();toast('استخدم البديل وسجل عليه')">استخدم البديل</button>
+    <button class="btn ghost" onclick="dlg.close()">إلغاء</button>
+  </div>`);
+}
+function togglePause(){
+  if(SES.pausedAt){ const pd=Date.now()-SES.pausedAt; SES.pausedAccum+=pd; if(SES.restEndTs) SES.restEndTs+=pd; SES.pausedAt=null; }
+  else SES.pausedAt=Date.now();
+  queueSave(); sessionRender();
+}
+function confirmEnd(){
+  openDlg(`<h3>إنهاء الجلسة؟</h3><p class="sub">ستُحفظ كل السيتات المسجلة.</p>
+  <div class="btnrow"><button class="btn primary" onclick="dlg.close();finishSession()">أنهِ واحفظ</button>
+  <button class="btn ghost" onclick="dlg.close()">استمرار التمرين</button></div>`);
+}
+function finishSession(){
+  const lg=dayWorkLog(SES.dayI); const w=WORKOUTS[SES.wk]; const blocks=sesBlocks();
+  const dur=sesElapsed(); lg.durationSec=dur;
+  const total=blocks.reduce((a,b,ix)=>a+blkSets(ix),0);
+  const doneSets=Object.values(lg.sets).flat().filter(s=>s&&!s.skip).length;
+  lg.status = doneSets>=total*0.6 ? 'done':'partial';
+  let vol=0; blocks.forEach(b=>{ (lg.sets[b.ex]||[]).forEach(s=>{ if(s&&!s.skip&&s.w&&s.r) vol+=s.w*s.r; }); });
+  let sug='';
+  blocks.forEach(b=>{ const sgN=suggestLoad(b.ex, SES.dayI+1); if(sgN) sug+=`<tr><td>${esc(EX[b.ex].ar)}</td><td class="num">${sgN.lo===sgN.hi?sgN.lo:sgN.lo+'–'+sgN.hi}</td></tr>`; });
+  const h=`<h3>✅ ملخص الجلسة — ${esc(w.title)}</h3>
+  <div class="grid3" style="margin:8px 0">
+    <div class="tile"><div class="v">${fmtMMSS(dur)}</div><div class="l">المدة</div></div>
+    <div class="tile"><div class="v">${doneSets}/${total}</div><div class="l">سيتات</div></div>
+    <div class="tile"><div class="v">${r0(vol).toLocaleString('en')}</div><div class="l">حجم كجم×تكرار</div></div>
+  </div>
+  ${lg.cardioDone?'<div class="okline">🫀 الكارديو مكتمل ✓</div>':''}
+  <h3 style="margin-top:10px">مقترح الجلسة القادمة</h3>
+  <table class="mini"><tr><th>التمرين</th><th>كجم</th></tr>${sug}</table>
+  <div class="btnrow"><button class="btn primary big" onclick="dlg.close()">تم</button></div>`;
+  S.sessionActive=null; SES=null;
+  save(true); hideSession(); openDlg(h);
+}
+</script>
+<script>
+/* ===================== MORE: progress / check-in / settings / sources ===================== */
+function renderMore(){
+  const el=document.getElementById('moreBody');
+  document.querySelectorAll('#v-more [data-go]').forEach(b=>b.onclick=()=>{moreSub=b.dataset.go;renderMore();});
+  if(moreSub==='progress') el.innerHTML=progressHTML();
+  else if(moreSub==='checkin') el.innerHTML=checkinHTML();
+  else if(moreSub==='settings') el.innerHTML=settingsHTML();
+  else if(moreSub==='sources') el.innerHTML=sourcesHTML();
+  else el.innerHTML=`<div class="card"><div class="sub">اختر قسماً من الأعلى. بياناتك كلها محفوظة محلياً على جهازك فقط.</div></div>`;
+}
+
+/* ---------- SVG line chart ---------- */
+function lineChart(data, unit, color){
+  if(!data.length) return `<div class="sub center" style="padding:18px">لا توجد بيانات بعد — سجل أول قياس من شاشة اليوم.</div>`;
+  const W=560,H=150,P=28;
+  const ys=data.map(d=>d.y);
+  let mn=Math.min(...ys), mx=Math.max(...ys); if(mx-mn<1){mx+=0.5;mn-=0.5;}
+  const X=i=>P+(W-2*P)*(data.length===1?0.5:i/(data.length-1));
+  const Y=v=>H-P-(H-2*P)*((v-mn)/(mx-mn));
+  const pts=data.map((d,i)=>X(i)+','+Y(d.y)).join(' ');
+  let dots=data.map((d,i)=>`<circle cx="${X(i)}" cy="${Y(d.y)}" r="3.5" fill="${color}"/>`).join('');
+  let labels=data.map((d,i)=> (data.length<=10||i%Math.ceil(data.length/8)===0)? `<text x="${X(i)}" y="${H-6}" font-size="9" text-anchor="middle" fill="#8b9097">${d.x}</text>`:'').join('');
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}">
+    <text x="4" y="${Y(mx)+4}" font-size="10" fill="#8b9097">${r1(mx)}</text>
+    <text x="4" y="${Y(mn)+4}" font-size="10" fill="#8b9097">${r1(mn)}</text>
+    <line x1="${P}" y1="${Y(mn)}" x2="${W-P}" y2="${Y(mn)}" stroke="#e3e5e9"/>
+    <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round"/>
+    ${dots}${labels}
+    <text x="${W-4}" y="12" font-size="10" text-anchor="end" fill="#8b9097">${unit}</text>
+  </svg>`;
+}
+function weekAvgWeights(){
+  const out=[];
+  for(let w=1;w<=4;w++){
+    const days=PLAN.filter(d=>d.week===w).map(d=>d.date);
+    const ws=S.weights.filter(x=>days.includes(x.date)).map(x=>x.kg);
+    if(ws.length) out.push({week:w, avg:r1(ws.reduce((a,b)=>a+b,0)/ws.length), n:ws.length});
+  }
+  return out;
+}
+function weekAdherence(w){
+  const days=PLAN.filter(d=>d.week===w);
+  let train=0, trainDone=0, mealSlots=0, mealDone=0;
+  days.forEach(d=>{
+    const i=d.idx-1;
+    if(d.isTrain){ train++; if(S.workLogs[i]&&S.workLogs[i].status==='done') trainDone++; }
+    const ml=S.mealLogs[i]||{};
+    SLOT_ORDER.forEach(s=>{ (d.meals.slots[s]||[]).forEach((mi,ix)=>{ if(s==='x')return; mealSlots++; const st=ml[s+'_'+ix]; if(st==='done'||st==='swapped') mealDone++; }); });
+  });
+  return {train, trainDone, mealPct: mealSlots? r0(100*mealDone/mealSlots):0};
+}
+function progressHTML(){
+  const wa=weekAvgWeights();
+  const wData=S.weights.map(x=>({x:x.date.slice(8,10)+'/'+x.date.slice(5,7), y:x.kg}));
+  const waistData=S.waists.map(x=>({x:x.date.slice(8,10)+'/'+x.date.slice(5,7), y:x.cm}));
+  const bfData=S.bodyFats.map(x=>({x:x.date.slice(8,10)+'/'+x.date.slice(5,7), y:x.pct}));
+  let h=`<div class="card"><h2>📈 التقدم</h2>
+  <h3>وزن الجسم (كجم)</h3><div class="chartbox">${lineChart(wData,'kg','#17181b')}</div>
+  ${wa.length?`<div class="grid4" style="margin-top:8px">${wa.map(x=>`<div class="tile"><div class="v">${x.avg}</div><div class="l">متوسط أسبوع ${x.week} (${x.n} قياس)</div></div>`).join('')}</div>`:''}
+  <div class="note">قِس صباحاً بعد الحمام وقبل الأكل. احكم على الاتجاه بمتوسط الأسبوع، وتجاهل تذبذب اليوم الواحد.</div>
+  <h3 style="margin-top:14px">محيط الخصر (سم)</h3><div class="chartbox">${lineChart(waistData,'cm','#b45309')}</div>
+  <div class="inrow" style="margin-top:8px">
+    <div><label class="f">قياس خصر جديد (سم)</label><input type="number" step="0.5" id="waistIn" placeholder="عند السرة"></div>
+    <div><label class="f">نسبة دهون (من InBody عند إعادة الفحص)</label><input type="number" step="0.1" id="bfIn" placeholder="%"></div>
+  </div>
+  <div class="btnrow"><button class="btn primary" onclick="addMeasure()">إضافة القياسات</button></div>
+  ${bfData.length?`<h3 style="margin-top:14px">نسبة الدهون %</h3><div class="chartbox">${lineChart(bfData,'%','#178a4c')}</div>`:''}
+  <h3 style="margin-top:14px">الالتزام الأسبوعي</h3>`;
+  for(let w=1;w<=4;w++){ const a=weekAdherence(w);
+    const cN=PLAN.filter(d=>d.week===w&&isCancelled(d.idx-1)).length;
+    h+=`<div style="margin:8px 0"><b class="sub" style="color:var(--ink)">أسبوع ${w}</b>
+    <div class="sub">تمارين: ${a.trainDone}/${a.train} مكتملة${cN?` (منها ${cN} ملغى بتعويض)`:''} • وجبات: ${a.mealPct}%</div>
+    <div class="progressbar g"><i style="width:${a.train? r0(100*a.trainDone/a.train):0}%"></i></div></div>`; }
+  h+=`</div>`;
+  return h;
+}
+function addMeasure(){
+  const today=new Date().toISOString().slice(0,10);
+  const wv=parseFloat(document.getElementById('waistIn').value);
+  const bf=parseFloat(document.getElementById('bfIn').value);
+  if(wv&&wv>40&&wv<200){ S.waists.push({date:today,cm:wv}); S.waists.sort((a,b)=>a.date<b.date?-1:1); }
+  if(bf&&bf>3&&bf<60){ S.bodyFats.push({date:today,pct:bf}); S.bodyFats.sort((a,b)=>a.date<b.date?-1:1); }
+  save(true); renderMore();
+}
+
+/* ---------- Check-in ---------- */
+function checkinHTML(){
+  const wa=weekAvgWeights();
+  let h=`<div class="card"><h2>📝 التشيك-إن الأسبوعي</h2>
+  <div class="sub">عبئه نهاية كل أسبوع (الجمعة أو السبت). التوصيات تُبنى على متوسطات الأسبوع كاملاً، لا على يوم واحد.</div>
+  <label class="f">الأسبوع</label><select id="ciWeek">${[1,2,3,4].map(w=>`<option value="${w}">أسبوع ${w}</option>`).join('')}</select>
+  <div class="inrow">
+    <div><label class="f">متوسط وزن الصباح (كجم)</label><input type="number" step="0.1" id="ciW" placeholder="${wa.length? 'آخر متوسط: '+wa[wa.length-1].avg:'—'}"></div>
+    <div><label class="f">الخصر (سم)</label><input type="number" step="0.5" id="ciWaist"></div>
+  </div>
+  <div class="inrow3">
+    <div><label class="f">الجوع (1-5)</label><select id="ciHunger">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
+    <div><label class="f">الطاقة (1-5)</label><select id="ciEnergy">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
+    <div><label class="f">النوم (1-5)</label><select id="ciSleep">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
+  </div>
+  <label class="f">ألم أو مشكلة استشفاء؟</label><input type="text" id="ciPain" placeholder="مثال: انزعاج بسيط في المرفق مع البريتشر">
+  <label class="f">ملاحظات</label><input type="text" id="ciNotes">
+  <div class="btnrow"><button class="btn primary big" onclick="runCheckin()">حلّل الأسبوع وأعطني التوصيات</button></div></div>`;
+  S.checkins.slice().reverse().forEach(c=>{
+    h+=`<div class="card flat"><h3>نتيجة أسبوع ${c.week} <span class="sub">(${fmtTime(c.date)})</span></h3>
+    <div class="sub">متوسط الوزن: ${c.avgW||'—'} كجم • تمارين ${c.done} • التزام وجبات ${c.adherence}% • جوع ${c.hunger} • طاقة ${c.energy} • نوم ${c.sleep}</div>
+    <div class="note" style="white-space:pre-line">${esc(c.reco)}</div></div>`;
+  });
+  return h;
+}
+function runCheckin(){
+  const week=+document.getElementById('ciWeek').value;
+  const a=weekAdherence(week);
+  const avgW=parseFloat(document.getElementById('ciW').value)||null;
+  const waist=parseFloat(document.getElementById('ciWaist').value)||null;
+  const hunger=+document.getElementById('ciHunger').value, energy=+document.getElementById('ciEnergy').value, sleep=+document.getElementById('ciSleep').value;
+  const pain=document.getElementById('ciPain').value.trim(), notes=document.getElementById('ciNotes').value.trim();
+  if(waist){ S.waists.push({date:new Date().toISOString().slice(0,10),cm:waist}); }
+  const prev=S.checkins.filter(c=>c.week===week-1).pop();
+  const prevW=prev?prev.avgW:(S.profile.weightKg||null);
+  let lines=[];
+  let lossPct=null;
+  if(avgW&&prevW){ lossPct=r1(100*(prevW-avgW)/prevW); lines.push(`التغير الأسبوعي: ${lossPct>0?'-':'+'}${Math.abs(lossPct)}% (${r1(prevW-avgW)} كجم).`); }
+  if(a.mealPct<75 || a.trainDone<a.train-1){
+    lines.push('الأولوية القادمة: الالتزام قبل أي تعديل — ثبّت الخطة كما هي وحقق ≥80% أسبوعاً كاملاً.');
+  } else if(lossPct!=null){
+    if(lossPct>1.2 && (hunger>=4||energy<=2)) lines.push('النزول أسرع من اللازم مع جوع/إرهاق: أضف سناك الجوع يومياً (+150-200 kcal) وراقب أسبوعاً.');
+    else if(lossPct>=0.4) lines.push('معدل النزول ممتاز (0.4-1.2%): لا تغيّر شيئاً — كرر نفس الأسبوع.');
+    else if(week>=2) lines.push('النزول أبطأ من الهدف مع التزام جيد: احذف «سناك الجوع» في أيام الراحة أو ارفع الخطوات إلى 11 ألفاً — خياراً واحداً فقط، ليس الاثنين.');
+    else lines.push('أسبوع أول: لا تستعجل الحكم — الماء والجلايكوجين يخفيان النتيجة. استمر.');
+  }
+  if(hunger>=4&&lossPct!=null&&lossPct<=1.2) lines.push('لإدارة الجوع: قدّم العشاء، أضف سلطة خضراء/فت زيرو (سعرات شبه صفرية)، ونم مبكراً.');
+  if(energy<=2||sleep<=2) lines.push('طاقة/نوم منخفض: ثبّت موعد النوم (7-8 ساعات)، وخفف الكارديو الختامي إلى 10 دقائق هذا الأسبوع.'+(week===4?' فعّل الديلود: احذف السيت الأخير من تمارين العزل.':''));
+  if(pain) lines.push('الألم ('+pain+'): بدّل التمرين المسبب بالبديل المذكور وخفف وزنه 10-15%. إذا استمر أسبوعين أو كان حاداً/مفصلياً راجع أخصائي علاج طبيعي.');
+  if(waist) lines.push('الخصر مسجل — راقب الاتجاه عبر 2-3 أسابيع مع متوسط الوزن معاً.');
+  if(!lines.length) lines.push('استمر على نفس الخطة وسجل بياناتك يومياً.');
+  const reco='• '+lines.join('\n• ');
+  S.checkins.push({week, avgW, waist, done:a.trainDone+'/'+a.train, adherence:a.mealPct, hunger, energy, sleep, pain, notes, reco, date:new Date().toISOString()});
+  save(true); renderMore();
+}
+
+/* ---------- Settings ---------- */
+function settingsHTML(){
+  const p=S.profile, t=targets();
+  return `<div class="card"><h2>⚙️ الإعدادات</h2>
+  <h3>الملف الشخصي وقيم InBody</h3>
+  ${p.estimated?'<div class="warnnote">القيم الحالية تقديرية إلى أن تُدخل أرقام تقرير InBody غداً — عدّلها هنا وسيُعاد حساب كل الأهداف.</div>':''}
+  <div class="inrow3">
+    <div><label class="f">الوزن (كجم)</label><input type="number" step="0.1" id="pW" value="${p.weightKg}"></div>
+    <div><label class="f">الطول (سم)</label><input type="number" id="pH" value="${p.heightCm}"></div>
+    <div><label class="f">العمر</label><input type="number" id="pA" value="${p.age}"></div>
+  </div>
+  <div class="inrow3">
+    <div><label class="f">العضلات الهيكلية SMM</label><input type="number" step="0.1" id="pSMM" value="${p.smm??''}"></div>
+    <div><label class="f">كتلة الدهون BFM</label><input type="number" step="0.1" id="pBFM" value="${p.bfm??''}"></div>
+    <div><label class="f">نسبة الدهون PBF %</label><input type="number" step="0.1" id="pPBF" value="${p.pbf??''}"></div>
+  </div>
+  <div class="inrow3">
+    <div><label class="f">BMI</label><input type="number" step="0.1" id="pBMI" value="${p.bmi??''}"></div>
+    <div><label class="f">الدهون الحشوية</label><input type="number" step="0.5" id="pVis" value="${p.visceral??''}"></div>
+    <div><label class="f">BMR من التقرير</label><input type="number" id="pBMR" value="${p.bmr??''}"></div>
+  </div>
+  <div class="inrow">
+    <div><label class="f">نقاط InBody</label><input type="number" id="pScore" value="${p.inbodyScore??''}"></div>
+    <div><label class="f">تاريخ الفحص</label><input type="date" id="pDate" value="${p.inbodyDate||''}"></div>
+  </div>
+  <div class="inrow">
+    <div><label class="f">معامل النشاط</label><select id="pAct">
+      <option value="1.35" ${p.activityFactor==1.35?'selected':''}>مكتبي + خطوات قليلة (1.35)</option>
+      <option value="1.45" ${p.activityFactor==1.45?'selected':''}>مكتبي + تمرين 5 أيام (1.45)</option>
+      <option value="1.55" ${p.activityFactor==1.55?'selected':''}>نشِط + خطوات عالية (1.55)</option></select></div>
+    <div><label class="f">العجز اليومي (kcal)</label><select id="pDef">
+      ${[450,550,650,750].map(x=>`<option ${p.deficit==x?'selected':''}>${x}</option>`).join('')}</select></div>
+  </div>
+  <div class="btnrow"><button class="btn primary" onclick="saveProfile()">احفظ وأعد حساب الأهداف</button></div>
+  <div class="grid4" style="margin-top:10px">
+    <div class="tile"><div class="v">${t.bmr}</div><div class="l">BMR</div></div>
+    <div class="tile"><div class="v">${t.tdee}</div><div class="l">TDEE</div></div>
+    <div class="tile"><div class="v">${t.kcalTrain}/${t.kcalRest}</div><div class="l">سعرات تدريب/راحة</div></div>
+    <div class="tile"><div class="v">${t.protein}غ</div><div class="l">بروتين</div></div>
+  </div>
+  <div class="hr"></div>
+  <h3>المؤقت والتنبيه</h3>
+  <div class="setline"><span>🔊 صوت نهاية الاستراحة</span><label class="tgl"><input type="checkbox" ${S.settings.sound?'checked':''} onchange="S.settings.sound=this.checked;queueSave()"><span></span></label></div>
+  <div class="setline"><span>📳 اهتزاز (الجوالات المدعومة)</span><label class="tgl"><input type="checkbox" ${S.settings.vibrate?'checked':''} onchange="S.settings.vibrate=this.checked;queueSave()"><span></span></label></div>
+  <div class="hr"></div>
+  <h3>البيانات والنسخ الاحتياطي</h3>
+  <div class="note">🔒 كل بياناتك محفوظة داخل متصفح هذا الجهاز فقط، ولا يُرسل أي شيء لأي خادم. تنبيه: مسح بيانات المتصفح يمسح سجلاتك — لذلك صدّر نسخة احتياطية أسبوعياً.</div>
+  <div class="btnrow">
+    <button class="btn" onclick="exportBackup()">⬇️ تصدير نسخة JSON</button>
+    <label class="btn" style="cursor:pointer">⬆️ استيراد نسخة<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(this)"></label>
+    <button class="btn" onclick="save(true)">💾 حفظ يدوي</button>
+    <button class="btn danger" onclick="confirmReset()">🗑️ مسح كل البيانات</button>
+  </div>
+  <div class="sub" style="margin-top:8px">آخر حفظ: ${S.savedAt? fmtTime(S.savedAt):'—'} • ملاحظة: صور التقدم غير مضمنة في التطبيق حفاظاً على سعة التخزين المحلي — احتفظ بها في ألبوم خاص بجوالك.</div>
+  </div>`;
+}
+function saveProfile(){
+  const p=S.profile;
+  const g=id=>document.getElementById(id).value;
+  const num=(id)=>{const v=parseFloat(g(id)); return isNaN(v)?null:v;};
+  p.weightKg=num('pW')||p.weightKg; p.heightCm=num('pH')||p.heightCm; p.age=num('pA')||p.age;
+  p.smm=num('pSMM'); p.bfm=num('pBFM'); p.pbf=num('pPBF'); p.bmi=num('pBMI'); p.visceral=num('pVis');
+  p.bmr=num('pBMR'); p.inbodyScore=num('pScore'); p.inbodyDate=g('pDate');
+  p.activityFactor=parseFloat(g('pAct')); p.deficit=parseInt(g('pDef'));
+  if(p.inbodyDate) p.estimated=false;
+  if(p.pbf!=null){ S.bodyFats.push({date:p.inbodyDate||new Date().toISOString().slice(0,10), pct:p.pbf}); }
+  save(true); renderMore(); toast('أُعيد حساب الأهداف ✓');
+}
+function exportBackup(){
+  const data=JSON.stringify(S,null,1);
+  const blob=new Blob([data],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='mohanad-fitness-backup-'+new Date().toISOString().slice(0,10)+'.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  toast('نُزلت النسخة الاحتياطية');
+}
+function importBackup(inp){
+  const f=inp.files[0]; if(!f) return;
+  const rd=new FileReader();
+  rd.onload=()=>{
+    try{
+      const d=JSON.parse(rd.result);
+      if(!d || typeof d!=='object' || d.v!==SCHEMA_V) throw 0;
+      const clean=DEFAULT_STATE();
+      ['profile','settings','workLogs','mealLogs','stepsLog','cancels','comps'].forEach(k=>{ if(d[k]&&typeof d[k]==='object') clean[k]=d[k]; });
+      ['weights','waists','bodyFats','checkins'].forEach(k=>{ if(Array.isArray(d[k])) clean[k]=d[k]; });
+      if(Array.isArray(d.dayShift)&&d.dayShift.length===28) clean.dayShift=d.dayShift.map(x=>Math.max(0,parseInt(x)||0));
+      clean.onboarded=!!d.onboarded;
+      S=clean; save(true); render(); toast('استُعيدت النسخة ✓');
+    }catch(e){ toast('ملف غير صالح — تأكد أنه نسخة من هذا التطبيق'); }
+  };
+  rd.readAsText(f);
+}
+function confirmReset(){
+  openDlg(`<h3>⚠️ مسح كل البيانات؟</h3><p class="sub">سيُحذف كل شيء: السجلات، الأوزان، التشيك-إن، الإعدادات. لا تراجع بعدها. صدّر نسخة احتياطية أولاً.</p>
+  <div class="btnrow"><button class="btn danger" onclick="S=DEFAULT_STATE();save(true);dlg.close();showView('today');toast('تم المسح')">نعم، امسح كل شيء</button>
+  <button class="btn primary" onclick="dlg.close()">تراجع</button></div>`);
+}
+
+/* ---------- Sources ---------- */
+function sourcesHTML(){
+  const L=(u,t)=>`<a class="ext" target="_blank" rel="noopener noreferrer" href="${u}">${t}</a>`;
+  return `<div class="card"><h2>📚 المصادر والمنهجية</h2>
+  <h3>المنهجية باختصار</h3>
+  <ul class="sub" style="padding-right:18px;line-height:1.9">
+    <li>السعرات: BMR بمعادلة Mifflin-St Jeor (أو BMR من تقرير InBody عند توفره) × معامل نشاط، ثم عجز 550-750 kcal — يستهدف خسارة دهون ~0.5-0.8% من وزن الجسم أسبوعياً مع الحفاظ على العضلات.</li>
+    <li>البروتين: ~2.0 غ/كجم يومياً (النطاق الفعال 1.6-2.4 خلال العجز).</li>
+    <li>حجم التدريب: ~10-16 سيت أسبوعياً للعضلات الرئيسية مع زيادة موجهة للذراعين، بجهد 1-4 تكرارات احتياطي (RIR) وتقدم مزدوج (تكرارات ثم وزن).</li>
+    <li>الكارديو: Zone 2 بعد الحديد + هدف خطوات يومي، وفواصل قصيرة اختيارية من الأسبوع الثالث.</li>
+    <li>قيم الوجبات: منقولة حرفياً من بطاقات منيو «وجبات اللياقة TFM» (سُحبت 01/08/2026). وجبات البروتين قيمها للمصدر البروتيني فقط والكارب يُضاف من جدول المصادر — وهذا مطابق لطريقة عرض المطعم نفسه.</li>
+    <li>توقع 4 أسابيع (لوزن بداية ~80 كجم): خسارة دهون متوقعة 2-3 كجم + نزول ماء/جلايكوجين 1-1.5 كجم أول أسبوعين → نزول ميزان واقعي 3-4.5 كجم. الوصول لـ 6 كجم ممكن لكنه سقف طموح يتطلب التزاماً كاملاً — وليس مطلوباً لنجاح الخطة. الحفاظ على العضلات (وربما زيادة بسيطة) متوقع مع البروتين والتمرين المنتظم.</li>
+  </ul>
+  <h3>مراجع علمية</h3>
+  <ul class="sub" style="padding-right:18px;line-height:2">
+    <li>${L('https://bjsm.bmj.com/content/52/6/376','Morton et al., BJSM 2018 — البروتين وتضخم العضلات (~1.6-2.2 غ/كجم)')}</li>
+    <li>${L('https://link.springer.com/10.1007/s40279-025-02344-w','Pelland et al., Sports Medicine 2025 — علاقة الحجم الأسبوعي بالتضخم والقوة')}</li>
+    <li>${L('https://link.springer.com/article/10.1186/s12970-017-0174-y','ISSN Position Stand 2017 — الحميات وتكوين الجسم ومعدل النزول الآمن')}</li>
+    <li>${L('https://jcsm.aasm.org/doi/10.5664/jcsm.4758','AASM/SRS — النوم ≥7 ساعات للبالغين')}</li>
+    <li>${L('https://www.who.int/news-room/fact-sheets/detail/physical-activity','WHO — 150-300 دقيقة نشاط هوائي أسبوعياً')}</li>
+  </ul>
+  <h3>مصادر Technogym الرسمية</h3>
+  <ul class="sub" style="padding-right:18px;line-height:2">
+    <li>${L(TG_LINKS.selection,'خط Selection (أجهزة الأثقال الموجهة)')}</li>
+    <li>${L(TG_LINKS.pure,'خط Pure Strength (الأطباق الحرة)')}</li>
+    <li>${L(TG_LINKS.excite,'خط Excite للكارديو (Run / Bike / Synchro / Climb)')}</li>
+    <li>${L(TG_LINKS.skill,'خط Skill (Skillmill / Skillrow / Skillbike)')}</li>
+    <li>${L('https://www.technogym.com/en-US/product/dumbbell_A0001-UDB.html','دمبل Technogym الرسمي — الأوزان المتوفرة: 1-10 كجم (درجة 1 كجم) ثم 12-36 كجم (درجة 2 كجم)')}</li>
+  </ul>
+  <div class="note">🔗 كل تمرين في المكتبة مربوط بأمرين مباشرين: صفحة الجهاز الرسمية على technogym.com (المُتحقق منها في 01/08/2026) + فيديو شرح مباشر مُنتقى. أرسل صور أجهزة ناديك وسأطابق الموديلات الفعلية وأحدث الروابط.</div>
+  <h3>المنيو</h3>
+  <ul class="sub" style="padding-right:18px;line-height:2">
+    <li>${L('https://qrco.de/bbeE4R','منيو وجبات اللياقة TFM (المصدر الرسمي للقيم)')}</li>
+    <li>${L('https://www.instagram.com/tfmksa/','حساب المطعم الرسمي @tfmksa')}</li>
+  </ul>
+  <div class="note">⚕️ هذا التطبيق للتخطيط والمتابعة فقط وليس تشخيصاً أو علاجاً طبياً. أوقف أي تمرين يسبب ألماً حاداً أو دواراً أو ضيق تنفس غير معتاد، وارجع لمختص عند الحاجة. لا حاجة لأي مكملات في هذه الخطة، ولا يُنصح بأي منتجات «حارقة للدهون».</div>
+  </div>`;
+}
+
+/* ---------- Onboarding (شاشة تأكيد InBody) ---------- */
+function onboardingHTML(){
+  const p=S.profile;
+  return `<h3>👋 يا هلا مهند — دقيقة وحدة قبل البداية</h3>
+  <p class="sub">هذه القيم المبدئية المستخدمة في الحسابات. عدّل ما تعرفه الآن، وبعد فحص InBody غداً حدّثها من الإعدادات — كل الأهداف تُعاد تلقائياً.</p>
+  <div class="inrow3">
+    <div><label class="f">الوزن (كجم)</label><input type="number" step="0.1" id="obW" value="${p.weightKg}"></div>
+    <div><label class="f">الطول (سم)</label><input type="number" id="obH" value="${p.heightCm}"></div>
+    <div><label class="f">العمر</label><input type="number" id="obA" value="${p.age}"></div>
+  </div>
+  <div class="note">الخطة تبدأ الأحد ${fmtDateAr(PLAN_START)}: تدريب الأحد-الخميس (٥ أيام)، راحة الجمعة والسبت. اشترك في باقة «وجبات اللياقة» اليومية: وجبتان رئيسيتان + ٢-٣ سناك + عصير.</div>
+  <div class="btnrow"><button class="btn primary big" onclick="finishOnboarding()">اعتمد وابدأ 🚀</button></div>`;
+}
+function finishOnboarding(){
+  const num=id=>{const v=parseFloat(document.getElementById(id).value); return isNaN(v)?null:v;};
+  S.profile.weightKg=num('obW')||S.profile.weightKg;
+  S.profile.heightCm=num('obH')||S.profile.heightCm;
+  S.profile.age=num('obA')||S.profile.age;
+  S.onboarded=true; dlg.close(); save(true); render();
+}
+
+/* ---------- Init ---------- */
+document.getElementById('btnManualSave').onclick=()=>save(true);
+if(!storageOK) document.getElementById('storageWarn').style.display='block';
+document.addEventListener('click',ensureAudio,{once:true});
+showView('today');
+if(S.sessionActive){
+  openDlg(`<h3>🏋️ عندك جلسة تمرين مفتوحة</h3><p class="sub">أُغلقت الصفحة أثناء التمرين — تقدر تكمل من حيث وقفت.</p>
+  <div class="btnrow"><button class="btn primary" onclick="dlg.close();SES=S.sessionActive;showSession()">كمّل الجلسة</button>
+  <button class="btn ghost" onclick="S.sessionActive=null;queueSave();dlg.close()">تجاهل وأغلقها</button></div>`);
+} else if(!S.onboarded){
+  openDlg(onboardingHTML());
+}
+</script>
+</body>
+</html>
