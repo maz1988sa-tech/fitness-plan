@@ -1479,16 +1479,27 @@ function beep(){
   if(!S.settings.sound) return; ensureAudio(); if(!audioCtx) return;
   try{
     const now=audioCtx.currentTime;
-    [0,0.25,0.5].forEach((t,ix)=>{
-      const o=audioCtx.createOscillator(), g=audioCtx.createGain();
-      o.connect(g); g.connect(audioCtx.destination);
-      o.frequency.value= ix===2? 1180:880; o.type='sine';
-      g.gain.setValueAtTime(0.0001,now+t); g.gain.exponentialRampToValueAtTime(0.35,now+t+0.02); g.gain.exponentialRampToValueAtTime(0.0001,now+t+0.22);
-      o.start(now+t); o.stop(now+t+0.24);
-    });
+    /* نغمة أعلى (square + طبقة أوكتاف) وتُعاد مرتين */
+    const phrase=(t0)=>{
+      [0,0.26,0.52].forEach((t,ix)=>{
+        const st=now+t0+t, f= ix===2? 1320:880;
+        const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+        o.connect(g); g.connect(audioCtx.destination);
+        o.type='square'; o.frequency.value=f;
+        g.gain.setValueAtTime(0.0001,st); g.gain.exponentialRampToValueAtTime(0.6,st+0.02); g.gain.exponentialRampToValueAtTime(0.0001,st+0.3);
+        o.start(st); o.stop(st+0.32);
+        const o2=audioCtx.createOscillator(), g2=audioCtx.createGain();
+        o2.connect(g2); g2.connect(audioCtx.destination);
+        o2.type='sine'; o2.frequency.value=f*2;
+        g2.gain.setValueAtTime(0.0001,st); g2.gain.exponentialRampToValueAtTime(0.28,st+0.02); g2.gain.exponentialRampToValueAtTime(0.0001,st+0.28);
+        o2.start(st); o2.stop(st+0.3);
+      });
+    };
+    phrase(0); phrase(1.1);
   }catch(e){}
 }
-function buzz(){ if(S.settings.vibrate && navigator.vibrate){ try{navigator.vibrate([250,120,250]);}catch(e){} } }
+/* اهتزاز مع كل نغمة: نبضتان متزامنتان مع تكرار الصوت */
+function buzz(){ if(S.settings.vibrate && navigator.vibrate){ try{navigator.vibrate([240,120,240,120,360, 500, 240,120,240,120,360]);}catch(e){} } }
 
 function openWorkoutEntry(){
   ensureAudio();
