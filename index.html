@@ -1502,9 +1502,35 @@ function togglePause(){
   queueSave(); sessionRender();
 }
 function confirmEnd(){
-  openDlg(`<h3>إنهاء الجلسة؟</h3><p class="sub">ستُحفظ كل السيتات المسجلة.</p>
-  <div class="btnrow"><button class="btn primary" onclick="dlg.close();finishSession()">أنهِ واحفظ</button>
-  <button class="btn ghost" onclick="dlg.close()">استمرار التمرين</button></div>`);
+  const lg=dayWorkLog(SES.dayI);
+  const done=Object.values(lg.sets).flat().filter(s=>s&&!s.skip).length;
+  openDlg(`<h3>⏹️ إيقاف الجلسة — وش تبي أسوي بأداء اليوم؟</h3>
+  <p class="sub">سجلت حتى الآن <b>${done}</b> سيت.</p>
+  <div class="btnrow" style="flex-direction:column;align-items:stretch">
+    <button class="btn primary" onclick="dlg.close();finishSession()">✅ أنهِ واحفظ اللي سويته</button>
+    <button class="btn danger" onclick="discardSession()">🗑️ أوقفه واحذف أي أداء — كأني ما تمرنت اليوم</button>
+    <button class="btn ghost" onclick="dlg.close()">▶️ لا، أكمل التمرين</button>
+  </div>`);
+}
+/* حذف أداء اليوم بالكامل ثم السؤال عن مصير اليوم */
+function discardSession(){
+  const i=SES.dayI;
+  S.workLogs[i]={sets:{},replaced:{},status:null,cardioDone:false};
+  S.sessionActive=null; SES=null;
+  save(true); hideSession();
+  const wk=WORKOUTS[PLAN[i].workout];
+  const nxt=nextTrainAfter(i);
+  openDlg(`<h3>🗑️ انحذف أداء اليوم — طيب وش مصير تمرين «${esc(wk.title)}»؟</h3>
+  <div class="btnrow" style="flex-direction:column;align-items:stretch">
+    <button class="btn primary" onclick="dlg.close();postponeDay(${i})">⏭️ أجّله لبكرة — بكرة أسوي «${esc(wk.title)}» وكل الجدول ينزاح يوم</button>
+    <button class="btn" onclick="dlg.close();cancelDay(${i})">🗓️ ألغِ اليوم نهائياً — ${nxt?`بكرة على جدوله «${esc(WORKOUTS[PLAN[nxt].workout].title)}»`:'نكمل على الجدول'} مع سيتات تعويض</button>
+    <button class="btn ghost" onclick="dlg.close()">⏸️ اتركه لليوم — يمكن أرجع أكمله</button>
+  </div>
+  <p class="sub" style="margin-top:8px">الإلغاء لا يُحسب تمريناً، والتأجيل يمدد نهاية الخطة يوماً واحداً. تقدر تتراجع عن الاثنين لاحقاً.</p>`);
+}
+function nextTrainAfter(i){
+  for(let j=i+1;j<28;j++){ if(PLAN[j].isTrain && !isCancelled(j)) return j; }
+  return null;
 }
 function finishSession(){
   const lg=dayWorkLog(SES.dayI); const w=WORKOUTS[SES.wk]; const blocks=sesBlocks();
