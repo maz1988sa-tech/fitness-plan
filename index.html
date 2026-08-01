@@ -1498,8 +1498,14 @@ function beep(){
     phrase(0); phrase(1.1);
   }catch(e){}
 }
-/* اهتزاز مع كل نغمة: نبضتان متزامنتان مع تكرار الصوت */
-function buzz(){ if(S.settings.vibrate && navigator.vibrate){ try{navigator.vibrate([240,120,240,120,360, 500, 240,120,240,120,360]);}catch(e){} } }
+/* اهتزاز مع كل نغمة: نبضة منفصلة متزامنة مع كل تكرار للحن */
+const CAN_VIBRATE = (typeof navigator!=='undefined') && ('vibrate' in navigator);
+function buzz(){
+  if(!S.settings.vibrate || !CAN_VIBRATE) return;
+  const burst=()=>{ try{ navigator.vibrate([240,120,240,120,360]); }catch(e){} };
+  burst();                       /* مع النغمة الأولى */
+  setTimeout(burst, 1100);       /* مع النغمة الثانية */
+}
 
 function openWorkoutEntry(){
   ensureAudio();
@@ -1937,7 +1943,9 @@ function settingsHTML(){
   <div class="hr"></div>
   <h3>${A('التنبيه','Alerts')}</h3>
   <div class="setline"><span>🔊 ${A('صوت نهاية الاستراحة','Rest-end sound')}</span><label class="tgl"><input type="checkbox" ${S.settings.sound?'checked':''} onchange="S.settings.sound=this.checked;queueSave()"><span></span></label></div>
-  <div class="setline"><span>📳 ${A('اهتزاز (الجوالات المدعومة)','Vibration (supported phones)')}</span><label class="tgl"><input type="checkbox" ${S.settings.vibrate?'checked':''} onchange="S.settings.vibrate=this.checked;queueSave()"><span></span></label></div>
+  <div class="setline"><span>📳 ${A('اهتزاز مع كل نغمة','Vibration with each tone')} ${CAN_VIBRATE?`<span class="chip ok">${A('مدعوم على هذا الجهاز','supported on this device')}</span>`:`<span class="chip warn">${A('غير مدعوم هنا','not supported here')}</span>`}</span><label class="tgl"><input type="checkbox" ${S.settings.vibrate?'checked':''} onchange="S.settings.vibrate=this.checked;queueSave()"><span></span></label></div>
+  <div class="btnrow"><button class="btn" onclick="ensureAudio();beep();buzz();toast(A('هذا هو تنبيه نهاية الاستراحة','This is the rest-end alert'))">🔊📳 ${A('جرّب التنبيه الآن','Test the alert now')}</button></div>
+  <div class="note">${A('الاهتزاز يعمل من متصفح الجوال فقط: أندرويد (كروم) يدعمه، أما آيفون فنظام iOS يمنع اهتزاز المواقع نهائياً — لهذا الصوت مصمم عالياً ليكون التنبيه الأساسي. الكمبيوتر لا يحتوي هزازاً أصلاً.','Vibration only exists on phones: Android (Chrome) supports it, while iOS blocks website vibration entirely — that is why the sound is designed loud as the primary alert. Computers have no vibration hardware at all.')}</div>
   <div class="hr"></div>
   <h3>${A('البيانات والنسخ الاحتياطي','Data & backup')}</h3>
   <div class="note">🔒 ${A('كل بياناتك محفوظة داخل متصفح هذا الجهاز فقط، ولا يُرسل أي شيء لأي خادم. مسح بيانات المتصفح يمسح سجلاتك — صدّر نسخة احتياطية أسبوعياً.','All data lives in this device\'s browser only; nothing is sent to any server. Clearing browser data wipes your logs — export a backup weekly.')}</div>
