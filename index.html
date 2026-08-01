@@ -3,26 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#e8eaed">
-<title>خطة مهند — 4 أسابيع | GET MOVING</title>
+<meta name="theme-color" content="#0b0c09">
+<title>خطة مهند — 4 أسابيع | BUILD YOUR BEST SELF</title>
 <style>
-/* ===== Theme: silver studio / bold mono — derived from reference poster ===== */
+/* ===== Theme: IRONCORE dark + volt green — from reference image ===== */
 :root{
-  --bg1:#c9ccd1; --bg2:#eef0f3; --card:#ffffff; --ink:#101113; --ink2:#5b5f66;
-  --line:#e3e5e9; --soft:#f4f5f7; --dark:#17181b; --dark2:#2a2c30;
-  --ok:#178a4c; --okbg:#e6f4ec; --warn:#b45309; --warnbg:#fdf1e0; --bad:#b3261e; --badbg:#fdecea;
-  --acc:#101113; --r:18px; --shadow:0 10px 28px rgba(16,17,19,.12);
+  --bg1:#0b0c09; --bg2:#121410; --card:#161814; --card2:#1b1e19; --ink:#f2f4ec; --ink2:#9aa091;
+  --line:#272b23; --soft:#1e211b; --dark:#c8f135; --dark2:#20241d;
+  --volt:#c8f135; --voltink:#10130a; --voltdim:#8fae26;
+  --ok:#c8f135; --okbg:#222a12; --warn:#ffb454; --warnbg:#2a2113; --bad:#ff6f61; --badbg:#2b1512;
+  --acc:#c8f135; --r:18px; --shadow:0 12px 30px rgba(0,0,0,.5);
   --font:'SF Arabic','Segoe UI','Helvetica Neue',Tahoma,'Noto Naskh Arabic UI',sans-serif;
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{
-  margin:0; font-family:var(--font); color:var(--ink); background:linear-gradient(160deg,var(--bg1),var(--bg2) 55%);
+  margin:0; font-family:var(--font); color:var(--ink); background:var(--bg1);
   min-height:100vh; font-size:15.5px; line-height:1.55;
 }
-body::before{ /* diagonal split like the poster */
+body::before{ /* volt glow like the reference hero */
   content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
-  background:linear-gradient(160deg,rgba(255,255,255,0) 45%,rgba(255,255,255,.55) 45.2%);
+  background:
+    radial-gradient(600px 300px at 85% -5%, rgba(200,241,53,.10), transparent 60%),
+    radial-gradient(500px 320px at -10% 30%, rgba(200,241,53,.05), transparent 60%),
+    linear-gradient(165deg,var(--bg2),var(--bg1) 60%);
 }
 #app{max-width:980px; margin:0 auto; padding:14px 14px 90px}
 /* ===== Typography ===== */
@@ -31,23 +35,23 @@ h1,h2,h3{margin:.2em 0 .35em; line-height:1.25}
   font-weight:900; letter-spacing:.5px; text-transform:uppercase;
   font-size:clamp(26px,6vw,40px); color:var(--ink);
 }
-.display .ghost{color:#fff; text-shadow:0 2px 14px rgba(0,0,0,.18)}
-.en-tag{ /* small english motif like GET MOVING */
-  display:inline-block; direction:ltr; font-weight:900; letter-spacing:2.5px; font-size:11px;
-  text-transform:uppercase; color:var(--ink2); transform:skewX(-8deg);
+.display .ghost{color:var(--volt); text-shadow:0 0 24px rgba(200,241,53,.35)}
+.en-tag{ /* volt eyebrow label like STRONGER EVERYDAY */
+  display:inline-block; direction:ltr; font-weight:800; letter-spacing:3px; font-size:11px;
+  text-transform:uppercase; color:var(--volt);
 }
 .sub{color:var(--ink2); font-size:13.5px}
 /* ===== Header ===== */
 header.top{display:flex; align-items:center; justify-content:space-between; padding:6px 2px 10px}
 .brand{display:flex; flex-direction:column; gap:2px}
-.brand b{font-size:19px; font-weight:900}
+.brand b{font-size:19px; font-weight:900; color:var(--ink)}
 .savebox{display:flex; align-items:center; gap:8px}
 .savedot{font-size:11px; color:var(--ink2); text-align:left; direction:ltr}
 /* ===== Cards ===== */
-.card{background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); padding:16px; margin:12px 0; border:1px solid rgba(255,255,255,.6)}
+.card{background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); padding:16px; margin:12px 0; border:1px solid var(--line)}
 .card.flat{box-shadow:none; border:1px solid var(--line)}
-.card h2{font-size:18px; font-weight:900; display:flex; align-items:center; gap:8px}
-.card h3{font-size:15.5px; font-weight:800}
+.card h2{font-size:18px; font-weight:900; display:flex; align-items:center; gap:8px; color:var(--ink)}
+.card h3{font-size:15.5px; font-weight:800; color:var(--ink)}
 .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
 .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
 .grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:8px}
@@ -56,140 +60,150 @@ header.top{display:flex; align-items:center; justify-content:space-between; padd
 .btn{
   appearance:none; border:0; cursor:pointer; font-family:inherit; font-weight:800; font-size:15px;
   border-radius:14px; padding:12px 18px; background:var(--soft); color:var(--ink);
-  transition:transform .06s ease, box-shadow .15s ease, background .15s; user-select:none;
+  transition:transform .06s ease, box-shadow .15s ease, background .15s, filter .15s; user-select:none;
+  border:1px solid var(--line);
 }
 .btn:active{transform:scale(.97)}
-.btn.primary{background:var(--dark); color:#fff; box-shadow:0 8px 20px rgba(16,17,19,.28)}
+.btn.primary{background:var(--volt); color:var(--voltink); border-color:var(--volt); box-shadow:0 8px 24px rgba(200,241,53,.25)}
+.btn.primary:active{filter:brightness(.92)}
 .btn.big{width:100%; padding:16px; font-size:18px; border-radius:16px}
-.btn.ok{background:var(--ok); color:#fff}
-.btn.ghost{background:transparent; border:1.5px solid var(--line)}
-.btn.danger{background:var(--badbg); color:var(--bad)}
+.btn.ok{background:var(--volt); color:var(--voltink); border-color:var(--volt)}
+.btn.ghost{background:transparent; border:1.5px solid var(--line); color:var(--ink2)}
+.btn.danger{background:var(--badbg); color:var(--bad); border-color:#3a201c}
 .btn.small{padding:7px 12px; font-size:13px; border-radius:10px}
 .btn[disabled]{opacity:.45; pointer-events:none}
 .btnrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
 /* ===== Chips / badges ===== */
 .chip{display:inline-flex; align-items:center; gap:5px; background:var(--soft); border:1px solid var(--line); border-radius:99px; padding:3px 10px; font-size:12px; font-weight:700; color:var(--ink2)}
-.chip.dark{background:var(--dark); color:#fff; border-color:var(--dark)}
-.chip.ok{background:var(--okbg); color:var(--ok); border-color:transparent}
+.chip.dark{background:var(--volt); color:var(--voltink); border-color:var(--volt)}
+.chip.ok{background:var(--okbg); color:var(--volt); border-color:transparent}
 .chip.warn{background:var(--warnbg); color:var(--warn); border-color:transparent}
-.chip.spicy{background:#fdecec; color:#c0392b; border-color:transparent}
-.tg{background:#111; color:#fff; font-size:10.5px; letter-spacing:.8px; direction:ltr; border-radius:6px; padding:2px 7px; font-weight:800; display:inline-block}
+.chip.spicy{background:#2b1512; color:#ff8a7a; border-color:transparent}
+.tg{background:var(--volt); color:var(--voltink); font-size:10.5px; letter-spacing:.8px; direction:ltr; border-radius:6px; padding:2px 7px; font-weight:900; display:inline-block}
 /* ===== Nav (bottom) ===== */
 nav.tabs{
   position:fixed; bottom:0; right:0; left:0; z-index:50; display:flex; justify-content:space-around;
-  background:rgba(255,255,255,.92); backdrop-filter:blur(14px); border-top:1px solid var(--line);
+  background:rgba(14,16,12,.92); backdrop-filter:blur(14px); border-top:1px solid var(--line);
   padding:6px 4px calc(6px + env(safe-area-inset-bottom));
 }
 nav.tabs button{
   flex:1; max-width:120px; border:0; background:none; font-family:inherit; cursor:pointer; padding:6px 2px;
   display:flex; flex-direction:column; align-items:center; gap:3px; color:var(--ink2); font-size:11px; font-weight:800; border-radius:12px;
 }
-nav.tabs button .ic{font-size:19px; line-height:1}
-nav.tabs button.active{color:var(--ink)}
-nav.tabs button.active .ic{transform:translateY(-1px)}
-nav.tabs button.active::after{content:""; width:18px; height:3px; border-radius:3px; background:var(--ink); margin-top:1px}
+nav.tabs button .ic{font-size:19px; line-height:1; filter:grayscale(.4)}
+nav.tabs button.active{color:var(--volt)}
+nav.tabs button.active .ic{transform:translateY(-1px); filter:none}
+nav.tabs button.active::after{content:""; width:18px; height:3px; border-radius:3px; background:var(--volt); margin-top:1px}
 /* ===== Sections ===== */
 .view{display:none; animation:fade .18s ease}
 .view.active{display:block}
 @keyframes fade{from{opacity:0; transform:translateY(4px)}to{opacity:1; transform:none}}
 /* ===== Stats tiles ===== */
-.tile{background:var(--card); border-radius:14px; padding:10px 12px; border:1px solid var(--line); text-align:center}
-.tile .v{font-size:20px; font-weight:900; direction:ltr}
+.tile{background:var(--card2); border-radius:14px; padding:10px 12px; border:1px solid var(--line); text-align:center}
+.tile .v{font-size:20px; font-weight:900; direction:ltr; color:var(--volt)}
 .tile .l{font-size:11px; color:var(--ink2); font-weight:700}
 /* ===== Exercise rows ===== */
-.exrow{border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:8px 0; background:#fff}
+.exrow{border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:8px 0; background:var(--card2)}
 .exrow .t{display:flex; justify-content:space-between; align-items:center; gap:8px; cursor:pointer}
-.exrow .t b{font-size:14.5px}
+.exrow .t b{font-size:14.5px; color:var(--ink)}
 .exrow .meta{font-size:12.5px; color:var(--ink2); margin-top:2px}
 .exrow .body{display:none; border-top:1px dashed var(--line); margin-top:9px; padding-top:9px; font-size:13.5px}
+.exrow.open{border-color:rgba(200,241,53,.35)}
 .exrow.open .body{display:block}
-.done-x{color:var(--ok); font-weight:900}
+.done-x{color:var(--volt); font-weight:900}
 /* ===== Tables ===== */
 table.mini{width:100%; border-collapse:collapse; font-size:13px}
 table.mini th{font-size:11.5px; color:var(--ink2); font-weight:800; padding:5px 6px; border-bottom:1px solid var(--line); text-align:right}
-table.mini td{padding:6px; border-bottom:1px solid var(--soft); text-align:right}
-table.mini td.num{direction:ltr; text-align:left; font-weight:700}
+table.mini td{padding:6px; border-bottom:1px solid var(--soft); text-align:right; color:var(--ink)}
+table.mini td.num{direction:ltr; text-align:left; font-weight:700; color:var(--ink)}
 /* ===== Inputs ===== */
 input[type=number],input[type=text],input[type=date],select,textarea{
   width:100%; font-family:inherit; font-size:15px; padding:10px 12px; border:1.5px solid var(--line);
-  border-radius:12px; background:#fff; color:var(--ink); outline:none;
+  border-radius:12px; background:var(--card2); color:var(--ink); outline:none; color-scheme:dark;
 }
-input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+input:focus,select:focus,textarea:focus{border-color:var(--volt)}
+input::placeholder{color:#666c60}
 label.f{display:block; font-size:12.5px; font-weight:800; color:var(--ink2); margin:8px 0 4px}
 .inrow{display:grid; grid-template-columns:1fr 1fr; gap:8px}
 .inrow3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
 /* toggle */
 .tgl{position:relative; width:46px; height:26px; flex:none}
 .tgl input{opacity:0; width:0; height:0}
-.tgl span{position:absolute; inset:0; background:#d6d9de; border-radius:99px; transition:.18s; cursor:pointer}
-.tgl span::before{content:""; position:absolute; width:20px; height:20px; border-radius:50%; background:#fff; top:3px; right:3px; transition:.18s; box-shadow:0 1px 4px rgba(0,0,0,.25)}
-.tgl input:checked + span{background:var(--ok)}
-.tgl input:checked + span::before{transform:translateX(-20px)}
-.setline{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 2px; border-bottom:1px solid var(--soft)}
+.tgl span{position:absolute; inset:0; background:#2b2f27; border-radius:99px; transition:.18s; cursor:pointer}
+.tgl span::before{content:""; position:absolute; width:20px; height:20px; border-radius:50%; background:#e8ebe0; top:3px; right:3px; transition:.18s; box-shadow:0 1px 4px rgba(0,0,0,.4)}
+.tgl input:checked + span{background:var(--volt)}
+.tgl input:checked + span::before{transform:translateX(-20px); background:var(--voltink)}
+.setline{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 2px; border-bottom:1px solid var(--soft); color:var(--ink)}
 /* ===== Session (workout mode) ===== */
 #sessionOverlay{
-  position:fixed; inset:0; z-index:100; background:linear-gradient(165deg,#1b1c1f,#0d0e10 60%); color:#fff;
+  position:fixed; inset:0; z-index:100; color:#fff;
+  background:
+    radial-gradient(500px 260px at 90% -4%, rgba(200,241,53,.12), transparent 60%),
+    linear-gradient(165deg,#101208,#0a0b08 60%);
   display:none; flex-direction:column; overflow-y:auto; padding:14px 14px 26px;
 }
 #sessionOverlay.on{display:flex}
 #sessionOverlay .shead{display:flex; justify-content:space-between; align-items:center; gap:8px}
-#sessionOverlay .stime{direction:ltr; font-weight:900; font-size:15px; color:#cfd2d6}
-.scard{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:14px; margin:10px 0}
+#sessionOverlay .stime{direction:ltr; font-weight:900; font-size:15px; color:var(--volt)}
+.scard{background:rgba(255,255,255,.05); border:1px solid rgba(200,241,53,.16); border-radius:16px; padding:14px; margin:10px 0}
 .scard h3{color:#fff}
 .snum{direction:ltr; font-weight:900}
 .bigtimer{
   text-align:center; font-weight:900; font-size:64px; direction:ltr; letter-spacing:2px; line-height:1;
   font-variant-numeric:tabular-nums; margin:4px 0;
 }
-.resting .bigtimer{color:#7ee2a8}
+.resting .bigtimer{color:var(--volt); text-shadow:0 0 30px rgba(200,241,53,.35)}
 .restdone{animation:pulse .6s ease 4}
-@keyframes pulse{0%,100%{background:rgba(126,226,168,.08)}50%{background:rgba(126,226,168,.35)}}
-.sbtn{background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2)}
-.sbtn.primary{background:#fff; color:#111}
+@keyframes pulse{0%,100%{background:rgba(200,241,53,.08)}50%{background:rgba(200,241,53,.35)}}
+.sbtn{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.18)}
+.sbtn.primary{background:var(--volt); color:var(--voltink); border-color:var(--volt)}
 .sgrid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
-.sgrid .f{color:#aeb2b8}
-#sessionOverlay input{background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.2); color:#fff; text-align:center; direction:ltr; font-weight:800}
+.sgrid .f{color:#aeb2a4}
+#sessionOverlay input{background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.2); color:#fff; text-align:center; direction:ltr; font-weight:800}
 .setdots{display:flex; gap:6px; margin:6px 0}
-.setdots i{width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.2)}
-.setdots i.d{background:#7ee2a8}
+.setdots i{width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,.18)}
+.setdots i.d{background:var(--volt)}
 .setdots i.cur{outline:2px solid #fff; outline-offset:2px}
 /* ===== Meals ===== */
-.meal{border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:8px 0; background:#fff}
+.meal{border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:8px 0; background:var(--card2)}
+.meal b{color:var(--ink)}
 .meal .mt{display:flex; justify-content:space-between; gap:8px; align-items:flex-start}
 .meal .macro{display:flex; gap:6px; flex-wrap:wrap; margin-top:6px}
-.mtag{font-size:11px; background:var(--soft); border-radius:8px; padding:2px 8px; font-weight:800; color:var(--ink2); direction:ltr}
+.mtag{font-size:11px; background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:2px 8px; font-weight:800; color:var(--ink2); direction:ltr}
+.mtag.w{background:var(--volt); color:var(--voltink); border-color:var(--volt)}
 /* ===== Calendar ===== */
 .wkband{display:flex; gap:6px; overflow-x:auto; padding:4px 0; scrollbar-width:none}
 .wkband::-webkit-scrollbar{display:none}
-.dayb{flex:none; width:64px; border:1.5px solid var(--line); background:#fff; border-radius:14px; padding:8px 4px; text-align:center; cursor:pointer; font-family:inherit}
+.dayb{flex:none; width:64px; border:1.5px solid var(--line); background:var(--card2); border-radius:14px; padding:8px 4px; text-align:center; cursor:pointer; font-family:inherit; color:var(--ink)}
 .dayb small{display:block; font-size:10px; color:var(--ink2); font-weight:700}
 .dayb b{font-size:15px}
-.dayb.today{border-color:var(--ink); box-shadow:0 4px 12px rgba(0,0,0,.12)}
-.dayb.selected{background:var(--dark); color:#fff}
-.dayb.selected small{color:#cfd2d6}
+.dayb.today{border-color:var(--volt); box-shadow:0 0 14px rgba(200,241,53,.22)}
+.dayb.selected{background:var(--volt); color:var(--voltink); border-color:var(--volt)}
+.dayb.selected small{color:#3c4517}
 .dayb .st{font-size:10px; font-weight:800}
-.dayb .st.done{color:var(--ok)}
+.dayb .st.done{color:var(--volt)}
+.dayb.selected .st.done{color:var(--voltink)}
 /* ===== Progress charts ===== */
-.chartbox{background:#fff; border:1px solid var(--line); border-radius:14px; padding:10px}
+.chartbox{background:var(--card2); border:1px solid var(--line); border-radius:14px; padding:10px}
 svg.chart{width:100%; height:150px; display:block; direction:ltr}
 /* ===== Misc ===== */
 .hr{height:1px; background:var(--line); margin:12px 0}
-.note{font-size:12.5px; color:var(--ink2); background:var(--soft); border-radius:10px; padding:8px 10px; margin-top:8px}
-.warnnote{font-size:12.5px; color:var(--warn); background:var(--warnbg); border-radius:10px; padding:8px 10px; margin-top:8px}
-.okline{color:var(--ok); font-weight:800}
-a.ext{color:var(--ink); font-weight:800; text-decoration:underline; text-underline-offset:3px}
+.note{font-size:12.5px; color:var(--ink2); background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:8px 10px; margin-top:8px}
+.warnnote{font-size:12.5px; color:var(--warn); background:var(--warnbg); border:1px solid #3a2c14; border-radius:10px; padding:8px 10px; margin-top:8px}
+.okline{color:var(--volt); font-weight:800}
+a.ext{color:var(--volt); font-weight:800; text-decoration:underline; text-underline-offset:3px}
 .center{text-align:center}
 .mut{color:var(--ink2)}
 .spacer{height:8px}
 .progressbar{height:8px; background:var(--soft); border-radius:99px; overflow:hidden}
-.progressbar i{display:block; height:100%; background:var(--dark); border-radius:99px; transition:width .3s}
-.progressbar.g i{background:var(--ok)}
-dialog{border:0; border-radius:18px; padding:0; max-width:480px; width:92vw; box-shadow:0 24px 60px rgba(0,0,0,.35)}
-dialog::backdrop{background:rgba(10,10,12,.5); backdrop-filter:blur(3px)}
+.progressbar i{display:block; height:100%; background:var(--volt); border-radius:99px; transition:width .3s}
+.progressbar.g i{background:var(--volt)}
+dialog{border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:18px; padding:0; max-width:480px; width:92vw; box-shadow:0 24px 60px rgba(0,0,0,.6)}
+dialog::backdrop{background:rgba(5,6,4,.65); backdrop-filter:blur(3px)}
 .dlgin{padding:18px}
 .toast{
-  position:fixed; bottom:84px; right:50%; transform:translateX(50%); background:var(--dark); color:#fff;
-  padding:10px 18px; border-radius:99px; font-weight:800; font-size:13.5px; z-index:200; box-shadow:var(--shadow);
+  position:fixed; bottom:84px; right:50%; transform:translateX(50%); background:var(--volt); color:var(--voltink);
+  padding:10px 18px; border-radius:99px; font-weight:800; font-size:13.5px; z-index:200; box-shadow:0 10px 28px rgba(200,241,53,.3);
   opacity:0; pointer-events:none; transition:opacity .25s;
 }
 .toast.on{opacity:1}
@@ -328,14 +342,14 @@ const MENU = {
   oj:{ar:'عصير برتقال',en:'Orange Juice',cat:'drink',price:15,kcal:161,p:3,f:1,c:35,scope:'full'},
   lemonMint:{ar:'عصير ليمون نعناع',en:'Lemon Mint Juice',cat:'drink',price:15,kcal:90,p:1,f:1,c:20,scope:'full'},
   /* مصادر الكارب (تُطلب كجانب مع الوجبة) */
-  riceWhite:{ar:'رز أبيض',en:'White Rice',cat:'carb',kcal:166,p:6,f:0.4,c:35,scope:'full'},
-  riceYellow:{ar:'رز أصفر',en:'Yellow Rice',cat:'carb',kcal:166,p:6,f:0.4,c:35,scope:'full'},
-  riceKabsa:{ar:'رز كبسة',en:'Kabsa Rice',cat:'carb',kcal:186,p:7,f:0.8,c:38,scope:'full'},
-  pastaRed:{ar:'مكرونة حمراء',en:'Red Pasta',cat:'carb',kcal:230,p:8.5,f:1,c:50,scope:'full'},
-  pastaWhite:{ar:'مكرونة بيضاء',en:'White Pasta',cat:'carb',kcal:261,p:11,f:1,c:52,scope:'full'},
-  pastaPesto:{ar:'مكرونة بيستو',en:'Pesto Pasta',cat:'carb',kcal:269,p:13,f:1,c:52,scope:'full'},
-  potatoGrilled:{ar:'بطاطس مشوي',en:'Grilled Potato',cat:'carb',kcal:117,p:3,f:0.1,c:26,scope:'full'},
-  potatoMash:{ar:'بطاطس مهروسة',en:'Mashed Potato',cat:'carb',kcal:137,p:5,f:1,c:27,scope:'full'},
+  riceWhite:{ar:'رز أبيض',en:'White Rice',cat:'carb',gEst:130,kcal:166,p:6,f:0.4,c:35,scope:'full'},
+  riceYellow:{ar:'رز أصفر',en:'Yellow Rice',cat:'carb',gEst:130,kcal:166,p:6,f:0.4,c:35,scope:'full'},
+  riceKabsa:{ar:'رز كبسة',en:'Kabsa Rice',cat:'carb',gEst:140,kcal:186,p:7,f:0.8,c:38,scope:'full'},
+  pastaRed:{ar:'مكرونة حمراء',en:'Red Pasta',cat:'carb',gEst:180,kcal:230,p:8.5,f:1,c:50,scope:'full'},
+  pastaWhite:{ar:'مكرونة بيضاء',en:'White Pasta',cat:'carb',gEst:200,kcal:261,p:11,f:1,c:52,scope:'full'},
+  pastaPesto:{ar:'مكرونة بيستو',en:'Pesto Pasta',cat:'carb',gEst:200,kcal:269,p:13,f:1,c:52,scope:'full'},
+  potatoGrilled:{ar:'بطاطس مشوي',en:'Grilled Potato',cat:'carb',gEst:140,kcal:117,p:3,f:0.1,c:26,scope:'full'},
+  potatoMash:{ar:'بطاطس مهروسة',en:'Mashed Potato',cat:'carb',gEst:150,kcal:137,p:5,f:1,c:27,scope:'full'},
   breadBur:{ar:'خبز بر',en:'Whole-wheat Bun',cat:'carb',kcal:176,p:8,f:2.8,c:32,scope:'full'},
   breadPotato:{ar:'خبز بطاطس',en:'Potato Bun',cat:'carb',kcal:210,p:5.6,f:6.3,c:33,scope:'full'},
   lettuceKeto:{ar:'خس كيتو',en:'Keto Lettuce Wrap',cat:'carb',kcal:10,p:0.8,f:0.2,c:1.2,scope:'full'},
@@ -365,113 +379,114 @@ const MEAL_CYCLE = [
  /* اليوم 1 — أحد تدريب */
  {slots:{
    b:[MI('oatStraw')],
-   l:[MI('tika',{dbl:1}),MI('riceYellow'),MI('sHot')],
-   pre:[MI('fruitCut'),MI('oj')],
-   d:[MI('salmon'),MI('potatoGrilled'),MI('green'),MI('sLemon')],
+   l:[MI('tika',{g:200}),MI('riceYellow'),MI('sHot')],
+   pre:[MI('fruitCut')],
+   d:[MI('steakBeef',{g:150}),MI('potatoGrilled'),MI('green'),MI('sRanch')],
    x:[MI('oatChoc')]
- }, why:'يوم دفع: كارب حول التمرين، بروتين مضاعف بالغداء، عشاء خفيف الدسم.'},
+ }, why:'يوم دفع: دجاج تكا 200غ حول التمرين + ستيك بيف 150غ مساءً — دجاجة ولحمة كل يوم.'},
  /* اليوم 2 — اثنين تدريب */
  {slots:{
    b:[MI('oatDate')],
-   l:[MI('kotshi',{dbl:1}),MI('pastaRed'),MI('sTFM')],
+   l:[MI('kotshi',{g:200}),MI('pastaRed'),MI('sTFM')],
    pre:[MI('fruitCold')],
-   d:[MI('steakBeef'),MI('potatoMash'),MI('green'),MI('sRanch')],
+   d:[MI('mongolianBeef',{g:150}),MI('green'),MI('sPom')],
    x:[MI('nuts')]
- }, why:'يوم سحب: مكرونة قبل التمرين بساعتين تدعم الأداء، وستيك مسائي عالي البروتين.'},
+ }, why:'يوم سحب: مكرونة قبل التمرين تدعم الأداء، ومنقولين بيف 150غ عشاء خفيف الكارب.'},
  /* اليوم 3 — ثلاثاء تدريب (أرجل) */
  {slots:{
    b:[MI('oatPB')],
-   l:[MI('masala',{dbl:1}),MI('riceKabsa')],
+   l:[MI('masala',{g:150}),MI('riceKabsa')],
    pre:[MI('oj'),MI('fruitCut')],
-   d:[MI('fishFillet'),MI('fitTwo'),MI('green'),MI('sTahini')],
+   d:[MI('meatballs',{g:150}),MI('fitTwo'),MI('green'),MI('sTahini')],
    x:[MI('oatChoc')]
- }, why:'يوم الأرجل الأعلى جهداً: أعلى كارب غداءً، وعشاء خفيف سهل الهضم.'},
+ }, why:'يوم الأرجل الأعلى جهداً: أعلى سعرات الأسبوع — ماسالا 150غ + كرات لحم 150غ.'},
  /* اليوم 4 — أربعاء تدريب (ذراعين) */
  {slots:{
    b:[MI('oatStraw')],
-   l:[MI('fajitaCh',{dbl:1}),MI('riceYellow'),MI('sHot')],
+   l:[MI('fajitaCh',{g:200}),MI('riceYellow'),MI('sHot')],
    pre:[MI('fruitCold')],
-   d:[MI('mongolianBeef'),MI('potatoGrilled'),MI('caesar'),MI('sPom')],
+   d:[MI('chiliBeef',{g:150}),MI('potatoGrilled'),MI('green'),MI('sPom')],
    x:[MI('nuts')]
- }, why:'يوم الذراعين: توزيع متوازن، بروتين مرتفع في الوجبتين.'},
+ }, why:'يوم الذراعين: فاهيتا دجاج 200غ + تشيلي بيف 150غ — بروتين مرتفع في الوجبتين.'},
  /* اليوم 5 — خميس تدريب */
  {slots:{
    b:[MI('oatPist')],
-   l:[MI('mashwi',{dbl:1}),MI('riceKabsa'),MI('sTFM')],
+   l:[MI('mashwi',{g:200}),MI('riceKabsa'),MI('sTFM')],
    pre:[MI('oj'),MI('fruitCut')],
-   d:[MI('molokh'),MI('riceWhite'),MI('sLemon')],
+   d:[MI('steakDeBeef',{g:150}),MI('fitOne'),MI('sLemon')],
    x:[MI('oatChoc')]
- }, why:'إغلاق أسبوع التدريب: مشوي دبل خفيف الدهون + ملوخية غنية بالبروتين.'},
+ }, why:'إغلاق أسبوع التدريب: مشوي 200غ أخف دهون بالمنيو + ستيك دي بيف مع خضار مشوية.'},
  /* اليوم 6 — جمعة راحة (مرنة/اجتماعية) */
  {slots:{
    b:[MI('oatStraw')],
    l:[MI('shawarma'),MI('green'),MI('sHot')],
-   d:[MI('mashwi',{dbl:1}),MI('riceWhite'),MI('sTFM')],
+   pre:[MI('fruitCold')],
+   d:[MI('mongolianBeef',{g:200}),MI('fitZero'),MI('sTFM')],
    x:[MI('oatChoc')]
- }, why:'الجمعة الاجتماعية: شاورما من نفس المطعم بدل وجبة عشوائية، مع تعويض البروتين مساءً.'},
+ }, why:'الجمعة الاجتماعية: شاورما دجاج (حصة المنيو) + منقولين بيف 200غ عشاء دسم بدون أرز.'},
  /* اليوم 7 — سبت راحة */
  {slots:{
    b:[MI('oatFruit')],
-   l:[MI('asian',{dbl:1}),MI('riceYellow'),MI('sHot')],
+   l:[MI('mashwi',{g:150}),MI('riceWhite'),MI('sLemon')],
    pre:[MI('fruitCut')],
-   d:[MI('sultana'),MI('fitZero')],
+   d:[MI('steakBeef',{g:150}),MI('fitZero'),MI('green'),MI('sVin')],
    x:[MI('oatDate')]
- }, why:'راحة: كارب أقل مساءً (سلطة لو كارب) مع بقاء البروتين مرتفعاً.'},
+ }, why:'راحة خفيفة: مشوي 150غ ظهراً وستيك بيف 150غ مساءً مع خضار — كارب أقل.'},
  /* اليوم 8 — أحد تدريب */
  {slots:{
    b:[MI('oatDate')],
-   l:[MI('dragon',{dbl:1}),MI('riceYellow')],
-   pre:[MI('fruitCold'),MI('oj')],
-   d:[MI('steakDeBeef'),MI('potatoMash'),MI('green'),MI('sRanch')],
+   l:[MI('dragon',{g:200}),MI('riceYellow')],
+   pre:[MI('fruitCold')],
+   d:[MI('steakDeBeef',{g:150}),MI('potatoMash'),MI('green'),MI('sRanch')],
    x:[MI('nuts')]
- }, why:'تنويع الأسبوع الثاني مع نفس البنية الناجحة.'},
+ }, why:'أسبوع جديد بنفس البنية: دراقون 200غ + ستيك دي بيف مع مهروسة البطاطس.'},
  /* اليوم 9 — اثنين تدريب */
  {slots:{
    b:[MI('oatStraw')],
-   l:[MI('mongolianCh',{dbl:1}),MI('pastaWhite')],
-   pre:[MI('fruitCut'),MI('oj')],
-   d:[MI('fishFillet'),MI('fitTwo'),MI('caesar'),MI('sLemon')],
+   l:[MI('mongolianCh',{g:200}),MI('pastaWhite')],
+   pre:[MI('fruitCut')],
+   d:[MI('steakBeef',{g:150}),MI('fitTwo'),MI('green'),MI('sLemon')],
    x:[MI('oatChoc')]
- }, why:'باستا حول التمرين + عشاء سمك خفيف مع سيزر غنية بالبروتين.'},
+ }, why:'منقولين دجاج 200غ مع باستا حول التمرين + ستيك بيف عشاء لو كارب.'},
  /* اليوم 10 — ثلاثاء تدريب (أرجل) */
  {slots:{
    b:[MI('oatPB')],
-   l:[MI('curry',{dbl:1}),MI('riceWhite')],
+   l:[MI('curry',{g:150}),MI('riceWhite')],
    pre:[MI('oj'),MI('fruitCut')],
-   d:[MI('meatballs'),MI('potatoGrilled'),MI('green'),MI('sHot')],
+   d:[MI('meatballs',{g:125}),MI('potatoGrilled'),MI('green'),MI('sHot')],
    x:[MI('oatChoc')]
- }, why:'أعلى سعرات الأسبوع في يوم الأرجل — حيث تحتاجها.'},
+ }, why:'يوم الأرجل: كاري 150غ + كرات لحم 125غ مع بطاطس — وقود كافٍ للجلسة الأثقل.'},
  /* اليوم 11 — أربعاء تدريب (ذراعين) */
  {slots:{
    b:[MI('oatStraw')],
-   l:[MI('samurai',{dbl:1}),MI('riceKabsa')],
-   pre:[MI('fruitCold'),MI('oj')],
-   d:[MI('salmon'),MI('fitOne'),MI('green'),MI('sTartar')],
+   l:[MI('samurai',{g:200}),MI('riceKabsa')],
+   pre:[MI('fruitCold')],
+   d:[MI('chiliBeef',{g:150}),MI('fitOne'),MI('green'),MI('sTartar')],
    x:[MI('oatChoc')]
- }, why:'سالمون غني بأوميقا-3 مع خضار مشوية — عشاء خفيف عالي الجودة.'},
+ }, why:'ساموراي 200غ + تشيلي بيف 150غ مع خضار مشوية — عشاء خفيف عالي الجودة.'},
  /* اليوم 12 — خميس تدريب */
  {slots:{
    b:[MI('oatPist')],
-   l:[MI('mushCh',{dbl:1}),MI('pastaRed')],
+   l:[MI('mushCh',{g:200}),MI('pastaRed')],
    pre:[MI('oj'),MI('fruitCut')],
-   d:[MI('chichawi'),MI('shrimpG'),MI('sLemon')],
+   d:[MI('mongolianBeef',{g:125}),MI('fitZero'),MI('sLemon')],
    x:[MI('oatChoc')]
- }, why:'عشاء سلطة لو كارب + روبيان مشوي: بروتين عالٍ وسعرات منخفضة.'},
+ }, why:'دجاج الفطر 200غ مع مكرونة حمراء + منقولين بيف 125غ عشاء منخفض الكارب.'},
  /* اليوم 13 — جمعة راحة (يوم الرفيه) */
  {slots:{
    b:[MI('fruitCold')],
    l:[MI('fettCh'),MI('green')],
-   d:[MI('mashwi',{dbl:1}),MI('fitZero'),MI('sTFM')],
+   d:[MI('steakBeef',{g:200}),MI('fitZero'),MI('sTFM')],
    x:[MI('oatFruit')]
- }, why:'فيتوشيني الدجاج وجبة الرفيه المحسوبة — نفس المطعم، لا خروج عن الخطة.'},
+ }, why:'فيتوشيني الدجاج وجبة الرفيه المحسوبة + ستيك بيف 200غ مساءً يرفع بروتين اليوم.'},
  /* اليوم 14 — سبت راحة */
  {slots:{
    b:[MI('oatFruit')],
-   l:[MI('chickenWrap'),MI('caesar'),MI('sTahini')],
-   pre:[MI('fruitCut'),MI('oj')],
-   d:[MI('shrimpawi'),MI('shrimpG')],
+   l:[MI('bbqCh',{g:150}),MI('fitOne'),MI('sHot')],
+   pre:[MI('fruitCut')],
+   d:[MI('meatballs',{g:150}),MI('fitTres'),MI('green'),MI('sPom')],
    x:[MI('oatDate')]
- }, why:'يوم خفيف سهل: راب + سلطات بروتينية، استعداد لبداية أسبوع جديد.'}
+ }, why:'سبت خفيف لو كارب: باربكيو دجاج 150غ + كرات لحم 150غ مع بدائل الأرز الخضراء.'}
 ];
 const SLOT_AR = {b:'الفطور',l:'الغداء',pre:'قبل التمرين',d:'العشاء',x:'سناك مرن (عند الجوع)'};
 const SLOT_ORDER = ['b','l','pre','d','x'];
@@ -726,7 +741,9 @@ function calcTargets(p){
 /* حساب ماكروز وجبات يوم */
 function mealItemMacros(mi){
   const m=MENU[mi.id]; if(!m) return {kcal:0,p:0,f:0,c:0,ar:'?'};
-  const mult=mi.dbl?2:1;
+  /* حصة البروتين القياسية في المنيو = 100 جرام (مثبتة في بطاقة البامية «100ق دجاج»
+     ومطابقة لقيم صدر الدجاج المشوي القياسية) — mi.g يحدد الوزن المطلوب بالجرام */
+  const mult = (mi.g && m.scope==='protein') ? mi.g/100 : (mi.dbl?2:1);
   return {kcal:m.kcal*mult, p:m.p*mult, f:m.f*mult, c:m.c*mult};
 }
 function dayMealTotals(mealDay, includeFlex){
@@ -1007,18 +1024,18 @@ function renderToday(){
   const dayName=DAY_AR[new Date(todayStr+'T00:00:00').getDay()===0?0:new Date(todayStr+'T00:00:00').getDay()];
   let html='';
   const comp=!gap? S.comps[i]:null;
-  html+=`<div class="card" style="background:linear-gradient(150deg,#17181b,#2b2d31);color:#fff;border:0">
+  html+=`<div class="card" style="background:linear-gradient(150deg,#181b14,#0f110c);color:#fff;border:1px solid rgba(200,241,53,.28)">
     <span class="en-tag" style="color:#9aa0a8">${gap?'EXTRA REST':esc(w.en||'GET MOVING')}</span>
     <h2 style="color:#fff;font-size:22px;margin-top:2px">${gap? 'يوم مؤجل — راحة إضافية' : d.dayName+' — يوم '+d.idx+' من 28'}</h2>
     <div style="color:#c8ccd2;font-size:13px">${fmtDateAr(todayStr)} • ${esc(d.phase.name)}${totalShift()?` • الخطة ممتدة حتى ${fmtDateAr(effDate(27))}`:''}</div>
     <div class="btnrow">
-      ${isTrainToday? `<button class="btn big" style="background:#fff;color:#111" onclick="startSession(${i})">${wDone?'🔁 إعادة فتح التمرين':'▶️ ابدأ التمرين'}</button>`
+      ${isTrainToday? `<button class="btn big" style="background:var(--volt);color:var(--voltink)" onclick="startSession(${i})">${wDone?'🔁 إعادة فتح التمرين':'▶️ ابدأ التمرين'}</button>`
         : gap? `<div class="note" style="background:rgba(255,255,255,.08);color:#dfe2e6">أجّلت التمرين — اليوم راحة، وتمرين «${esc(w.title)}» ينتظرك ${fmtDateAr(effDate(i))}. حافظ على خطواتك ووجباتك.</div>${S.lastPostpone!=null?`<button class="btn small" style="background:rgba(255,255,255,.14);color:#fff" onclick="undoPostpone()">↩️ تراجع عن التأجيل (أرجع تمرين اليوم)</button>`:''}`
         : cancelled? `<div class="note" style="background:rgba(255,255,255,.08);color:#f3c6c3">هذا اليوم ملغى — التعويض مضاف للجلسة المناسبة القادمة.</div>`
         : `<div class="note" style="background:rgba(255,255,255,.08);color:#dfe2e6">اليوم ${d.workout==='restActive'?'راحة نشطة: '+esc(WORKOUTS.restActive.cardio.note):'راحة كاملة — نوم جيد وماء كافٍ.'}</div>`}
     </div>
     ${!gap&&!wDone? dayManageHTML(i,true):''}
-    ${comp? `<div class="note" style="background:rgba(126,226,168,.12);color:#7ee2a8">💪 هذه الجلسة فيها سيتات تعويض عن يوم «${esc(WORKOUTS[comp.workout].title)}» الملغى (+1 سيت على أول 3 تمارين).</div>`:''}
+    ${comp? `<div class="note" style="background:rgba(200,241,53,.12);color:var(--volt)">💪 هذه الجلسة فيها سيتات تعويض عن يوم «${esc(WORKOUTS[comp.workout].title)}» الملغى (+1 سيت على أول 3 تمارين).</div>`:''}
     ${before? `<div class="note" style="background:rgba(255,255,255,.08);color:#ffd9a8">الخطة تبدأ الأحد ${fmtDateAr(PLAN_START)} — استعرضها اليوم وجهز اشتراك الوجبات.</div>`:''}
   </div>`;
 
@@ -1100,13 +1117,17 @@ function mealsChecklistHTML(i, d, mlog, compact){
     items.forEach((mi,ix)=>{
       const m=MENU[mi.id]; const mm=mealItemMacros(mi); const key=slot+'_'+ix;
       const st=mlog[key];
+      const wLabel = (mi.g && m.scope==='protein') ? mi.g+' جرام'
+        : (m.cat==='carb' && m.gEst) ? 'حصة المنيو ≈'+m.gEst+'غ'
+        : (m.cat==='carb'||m.cat==='lowcarb') ? 'حصة المنيو'
+        : (m.scope==='full') ? 'حصة المنيو' : '100 جرام';
       h+=`<div class="meal"><div class="mt">
         <div style="flex:1">
-          <b>${esc(m.ar)}${mi.dbl?' <span class="chip warn">بروتين إضافي ×2</span>':''}</b>
+          <b>${esc(m.ar)} <span class="mtag w">⚖️ ${wLabel}</span></b>
           ${m.spicy?'<span class="chip spicy">حار 🌶️</span>':''}${m.milk?'<span class="chip">حليب</span>':''}${m.soy?'<span class="chip">صويا</span>':''}${m.sesame?'<span class="chip">سمسم</span>':''}
-          <div class="macro"><span class="mtag">${r0(mm.kcal)} kcal</span><span class="mtag">P ${r0(mm.p)}</span><span class="mtag">C ${r0(mm.c)}</span><span class="mtag">F ${r1(mm.f)}</span>${m.price?`<span class="mtag">${m.price*(mi.dbl?1:1)} ر.س</span>`:''}</div>
+          <div class="macro"><span class="mtag">${r0(mm.kcal)} kcal</span><span class="mtag">P ${r0(mm.p)}</span><span class="mtag">C ${r0(mm.c)}</span><span class="mtag">F ${r1(mm.f)}</span>${m.price? `<span class="mtag">${(mi.g&&mi.g!==100)?'السعر حسب الوزن':m.price+' ر.س'}</span>`:''}</div>
           ${m.note?`<div class="sub" style="margin-top:4px">${esc(m.note)}</div>`:''}
-          ${m.scope==='protein'&&(m.cat==='chicken'||m.cat==='beef'||m.cat==='seafood')?`<div class="sub" style="margin-top:2px">القيم للمصدر البروتيني — أضف جانب الكارب المذكور</div>`:''}
+          ${m.scope==='protein'&&(m.cat==='chicken'||m.cat==='beef')?`<div class="sub" style="margin-top:2px">القيم محسوبة على الوزن المذكور — اطلبه بالجرام مع الجانب المذكور</div>`:''}
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
           <button class="btn small ${st==='done'?'ok':''}" onclick="markMeal(${i},'${key}','done')">${st==='done'?'✓ أُكلت':'أكلتها'}</button>
@@ -1117,7 +1138,7 @@ function mealsChecklistHTML(i, d, mlog, compact){
   });
   const note=mlog._note||'';
   h+=`<label class="f">ماذا أكلت فعلياً (إن اختلف)؟</label><input type="text" value="${esc(note)}" onchange="dayMealLog(${i})._note=this.value;queueSave()" placeholder="مثال: بدلت العشاء بشيشاوي">`;
-  h+=`<div class="note">📦 طريقة الطلب: «الصوص على جنب» دائماً، و«بروتين إضافي» حيث مكتوب ×2. البدائل اللو كارب (فت زيرو/ون/تو) تُطلب بدل الأرز مباشرة.</div>`;
+  h+=`<div class="note">📦 طريقة الطلب: اذكر وزن البروتين بالجرام كما هو مكتوب (حصة المنيو القياسية = 100 جرام — مثبتة في بطاقات المنيو مثل البامية «100غ دجاج»). الصوص دائماً على جنب، وبدائل اللو كارب تُطلب بدل الأرز. أوزان الأرز/المكرونة تقديرية للحصة القياسية لأن المنيو ينشر القيم لا الجرامات.</div>`;
   return h;
 }
 function markMeal(i,key,st){
@@ -1131,7 +1152,7 @@ function swapMeal(i,key,curId){
     const m=MENU[k];
     if(k===curId) return false;
     if(cur.cat==='carb'||cur.cat==='lowcarb') return m.cat==='carb'||m.cat==='lowcarb';
-    if(cur.cat==='chicken'||cur.cat==='beef'||cur.cat==='seafood') return ['chicken','beef','seafood'].includes(m.cat);
+    if(cur.cat==='chicken'||cur.cat==='beef'||cur.cat==='seafood') return ['chicken','beef'].includes(m.cat); /* بدون بحري حسب طلبك */
     return m.cat===cur.cat;
   });
   let h=`<h3>بدّل «${esc(cur.ar)}» بصنف من نفس الفئة</h3><div style="max-height:50vh;overflow:auto">`;
@@ -1144,7 +1165,7 @@ function swapMeal(i,key,curId){
 }
 function applySwap(i,key,newId){
   const ml=dayMealLog(i);
-  ml[key]='swapped'; ml[key+'_to']=newId;
+  ml[key]='swapped'; ml[key+'_to']=newId; /* البديل يُطلب بنفس وزن الصنف الأصلي */
   const m=MENU[newId];
   ml._note=((ml._note||'')+' | بدلت إلى '+m.ar).slice(-160);
   dlg.close(); queueSave(); render(); toast('سُجل البديل: '+m.ar);
@@ -1216,7 +1237,7 @@ function renderMeals(){
   const ti=todayCal(); const lastCal=27+totalShift();
   let html=`<div class="card"><h2>🍽️ خطة الوجبات — وجبات اللياقة TFM</h2>
   <div class="sub">دورة تنويع 14 يوماً تتكرر مرتين • كل الأصناف من المنيو الرسمي بأسمائها الحرفية • القيم من بطاقات المنيو المطبوعة</div>
-  <div class="note">قاعدة الطلب الثابتة: الصوص على جنب • «بروتين إضافي» حيث علامة ×2 • بديل الأرز اللو كارب في أيام الراحة. الوجبات مثبتة على التاريخ حتى لو أجّلت تمريناً. عدّل أي صنف بزر «بدّل».</div>
+  <div class="note">كل يوم: وجبة دجاج + وجبة لحم (بدون بحري) بأوزان مكتوبة بالجرام — اطلب من المطعم بالوزن المذكور حرفياً. الصوص على جنب، وبدائل اللو كارب بدل الأرز في أيام الراحة. الوجبات مثبتة على التاريخ حتى لو أجّلت تمريناً. عدّل أي صنف بزر «بدّل».</div>
   <div class="wkband" style="margin-top:8px">`;
   for(let c=0;c<=lastCal;c++){
     const ds=calDate(c); const res=resolveCal(c);
@@ -1244,7 +1265,7 @@ function renderMeals(){
   ['chicken','beef','seafood','pasta','burger','wrap','salad','snack','drink','carb','lowcarb','sauce'].forEach(cat=>{
     const items=Object.keys(MENU).filter(k=>MENU[k].cat===cat);
     if(!items.length) return;
-    html+=`<h3 style="margin-top:12px">${CAT_AR[cat]}</h3><table class="mini"><tr><th>الصنف</th><th>kcal</th><th>P</th><th>C</th><th>F</th><th>ر.س</th></tr>`;
+    html+=`<h3 style="margin-top:12px">${CAT_AR[cat]}${cat==='seafood'?' <span class="chip warn">خارج خطتك — بدون بحري بطلبك</span>':''}</h3><table class="mini"><tr><th>الصنف</th><th>kcal</th><th>P</th><th>C</th><th>F</th><th>ر.س</th></tr>`;
     items.forEach(k=>{ const m=MENU[k];
       html+=`<tr><td>${esc(m.ar)}${m.lc?' <span class="chip ok">لو كارب</span>':''}${m.best?' ⭐':''}</td><td class="num">${m.kcal}</td><td class="num">${m.p}</td><td class="num">${m.c}</td><td class="num">${m.f}</td><td class="num">${m.price||'—'}</td></tr>`; });
     html+='</table>';
@@ -1396,9 +1417,9 @@ function sessionRender(restJustEnded){
 
   if(SES.phase==='rest'){
     const left=Math.max(0,Math.ceil((SES.restEndTs-Date.now())/1000));
-    h+=`<div class="center"><div class="sub" style="color:#7ee2a8;font-weight:800">استراحة — السيت القادم: ${SES.setI+1} من ${blkSets(SES.exI)}</div>
+    h+=`<div class="center"><div class="sub" style="color:#c8f135;font-weight:800">استراحة — السيت القادم: ${SES.setI+1} من ${blkSets(SES.exI)}</div>
     <div class="bigtimer" id="restLeft">${fmtMMSS(left)}</div>
-    <div class="progressbar" style="background:rgba(255,255,255,.12)"><i id="restBar" style="background:#7ee2a8;width:${r0(100*left/SES.restTotal)}%"></i></div>
+    <div class="progressbar" style="background:rgba(255,255,255,.12)"><i id="restBar" style="background:#c8f135;width:${r0(100*left/SES.restTotal)}%"></i></div>
     <div class="btnrow" style="justify-content:center">
       <button class="btn sbtn" onclick="adjRest(-15)">−15ث</button>
       <button class="btn sbtn" onclick="adjRest(15)">+15ث</button>
@@ -1406,7 +1427,7 @@ function sessionRender(restJustEnded){
     </div></div>`;
   } else {
     h+=`<div class="sub" style="color:#c8ccd2;margin-top:4px">السيت <b class="snum">${SES.setI+1}</b> من <b class="snum">${blkSets(SES.exI)}</b> • الهدف <b class="snum">${b.reps}</b> تكرار • راحة ${b.rest}ث • احتياطي RIR ${d.phase.rir}</div>
-    ${sg?`<div class="sub" style="color:#7ee2a8;margin-top:2px">وزن مقترح: <b class="snum">${sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi} كجم</b> — ${esc(sg.why)}</div>`:''}
+    ${sg?`<div class="sub" style="color:#c8f135;margin-top:2px">وزن مقترح: <b class="snum">${sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi} كجم</b> — ${esc(sg.why)}</div>`:''}
     <div class="sgrid" style="margin-top:10px">
       <div><label class="f">الوزن الفعلي (كجم)</label><input type="number" step="0.5" inputmode="decimal" id="inW" value="${sets[SES.setI]?.w ?? (sg? sg.lo:'')}"></div>
       <div><label class="f">التكرارات الفعلية</label><input type="number" inputmode="numeric" id="inR" value="${sets[SES.setI]?.r ?? ''}" placeholder="${b.reps}"></div>
@@ -1530,14 +1551,14 @@ function lineChart(data, unit, color){
   const Y=v=>H-P-(H-2*P)*((v-mn)/(mx-mn));
   const pts=data.map((d,i)=>X(i)+','+Y(d.y)).join(' ');
   let dots=data.map((d,i)=>`<circle cx="${X(i)}" cy="${Y(d.y)}" r="3.5" fill="${color}"/>`).join('');
-  let labels=data.map((d,i)=> (data.length<=10||i%Math.ceil(data.length/8)===0)? `<text x="${X(i)}" y="${H-6}" font-size="9" text-anchor="middle" fill="#8b9097">${d.x}</text>`:'').join('');
+  let labels=data.map((d,i)=> (data.length<=10||i%Math.ceil(data.length/8)===0)? `<text x="${X(i)}" y="${H-6}" font-size="9" text-anchor="middle" fill="#89907f">${d.x}</text>`:'').join('');
   return `<svg class="chart" viewBox="0 0 ${W} ${H}">
-    <text x="4" y="${Y(mx)+4}" font-size="10" fill="#8b9097">${r1(mx)}</text>
-    <text x="4" y="${Y(mn)+4}" font-size="10" fill="#8b9097">${r1(mn)}</text>
-    <line x1="${P}" y1="${Y(mn)}" x2="${W-P}" y2="${Y(mn)}" stroke="#e3e5e9"/>
+    <text x="4" y="${Y(mx)+4}" font-size="10" fill="#89907f">${r1(mx)}</text>
+    <text x="4" y="${Y(mn)+4}" font-size="10" fill="#89907f">${r1(mn)}</text>
+    <line x1="${P}" y1="${Y(mn)}" x2="${W-P}" y2="${Y(mn)}" stroke="#2a2e26"/>
     <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round"/>
     ${dots}${labels}
-    <text x="${W-4}" y="12" font-size="10" text-anchor="end" fill="#8b9097">${unit}</text>
+    <text x="${W-4}" y="12" font-size="10" text-anchor="end" fill="#89907f">${unit}</text>
   </svg>`;
 }
 function weekAvgWeights(){
@@ -1566,16 +1587,16 @@ function progressHTML(){
   const waistData=S.waists.map(x=>({x:x.date.slice(8,10)+'/'+x.date.slice(5,7), y:x.cm}));
   const bfData=S.bodyFats.map(x=>({x:x.date.slice(8,10)+'/'+x.date.slice(5,7), y:x.pct}));
   let h=`<div class="card"><h2>📈 التقدم</h2>
-  <h3>وزن الجسم (كجم)</h3><div class="chartbox">${lineChart(wData,'kg','#17181b')}</div>
+  <h3>وزن الجسم (كجم)</h3><div class="chartbox">${lineChart(wData,'kg','#c8f135')}</div>
   ${wa.length?`<div class="grid4" style="margin-top:8px">${wa.map(x=>`<div class="tile"><div class="v">${x.avg}</div><div class="l">متوسط أسبوع ${x.week} (${x.n} قياس)</div></div>`).join('')}</div>`:''}
   <div class="note">قِس صباحاً بعد الحمام وقبل الأكل. احكم على الاتجاه بمتوسط الأسبوع، وتجاهل تذبذب اليوم الواحد.</div>
-  <h3 style="margin-top:14px">محيط الخصر (سم)</h3><div class="chartbox">${lineChart(waistData,'cm','#b45309')}</div>
+  <h3 style="margin-top:14px">محيط الخصر (سم)</h3><div class="chartbox">${lineChart(waistData,'cm','#ffb454')}</div>
   <div class="inrow" style="margin-top:8px">
     <div><label class="f">قياس خصر جديد (سم)</label><input type="number" step="0.5" id="waistIn" placeholder="عند السرة"></div>
     <div><label class="f">نسبة دهون (من InBody عند إعادة الفحص)</label><input type="number" step="0.1" id="bfIn" placeholder="%"></div>
   </div>
   <div class="btnrow"><button class="btn primary" onclick="addMeasure()">إضافة القياسات</button></div>
-  ${bfData.length?`<h3 style="margin-top:14px">نسبة الدهون %</h3><div class="chartbox">${lineChart(bfData,'%','#178a4c')}</div>`:''}
+  ${bfData.length?`<h3 style="margin-top:14px">نسبة الدهون %</h3><div class="chartbox">${lineChart(bfData,'%','#7dd3fc')}</div>`:''}
   <h3 style="margin-top:14px">الالتزام الأسبوعي</h3>`;
   for(let w=1;w<=4;w++){ const a=weekAdherence(w);
     const cN=PLAN.filter(d=>d.week===w&&isCancelled(d.idx-1)).length;
@@ -1760,7 +1781,7 @@ function sourcesHTML(){
     <li>البروتين: ~2.0 غ/كجم يومياً (النطاق الفعال 1.6-2.4 خلال العجز).</li>
     <li>حجم التدريب: ~10-16 سيت أسبوعياً للعضلات الرئيسية مع زيادة موجهة للذراعين، بجهد 1-4 تكرارات احتياطي (RIR) وتقدم مزدوج (تكرارات ثم وزن).</li>
     <li>الكارديو: Zone 2 بعد الحديد + هدف خطوات يومي، وفواصل قصيرة اختيارية من الأسبوع الثالث.</li>
-    <li>قيم الوجبات: منقولة حرفياً من بطاقات منيو «وجبات اللياقة TFM» (سُحبت 01/08/2026). وجبات البروتين قيمها للمصدر البروتيني فقط والكارب يُضاف من جدول المصادر — وهذا مطابق لطريقة عرض المطعم نفسه.</li>
+    <li>قيم الوجبات: منقولة حرفياً من بطاقات منيو «وجبات اللياقة TFM» (سُحبت 01/08/2026). حصة البروتين القياسية = 100 جرام (مثبتة في بطاقة البامية ومطابقة لقيم صدر الدجاج المشوي)، وكل وجبة في الخطة مذكور وزنها بالجرام والقيم مضروبة على الوزن. أوزان جوانب الكارب تقديرية للحصة القياسية. بناء على طلبك: كل يوم وجبة دجاج + وجبة لحم، وبدون مأكولات بحرية نهائياً.</li>
     <li>توقع 4 أسابيع (لوزن بداية ~80 كجم): خسارة دهون متوقعة 2-3 كجم + نزول ماء/جلايكوجين 1-1.5 كجم أول أسبوعين → نزول ميزان واقعي 3-4.5 كجم. الوصول لـ 6 كجم ممكن لكنه سقف طموح يتطلب التزاماً كاملاً — وليس مطلوباً لنجاح الخطة. الحفاظ على العضلات (وربما زيادة بسيطة) متوقع مع البروتين والتمرين المنتظم.</li>
   </ul>
   <h3>مراجع علمية</h3>
@@ -1799,7 +1820,7 @@ function onboardingHTML(){
     <div><label class="f">الطول (سم)</label><input type="number" id="obH" value="${p.heightCm}"></div>
     <div><label class="f">العمر</label><input type="number" id="obA" value="${p.age}"></div>
   </div>
-  <div class="note">الخطة تبدأ الأحد ${fmtDateAr(PLAN_START)}: تدريب الأحد-الخميس (٥ أيام)، راحة الجمعة والسبت. اشترك في باقة «وجبات اللياقة» اليومية: وجبتان رئيسيتان + ٢-٣ سناك + عصير.</div>
+  <div class="note">الخطة تبدأ الأحد ${fmtDateAr(PLAN_START)}: تدريب الأحد-الخميس (٥ أيام)، راحة الجمعة والسبت. وجباتك محسوبة بالجرام: كل يوم وجبة دجاج ووجبة لحم (بدون بحري) بالأوزان المكتوبة — المطعم يجهزها بالوزن الذي تطلبه.</div>
   <div class="btnrow"><button class="btn primary big" onclick="finishOnboarding()">اعتمد وابدأ 🚀</button></div>`;
 }
 function finishOnboarding(){
