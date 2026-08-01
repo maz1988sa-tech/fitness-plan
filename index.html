@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0c09">
-<title>خطة مهند — 4 أسابيع | BUILD YOUR BEST SELF</title>
+<title>Mohanad 4-Week Plan | BUILD YOUR BEST SELF</title>
 <style>
 /* ===== Theme: IRONCORE dark + volt green — from reference image ===== */
 :root{
@@ -12,7 +12,10 @@
   --line:#272b23; --soft:#1e211b; --dark:#c8f135; --dark2:#20241d;
   --volt:#c8f135; --voltink:#10130a; --voltdim:#8fae26;
   --ok:#c8f135; --okbg:#222a12; --warn:#ffb454; --warnbg:#2a2113; --bad:#ff6f61; --badbg:#2b1512;
-  --acc:#c8f135; --r:18px; --shadow:0 12px 30px rgba(0,0,0,.5);
+  --acc:#c8f135; --accink:#10130a; --r:18px; --shadow:0 12px 30px rgba(0,0,0,.5);
+  --sesink:#ffffff; --sesink2:#aeb2a4; --sesink3:#8b9097; --sesline:rgba(255,255,255,.07);
+  --herobg1:#181b14; --herobg2:#0f110c; --heroline:rgba(200,241,53,.28); --heroink:#c8ccd2; --heronote:rgba(255,255,255,.08); --heronoteink:#dfe2e6;
+  --chartaxis:#2a2e26; --charttxt:#89907f;
   --font:'SF Arabic','Segoe UI','Helvetica Neue',Tahoma,'Noto Naskh Arabic UI',sans-serif;
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
@@ -46,7 +49,7 @@ header.top{display:flex; align-items:center; justify-content:space-between; padd
 .brand{display:flex; flex-direction:column; gap:2px}
 .brand b{font-size:19px; font-weight:900; color:var(--ink)}
 .savebox{display:flex; align-items:center; gap:8px}
-.savedot{font-size:11px; color:var(--ink2); text-align:left; direction:ltr}
+.savedot{font-size:11px; color:var(--ink2); direction:ltr}
 /* ===== Cards ===== */
 .card{background:var(--card); border-radius:var(--r); box-shadow:var(--shadow); padding:16px; margin:12px 0; border:1px solid var(--line)}
 .card.flat{box-shadow:none; border:1px solid var(--line)}
@@ -113,9 +116,9 @@ nav.tabs button.active::after{content:""; width:18px; height:3px; border-radius:
 .done-x{color:var(--volt); font-weight:900}
 /* ===== Tables ===== */
 table.mini{width:100%; border-collapse:collapse; font-size:13px}
-table.mini th{font-size:11.5px; color:var(--ink2); font-weight:800; padding:5px 6px; border-bottom:1px solid var(--line); text-align:right}
-table.mini td{padding:6px; border-bottom:1px solid var(--soft); text-align:right; color:var(--ink)}
-table.mini td.num{direction:ltr; text-align:left; font-weight:700; color:var(--ink)}
+table.mini th{font-size:11.5px; color:var(--ink2); font-weight:800; padding:5px 6px; border-bottom:1px solid var(--line); text-align:start}
+table.mini td{padding:6px; border-bottom:1px solid var(--soft); text-align:start; color:var(--ink)}
+table.mini td.num{direction:ltr; text-align:start; font-weight:700; color:var(--ink)}
 /* ===== Inputs ===== */
 input[type=number],input[type=text],input[type=date],select,textarea{
   width:100%; font-family:inherit; font-size:15px; padding:10px 12px; border:1.5px solid var(--line);
@@ -144,9 +147,9 @@ label.f{display:block; font-size:12.5px; font-weight:800; color:var(--ink2); mar
 }
 #sessionOverlay.on{display:flex}
 #sessionOverlay .shead{display:flex; justify-content:space-between; align-items:center; gap:8px}
-#sessionOverlay .stime{direction:ltr; font-weight:900; font-size:15px; color:var(--volt)}
+#sessionOverlay .stime{direction:ltr; font-weight:900; font-size:15px; color:var(--acc)}
 .scard{background:rgba(255,255,255,.05); border:1px solid rgba(200,241,53,.16); border-radius:16px; padding:14px; margin:10px 0}
-.scard h3{color:#fff}
+.scard h3{color:var(--sesink)}
 .snum{direction:ltr; font-weight:900}
 .bigtimer{
   text-align:center; font-weight:900; font-size:64px; direction:ltr; letter-spacing:2px; line-height:1;
@@ -208,6 +211,55 @@ dialog::backdrop{background:rgba(5,6,4,.65); backdrop-filter:blur(3px)}
 }
 .toast.on{opacity:1}
 .offlinebanner{background:var(--warnbg); color:var(--warn); font-size:12.5px; font-weight:700; border-radius:12px; padding:8px 12px; margin:8px 0; display:none}
+
+/* ===== Light "morning" theme: white + energetic light blue ===== */
+html[data-theme='light'] body{background:var(--bg1)}
+html[data-theme='light']{
+  --bg1:#eef2f7; --bg2:#f7f9fc; --card:#ffffff; --card2:#f6f9fc; --ink:#12233a; --ink2:#5b6b7e;
+  --line:#dde5ee; --soft:#eaf1f8; --dark:#1e9bff; --dark2:#e3edf7;
+  --volt:#1e9bff; --voltink:#ffffff; --voltdim:#1478c8;
+  --ok:#1e9bff; --okbg:#e3f1ff; --warn:#b45309; --warnbg:#fdf1e0; --bad:#c0392b; --badbg:#fdecea;
+  --acc:#1e9bff; --accink:#ffffff; --shadow:0 10px 26px rgba(30,80,140,.12);
+  --sesink:#12233a; --sesink2:#5b6b7e; --sesink3:#7b8a9c; --sesline:rgba(18,35,58,.08);
+  --herobg1:#ffffff; --herobg2:#f2f7fd; --heroline:rgba(30,155,255,.35); --heroink:#5b6b7e; --heronote:rgba(30,155,255,.08); --heronoteink:#31577e;
+  --chartaxis:#dde5ee; --charttxt:#7b8a9c;
+}
+html[data-theme='light'] body::before{
+  background:
+    radial-gradient(600px 300px at 85% -5%, rgba(30,155,255,.10), transparent 60%),
+    radial-gradient(500px 320px at -10% 30%, rgba(30,155,255,.06), transparent 60%),
+    linear-gradient(165deg,var(--bg2),var(--bg1) 60%);
+}
+html[data-theme='light'] .display .ghost{color:var(--acc); text-shadow:0 0 24px rgba(30,155,255,.3)}
+html[data-theme='light'] nav.tabs{background:rgba(255,255,255,.92)}
+html[data-theme='light'] #sessionOverlay{
+  background:
+    radial-gradient(500px 260px at 90% -4%, rgba(30,155,255,.10), transparent 60%),
+    linear-gradient(165deg,#f4f8fd,#e9f0f8 60%);
+  color:var(--ink);
+}
+html[data-theme='light'] .scard{background:#ffffff; border:1px solid rgba(30,155,255,.22); box-shadow:0 8px 22px rgba(30,80,140,.08)}
+html[data-theme='light'] .scard h3{color:var(--ink)}
+html[data-theme='light'] #sessionOverlay input{background:#fff; border-color:var(--line); color:var(--ink)}
+html[data-theme='light'] .sbtn{background:#eaf1f8; color:var(--ink); border:1px solid var(--line)}
+html[data-theme='light'] .sbtn.primary{background:var(--acc); color:#fff; border-color:var(--acc)}
+html[data-theme='light'] .setdots i{background:rgba(18,35,58,.15)}
+html[data-theme='light'] .resting .bigtimer{color:var(--acc); text-shadow:0 0 24px rgba(30,155,255,.35)}
+html[data-theme='light'] input,html[data-theme='light'] select,html[data-theme='light'] textarea{color-scheme:light}
+html[data-theme='light'] .chip.spicy{background:#fdecea;color:#c0392b}
+html[data-theme='light'] .exrow.open{border-color:rgba(30,155,255,.4)}
+html[data-theme='light'] .btn.primary{box-shadow:0 8px 22px rgba(30,155,255,.28)}
+html[data-theme='light'] .dayb.today{box-shadow:0 0 14px rgba(30,155,255,.25)}
+html[data-theme='light'] .toast{box-shadow:0 10px 28px rgba(30,155,255,.3)}
+html[data-theme='light'] .restdone{animation:pulseL .6s ease 4}
+@keyframes pulseL{0%,100%{background:rgba(30,155,255,.06)}50%{background:rgba(30,155,255,.3)}}
+/* hero card follows theme */
+.hero{background:linear-gradient(150deg,var(--herobg1),var(--herobg2)); color:var(--ink); border:1px solid var(--heroline) !important}
+.hero h2{color:var(--ink)}
+.hero .hsub{color:var(--heroink); font-size:13px}
+.hero .note{background:var(--heronote); color:var(--heronoteink); border-color:transparent}
+.hero .en-tag{color:var(--acc)}
+
 @media print{nav.tabs,#startFab{display:none}}
 </style>
 </head>
@@ -215,16 +267,18 @@ dialog::backdrop{background:rgba(5,6,4,.65); backdrop-filter:blur(3px)}
 <div id="app">
   <header class="top">
     <div class="brand">
-      <span class="en-tag">GET MOVING</span>
-      <b>خطة مهند — ٤ أسابيع</b>
+      <span class="en-tag" id="brandTag">BUILD YOUR BEST SELF</span>
+      <b id="brandTitle">Mohanad — 4-Week Plan</b>
       <span class="savedot" id="savedAt">—</span>
     </div>
     <div class="savebox">
-      <button class="btn small" id="btnManualSave">حفظ</button>
+      <button class="btn small" id="btnTheme" title="Light / Dark">☀️</button>
+      <button class="btn small" id="btnLang">عربي</button>
+      <button class="btn small" id="btnManualSave">Save</button>
     </div>
   </header>
 
-  <div class="offlinebanner" id="storageWarn">⚠️ التخزين المحلي غير متاح في هذا العرض (وضع معاينة). افتح الملف مباشرة في متصفحك حتى تُحفظ بياناتك.</div>
+  <div class="offlinebanner" id="storageWarn">⚠️ Local storage unavailable in this preview — open the file in your browser so data can be saved.</div>
 
   <!-- ============ TODAY ============ -->
   <section class="view" id="v-today"></section>
@@ -241,14 +295,8 @@ dialog::backdrop{background:rgba(5,6,4,.65); backdrop-filter:blur(3px)}
   <!-- ============ MORE (progress / check-in / settings / sources) ============ -->
   <section class="view" id="v-more">
     <div class="card">
-      <h2>المزيد</h2>
-      <div class="grid2">
-        <button class="btn" data-go="progress">📈 التقدم</button>
-        <button class="btn" data-go="checkin">📝 التشيك-إن الأسبوعي</button>
-        <button class="btn" onclick="showView('lib')">🏋️ مكتبة التمارين</button>
-        <button class="btn" data-go="settings">⚙️ الإعدادات والبيانات</button>
-        <button class="btn" data-go="sources">📚 المصادر والمنهجية</button>
-      </div>
+      <h2 id="moreTitle">More</h2>
+      <div class="grid2" id="moreGrid"></div>
     </div>
     <div id="moreBody"></div>
   </section>
@@ -266,11 +314,11 @@ dialog::backdrop{background:rgba(5,6,4,.65); backdrop-filter:blur(3px)}
 <dialog id="dlg"><div class="dlgin" id="dlgBody"></div></dialog>
 
 <nav class="tabs" id="tabs">
-  <button data-view="today" class="active"><span class="ic">🏠</span>اليوم</button>
-  <button data-view="workout" id="tabWorkout"><span class="ic">🏋️</span>التمرين</button>
-  <button data-view="plan"><span class="ic">📅</span>الخطة</button>
-  <button data-view="meals"><span class="ic">🍽️</span>الوجبات</button>
-  <button data-view="more"><span class="ic">☰</span>المزيد</button>
+  <button data-view="today" class="active"><span class="ic">🏠</span><span class="lbl">Today</span></button>
+  <button data-view="workout" id="tabWorkout"><span class="ic">🏋️</span><span class="lbl">Workout</span></button>
+  <button data-view="plan"><span class="ic">📅</span><span class="lbl">Plan</span></button>
+  <button data-view="meals"><span class="ic">🍽️</span><span class="lbl">Meals</span></button>
+  <button data-view="more"><span class="ic">☰</span><span class="lbl">More</span></button>
 </nav>
 <script>
 /* =====================================================================
@@ -296,7 +344,7 @@ const MENU = {
   curry:{ar:'دجاج فت كاري',en:'Fit Curry Chicken',cat:'chicken',price:26,kcal:226,p:39,f:6,c:4,scope:'protein',milk:1,spicy:1},
   mushCh:{ar:'دجاج فت الفطر',en:'Fit Mushroom Chicken',cat:'chicken',price:26,kcal:230,p:39,f:6,c:5,scope:'protein',milk:1},
   asian:{ar:'دجاج فت اسيوي',en:'Fit Asian Chicken',cat:'chicken',price:26,kcal:218,p:39,f:6,c:5,scope:'protein',spicy:1},
-  okra:{ar:'دجاج فت بامية',en:'Fit Okra Chicken',cat:'chicken',price:27,kcal:180,p:25,f:4.5,c:10,scope:'protein',note:'100غ بامية + 100غ دجاج'},
+  okra:{ar:'دجاج فت بامية',en:'Fit Okra Chicken',cat:'chicken',price:27,kcal:180,p:25,f:4.5,c:10,scope:'protein',note:'100غ بامية + 100غ دجاج',noteEn:'100g okra + 100g chicken'},
   molokh:{ar:'دجاج فت ملوخية',en:'Fit Molokhia Chicken',cat:'chicken',price:27,kcal:211.5,p:37,f:3.5,c:8,scope:'protein'},
   /* وجبات اللحم */
   steakBeef:{ar:'فت ستيك بيف',en:'Fit Beef Steak',cat:'beef',price:40,kcal:197,p:36,f:5,c:2,scope:'protein'},
@@ -312,10 +360,10 @@ const MENU = {
   /* باستا (كامل الطبق) */
   fettCh:{ar:'فيتوشيني الدجاج',en:'Chicken Fettuccine',cat:'pasta',price:35,kcal:582,p:40,f:6,c:92,scope:'full'},
   /* برقر (القيم للمصدر البروتيني؛ يقدم مع بطاطس مشوي وصوص، والخبز اختيار: بر / بطاطس / خس كيتو) */
-  burgerCh:{ar:'برقر دجاج مشوي',en:'Grilled Chicken Burger',cat:'burger',price:25,kcal:164,p:19,f:8,c:4,scope:'protein',best:1,note:'مع بطاطس مشوي وصوص — اختر الخبز: بر / بطاطس / خس كيتو'},
-  burgerBeef:{ar:'برقر لحم',en:'Beef Burger',cat:'burger',price:33,kcal:228,p:26,f:12,c:4,scope:'protein',best:1,note:'مع بطاطس مشوي وصوص — اختر الخبز: بر / بطاطس / خس كيتو'},
+  burgerCh:{ar:'برقر دجاج مشوي',en:'Grilled Chicken Burger',cat:'burger',price:25,kcal:164,p:19,f:8,c:4,scope:'protein',best:1,note:'مع بطاطس مشوي وصوص — اختر الخبز: بر / بطاطس / خس كيتو',noteEn:'With roasted potato & sauce — bun choice: wholewheat / potato / keto lettuce'},
+  burgerBeef:{ar:'برقر لحم',en:'Beef Burger',cat:'burger',price:33,kcal:228,p:26,f:12,c:4,scope:'protein',best:1,note:'مع بطاطس مشوي وصوص — اختر الخبز: بر / بطاطس / خس كيتو',noteEn:'With roasted potato & sauce — bun choice: wholewheat / potato / keto lettuce'},
   /* راب وشاورما (كامل الطبق) */
-  shawarma:{ar:'شاورما دجاج',en:'Chicken Shawarma',cat:'wrap',price:35,kcal:380,p:40,f:8,c:37,scope:'full',best:1,note:'تقدم مع بطاطس مشوي وثومية ومخللات'},
+  shawarma:{ar:'شاورما دجاج',en:'Chicken Shawarma',cat:'wrap',price:35,kcal:380,p:40,f:8,c:37,scope:'full',best:1,note:'تقدم مع بطاطس مشوي وثومية ومخللات',noteEn:'Served with roasted potato, garlic dip & pickles'},
   tikaWrap:{ar:'تكا راب',en:'Tikka Wrap',cat:'wrap',price:21,kcal:253,p:25,f:5,c:27,scope:'full',best:1},
   chickenWrap:{ar:'تشكن راب',en:'Chicken Wrap',cat:'wrap',price:19,kcal:242,p:23,f:6,c:24,scope:'full'},
   fajitaWrap:{ar:'فاهيتا راب',en:'Fajita Wrap',cat:'wrap',price:19,kcal:250,p:24,f:6,c:25,scope:'full'},
@@ -337,7 +385,7 @@ const MENU = {
   oatFruit:{ar:'سناك شوفان فواكة',en:'Fruit Oats',cat:'snack',price:15,kcal:216,p:12,f:8,c:24,scope:'full'},
   oatDate:{ar:'سناك شوفان تمر',en:'Date Oats',cat:'snack',price:15,kcal:216,p:12,f:8,c:24,scope:'full'},
   oatChoc:{ar:'سناك شوفان دارك تشوكلت',en:'Dark Chocolate Oats',cat:'snack',price:15,kcal:267,p:14,f:11,c:28,scope:'full'},
-  nuts:{ar:'سناك مكسرات',en:'Mixed Nuts',cat:'snack',price:10,kcal:198,p:0,f:14,c:18,scope:'full',note:'القيم كما هي مطبوعة في المنيو'},
+  nuts:{ar:'سناك مكسرات',en:'Mixed Nuts',cat:'snack',price:10,kcal:198,p:0,f:14,c:18,scope:'full',note:'القيم كما هي مطبوعة في المنيو',noteEn:'Values exactly as printed on the menu'},
   /* عصائر */
   oj:{ar:'عصير برتقال',en:'Orange Juice',cat:'drink',price:15,kcal:161,p:3,f:1,c:35,scope:'full'},
   lemonMint:{ar:'عصير ليمون نعناع',en:'Lemon Mint Juice',cat:'drink',price:15,kcal:90,p:1,f:1,c:20,scope:'full'},
@@ -354,11 +402,11 @@ const MENU = {
   breadPotato:{ar:'خبز بطاطس',en:'Potato Bun',cat:'carb',kcal:210,p:5.6,f:6.3,c:33,scope:'full'},
   lettuceKeto:{ar:'خس كيتو',en:'Keto Lettuce Wrap',cat:'carb',kcal:10,p:0.8,f:0.2,c:1.2,scope:'full'},
   /* البدائل اللو كارب (بديل الأرز/المكرونة) */
-  fitZero:{ar:'فت زيرو',en:'Fit Zero',cat:'lowcarb',kcal:42,p:3.6,f:0.4,c:7.9,scope:'full',note:'خيار، خس، بروكلي، قرنبيط، ليمون'},
-  fitOne:{ar:'فت ون',en:'Fit One',cat:'lowcarb',kcal:42,p:1.6,f:0.4,c:9.4,scope:'full',note:'خضار مشوية (كوسة، جزر، قرنبيط)'},
-  fitTwo:{ar:'فت تو',en:'Fit Two',cat:'lowcarb',kcal:38,p:2.9,f:0.4,c:7.5,scope:'full',note:'قرنبيط مهروس (بديل الأرز)'},
-  fitTres:{ar:'فت تريس',en:'Fit Tres',cat:'lowcarb',kcal:38,p:1.9,f:0.2,c:8.7,scope:'full',note:'ملفوف مهروس (بديل الأرز)'},
-  fitQuatro:{ar:'فت كواترو',en:'Fit Quatro',cat:'lowcarb',kcal:38,p:1.5,f:0.1,c:8.1,scope:'full',note:'فلفل بارد وكوسة وجزر بصوص طماطم'},
+  fitZero:{ar:'فت زيرو',en:'Fit Zero',cat:'lowcarb',kcal:42,p:3.6,f:0.4,c:7.9,scope:'full',note:'خيار، خس، بروكلي، قرنبيط، ليمون',noteEn:'Cucumber, lettuce, broccoli, cauliflower, lemon'},
+  fitOne:{ar:'فت ون',en:'Fit One',cat:'lowcarb',kcal:42,p:1.6,f:0.4,c:9.4,scope:'full',note:'خضار مشوية (كوسة، جزر، قرنبيط)',noteEn:'Grilled vegetables (zucchini, carrot, cauliflower)'},
+  fitTwo:{ar:'فت تو',en:'Fit Two',cat:'lowcarb',kcal:38,p:2.9,f:0.4,c:7.5,scope:'full',note:'قرنبيط مهروس (بديل الأرز)',noteEn:'Mashed cauliflower (rice substitute)'},
+  fitTres:{ar:'فت تريس',en:'Fit Tres',cat:'lowcarb',kcal:38,p:1.9,f:0.2,c:8.7,scope:'full',note:'ملفوف مهروس (بديل الأرز)',noteEn:'Mashed cabbage (rice substitute)'},
+  fitQuatro:{ar:'فت كواترو',en:'Fit Quatro',cat:'lowcarb',kcal:38,p:1.5,f:0.1,c:8.1,scope:'full',note:'فلفل بارد وكوسة وجزر بصوص طماطم',noteEn:'Peppers, zucchini & carrot in tomato sauce'},
   /* صوصات */
   sHot:{ar:'صوص حار',en:'Hot Sauce',cat:'sauce',price:3,kcal:25,p:1,f:1,c:3,scope:'full'},
   sTahini:{ar:'صوص طحينة',en:'Tahini Sauce',cat:'sauce',price:3,kcal:35,p:2,f:1.5,c:3,scope:'full'},
@@ -631,9 +679,9 @@ const WORKOUTS = {
   push:{title:'دفع — صدر وكتف وترايسبس',en:'PUSH DAY',dur:'≈ 55-65 دقيقة',
     warm:'5 دقائق Excite Bike خفيف + دوائر كتف ولوح كتف + سيت إحماء 50% ثم 70% لأول تمرين.',
     blocks:[
-      {ex:'chestPress',sets:3,reps:'8-12',rest:90},
-      {ex:'inclinePressM',sets:3,reps:'8-12',rest:90},
-      {ex:'shoulderPress',sets:3,reps:'8-12',rest:90},
+      {ex:'chestPress',sets:3,reps:'8-12',rest:60},
+      {ex:'inclinePressM',sets:3,reps:'8-12',rest:60},
+      {ex:'shoulderPress',sets:3,reps:'8-12',rest:60},
       {ex:'latRaise',sets:3,reps:'12-15',rest:60},
       {ex:'pushdown',sets:3,reps:'10-15',rest:60},
       {ex:'overheadExt',sets:2,reps:'12-15',rest:60}
@@ -642,48 +690,48 @@ const WORKOUTS = {
   pull:{title:'سحب — ظهر وبايسبس',en:'PULL DAY',dur:'≈ 55-65 دقيقة',
     warm:'5 دقائق مشي منحدر خفيف + سحب كيبل خفيف 15 تكرار + سيت إحماء لأول تمرين.',
     blocks:[
-      {ex:'latPulldown',sets:3,reps:'8-12',rest:90},
-      {ex:'seatedRow',sets:3,reps:'8-12',rest:90},
+      {ex:'latPulldown',sets:3,reps:'8-12',rest:60},
+      {ex:'seatedRow',sets:3,reps:'8-12',rest:60},
       {ex:'reverseFly',sets:3,reps:'12-15',rest:60},
       {ex:'cableCurl',sets:3,reps:'10-12',rest:60},
       {ex:'hammerCurl',sets:2,reps:'10-12',rest:60},
-      {ex:'crunchM',sets:3,reps:'12-15',rest:45}
+      {ex:'crunchM',sets:3,reps:'12-15',rest:60}
     ],
     cardio:{ex:'cRun',min:15,note:'مشي منحدر Zone 2'}},
   legs:{title:'أرجل وجذع',en:'LEG DAY',dur:'≈ 55-65 دقيقة',
     warm:'5 دقائق دراجة + سكوات وزن جسم 2×10 + سيت إحماء 50% للدفع.',
     blocks:[
-      {ex:'legPress',sets:3,reps:'10-12',rest:120},
-      {ex:'legExt',sets:3,reps:'12-15',rest:75},
-      {ex:'legCurl',sets:3,reps:'10-14',rest:75},
+      {ex:'legPress',sets:3,reps:'10-12',rest:60},
+      {ex:'legExt',sets:3,reps:'12-15',rest:60},
+      {ex:'legCurl',sets:3,reps:'10-14',rest:60},
       {ex:'calfRaise',sets:3,reps:'12-15',rest:60},
       {ex:'hipAbd',sets:2,reps:'12-15',rest:60},
-      {ex:'plank',sets:3,reps:'30-45ث',rest:45}
+      {ex:'plank',sets:3,reps:'30-45ث',rest:60}
     ],
     cardio:{ex:'cSynchro',min:10,note:'اختياري حسب الطاقة — خفيف جداً'}},
   arms:{title:'ذراعين وأكتاف — يوم التخصيص',en:'ARMS DAY',dur:'≈ 50-60 دقيقة',
     warm:'5 دقائق دراجة + مرجحة ودفع كيبل خفيف 15 تكرار لكل منهما.',
     blocks:[
-      {ex:'dbCurl',sets:3,reps:'8-12',rest:75},
-      {ex:'armExtM',sets:3,reps:'8-12',rest:75},
+      {ex:'dbCurl',sets:3,reps:'8-12',rest:60},
+      {ex:'armExtM',sets:3,reps:'8-12',rest:60},
       {ex:'preacherCurl',sets:3,reps:'10-12',rest:60},
       {ex:'pushdown',sets:3,reps:'10-15',rest:60},
       {ex:'inclineDbCurl',sets:2,reps:'12-15',rest:60},
       {ex:'overheadExt',sets:2,reps:'12-15',rest:60},
-      {ex:'latRaise',sets:3,reps:'12-20',rest:45},
-      {ex:'facePull',sets:2,reps:'15',rest:45}
+      {ex:'latRaise',sets:3,reps:'12-20',rest:60},
+      {ex:'facePull',sets:2,reps:'15',rest:60}
     ],
     cardio:{ex:'cBike',min:15,note:'Zone 2'}},
   upper:{title:'علوي شامل + إنهاء ذراعين',en:'UPPER DAY',dur:'≈ 55-65 دقيقة',
     warm:'5 دقائق أي جهاز كارديو + إحماء الكتف بالكيبل + سيت إحماء لأول تمرين.',
     blocks:[
-      {ex:'inclinePressM',sets:3,reps:'8-12',rest:90},
-      {ex:'vertTraction',sets:3,reps:'8-12',rest:90},
-      {ex:'seatedRow',sets:2,reps:'10-12',rest:75},
+      {ex:'inclinePressM',sets:3,reps:'8-12',rest:60},
+      {ex:'vertTraction',sets:3,reps:'8-12',rest:60},
+      {ex:'seatedRow',sets:2,reps:'10-12',rest:60},
       {ex:'pecFly',sets:2,reps:'12-15',rest:60},
-      {ex:'cableCurl',sets:2,reps:'12-15',rest:45},
-      {ex:'pushdown',sets:2,reps:'12-15',rest:45},
-      {ex:'kneeRaise',sets:3,reps:'10-15',rest:45}
+      {ex:'cableCurl',sets:2,reps:'12-15',rest:60},
+      {ex:'pushdown',sets:2,reps:'12-15',rest:60},
+      {ex:'kneeRaise',sets:3,reps:'10-15',rest:60}
     ],
     cardio:{ex:'cRun',min:15,note:'Zone 2 — وفي الأسبوعين 3-4 يمكن استبداله بالفواصل (cIntervals) إذا كان الاستشفاء ممتازاً'}},
   restActive:{title:'راحة نشطة',en:'ACTIVE REST',dur:'30-40 دقيقة',
@@ -809,6 +857,85 @@ function snapDb(w){ let best=DB_WEIGHTS[0]; for(const x of DB_WEIGHTS){ if(Math.
 
 /* تعويض الأيام الملغاة: أي جلسة تالية من هذه الأنواع تصلح للتعويض */
 const COMP_OK = { push:['upper','push'], pull:['upper','pull'], legs:['legs'], arms:['push','pull','arms','upper'], upper:['push','pull','upper'] };
+
+
+/* ===================== English data layer (bilingual app) ===================== */
+const DAY_EN=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const SLOT_EN={b:'Breakfast',l:'Lunch',pre:'Pre-workout',d:'Dinner',x:'Flex snack (if hungry)'};
+const CAT_EN={chicken:'Chicken',beef:'Beef',seafood:'Seafood',pasta:'Pasta',burger:'Burgers',wrap:'Wraps',salad:'Salads',snack:'Snacks',drink:'Juices',carb:'Carb sides',lowcarb:'Low-carb subs',sauce:'Sauces'};
+const PHASES_EN=[
+ {name:'Week 1 — Technique & calibration',note:'Goal: master form and calibrate loads. Never approach failure.'},
+ {name:'Week 2 — Controlled progression',note:'Add weight or reps wherever last week felt easy.'},
+ {name:'Week 3 — Productive overload',note:'Hardest effort of the program on final sets. Sleep well and hydrate.'},
+ {name:'Week 4 — Consolidation & review',note:'Hold your loads; drop one set from isolation work if fatigue is high. Re-measure at week end.'}];
+WEEK_PHASES.forEach((p,i)=>{p.nameEn=PHASES_EN[i].name;p.noteEn=PHASES_EN[i].note;});
+const WK_EN={
+ push:{title:'Push — Chest, Shoulders & Triceps',dur:'≈ 55-65 min',warm:'5 min easy Excite Bike + shoulder/scap circles + warm-up set at 50% then 70% of first lift.'},
+ pull:{title:'Pull — Back & Biceps',dur:'≈ 55-65 min',warm:'5 min easy incline walk + light cable pulls ×15 + warm-up set for first lift.'},
+ legs:{title:'Legs & Core',dur:'≈ 55-65 min',warm:'5 min bike + bodyweight squats 2×10 + 50% warm-up set on the press.'},
+ arms:{title:'Arms & Shoulders — Specialization',dur:'≈ 50-60 min',warm:'5 min bike + light cable curls & pushdowns ×15 each.'},
+ upper:{title:'Full Upper + Arm Finisher',dur:'≈ 55-65 min',warm:'5 min any cardio + cable shoulder warm-up + warm-up set for first lift.'},
+ restActive:{title:'Active Rest',dur:'30-40 min',warm:''},
+ restFull:{title:'Full Rest',dur:'—',warm:''}};
+for(const k in WK_EN){ Object.assign(WORKOUTS[k],{titleEn:WK_EN[k].title,durEn:WK_EN[k].dur,warmEn:WK_EN[k].warm}); }
+const CARDIO_NOTES_EN={
+ push:'Zone 2 — approx HR 115-130', pull:'Incline walk, Zone 2', legs:'Optional, very easy — by energy',
+ arms:'Zone 2', upper:'Zone 2 — from week 3-4 you may swap for intervals (Skillmill) if recovery is excellent',
+ restActive:'Outdoor walk or easy treadmill + 10 min stretching. Goal: steps and movement, not fatigue.'};
+for(const k in CARDIO_NOTES_EN){ if(WORKOUTS[k].cardio) WORKOUTS[k].cardio.noteEn=CARDIO_NOTES_EN[k]; }
+const MEAL_WHY_EN=[
+ 'Push day: 200g Tikka chicken around training + 150g beef steak at night — one chicken, one beef, every day.',
+ 'Pull day: pasta pre-workout fuels performance; 150g Mongolian beef is a low-carb dinner.',
+ 'Leg day — highest effort: biggest calories of the week — 150g Masala + 150g meatballs.',
+ 'Arm day: 200g fajita chicken + 150g chili beef — protein high in both mains.',
+ 'Closing the training week: 200g grilled chicken (leanest on the menu) + steak de beef with grilled veg.',
+ 'Social Friday: chicken shawarma (menu portion) + 200g Mongolian beef, no rice at night.',
+ 'Light rest day: 150g grilled chicken at lunch, 150g beef steak with greens at night — lower carbs.',
+ 'New week, same structure: 200g Dragon chicken + steak de beef with mashed potato.',
+ '200g Mongolian chicken with pasta around training + low-carb beef steak dinner.',
+ 'Leg day: 150g curry chicken + 125g meatballs with potato — fuel for the heaviest session.',
+ '200g Samurai chicken + 150g chili beef with grilled veg — light, high-quality dinner.',
+ '200g mushroom chicken with red pasta + 125g Mongolian beef low-carb dinner.',
+ 'Calculated treat day: chicken fettuccine + 200g beef steak at night to lift the day\'s protein.',
+ 'Light low-carb Saturday: 150g BBQ chicken + 150g meatballs with green rice substitutes.'];
+MEAL_CYCLE.forEach((d,i)=>d.whyEn=MEAL_WHY_EN[i]);
+const EX_EN={
+ chestPress:{musEn:'Chest, front delts, triceps',tgcEn:'Selectorized (Selection)',setupEn:['Set the seat so handles sit at mid-chest','Back and shoulder blades pinned to the pad','Grip slightly wider than shoulders'],romEn:'Lower to a comfortable chest stretch, press fully without jerking',altEn:'Pure Strength Incline Press or DB bench press',yttEn:'Technogym Chest Press tutorial — Travis Tarrant (4:07)'},
+ inclinePressM:{musEn:'Upper chest, front delts, triceps',tgcEn:'Selectorized / plate-loaded',setupEn:['Seat so handles start at upper chest','Don\'t shrug during the press'],romEn:'Full controlled range; stop just short of hard lockout',altEn:'30° incline DB press',yttEn:'Technogym Incline Chest Press — quick demo (0:34)'},
+ pecFly:{musEn:'Chest',tgcEn:'Machine / cable',setupEn:['Handles at mid-chest height','Keep a fixed soft elbow bend'],romEn:'Open to a comfortable stretch, squeeze together for one second',altEn:'DB fly on flat bench',yttEn:'Technogym Pec Deck Fly tutorial — Travis Tarrant (3:26)'},
+ shoulderPress:{musEn:'Front & side delts, triceps',tgcEn:'Selectorized (Selection)',setupEn:['Seat so handles sit about ear level','Lower back against the pad'],romEn:'Press up without arching; lower under control to ear level',altEn:'Seated DB press',yttEn:'Machine Shoulder Press — Renaissance Periodization (0:13)'},
+ latRaise:{musEn:'Side delts',tgcEn:'Free weights',setupEn:['Slight forward lean, braced torso','Raise to shoulder height'],romEn:'Lead with the elbows; lower slowly 2-3s',altEn:'Single-arm cable lateral raise',yttEn:'Dumbbell Lateral Raise — NASM (0:19)'},
+ latRaiseCable:{musEn:'Side delts',tgcEn:'Cable',setupEn:['Pulley at lowest setting, far hand grips','Lean slightly away from the stack'],romEn:'Raise to shoulder height, slow negative',altEn:'DB lateral raise',yttEn:'Cable Lateral Raise — PureGym (0:15)'},
+ facePull:{musEn:'Rear delts, mid traps',tgcEn:'Cable',setupEn:['Pulley slightly above head height','Pull the rope toward your forehead, elbows wide'],romEn:'Squeeze shoulder blades for one second at the end',altEn:'Reverse Fly machine',yttEn:'Cable Face Pulls — PureGym (0:15)'},
+ latPulldown:{musEn:'Lats, biceps',tgcEn:'Selectorized (Selection)',setupEn:['Lock knees under the pad','Grip wider than shoulders, chest up'],romEn:'Pull the bar to upper chest, elbows down-and-back; full controlled return',altEn:'Vertical Traction or V-grip pulldown',yttEn:'Lat Pulldown — avoid mistakes (ATHLEAN-X, 5:55)'},
+ vertTraction:{musEn:'Back, biceps',tgcEn:'Selectorized (Selection)',setupEn:['Seat so arms reach handles fully extended','Pull until elbows touch your sides'],romEn:'Keep chest tall throughout',altEn:'Close-grip pulldown',yttEn:'Technogym Vertical Traction — setup & execution (1:48)'},
+ seatedRow:{musEn:'Mid-back, traps, biceps',tgcEn:'Selectorized / cable',setupEn:['Chest against the pad if present','Pull the handle to lower abdomen'],romEn:'Squeeze the blades, then fully extend under control',altEn:'Seated V-grip cable row',yttEn:'Technogym Low Row tutorial — Travis Tarrant (3:59)'},
+ reverseFly:{musEn:'Rear delts, upper back',tgcEn:'Selectorized',setupEn:['Chest on the pad','Handles in front at shoulder level'],romEn:'Sweep arms back in a wide arc, no jerking',altEn:'Cable face pull',yttEn:'Machine Reverse Flye — Renaissance Periodization (0:14)'},
+ cableCurl:{musEn:'Biceps',tgcEn:'Cable',setupEn:['Pulley at lowest setting','Elbows pinned to your sides'],romEn:'Curl to peak squeeze; 2-3s negative',altEn:'Free EZ-bar curl',yttEn:'Cable Bicep Curl — Colossus Fitness (1:13)'},
+ dbCurl:{musEn:'Biceps',tgcEn:'Free weights',setupEn:['Stand tall, elbows glued to sides'],romEn:'Curl with supination, full slow lowering',altEn:'Seated incline curl',yttEn:'Dumbbell Curl form — Fit Father Project (2:39)'},
+ hammerCurl:{musEn:'Biceps, brachialis, forearm',tgcEn:'Free weights',setupEn:['Neutral grip (thumbs up)','Elbows fixed'],romEn:'Full range without swinging',altEn:'Rope hammer curl',yttEn:'Hammer Curl — One Minute Tutorial (1:04)'},
+ preacherCurl:{musEn:'Biceps',tgcEn:'Selectorized (Selection)',setupEn:['Seat so the whole upper arm rests on the pad','Machine pivot aligned with elbow'],romEn:'Near-full stretch to full squeeze — don\'t shrug',altEn:'EZ-bar preacher curl',yttEn:'Machine Preacher Curl — Renaissance Periodization (0:17)'},
+ inclineDbCurl:{musEn:'Biceps (long head) — max stretch',tgcEn:'Free weights',setupEn:['Bench at 45-60°','Let arms hang slightly behind the torso'],romEn:'Slow lowering to a full stretch — the best biceps stretch exercise',altEn:'Behind-the-body cable curl',yttEn:'Incline DB Curl — ScottHermanFitness (1:45)'},
+ pushdown:{musEn:'Triceps',tgcEn:'Cable',setupEn:['Pulley at top','Elbows pinned to sides'],romEn:'Push down and split the rope ends; controlled return',altEn:'Straight-bar pushdown',yttEn:'Rope Pushdown — Renaissance Periodization (0:12)'},
+ overheadExt:{musEn:'Triceps (long head)',tgcEn:'Cable',setupEn:['Pulley low/mid, back to the stack','Elbows beside your head'],romEn:'Deep stretch behind the head, then full extension',altEn:'Single-DB overhead extension',yttEn:'Overhead Cable Extension — RP (0:12)'},
+ armExtM:{musEn:'Triceps',tgcEn:'Selectorized (Selection)',setupEn:['Pivot aligned with the elbow','Upper arm fixed on the pad'],romEn:'Full extension with a squeeze, slow return',altEn:'Cable rope pushdown',yttEn:'Triceps Press Machine — how to (1:03)'},
+ dipsMachine:{musEn:'Triceps, lower chest',tgcEn:'Selectorized',setupEn:['Upright torso to bias triceps','Lower to 90° elbows'],romEn:'Don\'t go deep enough to hurt the shoulder',altEn:'Rope pushdown + overhead extension',yttEn:'Assisted Dip Machine — Gold\'s Gym (1:37)'},
+ legPress:{musEn:'Quads, glutes, hamstrings',tgcEn:'Selectorized / plate-loaded',setupEn:['Feet shoulder-width, mid-platform','Lower back always on the pad'],romEn:'Lower to ~90° knees or a bit deeper without lifting hips',altEn:'DB goblet squat',yttEn:'Technogym Leg Press tutorial — Travis Tarrant (3:14)'},
+ legExt:{musEn:'Quads',tgcEn:'Selectorized (Selection)',setupEn:['Pivot aligned with the knee','Pad above the ankle'],romEn:'Full extension with 1s hold, slow lowering',altEn:'DB Bulgarian split squat',yttEn:'Technogym Leg Extension — Travis Tarrant (4:07)'},
+ legCurl:{musEn:'Hamstrings',tgcEn:'Selectorized (Selection)',setupEn:['Pivot aligned with the knee','Thighs locked under the top pad'],romEn:'Curl to full range, return with full control',altEn:'DB Romanian deadlift',yttEn:'Seated Leg Curl — Renaissance Periodization (0:11)'},
+ calfRaise:{musEn:'Calves',tgcEn:'Selectorized',setupEn:['Balls of feet on the platform edge'],romEn:'Full stretch at the bottom, 1s pause on tiptoes',altEn:'Standing DB calf raise on a step',yttEn:'Calf Raise on Leg Press — PureGym (0:14)'},
+ hipAbd:{musEn:'Side glutes',tgcEn:'Selectorized (Selection)',setupEn:['Sit tall, pads outside the knees'],romEn:'Open to a comfortable max, control the return',altEn:'Banded lateral walk',yttEn:'Seated Hip Abductor — PureGym (0:16)'},
+ gluteKickback:{musEn:'Glutes',tgcEn:'Cable',setupEn:['Pulley at lowest, ankle strap on','Slight forward torso lean, braced'],romEn:'Drive the leg back with a glute squeeze, no lower-back arch',altEn:'DB hip thrust',yttEn:'Cable Glute Kickback — Kia Khadem (0:27)'},
+ crunchM:{musEn:'Abs',tgcEn:'Selectorized (Selection)',setupEn:['Set seat so the pivot sits at the lower ribs'],romEn:'Bring ribs toward pelvis under control — don\'t pull with the neck',altEn:'Slow floor crunch',yttEn:'Technogym Ab Crunch machine — tutorial (3:46)'},
+ plank:{musEn:'Full core',tgcEn:'Bodyweight',setupEn:['Elbows under shoulders','Straight line — squeeze abs and glutes'],romEn:'Hold steady without hips sagging',altEn:'Knee plank',yttEn:'How to Plank — E3 Rehab (4:00)'},
+ kneeRaise:{musEn:'Lower abs',tgcEn:'Bodyweight',setupEn:['Hang steady without swinging'],romEn:'Raise knees toward chest with a slight pelvic curl',altEn:'Captain\'s chair knee raise',yttEn:'Hanging Knee Raise — Brian Schmitt (5:13)'},
+ cBike:{musEn:'Cardio',tgcEn:'Cardio (Excite)',setupEn:['Seat height: near-straight knee at pedal bottom'],romEn:'Steady 80-95 rpm',altEn:'Excite Synchro (elliptical)',yttEn:'Excite Bike — official Technogym channel (3:29)'},
+ cRun:{musEn:'Cardio',tgcEn:'Cardio (Excite)',setupEn:['Incline 5-8%, speed 5.5-6.5 km/h','Don\'t hold the rails'],romEn:'Breathing lets you speak short sentences (Zone 2)',altEn:'Brisk outdoor walk',yttEn:'Incline walking for fat loss — Eric Roberts (1:19)'},
+ cSynchro:{musEn:'Cardio',tgcEn:'Cardio (Excite)',setupEn:['Medium resistance, upright posture'],romEn:'Smooth full strides',altEn:'Excite Climb (stairs)',yttEn:'Elliptical beginner guide — Naomi Kong (1:47)'},
+ cIntervals:{musEn:'Cardio / conditioning',tgcEn:'Cardio (Skill)',setupEn:['3 min easy warm-up','6-8 rounds: 30s moderate-hard / 90s easy walk'],romEn:'Effort 7-8/10 on rounds — not all-out',altEn:'Same-timing intervals on Excite Bike',yttEn:'Skillmill — Nuffield Health (2:53)'}};
+for(const k in EX_EN){ if(EX[k]) Object.assign(EX[k],EX_EN[k]); }
+const LOADTYPE_EN={stack:'Stack weight (pick the pin in kg)',plate:'Plates: weight per side',db:'Weight of ONE dumbbell',cable:'Stack pin — pulley ratios can change true resistance',barbell:'Total load incl. the bar',body:'Bodyweight',time:'Seconds',cardio:''};
+
 </script>
 <script>
 /* ===================== Store & state ===================== */
@@ -823,35 +950,78 @@ const DEFAULT_STATE = () => ({
   v:SCHEMA_V,
   profile:Object.assign({},DEFAULT_PROFILE),
   onboarded:false,
-  settings:{sound:true, vibrate:true, autoRest:true},
-  dayShift:Array(28).fill(0), // تأجيلات: كم يوماً انزاح كل يوم تدريبي
-  cancels:{},                 // baseIdx -> true (يوم ملغى)
-  comps:{},                   // baseIdx الهدف -> {from, workout} سيتات تعويض
+  settings:{sound:true, vibrate:true, autoRest:true, lang:'en', theme:'auto', restSec:60},
+  dayShift:Array(28).fill(0),
+  cancels:{},
+  comps:{},
   lastPostpone:null,
-  workLogs:{},   // dayIdx -> {status:'done'|'partial', startedAt, durationSec, sets:{exId:[{w,r,rir,pain,note,skip}]}, replaced:{exId:altText}, cardioDone:bool, note}
-  mealLogs:{},   // dayIdx -> {itemKey:'done'|'swapped'|'skipped', _note}
-  weights:[],    // {date, kg}
-  waists:[],     // {date, cm}
-  bodyFats:[],   // {date, pct}
-  stepsLog:{},   // dayIdx -> number
-  checkins:[],   // {week, avgW, waist, done, hunger, energy, sleep, pain, adherence, notes, reco, date}
-  sessionActive:null, // crash recovery
+  workLogs:{},
+  mealLogs:{},
+  weights:[],
+  waists:[],
+  bodyFats:[],
+  stepsLog:{},
+  checkins:[],
+  sessionActive:null,
   savedAt:null
 });
 let S = DEFAULT_STATE();
 (function load(){
   const raw=rawGet('mohanad_fit_v1');
   if(raw){ try{ const d=JSON.parse(raw); if(d && d.v===SCHEMA_V) S=Object.assign(DEFAULT_STATE(),d); }catch(e){} }
+  S.settings=Object.assign({sound:true,vibrate:true,autoRest:true,lang:'en',theme:'auto',restSec:60}, S.settings||{});
 })();
+
+/* ===================== i18n + theme ===================== */
+function isAR(){ return S.settings.lang==='ar'; }
+function A(ar,en){ return isAR()? ar:en; }
+function restCur(){ const r=parseInt(S.settings.restSec)||60; return Math.min(300,Math.max(15,r)); }
+function themeNow(){
+  const t=S.settings.theme||'auto';
+  if(t==='light'||t==='dark') return t;
+  const h=new Date().getHours(); return (h>=6&&h<18)?'light':'dark';
+}
+function applyChrome(){
+  const root=document.documentElement;
+  root.lang=isAR()?'ar':'en'; root.dir=isAR()?'rtl':'ltr';
+  root.dataset.theme=themeNow();
+  document.querySelector('meta[name=theme-color]').setAttribute('content', themeNow()==='light'?'#eef2f7':'#0b0c09');
+  document.getElementById('brandTag').textContent = themeNow()==='light'? 'STRONGER EVERYDAY':'BUILD YOUR BEST SELF';
+  document.getElementById('brandTitle').textContent = A('خطة مهند — ٤ أسابيع','Mohanad — 4-Week Plan');
+  document.getElementById('btnLang').textContent = isAR()? 'EN':'عربي';
+  document.getElementById('btnTheme').textContent = themeNow()==='light'? '🌙':'☀️';
+  document.getElementById('btnManualSave').textContent = A('حفظ','Save');
+  document.getElementById('storageWarn').textContent = A('⚠️ التخزين المحلي غير متاح في هذا العرض (وضع معاينة). افتح الملف مباشرة في متصفحك حتى تُحفظ بياناتك.','⚠️ Local storage unavailable in this preview — open the app in your browser so data can be saved.');
+  document.getElementById('moreTitle').textContent = A('المزيد','More');
+  const NAV=[['today',A('اليوم','Today')],['workout',A('التمرين','Workout')],['plan',A('الخطة','Plan')],['meals',A('الوجبات','Meals')],['more',A('المزيد','More')]];
+  NAV.forEach(([v,l])=>{ const b=document.querySelector(`nav.tabs button[data-view="${v}"] .lbl`); if(b) b.textContent=l; });
+  document.getElementById('moreGrid').innerHTML=`
+    <button class="btn" data-go="progress">📈 ${A('التقدم','Progress')}</button>
+    <button class="btn" data-go="checkin">📝 ${A('التشيك-إن الأسبوعي','Weekly Check-in')}</button>
+    <button class="btn" onclick="showView('lib')">🏋️ ${A('مكتبة التمارين','Exercise Library')}</button>
+    <button class="btn" data-go="settings">⚙️ ${A('الإعدادات والبيانات','Settings & Data')}</button>
+    <button class="btn" data-go="sources">📚 ${A('المصادر والمنهجية','Sources & Method')}</button>`;
+}
+function setLang(l){
+  S.settings.lang=l; queueSave(); applyChrome();
+  if(dlg.open && !S.onboarded){ openDlg(onboardingHTML()); }
+  else if(dlg.open){ dlg.close(); }
+  if(SES) sessionRender(); else render();
+}
+function toggleTheme(){
+  S.settings.theme = themeNow()==='light'? 'dark':'light';
+  queueSave(); applyChrome(); if(SES) sessionRender(); else render();
+}
+
 let saveTimer=null;
 function save(showToast){
   S.savedAt=new Date().toISOString();
   rawSet('mohanad_fit_v1', JSON.stringify(S));
-  document.getElementById('savedAt').textContent = storageOK? ('آخر حفظ: '+fmtTime(S.savedAt)) : 'وضع معاينة — لا يوجد حفظ';
-  if(showToast) toast('تم الحفظ ✓');
+  document.getElementById('savedAt').textContent = storageOK? (A('آخر حفظ: ','Saved: ')+fmtTime(S.savedAt)) : A('وضع معاينة — لا يوجد حفظ','Preview — not saved');
+  if(showToast) toast(A('تم الحفظ ✓','Saved ✓'));
 }
 function queueSave(){ clearTimeout(saveTimer); saveTimer=setTimeout(()=>save(false),400); }
-function fmtTime(iso){ const d=new Date(iso); return d.toLocaleDateString('ar-SA-u-ca-gregory-nu-latn',{day:'numeric',month:'numeric'})+' '+d.toLocaleTimeString('ar-SA-u-nu-latn',{hour:'2-digit',minute:'2-digit'}); }
+function fmtTime(iso){ const d=new Date(iso); const loc=isAR()?'ar-SA-u-ca-gregory-nu-latn':'en-GB'; return d.toLocaleDateString(loc,{day:'numeric',month:'numeric'})+' '+d.toLocaleTimeString(isAR()?'ar-SA-u-nu-latn':'en-GB',{hour:'2-digit',minute:'2-digit'}); }
 function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('on'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('on'),1800); }
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 function r1(n){ return Math.round(n*10)/10; }
@@ -867,13 +1037,11 @@ function effOffset(i){ return i + (S.dayShift[i]||0); }
 function effDate(i){ return addDays(PLAN_START, effOffset(i)); }
 function totalShift(){ return S.dayShift[27]||0; }
 function calDate(c){ return addDays(PLAN_START, c); }
-/* c = يوم تقويمي منذ البداية → أي يوم أساس يقع عليه؟ */
 function baseForCal(c){
   for(let i=0;i<28;i++){ if(effOffset(i)===c) return i; if(effOffset(i)>c) return null; }
   return null;
 }
 function todayCal(){ return Math.min(Math.max(daysSinceStart(),0), 27+totalShift()); }
-/* حل حالة اليوم: {kind:'day', i} | {kind:'gap', next} */
 function resolveCal(c){
   const i=baseForCal(c);
   if(i!=null) return {kind:'day', i};
@@ -884,11 +1052,19 @@ function mealsForCal(c){ return MEAL_CYCLE[((c%14)+14)%14]; }
 function planDay(i){ return PLAN[i]; }
 function isCancelled(i){ return !!S.cancels[i]; }
 function pendingTrain(i){ const d=PLAN[i]; const lg=S.workLogs[i]; return d.isTrain && !isCancelled(i) && !(lg&&lg.status==='done'); }
-/* أجّل: هذا اليوم وكل ما بعده يتأخر يوماً واحداً */
+function wkTitle(k){ const w=WORKOUTS[k]; return A(w.title, w.titleEn||w.title); }
+function wkDur(k){ const w=WORKOUTS[k]; return A(w.dur, w.durEn||w.dur); }
+function dayNameOf(iso){ const dw=new Date(iso+'T00:00:00').getDay(); return A(DAY_AR[dw], DAY_EN[dw]); }
+function phName(ph){ return A(ph.name, ph.nameEn||ph.name); }
+function phNote(ph){ return A(ph.note, ph.noteEn||ph.note); }
+function mealWhy(m){ return A(m.why, m.whyEn||m.why); }
+function nm(m){ return A(m.ar, m.en||m.ar); }
+function exName(ex){ return A(ex.ar, ex.en); }
+
 function postponeDay(i){
   for(let j=i;j<28;j++) S.dayShift[j]=(S.dayShift[j]||0)+1;
   S.lastPostpone=i;
-  save(true); toast('تم التأجيل — تمرين اليوم انتقل إلى '+fmtDateAr(effDate(i)));
+  save(true); toast(A('تم التأجيل — تمرين اليوم انتقل إلى ','Postponed — this workout moved to ')+fmtDate(effDate(i)));
   render();
 }
 function undoPostpone(){
@@ -896,7 +1072,6 @@ function undoPostpone(){
   for(let j=i;j<28;j++) S.dayShift[j]=Math.max(0,(S.dayShift[j]||0)-1);
   S.lastPostpone=null; save(true); render();
 }
-/* ألغِ: اليوم يسقط (لا يُحسب تمريناً) ويُضاف تعويض لأقرب جلسة مناسبة */
 function cancelDay(i){
   S.cancels[i]=true;
   const okTypes=COMP_OK[PLAN[i].workout]||[];
@@ -905,7 +1080,7 @@ function cancelDay(i){
       S.comps[j]={from:i, workout:PLAN[i].workout}; break;
     }
   }
-  save(true); toast('أُلغي اليوم — أُضيفت سيتات تعويض للجلسة المناسبة القادمة'); render();
+  save(true); toast(A('أُلغي اليوم — أُضيفت سيتات تعويض للجلسة المناسبة القادمة','Day cancelled — make-up sets added to the next matching session')); render();
 }
 function uncancelDay(i){
   delete S.cancels[i];
@@ -913,37 +1088,36 @@ function uncancelDay(i){
   save(true); render();
 }
 function confirmPostpone(i){
-  openDlg(`<h3>تأجيل تمرين «${esc(WORKOUTS[PLAN[i].workout].title)}»؟</h3>
-  <p class="sub">ينتقل هذا التمرين إلى اليوم التالي، وكل الأيام بعده تنزاح يوماً واحداً (تمتد نهاية الخطة يوماً). وجبات كل يوم تبقى على تاريخها.</p>
-  <div class="btnrow"><button class="btn primary" onclick="dlg.close();postponeDay(${i})">نعم، أجّل</button>
-  <button class="btn ghost" onclick="dlg.close()">تراجع</button></div>`);
+  openDlg(`<h3>${A('تأجيل تمرين','Postpone')} «${esc(wkTitle(PLAN[i].workout))}»${A('؟','?')}</h3>
+  <p class="sub">${A('ينتقل هذا التمرين إلى اليوم التالي، وكل الأيام بعده تنزاح يوماً واحداً (تمتد نهاية الخطة يوماً). وجبات كل يوم تبقى على تاريخها.','This workout moves to the next day and everything after shifts by one day (the plan extends one day). Meals stay pinned to their dates.')}</p>
+  <div class="btnrow"><button class="btn primary" onclick="dlg.close();postponeDay(${i})">${A('نعم، أجّل','Yes, postpone')}</button>
+  <button class="btn ghost" onclick="dlg.close()">${A('تراجع','Back')}</button></div>`);
 }
 function confirmCancel(i){
-  openDlg(`<h3>إلغاء تمرين «${esc(WORKOUTS[PLAN[i].workout].title)}»؟</h3>
-  <p class="sub">اليوم يُلغى نهائياً ولا يُحسب تمريناً، والجدول لا يتحرك. سيضيف التطبيق «سيتات تعويض» (+1 سيت على أول 3 تمارين) في أقرب جلسة تغطي نفس العضلات.</p>
-  <div class="btnrow"><button class="btn danger" onclick="dlg.close();cancelDay(${i})">ألغِ اليوم</button>
-  <button class="btn ghost" onclick="dlg.close()">تراجع</button></div>`);
+  openDlg(`<h3>${A('إلغاء تمرين','Cancel')} «${esc(wkTitle(PLAN[i].workout))}»${A('؟','?')}</h3>
+  <p class="sub">${A('اليوم يُلغى نهائياً ولا يُحسب تمريناً، والجدول لا يتحرك. سيضيف التطبيق «سيتات تعويض» (+1 سيت على أول 3 تمارين) في أقرب جلسة تغطي نفس العضلات.','This day is cancelled for good and does NOT count as trained; the schedule stays put. The app adds make-up sets (+1 set on the first 3 exercises) to the next session covering the same muscles.')}</p>
+  <div class="btnrow"><button class="btn danger" onclick="dlg.close();cancelDay(${i})">${A('ألغِ اليوم','Cancel the day')}</button>
+  <button class="btn ghost" onclick="dlg.close()">${A('تراجع','Back')}</button></div>`);
 }
-/* أزرار إدارة اليوم */
 function dayManageHTML(i, dark){
   if(!pendingTrain(i)) {
-    if(isCancelled(i)) return `<div class="warnnote">يوم ملغى — لا يُحسب تمريناً، والتعويض مضاف للجلسة المناسبة. <button class="btn small" onclick="uncancelDay(${i})">تراجع عن الإلغاء</button></div>`;
+    if(isCancelled(i)) return `<div class="warnnote">${A('يوم ملغى — لا يُحسب تمريناً، والتعويض مضاف للجلسة المناسبة.','Cancelled day — not counted as trained; make-up sets added to the next matching session.')} <button class="btn small" onclick="uncancelDay(${i})">${A('تراجع عن الإلغاء','Undo cancel')}</button></div>`;
     return '';
   }
-  const st=dark?'style="background:rgba(255,255,255,.14);color:#fff"':'';
+  const st=dark?'style="background:var(--heronote);color:var(--ink)"':'';
   return `<div class="btnrow">
-    <button class="btn small" ${st} onclick="confirmPostpone(${i})">⏭️ ما أقدر اليوم — أجّله لبكرة</button>
-    <button class="btn small" ${st} onclick="confirmCancel(${i})">🗓️ ألغِ هذا اليوم (مع تعويض)</button>
-    ${S.lastPostpone!=null?`<button class="btn small ghost" ${st} onclick="undoPostpone()">↩️ تراجع عن آخر تأجيل</button>`:''}
+    <button class="btn small" ${st} onclick="confirmPostpone(${i})">⏭️ ${A('ما أقدر اليوم — أجّله لبكرة',"Can't today — postpone to tomorrow")}</button>
+    <button class="btn small" ${st} onclick="confirmCancel(${i})">🗓️ ${A('ألغِ هذا اليوم (مع تعويض)','Cancel this day (with make-up)')}</button>
+    ${S.lastPostpone!=null?`<button class="btn small ghost" ${st} onclick="undoPostpone()">↩️ ${A('تراجع عن آخر تأجيل','Undo last postpone')}</button>`:''}
   </div>`;
 }
 function targets(){ return calcTargets(S.profile); }
-function fmtDateAr(iso){ const d=new Date(iso+'T00:00:00'); return d.toLocaleDateString('ar-SA-u-ca-gregory-nu-latn',{day:'numeric',month:'long'}); }
-function workoutSetCount(wk){ return WORKOUTS[wk].blocks.reduce((a,b)=>a+b.sets,0); }
+function fmtDate(iso){ const d=new Date(iso+'T00:00:00'); return d.toLocaleDateString(isAR()?'ar-SA-u-ca-gregory-nu-latn':'en-GB',{day:'numeric',month:'long'}); }
+const fmtDateAr=fmtDate;
 function dayWorkLog(i){ if(!S.workLogs[i]) S.workLogs[i]={sets:{},replaced:{},status:null,cardioDone:false}; return S.workLogs[i]; }
 function dayMealLog(i){ if(!S.mealLogs[i]) S.mealLogs[i]={}; return S.mealLogs[i]; }
 
-/* اقتراح وزن الجلسة القادمة بناء على آخر سجل */
+/* اقتراح وزن الجلسة القادمة */
 function lastPerf(exId, beforeIdx){
   for(let i=(beforeIdx==null?27:beforeIdx-1); i>=0; i--){
     const lg=S.workLogs[i]; if(lg && lg.sets && lg.sets[exId] && lg.sets[exId].length){ return {sets:lg.sets[exId], dayIdx:i}; }
@@ -954,9 +1128,9 @@ function suggestLoad(exId, dayI){
   const ex=EX[exId];
   if(ex.cardio||ex.load==='time'||ex.load==='body') return null;
   const prev=lastPerf(exId, dayI);
-  if(!prev){ return {lo:ex.start[0], hi:ex.start[1], why:'وزن بداية تحفظي — عايره في أول جلسة (احتياطي 3-4 تكرارات)'}; }
+  if(!prev){ return {lo:ex.start[0], hi:ex.start[1], why:A('وزن بداية تحفظي — عايره في أول جلسة (احتياطي 3-4 تكرارات)','Conservative starting load — calibrate in session 1 (leave 3-4 reps in reserve)')}; }
   const done=prev.sets.filter(s=>!s.skip && s.w!=null);
-  if(!done.length) return {lo:ex.start[0], hi:ex.start[1], why:'لا يوجد سجل مكتمل — ابدأ من نطاق البداية'};
+  if(!done.length) return {lo:ex.start[0], hi:ex.start[1], why:A('لا يوجد سجل مكتمل — ابدأ من نطاق البداية','No completed log yet — start from the starting range')};
   const maxW=Math.max(...done.map(s=>+s.w||0));
   const pain=done.some(s=>s.pain);
   const avgRIR=done.reduce((a,s)=>a+(s.rir==null?2:+s.rir),0)/done.length;
@@ -964,17 +1138,18 @@ function suggestLoad(exId, dayI){
   const hitTop=done.every(s=>(+s.r||0)>=topReps);
   const inc = ex.load==='db'?2:(ex.load==='cable'?2.5:2.5);
   const S1=(v)=> ex.load==='db'? snapDb(v):v;
-  if(pain) return {lo:S1(Math.max(2,r1(maxW*0.85))), hi:S1(r1(maxW*0.9)), why:'سجلت ألماً — خفف 10-15% وراقب، وبدّل التمرين إذا استمر'};
-  if(avgRIR<=0.5) return {lo:S1(r1(maxW*0.95)), hi:S1(maxW), why:'وصلت قريباً من الفشل — ثبّت أو خفف قليلاً وركز على الأداء'};
-  if(hitTop && avgRIR>=1.5){ const nw= ex.load==='db'? (DB_WEIGHTS[DB_WEIGHTS.indexOf(snapDb(maxW))+1]||snapDb(maxW)) : maxW+inc; return {lo:nw, hi:nw, why: ex.load==='db'? 'زد لدرجة الدمبل التالية المتوفرة (درجات Technogym: 1-10 كجم ثم قفزات 2 كجم)':'وصلت أعلى النطاق بسهولة — زد درجة واحدة (~'+inc+' كجم حسب درجات الجهاز)'}; }
-  return {lo:S1(maxW), hi:S1(maxW), why:'استمر بنفس الوزن وزد التكرارات داخل النطاق'};
+  if(pain) return {lo:S1(Math.max(2,r1(maxW*0.85))), hi:S1(r1(maxW*0.9)), why:A('سجلت ألماً — خفف 10-15% وراقب، وبدّل التمرين إذا استمر','You logged pain — drop 10-15%, monitor, and swap the exercise if it persists')};
+  if(avgRIR<=0.5) return {lo:S1(r1(maxW*0.95)), hi:S1(maxW), why:A('وصلت قريباً من الفشل — ثبّت أو خفف قليلاً وركز على الأداء','You got very close to failure — hold or slightly reduce and focus on form')};
+  if(hitTop && avgRIR>=1.5){ const nw= ex.load==='db'? (DB_WEIGHTS[DB_WEIGHTS.indexOf(snapDb(maxW))+1]||snapDb(maxW)) : maxW+inc; return {lo:nw, hi:nw, why: ex.load==='db'? A('زد لدرجة الدمبل التالية المتوفرة (درجات Technogym: 1-10 كجم ثم قفزات 2 كجم)','Move up to the next available dumbbell (Technogym steps: 1-10 kg, then 2 kg jumps)'):A('وصلت أعلى النطاق بسهولة — زد درجة واحدة (~'+inc+' كجم حسب درجات الجهاز)','Top of the rep range with ease — go up one increment (~'+inc+' kg, machine steps permitting)')}; }
+  return {lo:S1(maxW), hi:S1(maxW), why:A('استمر بنفس الوزن وزد التكرارات داخل النطاق','Keep the same load and add reps within the range')};
 }
 function findBlock(exId){
   for(const k in WORKOUTS){ const b=(WORKOUTS[k].blocks||[]).find(x=>x.ex===exId); if(b) return b; }
   return null;
 }
-function loadTypeAr(t){
-  return {stack:'وزن المكدس (اختر الدرجة بالكجم)',plate:'أطباق: الوزن لكل جهة',db:'وزن الدمبل الواحد',cable:'درجة المكدس — نسب البكرات قد تغير المقاومة الفعلية',barbell:'الوزن الكلي شامل البار',body:'وزن الجسم',time:'بالثواني',cardio:''}[t]||'';
+function loadTypeTxt(t){
+  const AR={stack:'وزن المكدس (اختر الدرجة بالكجم)',plate:'أطباق: الوزن لكل جهة',db:'وزن الدمبل الواحد',cable:'درجة المكدس — نسب البكرات قد تغير المقاومة الفعلية',barbell:'الوزن الكلي شامل البار',body:'وزن الجسم',time:'بالثواني',cardio:''};
+  return A(AR[t]||'', LOADTYPE_EN[t]||'');
 }
 
 /* ===================== Router ===================== */
@@ -1021,59 +1196,56 @@ function renderToday(){
   const kcalT=isTrainToday? t.kcalTrain : t.kcalRest;
   const wLog=S.weights.find(x=>x.date===todayStr);
   const before=daysSinceStart()<0;
-  const dayName=DAY_AR[new Date(todayStr+'T00:00:00').getDay()===0?0:new Date(todayStr+'T00:00:00').getDay()];
   let html='';
   const comp=!gap? S.comps[i]:null;
-  html+=`<div class="card" style="background:linear-gradient(150deg,#181b14,#0f110c);color:#fff;border:1px solid rgba(200,241,53,.28)">
-    <span class="en-tag" style="color:#9aa0a8">${gap?'EXTRA REST':esc(w.en||'GET MOVING')}</span>
-    <h2 style="color:#fff;font-size:22px;margin-top:2px">${gap? 'يوم مؤجل — راحة إضافية' : d.dayName+' — يوم '+d.idx+' من 28'}</h2>
-    <div style="color:#c8ccd2;font-size:13px">${fmtDateAr(todayStr)} • ${esc(d.phase.name)}${totalShift()?` • الخطة ممتدة حتى ${fmtDateAr(effDate(27))}`:''}</div>
+  html+=`<div class="card hero">
+    <span class="en-tag">${gap?'EXTRA REST':esc(w.en||'GET MOVING')}</span>
+    <h2 style="font-size:22px;margin-top:2px">${gap? A('يوم مؤجل — راحة إضافية','Postponed day — extra rest') : dayNameOf(todayStr)+A(' — يوم ',' — Day ')+d.idx+A(' من 28',' of 28')}</h2>
+    <div class="hsub">${fmtDate(todayStr)} • ${esc(phName(d.phase))}${totalShift()?` • ${A('الخطة ممتدة حتى ','plan extended to ')}${fmtDate(effDate(27))}`:''}</div>
     <div class="btnrow">
-      ${isTrainToday? `<button class="btn big" style="background:var(--volt);color:var(--voltink)" onclick="startSession(${i})">${wDone?'🔁 إعادة فتح التمرين':'▶️ ابدأ التمرين'}</button>`
-        : gap? `<div class="note" style="background:rgba(255,255,255,.08);color:#dfe2e6">أجّلت التمرين — اليوم راحة، وتمرين «${esc(w.title)}» ينتظرك ${fmtDateAr(effDate(i))}. حافظ على خطواتك ووجباتك.</div>${S.lastPostpone!=null?`<button class="btn small" style="background:rgba(255,255,255,.14);color:#fff" onclick="undoPostpone()">↩️ تراجع عن التأجيل (أرجع تمرين اليوم)</button>`:''}`
-        : cancelled? `<div class="note" style="background:rgba(255,255,255,.08);color:#f3c6c3">هذا اليوم ملغى — التعويض مضاف للجلسة المناسبة القادمة.</div>`
-        : `<div class="note" style="background:rgba(255,255,255,.08);color:#dfe2e6">اليوم ${d.workout==='restActive'?'راحة نشطة: '+esc(WORKOUTS.restActive.cardio.note):'راحة كاملة — نوم جيد وماء كافٍ.'}</div>`}
+      ${isTrainToday? `<button class="btn big primary" onclick="startSession(${i})">${wDone? A('🔁 إعادة فتح التمرين','🔁 Reopen workout'):A('▶️ ابدأ التمرين','▶️ START WORKOUT')}</button>`
+        : gap? `<div class="note">${A('أجّلت التمرين — اليوم راحة، وتمرين','You postponed — today is rest, and')} «${esc(wkTitle(d.workout))}» ${A('ينتظرك','is waiting for you on')} ${fmtDate(effDate(i))}. ${A('حافظ على خطواتك ووجباتك.','Keep your steps and meals on track.')}</div>${S.lastPostpone!=null?`<button class="btn small" onclick="undoPostpone()">↩️ ${A('تراجع عن التأجيل (أرجع تمرين اليوم)','Undo postpone (bring today back)')}</button>`:''}`
+        : cancelled? `<div class="note">${A('هذا اليوم ملغى — التعويض مضاف للجلسة المناسبة القادمة.','This day is cancelled — make-up sets are queued for the next matching session.')}</div>`
+        : `<div class="note">${d.workout==='restActive'? A('اليوم راحة نشطة: ','Active rest today: ')+esc(A(WORKOUTS.restActive.cardio.note,WORKOUTS.restActive.cardio.noteEn)) : A('اليوم راحة كاملة — نوم جيد وماء كافٍ.','Full rest today — sleep well and hydrate.')}</div>`}
     </div>
     ${!gap&&!wDone? dayManageHTML(i,true):''}
-    ${comp? `<div class="note" style="background:rgba(200,241,53,.12);color:var(--volt)">💪 هذه الجلسة فيها سيتات تعويض عن يوم «${esc(WORKOUTS[comp.workout].title)}» الملغى (+1 سيت على أول 3 تمارين).</div>`:''}
-    ${before? `<div class="note" style="background:rgba(255,255,255,.08);color:#ffd9a8">الخطة تبدأ الأحد ${fmtDateAr(PLAN_START)} — استعرضها اليوم وجهز اشتراك الوجبات.</div>`:''}
+    ${comp? `<div class="note" style="color:var(--acc)">💪 ${A('هذه الجلسة فيها سيتات تعويض عن يوم','This session carries make-up sets for the cancelled')} «${esc(wkTitle(comp.workout))}» ${A('الملغى (+1 سيت على أول 3 تمارين).','day (+1 set on the first 3 exercises).')}</div>`:''}
+    ${before? `<div class="note">${A('الخطة تبدأ الأحد ','The plan starts Sunday ')}${fmtDate(PLAN_START)}${A(' — استعرضها اليوم وجهز اشتراك الوجبات.',' — browse it today and set up your meal subscription.')}</div>`:''}
   </div>`;
 
   if(isTrainToday){
-    html+=`<div class="card"><h2>🏋️ تمرين اليوم: ${esc(w.title)} ${wDone?'<span class="chip ok">مكتمل ✓</span>':''}</h2>
-    <div class="sub">${esc(w.dur)} • جهد مستهدف RIR ${d.phase.rir} • ${w.blocks.length} تمارين + كارديو${comp?' • +سيتات تعويض':''}</div>
+    html+=`<div class="card"><h2>🏋️ ${A('تمرين اليوم: ',"Today's workout: ")}${esc(wkTitle(d.workout))} ${wDone?`<span class="chip ok">${A('مكتمل ✓','Done ✓')}</span>`:''}</h2>
+    <div class="sub">${esc(wkDur(d.workout))} • ${A('جهد مستهدف','Target effort')} RIR ${d.phase.rir} • ${w.blocks.length} ${A('تمارين + كارديو','exercises + cardio')}${comp? A(' • +سيتات تعويض',' • +make-up sets'):''}</div>
     <div class="spacer"></div>`;
     w.blocks.forEach((b,bx)=>{
       const ex=EX[b.ex]; const sg=suggestLoad(b.ex,i); const extra=compExtra(i,bx,b.ex);
       html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')">
-        <div><b>${esc(ex.ar)}</b><div class="meta">${b.sets+extra}×${b.reps}${extra?' <span class="chip ok">+'+extra+' تعويض</span>':''} • راحة ${b.rest}ث ${sg?`• مقترح <span dir="ltr">${sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi}</span> كجم`:''}</div></div>
+        <div><b>${esc(exName(ex))}</b><div class="meta">${b.sets+extra}×${b.reps}${extra?` <span class="chip ok">+${extra} ${A('تعويض','make-up')}</span>`:''} • ${A('راحة','rest')} ${restCur()}${A('ث','s')} ${sg?`• ${A('مقترح','suggested')} <span dir="ltr">${sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi}</span> ${A('كجم','kg')}`:''}</div></div>
         <span class="tg">TG</span></div>
         <div class="body">${exDetailHTML(b.ex,b)}</div></div>`;
     });
     if(w.cardio){ const cx=EX[w.cardio.ex];
-      html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')"><div><b>🫀 ${esc(cx.ar)} — ${w.cardio.min} دقيقة</b><div class="meta">${esc(w.cardio.note)}</div></div><span class="tg">CARDIO</span></div><div class="body">${exDetailHTML(w.cardio.ex)}</div></div>`; }
+      html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')"><div><b>🫀 ${esc(exName(cx))} — ${w.cardio.min} ${A('دقيقة','min')}</b><div class="meta">${esc(A(w.cardio.note,w.cardio.noteEn||w.cardio.note))}</div></div><span class="tg">CARDIO</span></div><div class="body">${exDetailHTML(w.cardio.ex)}</div></div>`; }
     html+=`</div>`;
   }
 
-  /* وجبات اليوم (مثبتة على التاريخ حتى مع تأجيل التمارين) */
-  html+=`<div class="card"><h2>🍽️ وجبات اليوم <span class="chip">${r0(mtCore.kcal)}–${r0(mt.kcal)} kcal</span> <span class="chip dark">بروتين ${r0(mt.p)} غ</span></h2>
-  <div class="sub">الهدف: ~${kcalT} kcal • بروتين ${t.protein} غ${isTrainToday?' • يوم تدريب (كارب أعلى)':' • يوم راحة (كارب أقل — أخّر أو احذف سناك ما قبل التمرين)'}</div>`;
+  html+=`<div class="card"><h2>🍽️ ${A('وجبات اليوم',"Today's meals")} <span class="chip">${r0(mtCore.kcal)}–${r0(mt.kcal)} kcal</span> <span class="chip dark">${A('بروتين','Protein')} ${r0(mt.p)}${A(' غ','g')}</span></h2>
+  <div class="sub">${A('الهدف: ~','Target: ~')}${kcalT} kcal • ${A('بروتين','protein')} ${t.protein}${A(' غ','g')}${isTrainToday? A(' • يوم تدريب (كارب أعلى)',' • training day (higher carbs)'):A(' • يوم راحة (كارب أقل — أخّر أو احذف سناك ما قبل التمرين)',' • rest day (lower carbs — delay or skip the pre-workout snack)')}</div>`;
   html+=mealsChecklistHTML(c,{meals:meals},mlog,true);
-  html+=`<div class="note">💡 ${esc(meals.why)}</div></div>`;
+  html+=`<div class="note">💡 ${esc(mealWhy(meals))}</div></div>`;
 
-  /* أهداف اليوم */
   const steps=gap?8000:d.steps, water=isTrainToday?3.0:2.5;
-  html+=`<div class="card"><h2>🎯 أهداف اليوم</h2><div class="grid4">
-    <div class="tile"><div class="v">${steps.toLocaleString('en')}</div><div class="l">خطوات</div></div>
-    <div class="tile"><div class="v">${water} L</div><div class="l">ماء</div></div>
-    <div class="tile"><div class="v">7-8</div><div class="l">ساعات نوم</div></div>
-    <div class="tile"><div class="v">${kcalT}</div><div class="l">سعرات</div></div>
+  html+=`<div class="card"><h2>🎯 ${A('أهداف اليوم',"Today's targets")}</h2><div class="grid4">
+    <div class="tile"><div class="v">${steps.toLocaleString('en')}</div><div class="l">${A('خطوات','steps')}</div></div>
+    <div class="tile"><div class="v">${water} L</div><div class="l">${A('ماء','water')}</div></div>
+    <div class="tile"><div class="v">7-8</div><div class="l">${A('ساعات نوم','hrs sleep')}</div></div>
+    <div class="tile"><div class="v">${kcalT}</div><div class="l">kcal</div></div>
   </div>
   <div class="inrow" style="margin-top:10px">
-    <div><label class="f">وزن الصباح (كجم)</label><input type="number" step="0.1" inputmode="decimal" id="wIn" value="${wLog?wLog.kg:''}" placeholder="مثال: 80.4"></div>
-    <div><label class="f">خطوات اليوم</label><input type="number" id="stIn" inputmode="numeric" value="${S.stepsLog[todayStr]||''}" placeholder="من ساعتك/جوالك"></div>
+    <div><label class="f">${A('وزن الصباح (كجم)','Morning weight (kg)')}</label><input type="number" step="0.1" inputmode="decimal" id="wIn" value="${wLog?wLog.kg:''}" placeholder="${A('مثال: 80.4','e.g. 80.4')}"></div>
+    <div><label class="f">${A('خطوات اليوم',"Today's steps")}</label><input type="number" id="stIn" inputmode="numeric" value="${S.stepsLog[todayStr]||''}" placeholder="${A('من ساعتك/جوالك','from your watch/phone')}"></div>
   </div>
-  <div class="btnrow"><button class="btn primary" onclick="saveDaily('${todayStr}')">حفظ قياسات اليوم</button></div></div>`;
+  <div class="btnrow"><button class="btn primary" onclick="saveDaily('${todayStr}')">${A('حفظ قياسات اليوم',"Save today's numbers")}</button></div></div>`;
   document.getElementById('v-today').innerHTML=html;
 }
 function saveDaily(dateStr){
@@ -1083,7 +1255,6 @@ function saveDaily(dateStr){
   if(st&&st>0) S.stepsLog[dateStr]=st;
   save(true); renderToday();
 }
-/* سيتات التعويض: +1 على أول 3 تمارين غير الجذع/الكارديو */
 function compExtra(dayI, blockIndex, exId){
   if(!S.comps[dayI]) return 0;
   const ex=EX[exId];
@@ -1091,54 +1262,55 @@ function compExtra(dayI, blockIndex, exId){
   return blockIndex<3? 1:0;
 }
 function exDetailHTML(exId, block){
-  const ex=EX[exId]; const sg=block? suggestLoad(exId, null):null;
-  let h=`<div><span class="chip dark">${esc(ex.tg)}</span> <span class="chip">${esc(ex.tgc)}</span></div>
-  <div class="sub" style="margin-top:6px"><b>العضلات:</b> ${esc(ex.mus)} • <span dir="ltr">${esc(ex.en)}</span></div>
-  <div style="margin-top:6px"><b>الضبط:</b><ul style="margin:4px 0 6px;padding-right:18px">${ex.setup.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
-  <b>المدى والأداء:</b> ${esc(ex.rom)}</div>`;
+  const ex=EX[exId];
+  const setup=A(ex.setup, ex.setupEn||ex.setup);
+  let h=`<div><span class="chip dark">${esc(ex.tg)}</span> <span class="chip">${esc(A(ex.tgc,ex.tgcEn||ex.tgc))}</span></div>
+  <div class="sub" style="margin-top:6px"><b>${A('العضلات:','Muscles:')}</b> ${esc(A(ex.mus,ex.musEn||ex.mus))} • <span dir="ltr">${esc(isAR()? ex.en : ex.ar)}</span></div>
+  <div style="margin-top:6px"><b>${A('الضبط:','Setup:')}</b><ul style="margin:4px 0 6px;padding-inline-start:18px">${setup.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+  <b>${A('المدى والأداء:','Range & execution:')}</b> ${esc(A(ex.rom,ex.romEn||ex.rom))}</div>`;
   if(!ex.cardio && ex.load!=='body' && ex.load!=='time'){
-    const dbNote= ex.load==='db'? ' درجات دمبل Technogym المتوفرة: 1-10 كجم (كل 1 كجم) ثم 12-36 كجم (كل 2 كجم).':'';
-    h+=`<div class="note">⚖️ ${esc(loadTypeAr(ex.load))} — بداية مقترحة <span dir="ltr">${ex.start[0]}–${ex.start[1]}</span> كجم، ثم عاير: أدِّ سيت تجريبياً واحتفظ بـ 3-4 تكرارات احتياطي.${dbNote}${ex.load==='stack'||ex.load==='cable'?' استخدم أقرب درجة متاحة على مكدس الجهاز نفسه.':''}</div>`;
+    const dbNote= ex.load==='db'? A(' درجات دمبل Technogym المتوفرة: 1-10 كجم (كل 1 كجم) ثم 12-36 كجم (كل 2 كجم).',' Technogym dumbbell steps: 1-10 kg (every 1 kg), then 12-36 kg (every 2 kg).'):'';
+    h+=`<div class="note">⚖️ ${esc(loadTypeTxt(ex.load))} — ${A('بداية مقترحة','suggested start')} <span dir="ltr">${ex.start[0]}–${ex.start[1]}</span> ${A('كجم، ثم عاير: أدِّ سيت تجريبياً واحتفظ بـ 3-4 تكرارات احتياطي.','kg, then calibrate: do a test set keeping 3-4 reps in reserve.')}${dbNote}${(ex.load==='stack'||ex.load==='cable')? A(' استخدم أقرب درجة متاحة على مكدس الجهاز نفسه.',' Use the nearest pin available on that machine.'):''}</div>`;
   }
-  h+=`<div class="sub" style="margin-top:6px"><b>البديل إذا كان الجهاز مشغولاً:</b> ${esc(ex.alt)}</div>`;
-  if(ex.ytv) h+=`<a class="btn small" style="display:block;text-align:right;margin-top:8px" target="_blank" rel="noopener noreferrer" href="${ex.ytv}">🎬 ${esc(ex.ytt||'فيديو الشرح المباشر')}</a>`;
+  h+=`<div class="sub" style="margin-top:6px"><b>${A('البديل إذا كان الجهاز مشغولاً:','If the machine is busy:')}</b> ${esc(A(ex.alt,ex.altEn||ex.alt))}</div>`;
+  if(ex.ytv) h+=`<a class="btn small" style="display:block;text-align:start;margin-top:8px" target="_blank" rel="noopener noreferrer" href="${ex.ytv}">🎬 ${esc(A(ex.ytt,ex.yttEn||ex.ytt))}</a>`;
   h+=`<div class="btnrow">`;
-  if(ex.tgUrl) h+=`<a class="btn small ghost" target="_blank" rel="noopener noreferrer" href="${ex.tgUrl}">🏷️ صفحة الجهاز: ${esc(ex.tgName||'Technogym')}</a>`;
-  h+=`<a class="btn small ghost" target="_blank" rel="noopener noreferrer" href="${ytLink(ex.yt)}">🔎 فيديوهات إضافية</a></div>`;
+  if(ex.tgUrl) h+=`<a class="btn small ghost" target="_blank" rel="noopener noreferrer" href="${ex.tgUrl}">🏷️ ${A('صفحة الجهاز: ','Machine page: ')}${esc(ex.tgName||'Technogym')}</a>`;
+  h+=`<a class="btn small ghost" target="_blank" rel="noopener noreferrer" href="${ytLink(ex.yt)}">🔎 ${A('فيديوهات إضافية','More videos')}</a></div>`;
   return h;
 }
 
-/* ===================== MEALS checklist (مشترك) ===================== */
+/* ===================== MEALS checklist ===================== */
 function mealsChecklistHTML(i, d, mlog, compact){
   let h='';
   SLOT_ORDER.forEach(slot=>{
     const items=d.meals.slots[slot]; if(!items||!items.length) return;
-    h+=`<div style="margin-top:10px"><b class="sub" style="color:var(--ink)">${SLOT_AR[slot]}</b>`;
+    h+=`<div style="margin-top:10px"><b class="sub" style="color:var(--ink)">${A(SLOT_AR[slot],SLOT_EN[slot])}</b>`;
     items.forEach((mi,ix)=>{
       const m=MENU[mi.id]; const mm=mealItemMacros(mi); const key=slot+'_'+ix;
       const st=mlog[key];
-      const wLabel = (mi.g && m.scope==='protein') ? mi.g+' جرام'
-        : (m.cat==='carb' && m.gEst) ? 'حصة المنيو ≈'+m.gEst+'غ'
-        : (m.cat==='carb'||m.cat==='lowcarb') ? 'حصة المنيو'
-        : (m.scope==='full') ? 'حصة المنيو' : '100 جرام';
+      const wLabel = (mi.g && m.scope==='protein') ? mi.g+A(' جرام','g')
+        : (m.cat==='carb' && m.gEst) ? A('حصة المنيو ≈','menu portion ≈')+m.gEst+A('غ','g')
+        : (m.cat==='carb'||m.cat==='lowcarb') ? A('حصة المنيو','menu portion')
+        : (m.scope==='full') ? A('حصة المنيو','menu portion') : '100'+A(' جرام','g');
       h+=`<div class="meal"><div class="mt">
         <div style="flex:1">
-          <b>${esc(m.ar)} <span class="mtag w">⚖️ ${wLabel}</span></b>
-          ${m.spicy?'<span class="chip spicy">حار 🌶️</span>':''}${m.milk?'<span class="chip">حليب</span>':''}${m.soy?'<span class="chip">صويا</span>':''}${m.sesame?'<span class="chip">سمسم</span>':''}
-          <div class="macro"><span class="mtag">${r0(mm.kcal)} kcal</span><span class="mtag">P ${r0(mm.p)}</span><span class="mtag">C ${r0(mm.c)}</span><span class="mtag">F ${r1(mm.f)}</span>${m.price? `<span class="mtag">${(mi.g&&mi.g!==100)?'السعر حسب الوزن':m.price+' ر.س'}</span>`:''}</div>
-          ${m.note?`<div class="sub" style="margin-top:4px">${esc(m.note)}</div>`:''}
-          ${m.scope==='protein'&&(m.cat==='chicken'||m.cat==='beef')?`<div class="sub" style="margin-top:2px">القيم محسوبة على الوزن المذكور — اطلبه بالجرام مع الجانب المذكور</div>`:''}
+          <b>${esc(nm(m))} <span class="mtag w">⚖️ ${wLabel}</span></b>
+          ${m.spicy?`<span class="chip spicy">${A('حار 🌶️','Spicy 🌶️')}</span>`:''}${m.milk?`<span class="chip">${A('حليب','Milk')}</span>`:''}${m.soy?`<span class="chip">${A('صويا','Soy')}</span>`:''}${m.sesame?`<span class="chip">${A('سمسم','Sesame')}</span>`:''}
+          <div class="macro"><span class="mtag">${r0(mm.kcal)} kcal</span><span class="mtag">P ${r0(mm.p)}</span><span class="mtag">C ${r0(mm.c)}</span><span class="mtag">F ${r1(mm.f)}</span>${m.price? `<span class="mtag">${(mi.g&&mi.g!==100)? A('السعر حسب الوزن','price by weight'):m.price+A(' ر.س',' SAR')}</span>`:''}</div>
+          ${m.note?`<div class="sub" style="margin-top:4px">${esc(A(m.note,m.noteEn||m.note))}</div>`:''}
+          ${m.scope==='protein'&&(m.cat==='chicken'||m.cat==='beef')?`<div class="sub" style="margin-top:2px">${A('القيم محسوبة على الوزن المذكور — اطلبه بالجرام مع الجانب المذكور','Values are computed for the listed weight — order it by grams with the listed side')}</div>`:''}
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;align-items:flex-end">
-          <button class="btn small ${st==='done'?'ok':''}" onclick="markMeal(${i},'${key}','done')">${st==='done'?'✓ أُكلت':'أكلتها'}</button>
-          <button class="btn small ${st==='swapped'?'ok':'ghost'}" onclick="swapMeal(${i},'${key}','${mi.id}')">${st==='swapped'?'مُبدلة':'بدّل'}</button>
+          <button class="btn small ${st==='done'?'ok':''}" onclick="markMeal(${i},'${key}','done')">${st==='done'? A('✓ أُكلت','✓ Eaten'):A('أكلتها','Ate it')}</button>
+          <button class="btn small ${st==='swapped'?'ok':'ghost'}" onclick="swapMeal(${i},'${key}','${mi.id}')">${st==='swapped'? A('مُبدلة','Swapped'):A('بدّل','Swap')}</button>
         </div></div></div>`;
     });
     h+='</div>';
   });
   const note=mlog._note||'';
-  h+=`<label class="f">ماذا أكلت فعلياً (إن اختلف)؟</label><input type="text" value="${esc(note)}" onchange="dayMealLog(${i})._note=this.value;queueSave()" placeholder="مثال: بدلت العشاء بشيشاوي">`;
-  h+=`<div class="note">📦 طريقة الطلب: اذكر وزن البروتين بالجرام كما هو مكتوب (حصة المنيو القياسية = 100 جرام — مثبتة في بطاقات المنيو مثل البامية «100غ دجاج»). الصوص دائماً على جنب، وبدائل اللو كارب تُطلب بدل الأرز. أوزان الأرز/المكرونة تقديرية للحصة القياسية لأن المنيو ينشر القيم لا الجرامات.</div>`;
+  h+=`<label class="f">${A('ماذا أكلت فعلياً (إن اختلف)؟','What did you actually eat (if different)?')}</label><input type="text" value="${esc(note)}" onchange="dayMealLog(${i})._note=this.value;queueSave()" placeholder="${A('مثال: بدلت العشاء بشيشاوي','e.g. swapped dinner for Chichawi')}">`;
+  h+=`<div class="note">📦 ${A('طريقة الطلب: اذكر وزن البروتين بالجرام كما هو مكتوب (حصة المنيو القياسية = 100 جرام — مثبتة في بطاقات المنيو مثل البامية «100غ دجاج»). الصوص دائماً على جنب، وبدائل اللو كارب تُطلب بدل الأرز. أوزان الأرز/المكرونة تقديرية للحصة القياسية لأن المنيو ينشر القيم لا الجرامات.','How to order: state the protein weight in grams exactly as written (the standard menu portion = 100 g — confirmed on menu cards like Okra "100g chicken"). Sauce always on the side; low-carb subs replace rice. Rice/pasta gram weights are estimates for the standard portion since the menu publishes values, not grams.')}</div>`;
   return h;
 }
 function markMeal(i,key,st){
@@ -1152,42 +1324,42 @@ function swapMeal(i,key,curId){
     const m=MENU[k];
     if(k===curId) return false;
     if(cur.cat==='carb'||cur.cat==='lowcarb') return m.cat==='carb'||m.cat==='lowcarb';
-    if(cur.cat==='chicken'||cur.cat==='beef'||cur.cat==='seafood') return ['chicken','beef'].includes(m.cat); /* بدون بحري حسب طلبك */
+    if(cur.cat==='chicken'||cur.cat==='beef'||cur.cat==='seafood') return ['chicken','beef'].includes(m.cat);
     return m.cat===cur.cat;
   });
-  let h=`<h3>بدّل «${esc(cur.ar)}» بصنف من نفس الفئة</h3><div style="max-height:50vh;overflow:auto">`;
+  let h=`<h3>${A('بدّل','Swap')} «${esc(nm(cur))}» ${A('بصنف من نفس الفئة','for another item in the same category')}</h3><div style="max-height:50vh;overflow:auto">`;
   alts.forEach(k=>{ const m=MENU[k];
-    h+=`<div class="meal" style="cursor:pointer" onclick="applySwap(${i},'${key}','${k}')"><b>${esc(m.ar)}</b>
-    <div class="macro"><span class="mtag">${r0(m.kcal)} kcal</span><span class="mtag">P ${r0(m.p)}</span><span class="mtag">C ${r0(m.c)}</span>${m.price?`<span class="mtag">${m.price} ر.س</span>`:''}</div></div>`;
+    h+=`<div class="meal" style="cursor:pointer" onclick="applySwap(${i},'${key}','${k}')"><b>${esc(nm(m))}</b>
+    <div class="macro"><span class="mtag">${r0(m.kcal)} kcal</span><span class="mtag">P ${r0(m.p)}</span><span class="mtag">C ${r0(m.c)}</span>${m.price?`<span class="mtag">${m.price}${A(' ر.س',' SAR')}</span>`:''}</div></div>`;
   });
-  h+=`</div><div class="btnrow"><button class="btn" onclick="dlg.close()">إغلاق</button></div>`;
+  h+=`</div><div class="btnrow"><button class="btn" onclick="dlg.close()">${A('إغلاق','Close')}</button></div>`;
   openDlg(h);
 }
 function applySwap(i,key,newId){
   const ml=dayMealLog(i);
-  ml[key]='swapped'; ml[key+'_to']=newId; /* البديل يُطلب بنفس وزن الصنف الأصلي */
+  ml[key]='swapped'; ml[key+'_to']=newId;
   const m=MENU[newId];
-  ml._note=((ml._note||'')+' | بدلت إلى '+m.ar).slice(-160);
-  dlg.close(); queueSave(); render(); toast('سُجل البديل: '+m.ar);
+  ml._note=((ml._note||'')+' | '+A('بدلت إلى ','swapped to ')+nm(m)).slice(-160);
+  dlg.close(); queueSave(); render(); toast(A('سُجل البديل: ','Swap logged: ')+nm(m));
 }
 function openDlg(html){ if(dlg.open) dlg.close(); document.getElementById('dlgBody').innerHTML=html; dlg.showModal(); }
 const dlg=document.getElementById('dlg');
 
-/* ===================== PLAN (calendar) ===================== */
+/* ===================== PLAN ===================== */
 function renderPlan(){
   const c=todayCal(); const resv=resolveCal(c); const ti=resv.kind==='day'? resv.i : -1;
-  let html=`<div class="card"><h2>📅 خطة 28 يوم <span class="en-tag">4-WEEK PLAN</span></h2>
-  <div class="sub">من الأحد ${fmtDateAr(PLAN_START)} إلى ${fmtDateAr(effDate(27))} • تدريب الأحد–الخميس، راحة الجمعة والسبت${totalShift()?` • ممتدة ${totalShift()} يوم بسبب التأجيل`:''}</div>`;
+  let html=`<div class="card"><h2>📅 ${A('خطة 28 يوم','28-Day Plan')} <span class="en-tag">4-WEEK PLAN</span></h2>
+  <div class="sub">${A('من الأحد','Sunday')} ${fmtDate(PLAN_START)} ${A('إلى','to')} ${fmtDate(effDate(27))} • ${A('تدريب الأحد–الخميس، راحة الجمعة والسبت','training Sun–Thu, rest Fri & Sat')}${totalShift()?` • ${A('ممتدة','extended')} ${totalShift()} ${A('يوم بسبب التأجيل','day(s) from postponing')}`:''}</div>`;
   WEEK_PHASES.forEach(ph=>{
-    html+=`<div style="margin-top:12px"><b>${esc(ph.name)}</b> <span class="chip">RIR ${ph.rir}</span><div class="sub">${esc(ph.note)}</div>
+    html+=`<div style="margin-top:12px"><b>${esc(phName(ph))}</b> <span class="chip">RIR ${ph.rir}</span><div class="sub">${esc(phNote(ph))}</div>
     <div class="wkband" style="margin-top:6px">`;
     PLAN.filter(d=>d.week===ph.n).forEach(d=>{
       const i=d.idx-1; const lg=S.workLogs[i];
       const done=lg&&lg.status==='done'; const canc=isCancelled(i);
-      const ed=effDate(i); const dn=DAY_AR[new Date(ed+'T00:00:00').getDay()];
+      const ed=effDate(i); const dn=dayNameOf(ed).slice(0,isAR()?12:3);
       html+=`<button class="dayb ${i===ti?'today':''} ${i===selectedPlanDay?'selected':''}" onclick="selectedPlanDay=${i};renderPlan()">
         <small>${dn}${(S.dayShift[i]||0)>0?' ⏭':''}</small><b>${ed.slice(8)}</b>
-        <span class="st ${done?'done':''}" ${canc?'style="color:var(--bad)"':''}>${canc?'✗ ملغى':done?'✓':WORKOUTS[d.workout].title.split(' ')[0]}</span></button>`;
+        <span class="st ${done?'done':''}" ${canc?'style="color:var(--bad)"':''}>${canc? A('✗ ملغى','✗ off'):done?'✓':wkTitle(d.workout).split(' ')[0]}</span></button>`;
     });
     html+=`</div></div>`;
   });
@@ -1200,33 +1372,33 @@ function planDayDetailHTML(i){
   const cal=effOffset(i); const meals=mealsForCal(cal);
   const mt=dayMealTotals(meals,true);
   const canc=isCancelled(i); const comp=S.comps[i];
-  const ed=effDate(i); const dn=DAY_AR[new Date(ed+'T00:00:00').getDay()];
-  let html=`<div class="card"><h2>${dn} ${fmtDateAr(ed)} — يوم ${d.idx}${(S.dayShift[i]||0)>0?' <span class="chip warn">مؤجل ⏭</span>':''}${canc?' <span class="chip" style="background:var(--badbg);color:var(--bad)">ملغى</span>':''}</h2>
-  <div class="sub">${esc(d.phase.name)} • ${d.isTrain? 'تدريب: '+esc(w.title):'راحة'}</div>
+  const ed=effDate(i);
+  let html=`<div class="card"><h2>${dayNameOf(ed)} ${fmtDate(ed)} — ${A('يوم','Day')} ${d.idx}${(S.dayShift[i]||0)>0?` <span class="chip warn">${A('مؤجل ⏭','moved ⏭')}</span>`:''}${canc?` <span class="chip" style="background:var(--badbg);color:var(--bad)">${A('ملغى','cancelled')}</span>`:''}</h2>
+  <div class="sub">${esc(phName(d.phase))} • ${d.isTrain? A('تدريب: ','Training: ')+esc(wkTitle(d.workout)):A('راحة','Rest')}</div>
   <div class="grid4" style="margin-top:8px">
-    <div class="tile"><div class="v">${d.isTrain&&!canc?t.kcalTrain:t.kcalRest}</div><div class="l">سعرات هدف</div></div>
-    <div class="tile"><div class="v">${t.protein}</div><div class="l">بروتين غ</div></div>
-    <div class="tile"><div class="v">${d.steps.toLocaleString('en')}</div><div class="l">خطوات</div></div>
-    <div class="tile"><div class="v">${d.waterL}L</div><div class="l">ماء</div></div>
+    <div class="tile"><div class="v">${d.isTrain&&!canc?t.kcalTrain:t.kcalRest}</div><div class="l">${A('سعرات هدف','target kcal')}</div></div>
+    <div class="tile"><div class="v">${t.protein}</div><div class="l">${A('بروتين غ','protein g')}</div></div>
+    <div class="tile"><div class="v">${d.steps.toLocaleString('en')}</div><div class="l">${A('خطوات','steps')}</div></div>
+    <div class="tile"><div class="v">${d.waterL}L</div><div class="l">${A('ماء','water')}</div></div>
   </div>
   ${dayManageHTML(i,false)}
-  ${comp? `<div class="note" style="background:var(--okbg);color:var(--ok)">💪 تشمل سيتات تعويض عن يوم «${esc(WORKOUTS[comp.workout].title)}» الملغى (+1 سيت على أول 3 تمارين).</div>`:''}`;
+  ${comp? `<div class="note" style="background:var(--okbg);color:var(--ok)">💪 ${A('تشمل سيتات تعويض عن يوم','Includes make-up sets for the cancelled')} «${esc(wkTitle(comp.workout))}» ${A('الملغى (+1 سيت على أول 3 تمارين).','day (+1 set on the first 3 exercises).')}</div>`:''}`;
   if(d.isTrain&&!canc){
-    html+=`<div class="hr"></div><h3>التمرين (${esc(w.dur)}) — RIR ${d.phase.rir}</h3>
-    <div class="note">🔥 الإحماء: ${esc(w.warm)}</div>`;
+    html+=`<div class="hr"></div><h3>${A('التمرين','Workout')} (${esc(wkDur(d.workout))}) — RIR ${d.phase.rir}</h3>
+    <div class="note">🔥 ${A('الإحماء: ','Warm-up: ')}${esc(A(w.warm,w.warmEn||w.warm))}</div>`;
     w.blocks.forEach((b,bx)=>{ const ex=EX[b.ex]; const sg=suggestLoad(b.ex,i); const extra=compExtra(i,bx,b.ex);
       html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')">
-      <div><b>${esc(ex.ar)}</b><div class="meta">${b.sets+extra}×${b.reps}${extra?' <span class="chip ok">+'+extra+'</span>':''} • راحة ${b.rest}ث • مقترح <span dir="ltr">${sg? (sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi):'—'}</span> كجم</div></div><span class="tg">TG</span></div>
+      <div><b>${esc(exName(ex))}</b><div class="meta">${b.sets+extra}×${b.reps}${extra?` <span class="chip ok">+${extra}</span>`:''} • ${A('راحة','rest')} ${restCur()}${A('ث','s')} • ${A('مقترح','sugg.')} <span dir="ltr">${sg? (sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi):'—'}</span> ${A('كجم','kg')}</div></div><span class="tg">TG</span></div>
       <div class="body">${exDetailHTML(b.ex,b)}</div></div>`; });
-    if(w.cardio){ const c=EX[w.cardio.ex]; html+=`<div class="note">🫀 كارديو: ${esc(c.ar)} ${w.cardio.min} دقيقة — ${esc(w.cardio.note)}</div>`; }
-    if(d.week===4) html+=`<div class="warnnote">أسبوع التثبيت: إذا كان مجموع إجابات الطاقة/النوم في التشيك-إن ضعيفاً، احذف السيت الأخير من تمارين العزل (ديلود خفيف).</div>`;
-    html+=`<div class="btnrow"><button class="btn primary" onclick="startSession(${i})">▶️ ابدأ هذا التمرين</button>${lg&&lg.status?`<span class="chip ok">آخر حالة: ${lg.status==='done'?'مكتمل':'جزئي'}</span>`:''}</div>`;
+    if(w.cardio){ const cx=EX[w.cardio.ex]; html+=`<div class="note">🫀 ${A('كارديو: ','Cardio: ')}${esc(exName(cx))} ${w.cardio.min} ${A('دقيقة','min')} — ${esc(A(w.cardio.note,w.cardio.noteEn||w.cardio.note))}</div>`; }
+    if(d.week===4) html+=`<div class="warnnote">${A('أسبوع التثبيت: إذا كان مجموع إجابات الطاقة/النوم في التشيك-إن ضعيفاً، احذف السيت الأخير من تمارين العزل (ديلود خفيف).','Consolidation week: if energy/sleep scores in the check-in are low, drop the last set of isolation lifts (light deload).')}</div>`;
+    html+=`<div class="btnrow"><button class="btn primary" onclick="startSession(${i})">▶️ ${A('ابدأ هذا التمرين','Start this workout')}</button>${lg&&lg.status?`<span class="chip ok">${A('آخر حالة: ','Last: ')}${lg.status==='done'? A('مكتمل','done'):A('جزئي','partial')}</span>`:''}</div>`;
   } else if(canc){
-    html+=`<div class="note">يوم ملغى — لا يُحسب ضمن التزامك التدريبي، ووجبات هذا التاريخ تبقى كما هي (اعتبره يوم راحة غذائياً).</div>`;
+    html+=`<div class="note">${A('يوم ملغى — لا يُحسب ضمن التزامك التدريبي، ووجبات هذا التاريخ تبقى كما هي (اعتبره يوم راحة غذائياً).','Cancelled day — not counted toward training adherence; meals for this date stay as planned (treat it as a rest day, nutritionally).')}</div>`;
   } else {
-    html+=`<div class="note">${d.workout==='restActive'? '🚶 '+esc(WORKOUTS.restActive.cardio.note) : '🛌 راحة كاملة — الأهم: نوم 7-8 ساعات وماء كافٍ وخطواتك اليومية.'}</div>`;
+    html+=`<div class="note">${d.workout==='restActive'? '🚶 '+esc(A(WORKOUTS.restActive.cardio.note,WORKOUTS.restActive.cardio.noteEn)) : '🛌 '+A('راحة كاملة — الأهم: نوم 7-8 ساعات وماء كافٍ وخطواتك اليومية.','Full rest — priorities: 7-8h sleep, water, and your daily steps.')}</div>`;
   }
-  html+=`<div class="hr"></div><h3>وجبات ${fmtDateAr(ed)} <span class="chip">${r0(dayMealTotals(meals,false).kcal)}–${r0(mt.kcal)} kcal • P ${r0(mt.p)}</span></h3>`;
+  html+=`<div class="hr"></div><h3>${A('وجبات','Meals for')} ${fmtDate(ed)} <span class="chip">${r0(dayMealTotals(meals,false).kcal)}–${r0(mt.kcal)} kcal • P ${r0(mt.p)}</span></h3>`;
   html+=mealsChecklistHTML(cal,{meals:meals},dayMealLog(cal),false);
   html+=`</div>`;
   return html;
@@ -1235,58 +1407,63 @@ function planDayDetailHTML(i){
 /* ===================== MEALS view ===================== */
 function renderMeals(){
   const ti=todayCal(); const lastCal=27+totalShift();
-  let html=`<div class="card"><h2>🍽️ خطة الوجبات — وجبات اللياقة TFM</h2>
-  <div class="sub">دورة تنويع 14 يوماً تتكرر مرتين • كل الأصناف من المنيو الرسمي بأسمائها الحرفية • القيم من بطاقات المنيو المطبوعة</div>
-  <div class="note">كل يوم: وجبة دجاج + وجبة لحم (بدون بحري) بأوزان مكتوبة بالجرام — اطلب من المطعم بالوزن المذكور حرفياً. الصوص على جنب، وبدائل اللو كارب بدل الأرز في أيام الراحة. الوجبات مثبتة على التاريخ حتى لو أجّلت تمريناً. عدّل أي صنف بزر «بدّل».</div>
+  let html=`<div class="card"><h2>🍽️ ${A('خطة الوجبات — وجبات اللياقة TFM','Meal Plan — The Fitness Meals (TFM)')}</h2>
+  <div class="sub">${A('دورة تنويع 14 يوماً تتكرر مرتين • كل الأصناف من المنيو الرسمي بأسمائها الحرفية • القيم من بطاقات المنيو المطبوعة','A 14-day variety cycle repeated twice • every item is from the official menu, by exact name • values from the printed menu cards')}</div>
+  <div class="note">${A('كل يوم: وجبة دجاج + وجبة لحم (بدون بحري) بأوزان مكتوبة بالجرام — اطلب من المطعم بالوزن المذكور حرفياً. الصوص على جنب، وبدائل اللو كارب بدل الأرز في أيام الراحة. الوجبات مثبتة على التاريخ حتى لو أجّلت تمريناً. عدّل أي صنف بزر «بدّل».','Every day: one chicken meal + one beef meal (no seafood), with weights written in grams — order exactly by the listed weight. Sauce on the side; low-carb subs replace rice on rest days. Meals stay pinned to dates even if you postpone a workout. Change any item with "Swap".')}</div>
   <div class="wkband" style="margin-top:8px">`;
   for(let c=0;c<=lastCal;c++){
     const ds=calDate(c); const res=resolveCal(c);
     const isT=res.kind==='day'&&PLAN[res.i].isTrain&&!isCancelled(res.i);
-    const dn=DAY_AR[new Date(ds+'T00:00:00').getDay()];
+    const dn=dayNameOf(ds).slice(0,isAR()?12:3);
     html+=`<button class="dayb ${c===ti?'today':''} ${c===selectedMealDay?'selected':''}" onclick="selectedMealDay=${c};renderMeals()">
-    <small>${dn}</small><b>${ds.slice(8)}</b><span class="st">${isT?'تمرين':'راحة'}</span></button>`;
+    <small>${dn}</small><b>${ds.slice(8)}</b><span class="st">${isT? A('تمرين','train'):A('راحة','rest')}</span></button>`;
   }
   html+='</div></div>';
   const c=Math.min(selectedMealDay,lastCal); const meals=mealsForCal(c); const t=targets();
   const res=resolveCal(c); const isT=res.kind==='day'&&PLAN[res.i].isTrain&&!isCancelled(res.i);
-  const ds=calDate(c); const dn=DAY_AR[new Date(ds+'T00:00:00').getDay()];
+  const ds=calDate(c);
   const core=dayMealTotals(meals,false), full=dayMealTotals(meals,true);
-  html+=`<div class="card"><h2>${dn} ${fmtDateAr(ds)} ${isT?'<span class="chip dark">تدريب</span>':'<span class="chip">راحة</span>'}</h2>
+  html+=`<div class="card"><h2>${dayNameOf(ds)} ${fmtDate(ds)} ${isT?`<span class="chip dark">${A('تدريب','training')}</span>`:`<span class="chip">${A('راحة','rest')}</span>`}</h2>
   <div class="grid4" style="margin-top:6px">
-    <div class="tile"><div class="v">${r0(core.kcal)}</div><div class="l">أساسي kcal</div></div>
-    <div class="tile"><div class="v">${r0(full.kcal)}</div><div class="l">مع سناك الجوع</div></div>
-    <div class="tile"><div class="v">${r0(full.p)}</div><div class="l">بروتين غ</div></div>
-    <div class="tile"><div class="v">${isT?t.kcalTrain:t.kcalRest}</div><div class="l">الهدف kcal</div></div>
+    <div class="tile"><div class="v">${r0(core.kcal)}</div><div class="l">${A('أساسي kcal','core kcal')}</div></div>
+    <div class="tile"><div class="v">${r0(full.kcal)}</div><div class="l">${A('مع سناك الجوع','w/ flex snack')}</div></div>
+    <div class="tile"><div class="v">${r0(full.p)}</div><div class="l">${A('بروتين غ','protein g')}</div></div>
+    <div class="tile"><div class="v">${isT?t.kcalTrain:t.kcalRest}</div><div class="l">${A('الهدف kcal','target kcal')}</div></div>
   </div>
   ${mealsChecklistHTML(c,{meals:meals},dayMealLog(c),false)}
-  <div class="note">💡 ${esc(meals.why)}</div></div>`;
-  /* دليل الأصناف الكامل */
-  html+=`<div class="card"><h2>📖 دليل المنيو الكامل</h2><div class="sub">كل الأصناف المتاحة للتبديل (الأسعار بالريال، القيم كما في المنيو)</div>`;
+  <div class="note">💡 ${esc(mealWhy(meals))}</div></div>`;
+  html+=`<div class="card"><h2>📖 ${A('دليل المنيو الكامل','Full Menu Guide')}</h2><div class="sub">${A('كل الأصناف المتاحة للتبديل (الأسعار بالريال، القيم كما في المنيو)','Everything available for swaps (prices in SAR, values as printed)')}</div>`;
   ['chicken','beef','seafood','pasta','burger','wrap','salad','snack','drink','carb','lowcarb','sauce'].forEach(cat=>{
     const items=Object.keys(MENU).filter(k=>MENU[k].cat===cat);
     if(!items.length) return;
-    html+=`<h3 style="margin-top:12px">${CAT_AR[cat]}${cat==='seafood'?' <span class="chip warn">خارج خطتك — بدون بحري بطلبك</span>':''}</h3><table class="mini"><tr><th>الصنف</th><th>kcal</th><th>P</th><th>C</th><th>F</th><th>ر.س</th></tr>`;
+    html+=`<h3 style="margin-top:12px">${A(CAT_AR[cat],CAT_EN[cat])}${cat==='seafood'?` <span class="chip warn">${A('خارج خطتك — بدون بحري بطلبك','excluded — no seafood, per your request')}</span>`:''}</h3><table class="mini"><tr><th>${A('الصنف','Item')}</th><th>kcal</th><th>P</th><th>C</th><th>F</th><th>${A('ر.س','SAR')}</th></tr>`;
     items.forEach(k=>{ const m=MENU[k];
-      html+=`<tr><td>${esc(m.ar)}${m.lc?' <span class="chip ok">لو كارب</span>':''}${m.best?' ⭐':''}</td><td class="num">${m.kcal}</td><td class="num">${m.p}</td><td class="num">${m.c}</td><td class="num">${m.f}</td><td class="num">${m.price||'—'}</td></tr>`; });
+      html+=`<tr><td>${esc(nm(m))}${m.lc?` <span class="chip ok">${A('لو كارب','low-carb')}</span>`:''}${m.best?' ⭐':''}</td><td class="num">${m.kcal}</td><td class="num">${m.p}</td><td class="num">${m.c}</td><td class="num">${m.f}</td><td class="num">${m.price||'—'}</td></tr>`; });
     html+='</table>';
   });
-  html+=`<div class="note">القيم من بطاقات المنيو الرسمية (سُحبت في 01/08/2026). وجبات الدجاج/اللحم/البحري قيمها «للمصدر البروتيني فقط» — أضف جانب الكارب. إذا تغير المنيو أرسل لي النسخة الجديدة وسأحدث الخطة دون فقدان سجلاتك.</div></div>`;
+  html+=`<div class="note">${A('القيم من بطاقات المنيو الرسمية (سُحبت في 01/08/2026). وجبات الدجاج/اللحم قيمها لكل 100 جرام من المصدر البروتيني — أضف جانب الكارب. إذا تغير المنيو أرسل النسخة الجديدة وسأحدث الخطة دون فقدان سجلاتك.','Values from the official menu cards (captured 01/08/2026). Chicken/beef values are per 100 g of the protein source — add your carb side. If the menu changes, send the new version and the plan updates without losing your logs.')}</div></div>`;
   document.getElementById('v-meals').innerHTML=html;
 }
 
 /* ===================== LIBRARY ===================== */
 function renderLib(){
-  let html=`<div class="card"><h2>📚 مكتبة التمارين <span class="en-tag">TECHNOGYM</span></h2>
-  <div class="sub">الأسماء بصيغة «الخط + الوظيفة» لأن موديلات ناديك لم تُؤكد بعد — أرسل صور الأجهزة وسأطابقها بدقة. روابط الفيديو تفتح بحث يوتيوب بالاسم الدقيق للجهاز والتمرين.</div></div>`;
-  const groups={'صدر':['chestPress','inclinePressM','pecFly'],'ظهر':['latPulldown','vertTraction','seatedRow','reverseFly','facePull'],
-  'كتف':['shoulderPress','latRaise','latRaiseCable'],'بايسبس':['dbCurl','cableCurl','preacherCurl','inclineDbCurl','hammerCurl'],
-  'ترايسبس':['pushdown','overheadExt','armExtM','dipsMachine'],'أرجل ومؤخرة':['legPress','legExt','legCurl','calfRaise','hipAbd','gluteKickback'],
-  'جذع وبطن':['crunchM','plank','kneeRaise'],'كارديو Technogym':['cRun','cBike','cSynchro','cIntervals']};
+  let html=`<div class="card"><h2>📚 ${A('مكتبة التمارين','Exercise Library')} <span class="en-tag">TECHNOGYM</span></h2>
+  <div class="sub">${A('الأسماء بصيغة «الخط + الوظيفة» لأن موديلات ناديك لم تُؤكد بعد — أرسل صور الأجهزة وسأطابقها بدقة. كل تمرين فيه فيديو مباشر + صفحة الجهاز الرسمية.',"Names use Technogym line + function since your gym's exact models aren't confirmed yet — send machine photos for exact matching. Every exercise has a direct video + the official machine page.")}</div></div>`;
+  const G=(ar,en)=>A(ar,en);
+  const groups={
+    [G('صدر','Chest')]:['chestPress','inclinePressM','pecFly'],
+    [G('ظهر','Back')]:['latPulldown','vertTraction','seatedRow','reverseFly','facePull'],
+    [G('كتف','Shoulders')]:['shoulderPress','latRaise','latRaiseCable'],
+    [G('بايسبس','Biceps')]:['dbCurl','cableCurl','preacherCurl','inclineDbCurl','hammerCurl'],
+    [G('ترايسبس','Triceps')]:['pushdown','overheadExt','armExtM','dipsMachine'],
+    [G('أرجل ومؤخرة','Legs & Glutes')]:['legPress','legExt','legCurl','calfRaise','hipAbd','gluteKickback'],
+    [G('جذع وبطن','Core & Abs')]:['crunchM','plank','kneeRaise'],
+    [G('كارديو Technogym','Technogym Cardio')]:['cRun','cBike','cSynchro','cIntervals']};
   for(const g in groups){
     html+=`<div class="card"><h3>${g}</h3>`;
     groups[g].forEach(id=>{ const ex=EX[id];
       html+=`<div class="exrow"><div class="t" onclick="this.parentElement.classList.toggle('open')">
-      <div><b>${esc(ex.ar)}</b><div class="meta" dir="ltr" style="text-align:right">${esc(ex.en)}</div></div><span class="tg">TG</span></div>
+      <div><b>${esc(exName(ex))}</b><div class="meta" dir="ltr" style="text-align:start">${esc(isAR()? ex.en : ex.ar)}</div></div><span class="tg">TG</span></div>
       <div class="body">${exDetailHTML(id)}</div></div>`; });
     html+='</div>';
   }
@@ -1318,19 +1495,18 @@ function openWorkoutEntry(){
   if(S.sessionActive){ SES=S.sessionActive; showSession(); return; }
   const c=todayCal(); const res=resolveCal(c);
   if(res.kind==='day' && PLAN[res.i].isTrain && !isCancelled(res.i)){ startSession(res.i); return; }
-  /* يوم راحة/مؤجل: اختر يوم تمرين */
-  let h=`<h3>${res.kind==='gap'?'اليوم راحة (يوم مؤجل) ⏭':'اليوم يوم راحة 🛌'}</h3><p class="sub">تبي تفتح تمريناً من يوم آخر؟</p>`;
+  let h=`<h3>${res.kind==='gap'? A('اليوم راحة (يوم مؤجل) ⏭','Today is rest (postponed day) ⏭'):A('اليوم يوم راحة 🛌','Today is a rest day 🛌')}</h3><p class="sub">${A('تبي تفتح تمريناً من يوم آخر؟','Want to open a workout from another day?')}</p>`;
   const anchor=res.kind==='gap'? res.next : res.i;
   PLAN.forEach(x=>{ const j=x.idx-1;
     if(x.isTrain && !isCancelled(j) && Math.abs(j-anchor)<=7){ const ed=effDate(j);
-      h+=`<button class="btn" style="margin:3px" onclick="dlg.close();startSession(${j})">${ed.slice(8,10)}/${ed.slice(5,7)} — ${esc(WORKOUTS[x.workout].title)}</button>`; }
+      h+=`<button class="btn" style="margin:3px" onclick="dlg.close();startSession(${j})">${ed.slice(8,10)}/${ed.slice(5,7)} — ${esc(wkTitle(x.workout))}</button>`; }
   });
-  h+=`<div class="btnrow"><button class="btn ghost" onclick="dlg.close()">إغلاق</button></div>`;
+  h+=`<div class="btnrow"><button class="btn ghost" onclick="dlg.close()">${A('إغلاق','Close')}</button></div>`;
   openDlg(h);
 }
 function startSession(dayI){
   ensureAudio();
-  const d=planDay(dayI); if(!d.isTrain){ toast('هذا يوم راحة'); return; }
+  const d=planDay(dayI); if(!d.isTrain){ toast(A('هذا يوم راحة','That is a rest day')); return; }
   const lg=dayWorkLog(dayI);
   SES={ dayI, wk:d.workout, exI:0, setI:0, startTs:Date.now(), pausedAt:null, pausedAccum:0,
         restEndTs:null, restTotal:0, phase:'work', cardio:false, replaced:lg.replaced||{} };
@@ -1377,30 +1553,30 @@ function sessionRender(restJustEnded){
   const total=blocks.reduce((a,b,ix)=>a+blkSets(ix),0);
   const doneSets=Object.values(lg.sets).flat().filter(s=>s&&!s.skip).length;
   let h=`<div class="shead">
-    <div><span class="en-tag" style="color:#8b9097">${esc(w.en)}</span><h3 style="margin:0;color:#fff">${esc(w.title)}</h3>
-    <div class="sub" style="color:#9aa0a8">${d.dayName} — يوم ${d.idx} • RIR ${d.phase.rir}</div></div>
-    <div style="text-align:left"><div class="stime" id="sesTime">${fmtMMSS(sesElapsed())}</div>
+    <div><span class="en-tag">${esc(w.en)}</span><h3 style="margin:0;color:var(--sesink)">${esc(wkTitle(SES.wk))}</h3>
+    <div class="sub" style="color:var(--sesink2)">${dayNameOf(effDate(SES.dayI))} — ${A('يوم','Day')} ${d.idx} • RIR ${d.phase.rir}</div></div>
+    <div style="text-align:end"><div class="stime" id="sesTime">${fmtMMSS(sesElapsed())}</div>
     <div class="btnrow" style="margin:4px 0 0">
-      <button class="btn small sbtn" onclick="togglePause()">${SES.pausedAt?'▶️ استئناف':'⏸️ إيقاف'}</button>
-      <button class="btn small sbtn" onclick="confirmEnd()">⏹️ إنهاء</button>
+      <button class="btn small sbtn" onclick="togglePause()">${SES.pausedAt? A('▶️ استئناف','▶️ Resume'):A('⏸️ إيقاف','⏸️ Pause')}</button>
+      <button class="btn small sbtn" onclick="confirmEnd()">⏹️ ${A('إنهاء','End')}</button>
     </div></div></div>
   <div class="progressbar g" style="margin:10px 0 2px"><i style="width:${r0(100*doneSets/total)}%"></i></div>
-  <div class="sub" style="color:#9aa0a8">${doneSets} من ${total} سيت</div>`;
+  <div class="sub" style="color:var(--sesink2)">${doneSets} ${A('من','of')} ${total} ${A('سيت','sets')}</div>`;
 
   if(SES.pausedAt){
-    h+=`<div class="scard center"><h3>⏸️ الجلسة موقوفة</h3><p class="sub" style="color:#aeb2b8">المؤقت متوقف — كمل وقت ما تكون جاهز.</p>
-    <button class="btn sbtn primary big" onclick="togglePause()">استئناف التمرين</button></div>`;
+    h+=`<div class="scard center"><h3>⏸️ ${A('الجلسة موقوفة','Session paused')}</h3><p class="sub" style="color:var(--sesink2)">${A('المؤقت متوقف — كمل وقت ما تكون جاهز.','Timer stopped — resume whenever you are ready.')}</p>
+    <button class="btn sbtn primary big" onclick="togglePause()">${A('استئناف التمرين','Resume workout')}</button></div>`;
     document.getElementById('sessionOverlay').innerHTML=h; return;
   }
 
   if(SES.cardio){
     const c=EX[w.cardio.ex];
-    h+=`<div class="scard"><h3>🫀 الكارديو الختامي: ${esc(c.ar)} — ${w.cardio.min} دقيقة</h3>
-    <div class="sub" style="color:#aeb2b8">${esc(w.cardio.note)} • ${esc(c.tg)}</div>
-    <ul style="color:#c8ccd2">${c.setup.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+    h+=`<div class="scard"><h3>🫀 ${A('الكارديو الختامي: ','Finishing cardio: ')}${esc(exName(c))} — ${w.cardio.min} ${A('دقيقة','min')}</h3>
+    <div class="sub" style="color:var(--sesink2)">${esc(A(w.cardio.note,w.cardio.noteEn||w.cardio.note))} • ${esc(c.tg)}</div>
+    <ul style="color:var(--sesink2);padding-inline-start:18px">${A(c.setup,c.setupEn||c.setup).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
     <div class="btnrow">
-      <button class="btn sbtn primary" onclick="dayWorkLog(SES.dayI).cardioDone=true;finishSession()">✓ خلصت الكارديو — أنهِ الجلسة</button>
-      <button class="btn sbtn" onclick="finishSession()">تخطَّ الكارديو وأنهِ</button>
+      <button class="btn sbtn primary" onclick="dayWorkLog(SES.dayI).cardioDone=true;finishSession()">✓ ${A('خلصت الكارديو — أنهِ الجلسة','Cardio done — finish session')}</button>
+      <button class="btn sbtn" onclick="finishSession()">${A('تخطَّ الكارديو وأنهِ','Skip cardio & finish')}</button>
     </div></div>`;
     document.getElementById('sessionOverlay').innerHTML=h; return;
   }
@@ -1410,57 +1586,56 @@ function sessionRender(restJustEnded){
   const replaced=SES.replaced[b.ex];
   h+=`<div class="scard ${SES.phase==='rest'?'resting':''} ${restJustEnded?'restdone':''}">
     <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
-      <div><h3 style="margin:0">${esc(ex.ar)} ${replaced?`<span class="chip warn">بديل: ${esc(replaced)}</span>`:''}</h3>
-      <div class="sub" style="color:#aeb2b8">${esc(ex.tg)} • تمرين ${SES.exI+1}/${blocks.length}</div></div>
+      <div><h3 style="margin:0">${esc(exName(ex))} ${replaced?`<span class="chip warn">${A('بديل: ','alt: ')}${esc(replaced)}</span>`:''}</h3>
+      <div class="sub" style="color:var(--sesink2)">${esc(ex.tg)} • ${A('تمرين','exercise')} ${SES.exI+1}/${blocks.length}</div></div>
       <span class="tg">TG</span></div>
     <div class="setdots">${Array.from({length:blkSets(SES.exI)},(_,k)=>`<i class="${sets[k]&&!sets[k].skip?'d':''} ${k===SES.setI?'cur':''}"></i>`).join('')}</div>`;
 
   if(SES.phase==='rest'){
     const left=Math.max(0,Math.ceil((SES.restEndTs-Date.now())/1000));
-    h+=`<div class="center"><div class="sub" style="color:#c8f135;font-weight:800">استراحة — السيت القادم: ${SES.setI+1} من ${blkSets(SES.exI)}</div>
+    h+=`<div class="center"><div class="sub" style="color:var(--acc);font-weight:800">${A('استراحة — السيت القادم: ','Rest — next set: ')}${SES.setI+1} ${A('من','of')} ${blkSets(SES.exI)}</div>
     <div class="bigtimer" id="restLeft">${fmtMMSS(left)}</div>
-    <div class="progressbar" style="background:rgba(255,255,255,.12)"><i id="restBar" style="background:#c8f135;width:${r0(100*left/SES.restTotal)}%"></i></div>
+    <div class="progressbar" style="background:var(--sesline)"><i id="restBar" style="background:var(--acc);width:${r0(100*left/SES.restTotal)}%"></i></div>
     <div class="btnrow" style="justify-content:center">
-      <button class="btn sbtn" onclick="adjRest(-15)">−15ث</button>
-      <button class="btn sbtn" onclick="adjRest(15)">+15ث</button>
-      <button class="btn sbtn primary" onclick="skipRest()">تخطَّ الاستراحة ←</button>
+      <button class="btn sbtn" onclick="adjRest(-15)">−15${A('ث','s')}</button>
+      <button class="btn sbtn" onclick="adjRest(15)">+15${A('ث','s')}</button>
+      <button class="btn sbtn primary" onclick="skipRest()">${A('تخطَّ الاستراحة ←','Skip rest →')}</button>
     </div></div>`;
   } else {
-    h+=`<div class="sub" style="color:#c8ccd2;margin-top:4px">السيت <b class="snum">${SES.setI+1}</b> من <b class="snum">${blkSets(SES.exI)}</b> • الهدف <b class="snum">${b.reps}</b> تكرار • راحة ${b.rest}ث • احتياطي RIR ${d.phase.rir}</div>
-    ${sg?`<div class="sub" style="color:#c8f135;margin-top:2px">وزن مقترح: <b class="snum">${sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi} كجم</b> — ${esc(sg.why)}</div>`:''}
+    h+=`<div class="sub" style="color:var(--sesink2);margin-top:4px">${A('السيت','Set')} <b class="snum">${SES.setI+1}</b> ${A('من','of')} <b class="snum">${blkSets(SES.exI)}</b> • ${A('الهدف','target')} <b class="snum">${b.reps}</b> ${A('تكرار','reps')} • ${A('راحة','rest')} ${restCur()}${A('ث','s')} • RIR ${d.phase.rir}</div>
+    ${sg?`<div class="sub" style="color:var(--acc);margin-top:2px">${A('وزن مقترح: ','Suggested: ')}<b class="snum">${sg.lo===sg.hi?sg.lo:sg.lo+'–'+sg.hi} ${A('كجم','kg')}</b> — ${esc(sg.why)}</div>`:''}
     <div class="sgrid" style="margin-top:10px">
-      <div><label class="f">الوزن الفعلي (كجم)</label><input type="number" step="0.5" inputmode="decimal" id="inW" value="${sets[SES.setI]?.w ?? (sg? sg.lo:'')}"></div>
-      <div><label class="f">التكرارات الفعلية</label><input type="number" inputmode="numeric" id="inR" value="${sets[SES.setI]?.r ?? ''}" placeholder="${b.reps}"></div>
-      <div><label class="f">RIR (احتياطي)</label><input type="number" inputmode="numeric" id="inRIR" value="${sets[SES.setI]?.rir ?? ''}" placeholder="${d.phase.rir}"></div>
+      <div><label class="f">${A('الوزن الفعلي (كجم)','Actual weight (kg)')}</label><input type="number" step="0.5" inputmode="decimal" id="inW" value="${sets[SES.setI]?.w ?? (sg? sg.lo:'')}"></div>
+      <div><label class="f">${A('التكرارات الفعلية','Actual reps')}</label><input type="number" inputmode="numeric" id="inR" value="${sets[SES.setI]?.r ?? ''}" placeholder="${b.reps}"></div>
+      <div><label class="f">RIR</label><input type="number" inputmode="numeric" id="inRIR" value="${sets[SES.setI]?.rir ?? ''}" placeholder="${d.phase.rir}"></div>
     </div>
     <div class="btnrow" style="align-items:center">
-      <label style="display:flex;align-items:center;gap:6px;color:#c8ccd2;font-size:13px"><input type="checkbox" id="inPain" style="width:18px;height:18px" ${sets[SES.setI]?.pain?'checked':''}> ألم/انزعاج</label>
-      <input type="text" id="inNote" placeholder="ملاحظة (اختياري)" style="flex:1;min-width:120px" value="${esc(sets[SES.setI]?.note||'')}">
+      <label style="display:flex;align-items:center;gap:6px;color:var(--sesink2);font-size:13px"><input type="checkbox" id="inPain" style="width:18px;height:18px" ${sets[SES.setI]?.pain?'checked':''}> ${A('ألم/انزعاج','Pain/discomfort')}</label>
+      <input type="text" id="inNote" placeholder="${A('ملاحظة (اختياري)','Note (optional)')}" style="flex:1;min-width:120px" value="${esc(sets[SES.setI]?.note||'')}">
     </div>
     <div class="btnrow">
-      <button class="btn sbtn primary big" onclick="completeSet()">✓ أنهيت السيت — ابدأ الاستراحة</button>
+      <button class="btn sbtn primary big" onclick="completeSet()">✓ ${A('أنهيت السيت — ابدأ الاستراحة','Set done — start rest')}</button>
     </div>
     <div class="btnrow">
-      <button class="btn small sbtn" onclick="skipExercise()">تخطَّ التمرين</button>
-      <button class="btn small sbtn" onclick="replaceExercise()">🔁 بدّل التمرين (الجهاز مشغول)</button>
-      <button class="btn small sbtn" onclick="showExInfo('${b.ex}')">ℹ️ طريقة الأداء</button>
+      <button class="btn small sbtn" onclick="skipExercise()">${A('تخطَّ التمرين','Skip exercise')}</button>
+      <button class="btn small sbtn" onclick="replaceExercise()">🔁 ${A('بدّل التمرين (الجهاز مشغول)','Swap (machine busy)')}</button>
+      <button class="btn small sbtn" onclick="showExInfo('${b.ex}')">ℹ️ ${A('طريقة الأداء','How to')}</button>
     </div>`;
   }
   h+=`</div>`;
-  /* قائمة بقية التمارين */
-  h+=`<div class="scard"><div class="sub" style="color:#9aa0a8;font-weight:800">بقية الجلسة</div>`;
+  h+=`<div class="scard"><div class="sub" style="color:var(--sesink2);font-weight:800">${A('بقية الجلسة','Rest of session')}</div>`;
   blocks.forEach((bb,ix)=>{
     const exx=EX[bb.ex]; const st=lg.sets[bb.ex]||[]; const dn=st.filter(s=>s&&!s.skip).length;
-    h+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.07);${ix===SES.exI?'color:#fff;font-weight:800':'color:#8b9097'}">
-    <span>${ix===SES.exI?'▸ ':''}${esc(exx.ar)}</span><span class="snum">${dn}/${blkSets(ix)}</span></div>`;
+    h+=`<div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--sesline);${ix===SES.exI?'color:var(--sesink);font-weight:800':'color:var(--sesink3)'}">
+    <span>${ix===SES.exI?'▸ ':''}${esc(exName(exx))}</span><span class="snum">${dn}/${blkSets(ix)}</span></div>`;
   });
-  h+=`<div style="display:flex;justify-content:space-between;padding:6px 0;color:#8b9097"><span>🫀 ${esc(EX[w.cardio.ex].ar)}</span><span class="snum">${w.cardio.min}د</span></div></div>`;
-  h+=`<div class="sub center" style="color:#5f646b;margin-top:4px">الصوت ${S.settings.sound?'مفعل':'مطفأ'} • الاهتزاز ${S.settings.vibrate?'مفعل':'مطفأ'} — من الإعدادات</div>`;
+  h+=`<div style="display:flex;justify-content:space-between;padding:6px 0;color:var(--sesink3)"><span>🫀 ${esc(exName(EX[w.cardio.ex]))}</span><span class="snum">${w.cardio.min}${A('د','m')}</span></div></div>`;
+  h+=`<div class="sub center" style="color:var(--sesink3);margin-top:4px">${A('الصوت','Sound')} ${S.settings.sound? A('مفعل','on'):A('مطفأ','off')} • ${A('الاهتزاز','Vibration')} ${S.settings.vibrate? A('مفعل','on'):A('مطفأ','off')} — ${A('من الإعدادات','in Settings')}</div>`;
   document.getElementById('sessionOverlay').innerHTML=h;
 }
 function showExInfo(exId){
   const ex=EX[exId];
-  openDlg(`<h3>${esc(ex.ar)}</h3>${exDetailHTML(exId)}<div class="btnrow"><button class="btn" onclick="dlg.close()">رجوع للتمرين</button></div>`);
+  openDlg(`<h3>${esc(exName(ex))}</h3>${exDetailHTML(exId)}<div class="btnrow"><button class="btn" onclick="dlg.close()">${A('رجوع للتمرين','Back to workout')}</button></div>`);
 }
 function completeSet(){
   const b=curBlock(); const lg=dayWorkLog(SES.dayI);
@@ -1471,12 +1646,12 @@ function completeSet(){
   const pain=document.getElementById('inPain').checked;
   const note=document.getElementById('inNote').value.trim();
   lg.sets[b.ex][SES.setI]={w:isNaN(w)?null:w, r:isNaN(r)?null:r, rir, pain, note, skip:false};
-  if(pain) toast('سُجل الألم — إذا كان حاداً أوقف التمرين وبدّله');
+  if(pain) toast(A('سُجل الألم — إذا كان حاداً أوقف التمرين وبدّله','Pain logged — if sharp, stop and swap the exercise'));
   const lastSetOfEx=SES.setI>=blkSets(SES.exI)-1;
   const lastEx=SES.exI>=sesBlocks().length-1;
   if(lastSetOfEx && lastEx){ SES.cardio=true; queueSave(); sessionRender(); return; }
   if(lastSetOfEx){ SES.exI++; SES.setI=0; } else { SES.setI++; }
-  SES.phase='rest'; SES.restTotal=b.rest; SES.restEndTs=Date.now()+b.rest*1000;
+  SES.phase='rest'; SES.restTotal=restCur(); SES.restEndTs=Date.now()+restCur()*1000;
   queueSave(); sessionRender();
 }
 function adjRest(dsec){ if(SES.phase!=='rest') return; SES.restEndTs+=dsec*1000; SES.restTotal=Math.max(15,SES.restTotal+dsec); queueSave(); sessionRender(); }
@@ -1490,10 +1665,10 @@ function skipExercise(){
 }
 function replaceExercise(){
   const b=curBlock(); const ex=EX[b.ex];
-  openDlg(`<h3>بدّل «${esc(ex.ar)}»</h3><p class="sub">البديل المقترح: <b>${esc(ex.alt)}</b> — بنفس السيتات والتكرارات.</p>
+  openDlg(`<h3>${A('بدّل','Swap')} «${esc(exName(ex))}»</h3><p class="sub">${A('البديل المقترح: ','Suggested alternative: ')}<b>${esc(A(ex.alt,ex.altEn||ex.alt))}</b> — ${A('بنفس السيتات والتكرارات.','same sets and reps.')}</p>
   <div class="btnrow">
-    <button class="btn primary" onclick="SES.replaced['${b.ex}']=EX['${b.ex}'].alt;dayWorkLog(SES.dayI).replaced['${b.ex}']=EX['${b.ex}'].alt;dlg.close();queueSave();sessionRender();toast('استخدم البديل وسجل عليه')">استخدم البديل</button>
-    <button class="btn ghost" onclick="dlg.close()">إلغاء</button>
+    <button class="btn primary" onclick="SES.replaced['${b.ex}']=A(EX['${b.ex}'].alt,EX['${b.ex}'].altEn||EX['${b.ex}'].alt);dayWorkLog(SES.dayI).replaced['${b.ex}']=SES.replaced['${b.ex}'];dlg.close();queueSave();sessionRender();toast(A('استخدم البديل وسجل عليه','Use the alternative and log on it'))">${A('استخدم البديل','Use alternative')}</button>
+    <button class="btn ghost" onclick="dlg.close()">${A('إلغاء','Cancel')}</button>
   </div>`);
 }
 function togglePause(){
@@ -1504,29 +1679,27 @@ function togglePause(){
 function confirmEnd(){
   const lg=dayWorkLog(SES.dayI);
   const done=Object.values(lg.sets).flat().filter(s=>s&&!s.skip).length;
-  openDlg(`<h3>⏹️ إيقاف الجلسة — وش تبي أسوي بأداء اليوم؟</h3>
-  <p class="sub">سجلت حتى الآن <b>${done}</b> سيت.</p>
+  openDlg(`<h3>⏹️ ${A('إيقاف الجلسة — وش تبي أسوي بأداء اليوم؟',"Stop session — what should I do with today's work?")}</h3>
+  <p class="sub">${A('سجلت حتى الآن','Logged so far:')} <b>${done}</b> ${A('سيت','sets')}.</p>
   <div class="btnrow" style="flex-direction:column;align-items:stretch">
-    <button class="btn primary" onclick="dlg.close();finishSession()">✅ أنهِ واحفظ اللي سويته</button>
-    <button class="btn danger" onclick="discardSession()">🗑️ أوقفه واحذف أي أداء — كأني ما تمرنت اليوم</button>
-    <button class="btn ghost" onclick="dlg.close()">▶️ لا، أكمل التمرين</button>
+    <button class="btn primary" onclick="dlg.close();finishSession()">✅ ${A('أنهِ واحفظ اللي سويته','Finish & save what I did')}</button>
+    <button class="btn danger" onclick="discardSession()">🗑️ ${A('أوقفه واحذف أي أداء — كأني ما تمرنت اليوم',"Stop & delete everything — as if I didn't train today")}</button>
+    <button class="btn ghost" onclick="dlg.close()">▶️ ${A('لا، أكمل التمرين','No, keep training')}</button>
   </div>`);
 }
-/* حذف أداء اليوم بالكامل ثم السؤال عن مصير اليوم */
 function discardSession(){
   const i=SES.dayI;
   S.workLogs[i]={sets:{},replaced:{},status:null,cardioDone:false};
   S.sessionActive=null; SES=null;
   save(true); hideSession();
-  const wk=WORKOUTS[PLAN[i].workout];
   const nxt=nextTrainAfter(i);
-  openDlg(`<h3>🗑️ انحذف أداء اليوم — طيب وش مصير تمرين «${esc(wk.title)}»؟</h3>
+  openDlg(`<h3>🗑️ ${A('انحذف أداء اليوم — طيب وش مصير تمرين','Performance deleted — so what happens to')} «${esc(wkTitle(PLAN[i].workout))}»${A('؟','?')}</h3>
   <div class="btnrow" style="flex-direction:column;align-items:stretch">
-    <button class="btn primary" onclick="dlg.close();postponeDay(${i})">⏭️ أجّله لبكرة — بكرة أسوي «${esc(wk.title)}» وكل الجدول ينزاح يوم</button>
-    <button class="btn" onclick="dlg.close();cancelDay(${i})">🗓️ ألغِ اليوم نهائياً — ${nxt?`بكرة على جدوله «${esc(WORKOUTS[PLAN[nxt].workout].title)}»`:'نكمل على الجدول'} مع سيتات تعويض</button>
-    <button class="btn ghost" onclick="dlg.close()">⏸️ اتركه لليوم — يمكن أرجع أكمله</button>
+    <button class="btn primary" onclick="dlg.close();postponeDay(${i})">⏭️ ${A('أجّله لبكرة — بكرة أسوي','Postpone to tomorrow — tomorrow I do')} «${esc(wkTitle(PLAN[i].workout))}» ${A('وكل الجدول ينزاح يوم','and the whole schedule shifts a day')}</button>
+    <button class="btn" onclick="dlg.close();cancelDay(${i})">🗓️ ${A('ألغِ اليوم نهائياً — ','Cancel this day — ')}${nxt? A('بكرة على جدوله «','tomorrow stays on schedule: “')+esc(wkTitle(PLAN[nxt].workout))+A('»','”'):A('نكمل على الجدول','we continue on schedule')} ${A('مع سيتات تعويض','with make-up sets')}</button>
+    <button class="btn ghost" onclick="dlg.close()">⏸️ ${A('اتركه لليوم — يمكن أرجع أكمله','Leave it for today — I might come back')}</button>
   </div>
-  <p class="sub" style="margin-top:8px">الإلغاء لا يُحسب تمريناً، والتأجيل يمدد نهاية الخطة يوماً واحداً. تقدر تتراجع عن الاثنين لاحقاً.</p>`);
+  <p class="sub" style="margin-top:8px">${A('الإلغاء لا يُحسب تمريناً، والتأجيل يمدد نهاية الخطة يوماً واحداً. تقدر تتراجع عن الاثنين لاحقاً.','Cancelling does not count as trained; postponing extends the plan by one day. Both can be undone later.')}</p>`);
 }
 function nextTrainAfter(i){
   for(let j=i+1;j<28;j++){ if(PLAN[j].isTrain && !isCancelled(j)) return j; }
@@ -1540,17 +1713,17 @@ function finishSession(){
   lg.status = doneSets>=total*0.6 ? 'done':'partial';
   let vol=0; blocks.forEach(b=>{ (lg.sets[b.ex]||[]).forEach(s=>{ if(s&&!s.skip&&s.w&&s.r) vol+=s.w*s.r; }); });
   let sug='';
-  blocks.forEach(b=>{ const sgN=suggestLoad(b.ex, SES.dayI+1); if(sgN) sug+=`<tr><td>${esc(EX[b.ex].ar)}</td><td class="num">${sgN.lo===sgN.hi?sgN.lo:sgN.lo+'–'+sgN.hi}</td></tr>`; });
-  const h=`<h3>✅ ملخص الجلسة — ${esc(w.title)}</h3>
+  blocks.forEach(b=>{ const sgN=suggestLoad(b.ex, SES.dayI+1); if(sgN) sug+=`<tr><td>${esc(exName(EX[b.ex]))}</td><td class="num">${sgN.lo===sgN.hi?sgN.lo:sgN.lo+'–'+sgN.hi}</td></tr>`; });
+  const h=`<h3>✅ ${A('ملخص الجلسة — ','Session summary — ')}${esc(wkTitle(SES.wk))}</h3>
   <div class="grid3" style="margin:8px 0">
-    <div class="tile"><div class="v">${fmtMMSS(dur)}</div><div class="l">المدة</div></div>
-    <div class="tile"><div class="v">${doneSets}/${total}</div><div class="l">سيتات</div></div>
-    <div class="tile"><div class="v">${r0(vol).toLocaleString('en')}</div><div class="l">حجم كجم×تكرار</div></div>
+    <div class="tile"><div class="v">${fmtMMSS(dur)}</div><div class="l">${A('المدة','duration')}</div></div>
+    <div class="tile"><div class="v">${doneSets}/${total}</div><div class="l">${A('سيتات','sets')}</div></div>
+    <div class="tile"><div class="v">${r0(vol).toLocaleString('en')}</div><div class="l">${A('حجم كجم×تكرار','volume kg×reps')}</div></div>
   </div>
-  ${lg.cardioDone?'<div class="okline">🫀 الكارديو مكتمل ✓</div>':''}
-  <h3 style="margin-top:10px">مقترح الجلسة القادمة</h3>
-  <table class="mini"><tr><th>التمرين</th><th>كجم</th></tr>${sug}</table>
-  <div class="btnrow"><button class="btn primary big" onclick="dlg.close()">تم</button></div>`;
+  ${lg.cardioDone?`<div class="okline">🫀 ${A('الكارديو مكتمل ✓','Cardio done ✓')}</div>`:''}
+  <h3 style="margin-top:10px">${A('مقترح الجلسة القادمة','Next-session suggestions')}</h3>
+  <table class="mini"><tr><th>${A('التمرين','Exercise')}</th><th>${A('كجم','kg')}</th></tr>${sug}</table>
+  <div class="btnrow"><button class="btn primary big" onclick="dlg.close()">${A('تم','Done')}</button></div>`;
   S.sessionActive=null; SES=null;
   save(true); hideSession(); openDlg(h);
 }
@@ -1558,18 +1731,19 @@ function finishSession(){
 <script>
 /* ===================== MORE: progress / check-in / settings / sources ===================== */
 function renderMore(){
+  applyChrome();
   const el=document.getElementById('moreBody');
   document.querySelectorAll('#v-more [data-go]').forEach(b=>b.onclick=()=>{moreSub=b.dataset.go;renderMore();});
   if(moreSub==='progress') el.innerHTML=progressHTML();
   else if(moreSub==='checkin') el.innerHTML=checkinHTML();
   else if(moreSub==='settings') el.innerHTML=settingsHTML();
   else if(moreSub==='sources') el.innerHTML=sourcesHTML();
-  else el.innerHTML=`<div class="card"><div class="sub">اختر قسماً من الأعلى. بياناتك كلها محفوظة محلياً على جهازك فقط.</div></div>`;
+  else el.innerHTML=`<div class="card"><div class="sub">${A('اختر قسماً من الأعلى. بياناتك كلها محفوظة محلياً على جهازك فقط.','Pick a section above. All your data lives locally on this device only.')}</div></div>`;
 }
 
 /* ---------- SVG line chart ---------- */
 function lineChart(data, unit, color){
-  if(!data.length) return `<div class="sub center" style="padding:18px">لا توجد بيانات بعد — سجل أول قياس من شاشة اليوم.</div>`;
+  if(!data.length) return `<div class="sub center" style="padding:18px">${A('لا توجد بيانات بعد — سجل أول قياس من شاشة اليوم.','No data yet — log your first entry from the Today screen.')}</div>`;
   const W=560,H=150,P=28;
   const ys=data.map(d=>d.y);
   let mn=Math.min(...ys), mx=Math.max(...ys); if(mx-mn<1){mx+=0.5;mn-=0.5;}
@@ -1577,14 +1751,14 @@ function lineChart(data, unit, color){
   const Y=v=>H-P-(H-2*P)*((v-mn)/(mx-mn));
   const pts=data.map((d,i)=>X(i)+','+Y(d.y)).join(' ');
   let dots=data.map((d,i)=>`<circle cx="${X(i)}" cy="${Y(d.y)}" r="3.5" fill="${color}"/>`).join('');
-  let labels=data.map((d,i)=> (data.length<=10||i%Math.ceil(data.length/8)===0)? `<text x="${X(i)}" y="${H-6}" font-size="9" text-anchor="middle" fill="#89907f">${d.x}</text>`:'').join('');
+  let labels=data.map((d,i)=> (data.length<=10||i%Math.ceil(data.length/8)===0)? `<text x="${X(i)}" y="${H-6}" font-size="9" text-anchor="middle" fill="var(--charttxt)">${d.x}</text>`:'').join('');
   return `<svg class="chart" viewBox="0 0 ${W} ${H}">
-    <text x="4" y="${Y(mx)+4}" font-size="10" fill="#89907f">${r1(mx)}</text>
-    <text x="4" y="${Y(mn)+4}" font-size="10" fill="#89907f">${r1(mn)}</text>
-    <line x1="${P}" y1="${Y(mn)}" x2="${W-P}" y2="${Y(mn)}" stroke="#2a2e26"/>
+    <text x="4" y="${Y(mx)+4}" font-size="10" fill="var(--charttxt)">${r1(mx)}</text>
+    <text x="4" y="${Y(mn)+4}" font-size="10" fill="var(--charttxt)">${r1(mn)}</text>
+    <line x1="${P}" y1="${Y(mn)}" x2="${W-P}" y2="${Y(mn)}" stroke="var(--chartaxis)"/>
     <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round"/>
     ${dots}${labels}
-    <text x="${W-4}" y="12" font-size="10" text-anchor="end" fill="#89907f">${unit}</text>
+    <text x="${W-4}" y="12" font-size="10" text-anchor="end" fill="var(--charttxt)">${unit}</text>
   </svg>`;
 }
 function weekAvgWeights(){
@@ -1612,22 +1786,22 @@ function progressHTML(){
   const wData=S.weights.map(x=>({x:x.date.slice(8,10)+'/'+x.date.slice(5,7), y:x.kg}));
   const waistData=S.waists.map(x=>({x:x.date.slice(8,10)+'/'+x.date.slice(5,7), y:x.cm}));
   const bfData=S.bodyFats.map(x=>({x:x.date.slice(8,10)+'/'+x.date.slice(5,7), y:x.pct}));
-  let h=`<div class="card"><h2>📈 التقدم</h2>
-  <h3>وزن الجسم (كجم)</h3><div class="chartbox">${lineChart(wData,'kg','#c8f135')}</div>
-  ${wa.length?`<div class="grid4" style="margin-top:8px">${wa.map(x=>`<div class="tile"><div class="v">${x.avg}</div><div class="l">متوسط أسبوع ${x.week} (${x.n} قياس)</div></div>`).join('')}</div>`:''}
-  <div class="note">قِس صباحاً بعد الحمام وقبل الأكل. احكم على الاتجاه بمتوسط الأسبوع، وتجاهل تذبذب اليوم الواحد.</div>
-  <h3 style="margin-top:14px">محيط الخصر (سم)</h3><div class="chartbox">${lineChart(waistData,'cm','#ffb454')}</div>
+  let h=`<div class="card"><h2>📈 ${A('التقدم','Progress')}</h2>
+  <h3>${A('وزن الجسم (كجم)','Body weight (kg)')}</h3><div class="chartbox">${lineChart(wData,'kg','var(--acc)')}</div>
+  ${wa.length?`<div class="grid4" style="margin-top:8px">${wa.map(x=>`<div class="tile"><div class="v">${x.avg}</div><div class="l">${A('متوسط أسبوع ','wk avg ')}${x.week} (${x.n})</div></div>`).join('')}</div>`:''}
+  <div class="note">${A('قِس صباحاً بعد الحمام وقبل الأكل. احكم على الاتجاه بمتوسط الأسبوع، وتجاهل تذبذب اليوم الواحد.','Weigh in the morning, after the bathroom, before eating. Judge the weekly average — ignore single-day noise.')}</div>
+  <h3 style="margin-top:14px">${A('محيط الخصر (سم)','Waist (cm)')}</h3><div class="chartbox">${lineChart(waistData,'cm','#ffb454')}</div>
   <div class="inrow" style="margin-top:8px">
-    <div><label class="f">قياس خصر جديد (سم)</label><input type="number" step="0.5" id="waistIn" placeholder="عند السرة"></div>
-    <div><label class="f">نسبة دهون (من InBody عند إعادة الفحص)</label><input type="number" step="0.1" id="bfIn" placeholder="%"></div>
+    <div><label class="f">${A('قياس خصر جديد (سم)','New waist entry (cm)')}</label><input type="number" step="0.5" id="waistIn" placeholder="${A('عند السرة','at the navel')}"></div>
+    <div><label class="f">${A('نسبة دهون (من InBody عند إعادة الفحص)','Body-fat % (from InBody retest)')}</label><input type="number" step="0.1" id="bfIn" placeholder="%"></div>
   </div>
-  <div class="btnrow"><button class="btn primary" onclick="addMeasure()">إضافة القياسات</button></div>
-  ${bfData.length?`<h3 style="margin-top:14px">نسبة الدهون %</h3><div class="chartbox">${lineChart(bfData,'%','#7dd3fc')}</div>`:''}
-  <h3 style="margin-top:14px">الالتزام الأسبوعي</h3>`;
+  <div class="btnrow"><button class="btn primary" onclick="addMeasure()">${A('إضافة القياسات','Add measurements')}</button></div>
+  ${bfData.length?`<h3 style="margin-top:14px">${A('نسبة الدهون %','Body-fat %')}</h3><div class="chartbox">${lineChart(bfData,'%','#7dd3fc')}</div>`:''}
+  <h3 style="margin-top:14px">${A('الالتزام الأسبوعي','Weekly adherence')}</h3>`;
   for(let w=1;w<=4;w++){ const a=weekAdherence(w);
     const cN=PLAN.filter(d=>d.week===w&&isCancelled(d.idx-1)).length;
-    h+=`<div style="margin:8px 0"><b class="sub" style="color:var(--ink)">أسبوع ${w}</b>
-    <div class="sub">تمارين: ${a.trainDone}/${a.train} مكتملة${cN?` (منها ${cN} ملغى بتعويض)`:''} • وجبات: ${a.mealPct}%</div>
+    h+=`<div style="margin:8px 0"><b class="sub" style="color:var(--ink)">${A('أسبوع','Week')} ${w}</b>
+    <div class="sub">${A('تمارين: ','Workouts: ')}${a.trainDone}/${a.train}${cN?` (${cN} ${A('ملغى بتعويض','cancelled w/ make-up')})`:''} • ${A('وجبات: ','meals: ')}${a.mealPct}%</div>
     <div class="progressbar g"><i style="width:${a.train? r0(100*a.trainDone/a.train):0}%"></i></div></div>`; }
   h+=`</div>`;
   return h;
@@ -1644,24 +1818,24 @@ function addMeasure(){
 /* ---------- Check-in ---------- */
 function checkinHTML(){
   const wa=weekAvgWeights();
-  let h=`<div class="card"><h2>📝 التشيك-إن الأسبوعي</h2>
-  <div class="sub">عبئه نهاية كل أسبوع (الجمعة أو السبت). التوصيات تُبنى على متوسطات الأسبوع كاملاً، لا على يوم واحد.</div>
-  <label class="f">الأسبوع</label><select id="ciWeek">${[1,2,3,4].map(w=>`<option value="${w}">أسبوع ${w}</option>`).join('')}</select>
+  let h=`<div class="card"><h2>📝 ${A('التشيك-إن الأسبوعي','Weekly Check-in')}</h2>
+  <div class="sub">${A('عبئه نهاية كل أسبوع (الجمعة أو السبت). التوصيات تُبنى على متوسطات الأسبوع كاملاً، لا على يوم واحد.','Fill it at week end (Fri/Sat). Recommendations use full-week averages, never a single day.')}</div>
+  <label class="f">${A('الأسبوع','Week')}</label><select id="ciWeek">${[1,2,3,4].map(w=>`<option value="${w}">${A('أسبوع','Week')} ${w}</option>`).join('')}</select>
   <div class="inrow">
-    <div><label class="f">متوسط وزن الصباح (كجم)</label><input type="number" step="0.1" id="ciW" placeholder="${wa.length? 'آخر متوسط: '+wa[wa.length-1].avg:'—'}"></div>
-    <div><label class="f">الخصر (سم)</label><input type="number" step="0.5" id="ciWaist"></div>
+    <div><label class="f">${A('متوسط وزن الصباح (كجم)','Avg morning weight (kg)')}</label><input type="number" step="0.1" id="ciW" placeholder="${wa.length? A('آخر متوسط: ','last avg: ')+wa[wa.length-1].avg:'—'}"></div>
+    <div><label class="f">${A('الخصر (سم)','Waist (cm)')}</label><input type="number" step="0.5" id="ciWaist"></div>
   </div>
   <div class="inrow3">
-    <div><label class="f">الجوع (1-5)</label><select id="ciHunger">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
-    <div><label class="f">الطاقة (1-5)</label><select id="ciEnergy">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
-    <div><label class="f">النوم (1-5)</label><select id="ciSleep">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
+    <div><label class="f">${A('الجوع (1-5)','Hunger (1-5)')}</label><select id="ciHunger">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
+    <div><label class="f">${A('الطاقة (1-5)','Energy (1-5)')}</label><select id="ciEnergy">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
+    <div><label class="f">${A('النوم (1-5)','Sleep (1-5)')}</label><select id="ciSleep">${[1,2,3,4,5].map(x=>`<option ${x===3?'selected':''}>${x}</option>`).join('')}</select></div>
   </div>
-  <label class="f">ألم أو مشكلة استشفاء؟</label><input type="text" id="ciPain" placeholder="مثال: انزعاج بسيط في المرفق مع البريتشر">
-  <label class="f">ملاحظات</label><input type="text" id="ciNotes">
-  <div class="btnrow"><button class="btn primary big" onclick="runCheckin()">حلّل الأسبوع وأعطني التوصيات</button></div></div>`;
+  <label class="f">${A('ألم أو مشكلة استشفاء؟','Pain or recovery issue?')}</label><input type="text" id="ciPain" placeholder="${A('مثال: انزعاج بسيط في المرفق مع البريتشر','e.g. mild elbow discomfort on preacher curls')}">
+  <label class="f">${A('ملاحظات','Notes')}</label><input type="text" id="ciNotes">
+  <div class="btnrow"><button class="btn primary big" onclick="runCheckin()">${A('حلّل الأسبوع وأعطني التوصيات','Analyze the week & give recommendations')}</button></div></div>`;
   S.checkins.slice().reverse().forEach(c=>{
-    h+=`<div class="card flat"><h3>نتيجة أسبوع ${c.week} <span class="sub">(${fmtTime(c.date)})</span></h3>
-    <div class="sub">متوسط الوزن: ${c.avgW||'—'} كجم • تمارين ${c.done} • التزام وجبات ${c.adherence}% • جوع ${c.hunger} • طاقة ${c.energy} • نوم ${c.sleep}</div>
+    h+=`<div class="card flat"><h3>${A('نتيجة أسبوع','Week result')} ${c.week} <span class="sub">(${fmtTime(c.date)})</span></h3>
+    <div class="sub">${A('متوسط الوزن: ','Avg weight: ')}${c.avgW||'—'} • ${A('تمارين','workouts')} ${c.done} • ${A('التزام وجبات','meal adherence')} ${c.adherence}% • ${A('جوع','hunger')} ${c.hunger} • ${A('طاقة','energy')} ${c.energy} • ${A('نوم','sleep')} ${c.sleep}</div>
     <div class="note" style="white-space:pre-line">${esc(c.reco)}</div></div>`;
   });
   return h;
@@ -1678,20 +1852,20 @@ function runCheckin(){
   const prevW=prev?prev.avgW:(S.profile.weightKg||null);
   let lines=[];
   let lossPct=null;
-  if(avgW&&prevW){ lossPct=r1(100*(prevW-avgW)/prevW); lines.push(`التغير الأسبوعي: ${lossPct>0?'-':'+'}${Math.abs(lossPct)}% (${r1(prevW-avgW)} كجم).`); }
+  if(avgW&&prevW){ lossPct=r1(100*(prevW-avgW)/prevW); lines.push(A(`التغير الأسبوعي: ${lossPct>0?'-':'+'}${Math.abs(lossPct)}% (${r1(prevW-avgW)} كجم).`,`Weekly change: ${lossPct>0?'-':'+'}${Math.abs(lossPct)}% (${r1(prevW-avgW)} kg).`)); }
   if(a.mealPct<75 || a.trainDone<a.train-1){
-    lines.push('الأولوية القادمة: الالتزام قبل أي تعديل — ثبّت الخطة كما هي وحقق ≥80% أسبوعاً كاملاً.');
+    lines.push(A('الأولوية القادمة: الالتزام قبل أي تعديل — ثبّت الخطة كما هي وحقق ≥80% أسبوعاً كاملاً.','Priority: adherence before any adjustment — keep the plan as-is and hit ≥80% for a full week.'));
   } else if(lossPct!=null){
-    if(lossPct>1.2 && (hunger>=4||energy<=2)) lines.push('النزول أسرع من اللازم مع جوع/إرهاق: أضف سناك الجوع يومياً (+150-200 kcal) وراقب أسبوعاً.');
-    else if(lossPct>=0.4) lines.push('معدل النزول ممتاز (0.4-1.2%): لا تغيّر شيئاً — كرر نفس الأسبوع.');
-    else if(week>=2) lines.push('النزول أبطأ من الهدف مع التزام جيد: احذف «سناك الجوع» في أيام الراحة أو ارفع الخطوات إلى 11 ألفاً — خياراً واحداً فقط، ليس الاثنين.');
-    else lines.push('أسبوع أول: لا تستعجل الحكم — الماء والجلايكوجين يخفيان النتيجة. استمر.');
+    if(lossPct>1.2 && (hunger>=4||energy<=2)) lines.push(A('النزول أسرع من اللازم مع جوع/إرهاق: أضف سناك الجوع يومياً (+150-200 kcal) وراقب أسبوعاً.','Losing too fast with hunger/fatigue: add the flex snack daily (+150-200 kcal) and watch for a week.'));
+    else if(lossPct>=0.4) lines.push(A('معدل النزول ممتاز (0.4-1.2%): لا تغيّر شيئاً — كرر نفس الأسبوع.','Rate of loss is ideal (0.4-1.2%): change nothing — repeat the week.'));
+    else if(week>=2) lines.push(A('النزول أبطأ من الهدف مع التزام جيد: احذف «سناك الجوع» في أيام الراحة أو ارفع الخطوات إلى 11 ألفاً — خياراً واحداً فقط.','Loss slower than target with good adherence: drop the flex snack on rest days OR raise steps to 11k — pick one, not both.'));
+    else lines.push(A('أسبوع أول: لا تستعجل الحكم — الماء والجلايكوجين يخفيان النتيجة. استمر.','Week 1: don\'t judge yet — water and glycogen mask the result. Keep going.'));
   }
-  if(hunger>=4&&lossPct!=null&&lossPct<=1.2) lines.push('لإدارة الجوع: قدّم العشاء، أضف سلطة خضراء/فت زيرو (سعرات شبه صفرية)، ونم مبكراً.');
-  if(energy<=2||sleep<=2) lines.push('طاقة/نوم منخفض: ثبّت موعد النوم (7-8 ساعات)، وخفف الكارديو الختامي إلى 10 دقائق هذا الأسبوع.'+(week===4?' فعّل الديلود: احذف السيت الأخير من تمارين العزل.':''));
-  if(pain) lines.push('الألم ('+pain+'): بدّل التمرين المسبب بالبديل المذكور وخفف وزنه 10-15%. إذا استمر أسبوعين أو كان حاداً/مفصلياً راجع أخصائي علاج طبيعي.');
-  if(waist) lines.push('الخصر مسجل — راقب الاتجاه عبر 2-3 أسابيع مع متوسط الوزن معاً.');
-  if(!lines.length) lines.push('استمر على نفس الخطة وسجل بياناتك يومياً.');
+  if(hunger>=4&&lossPct!=null&&lossPct<=1.2) lines.push(A('لإدارة الجوع: قدّم العشاء، أضف سلطة خضراء/فت زيرو (سعرات شبه صفرية)، ونم مبكراً.','For hunger: eat dinner earlier, add a green salad/Fit Zero (near-zero kcal), sleep earlier.'));
+  if(energy<=2||sleep<=2) lines.push(A('طاقة/نوم منخفض: ثبّت موعد النوم (7-8 ساعات)، وخفف الكارديو الختامي إلى 10 دقائق هذا الأسبوع.','Low energy/sleep: fix your bedtime (7-8h) and cut finishing cardio to 10 min this week.')+(week===4? A(' فعّل الديلود: احذف السيت الأخير من تمارين العزل.',' Activate the deload: drop the last set of isolation lifts.'):''));
+  if(pain) lines.push(A('الألم ('+pain+'): بدّل التمرين المسبب بالبديل المذكور وخفف وزنه 10-15%. إذا استمر أسبوعين أو كان حاداً راجع أخصائي علاج طبيعي.','Pain ('+pain+'): swap the offending exercise for its listed alternative and drop its load 10-15%. If it persists 2 weeks or is sharp, see a physio.'));
+  if(waist) lines.push(A('الخصر مسجل — راقب الاتجاه عبر 2-3 أسابيع مع متوسط الوزن معاً.','Waist logged — track the trend over 2-3 weeks together with average weight.'));
+  if(!lines.length) lines.push(A('استمر على نفس الخطة وسجل بياناتك يومياً.','Stay the course and log daily.'));
   const reco='• '+lines.join('\n• ');
   S.checkins.push({week, avgW, waist, done:a.trainDone+'/'+a.train, adherence:a.mealPct, hunger, energy, sleep, pain, notes, reco, date:new Date().toISOString()});
   save(true); renderMore();
@@ -1700,57 +1874,69 @@ function runCheckin(){
 /* ---------- Settings ---------- */
 function settingsHTML(){
   const p=S.profile, t=targets();
-  return `<div class="card"><h2>⚙️ الإعدادات</h2>
-  <h3>الملف الشخصي وقيم InBody</h3>
-  ${p.estimated?'<div class="warnnote">القيم الحالية تقديرية إلى أن تُدخل أرقام تقرير InBody غداً — عدّلها هنا وسيُعاد حساب كل الأهداف.</div>':''}
+  return `<div class="card"><h2>⚙️ ${A('الإعدادات','Settings')}</h2>
+  <h3>${A('اللغة والمظهر والمؤقت','Language, theme & timer')}</h3>
   <div class="inrow3">
-    <div><label class="f">الوزن (كجم)</label><input type="number" step="0.1" id="pW" value="${p.weightKg}"></div>
-    <div><label class="f">الطول (سم)</label><input type="number" id="pH" value="${p.heightCm}"></div>
-    <div><label class="f">العمر</label><input type="number" id="pA" value="${p.age}"></div>
+    <div><label class="f">${A('اللغة','Language')}</label><select onchange="setLang(this.value)">
+      <option value="en" ${!isAR()?'selected':''}>English</option>
+      <option value="ar" ${isAR()?'selected':''}>العربية</option></select></div>
+    <div><label class="f">${A('المظهر','Theme')}</label><select onchange="S.settings.theme=this.value;queueSave();applyChrome();render()">
+      <option value="auto" ${S.settings.theme==='auto'?'selected':''}>${A('تلقائي (نهار/ليل)','Auto (day/night)')}</option>
+      <option value="light" ${S.settings.theme==='light'?'selected':''}>${A('نهاري أبيض','Light')}</option>
+      <option value="dark" ${S.settings.theme==='dark'?'selected':''}>${A('ليلي أسود','Dark')}</option></select></div>
+    <div><label class="f">${A('الراحة الافتراضية (ثانية)','Default rest (sec)')}</label><input type="number" step="15" min="15" max="300" value="${restCur()}" onchange="S.settings.restSec=parseInt(this.value)||60;queueSave();render()"></div>
+  </div>
+  <div class="hr"></div>
+  <h3>${A('الملف الشخصي وقيم InBody','Profile & InBody values')}</h3>
+  ${p.estimated?`<div class="warnnote">${A('القيم الحالية تقديرية إلى أن تُدخل أرقام تقرير InBody — عدّلها هنا وسيُعاد حساب كل الأهداف.','Current values are estimates until you enter your InBody numbers — update them here and every target recalculates.')}</div>`:''}
+  <div class="inrow3">
+    <div><label class="f">${A('الوزن (كجم)','Weight (kg)')}</label><input type="number" step="0.1" id="pW" value="${p.weightKg}"></div>
+    <div><label class="f">${A('الطول (سم)','Height (cm)')}</label><input type="number" id="pH" value="${p.heightCm}"></div>
+    <div><label class="f">${A('العمر','Age')}</label><input type="number" id="pA" value="${p.age}"></div>
   </div>
   <div class="inrow3">
-    <div><label class="f">العضلات الهيكلية SMM</label><input type="number" step="0.1" id="pSMM" value="${p.smm??''}"></div>
-    <div><label class="f">كتلة الدهون BFM</label><input type="number" step="0.1" id="pBFM" value="${p.bfm??''}"></div>
-    <div><label class="f">نسبة الدهون PBF %</label><input type="number" step="0.1" id="pPBF" value="${p.pbf??''}"></div>
+    <div><label class="f">SMM</label><input type="number" step="0.1" id="pSMM" value="${p.smm??''}"></div>
+    <div><label class="f">BFM</label><input type="number" step="0.1" id="pBFM" value="${p.bfm??''}"></div>
+    <div><label class="f">PBF %</label><input type="number" step="0.1" id="pPBF" value="${p.pbf??''}"></div>
   </div>
   <div class="inrow3">
     <div><label class="f">BMI</label><input type="number" step="0.1" id="pBMI" value="${p.bmi??''}"></div>
-    <div><label class="f">الدهون الحشوية</label><input type="number" step="0.5" id="pVis" value="${p.visceral??''}"></div>
-    <div><label class="f">BMR من التقرير</label><input type="number" id="pBMR" value="${p.bmr??''}"></div>
+    <div><label class="f">${A('الدهون الحشوية','Visceral fat')}</label><input type="number" step="0.5" id="pVis" value="${p.visceral??''}"></div>
+    <div><label class="f">${A('BMR من التقرير','BMR from report')}</label><input type="number" id="pBMR" value="${p.bmr??''}"></div>
   </div>
   <div class="inrow">
-    <div><label class="f">نقاط InBody</label><input type="number" id="pScore" value="${p.inbodyScore??''}"></div>
-    <div><label class="f">تاريخ الفحص</label><input type="date" id="pDate" value="${p.inbodyDate||''}"></div>
+    <div><label class="f">${A('نقاط InBody','InBody score')}</label><input type="number" id="pScore" value="${p.inbodyScore??''}"></div>
+    <div><label class="f">${A('تاريخ الفحص','Test date')}</label><input type="date" id="pDate" value="${p.inbodyDate||''}"></div>
   </div>
   <div class="inrow">
-    <div><label class="f">معامل النشاط</label><select id="pAct">
-      <option value="1.35" ${p.activityFactor==1.35?'selected':''}>مكتبي + خطوات قليلة (1.35)</option>
-      <option value="1.45" ${p.activityFactor==1.45?'selected':''}>مكتبي + تمرين 5 أيام (1.45)</option>
-      <option value="1.55" ${p.activityFactor==1.55?'selected':''}>نشِط + خطوات عالية (1.55)</option></select></div>
-    <div><label class="f">العجز اليومي (kcal)</label><select id="pDef">
+    <div><label class="f">${A('معامل النشاط','Activity factor')}</label><select id="pAct">
+      <option value="1.35" ${p.activityFactor==1.35?'selected':''}>${A('مكتبي + خطوات قليلة','Desk job + low steps')} (1.35)</option>
+      <option value="1.45" ${p.activityFactor==1.45?'selected':''}>${A('مكتبي + تمرين 5 أيام','Desk job + 5 training days')} (1.45)</option>
+      <option value="1.55" ${p.activityFactor==1.55?'selected':''}>${A('نشِط + خطوات عالية','Active + high steps')} (1.55)</option></select></div>
+    <div><label class="f">${A('العجز اليومي (kcal)','Daily deficit (kcal)')}</label><select id="pDef">
       ${[450,550,650,750].map(x=>`<option ${p.deficit==x?'selected':''}>${x}</option>`).join('')}</select></div>
   </div>
-  <div class="btnrow"><button class="btn primary" onclick="saveProfile()">احفظ وأعد حساب الأهداف</button></div>
+  <div class="btnrow"><button class="btn primary" onclick="saveProfile()">${A('احفظ وأعد حساب الأهداف','Save & recalculate targets')}</button></div>
   <div class="grid4" style="margin-top:10px">
     <div class="tile"><div class="v">${t.bmr}</div><div class="l">BMR</div></div>
     <div class="tile"><div class="v">${t.tdee}</div><div class="l">TDEE</div></div>
-    <div class="tile"><div class="v">${t.kcalTrain}/${t.kcalRest}</div><div class="l">سعرات تدريب/راحة</div></div>
-    <div class="tile"><div class="v">${t.protein}غ</div><div class="l">بروتين</div></div>
+    <div class="tile"><div class="v">${t.kcalTrain}/${t.kcalRest}</div><div class="l">${A('سعرات تدريب/راحة','train/rest kcal')}</div></div>
+    <div class="tile"><div class="v">${t.protein}${A('غ','g')}</div><div class="l">${A('بروتين','protein')}</div></div>
   </div>
   <div class="hr"></div>
-  <h3>المؤقت والتنبيه</h3>
-  <div class="setline"><span>🔊 صوت نهاية الاستراحة</span><label class="tgl"><input type="checkbox" ${S.settings.sound?'checked':''} onchange="S.settings.sound=this.checked;queueSave()"><span></span></label></div>
-  <div class="setline"><span>📳 اهتزاز (الجوالات المدعومة)</span><label class="tgl"><input type="checkbox" ${S.settings.vibrate?'checked':''} onchange="S.settings.vibrate=this.checked;queueSave()"><span></span></label></div>
+  <h3>${A('التنبيه','Alerts')}</h3>
+  <div class="setline"><span>🔊 ${A('صوت نهاية الاستراحة','Rest-end sound')}</span><label class="tgl"><input type="checkbox" ${S.settings.sound?'checked':''} onchange="S.settings.sound=this.checked;queueSave()"><span></span></label></div>
+  <div class="setline"><span>📳 ${A('اهتزاز (الجوالات المدعومة)','Vibration (supported phones)')}</span><label class="tgl"><input type="checkbox" ${S.settings.vibrate?'checked':''} onchange="S.settings.vibrate=this.checked;queueSave()"><span></span></label></div>
   <div class="hr"></div>
-  <h3>البيانات والنسخ الاحتياطي</h3>
-  <div class="note">🔒 كل بياناتك محفوظة داخل متصفح هذا الجهاز فقط، ولا يُرسل أي شيء لأي خادم. تنبيه: مسح بيانات المتصفح يمسح سجلاتك — لذلك صدّر نسخة احتياطية أسبوعياً.</div>
+  <h3>${A('البيانات والنسخ الاحتياطي','Data & backup')}</h3>
+  <div class="note">🔒 ${A('كل بياناتك محفوظة داخل متصفح هذا الجهاز فقط، ولا يُرسل أي شيء لأي خادم. مسح بيانات المتصفح يمسح سجلاتك — صدّر نسخة احتياطية أسبوعياً.','All data lives in this device\'s browser only; nothing is sent to any server. Clearing browser data wipes your logs — export a backup weekly.')}</div>
   <div class="btnrow">
-    <button class="btn" onclick="exportBackup()">⬇️ تصدير نسخة JSON</button>
-    <label class="btn" style="cursor:pointer">⬆️ استيراد نسخة<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(this)"></label>
-    <button class="btn" onclick="save(true)">💾 حفظ يدوي</button>
-    <button class="btn danger" onclick="confirmReset()">🗑️ مسح كل البيانات</button>
+    <button class="btn" onclick="exportBackup()">⬇️ ${A('تصدير نسخة JSON','Export JSON backup')}</button>
+    <label class="btn" style="cursor:pointer">⬆️ ${A('استيراد نسخة','Import backup')}<input type="file" accept=".json,application/json" style="display:none" onchange="importBackup(this)"></label>
+    <button class="btn" onclick="save(true)">💾 ${A('حفظ يدوي','Manual save')}</button>
+    <button class="btn danger" onclick="confirmReset()">🗑️ ${A('مسح كل البيانات','Erase all data')}</button>
   </div>
-  <div class="sub" style="margin-top:8px">آخر حفظ: ${S.savedAt? fmtTime(S.savedAt):'—'} • ملاحظة: صور التقدم غير مضمنة في التطبيق حفاظاً على سعة التخزين المحلي — احتفظ بها في ألبوم خاص بجوالك.</div>
+  <div class="sub" style="margin-top:8px">${A('آخر حفظ: ','Last saved: ')}${S.savedAt? fmtTime(S.savedAt):'—'} • ${A('صور التقدم غير مضمنة حفاظاً على سعة التخزين المحلي.','Progress photos are intentionally not stored, to protect local storage limits.')}</div>
   </div>`;
 }
 function saveProfile(){
@@ -1763,7 +1949,7 @@ function saveProfile(){
   p.activityFactor=parseFloat(g('pAct')); p.deficit=parseInt(g('pDef'));
   if(p.inbodyDate) p.estimated=false;
   if(p.pbf!=null){ S.bodyFats.push({date:p.inbodyDate||new Date().toISOString().slice(0,10), pct:p.pbf}); }
-  save(true); renderMore(); toast('أُعيد حساب الأهداف ✓');
+  save(true); renderMore(); toast(A('أُعيد حساب الأهداف ✓','Targets recalculated ✓'));
 }
 function exportBackup(){
   const data=JSON.stringify(S,null,1);
@@ -1772,7 +1958,7 @@ function exportBackup(){
   a.href=URL.createObjectURL(blob);
   a.download='mohanad-fitness-backup-'+new Date().toISOString().slice(0,10)+'.json';
   document.body.appendChild(a); a.click(); a.remove();
-  toast('نُزلت النسخة الاحتياطية');
+  toast(A('نُزلت النسخة الاحتياطية','Backup downloaded'));
 }
 function importBackup(inp){
   const f=inp.files[0]; if(!f) return;
@@ -1786,68 +1972,74 @@ function importBackup(inp){
       ['weights','waists','bodyFats','checkins'].forEach(k=>{ if(Array.isArray(d[k])) clean[k]=d[k]; });
       if(Array.isArray(d.dayShift)&&d.dayShift.length===28) clean.dayShift=d.dayShift.map(x=>Math.max(0,parseInt(x)||0));
       clean.onboarded=!!d.onboarded;
-      S=clean; save(true); render(); toast('استُعيدت النسخة ✓');
-    }catch(e){ toast('ملف غير صالح — تأكد أنه نسخة من هذا التطبيق'); }
+      S=clean;
+      S.settings=Object.assign({sound:true,vibrate:true,autoRest:true,lang:'en',theme:'auto',restSec:60}, S.settings||{});
+      save(true); applyChrome(); render(); toast(A('استُعيدت النسخة ✓','Backup restored ✓'));
+    }catch(e){ toast(A('ملف غير صالح — تأكد أنه نسخة من هذا التطبيق','Invalid file — make sure it\'s a backup from this app')); }
   };
   rd.readAsText(f);
 }
 function confirmReset(){
-  openDlg(`<h3>⚠️ مسح كل البيانات؟</h3><p class="sub">سيُحذف كل شيء: السجلات، الأوزان، التشيك-إن، الإعدادات. لا تراجع بعدها. صدّر نسخة احتياطية أولاً.</p>
-  <div class="btnrow"><button class="btn danger" onclick="S=DEFAULT_STATE();save(true);dlg.close();showView('today');toast('تم المسح')">نعم، امسح كل شيء</button>
-  <button class="btn primary" onclick="dlg.close()">تراجع</button></div>`);
+  openDlg(`<h3>⚠️ ${A('مسح كل البيانات؟','Erase all data?')}</h3><p class="sub">${A('سيُحذف كل شيء: السجلات، الأوزان، التشيك-إن، الإعدادات. لا تراجع بعدها. صدّر نسخة احتياطية أولاً.','Everything will be deleted: logs, weights, check-ins, settings. No undo. Export a backup first.')}</p>
+  <div class="btnrow"><button class="btn danger" onclick="S=DEFAULT_STATE();save(true);dlg.close();applyChrome();showView('today');toast(A('تم المسح','Erased'))">${A('نعم، امسح كل شيء','Yes, erase everything')}</button>
+  <button class="btn primary" onclick="dlg.close()">${A('تراجع','Back')}</button></div>`);
 }
 
 /* ---------- Sources ---------- */
 function sourcesHTML(){
   const L=(u,t)=>`<a class="ext" target="_blank" rel="noopener noreferrer" href="${u}">${t}</a>`;
-  return `<div class="card"><h2>📚 المصادر والمنهجية</h2>
-  <h3>المنهجية باختصار</h3>
-  <ul class="sub" style="padding-right:18px;line-height:1.9">
-    <li>السعرات: BMR بمعادلة Mifflin-St Jeor (أو BMR من تقرير InBody عند توفره) × معامل نشاط، ثم عجز 550-750 kcal — يستهدف خسارة دهون ~0.5-0.8% من وزن الجسم أسبوعياً مع الحفاظ على العضلات.</li>
-    <li>البروتين: ~2.0 غ/كجم يومياً (النطاق الفعال 1.6-2.4 خلال العجز).</li>
-    <li>حجم التدريب: ~10-16 سيت أسبوعياً للعضلات الرئيسية مع زيادة موجهة للذراعين، بجهد 1-4 تكرارات احتياطي (RIR) وتقدم مزدوج (تكرارات ثم وزن).</li>
-    <li>الكارديو: Zone 2 بعد الحديد + هدف خطوات يومي، وفواصل قصيرة اختيارية من الأسبوع الثالث.</li>
-    <li>قيم الوجبات: منقولة حرفياً من بطاقات منيو «وجبات اللياقة TFM» (سُحبت 01/08/2026). حصة البروتين القياسية = 100 جرام (مثبتة في بطاقة البامية ومطابقة لقيم صدر الدجاج المشوي)، وكل وجبة في الخطة مذكور وزنها بالجرام والقيم مضروبة على الوزن. أوزان جوانب الكارب تقديرية للحصة القياسية. بناء على طلبك: كل يوم وجبة دجاج + وجبة لحم، وبدون مأكولات بحرية نهائياً.</li>
-    <li>توقع 4 أسابيع (لوزن بداية ~80 كجم): خسارة دهون متوقعة 2-3 كجم + نزول ماء/جلايكوجين 1-1.5 كجم أول أسبوعين → نزول ميزان واقعي 3-4.5 كجم. الوصول لـ 6 كجم ممكن لكنه سقف طموح يتطلب التزاماً كاملاً — وليس مطلوباً لنجاح الخطة. الحفاظ على العضلات (وربما زيادة بسيطة) متوقع مع البروتين والتمرين المنتظم.</li>
+  return `<div class="card"><h2>📚 ${A('المصادر والمنهجية','Sources & Methodology')}</h2>
+  <h3>${A('المنهجية باختصار','Method in brief')}</h3>
+  <ul class="sub" style="padding-inline-start:18px;line-height:1.9">
+    <li>${A('السعرات: BMR بمعادلة Mifflin-St Jeor (أو BMR من تقرير InBody عند توفره) × معامل نشاط، ثم عجز 550-750 kcal — يستهدف خسارة دهون ~0.5-0.8% من وزن الجسم أسبوعياً مع الحفاظ على العضلات.','Calories: Mifflin-St Jeor BMR (or InBody-reported BMR when available) × activity factor, minus a 550-750 kcal deficit — targeting ~0.5-0.8% bodyweight fat loss per week while preserving muscle.')}</li>
+    <li>${A('البروتين: ~2.0 غ/كجم يومياً (النطاق الفعال 1.6-2.4 خلال العجز).','Protein: ~2.0 g/kg daily (effective range 1.6-2.4 in a deficit).')}</li>
+    <li>${A('حجم التدريب: ~10-16 سيت أسبوعياً للعضلات الرئيسية مع زيادة موجهة للذراعين، بجهد 1-4 تكرارات احتياطي (RIR) وتقدم مزدوج.','Training volume: ~10-16 weekly sets per major muscle with extra targeted arm volume, at 1-4 reps in reserve (RIR) and double progression.')}</li>
+    <li>${A('الراحة بين السيتات: 60 ثانية افتراضياً (قابلة للتعديل ±15 ثانية أثناء الجلسة أو من الإعدادات).','Rest between sets: 60 seconds by default (adjustable ±15s in-session or in Settings).')}</li>
+    <li>${A('الكارديو: Zone 2 بعد الحديد + هدف خطوات يومي، وفواصل قصيرة اختيارية من الأسبوع الثالث.','Cardio: Zone 2 after lifting + a daily step target, with optional short intervals from week 3.')}</li>
+    <li>${A('قيم الوجبات: من بطاقات منيو «وجبات اللياقة TFM» (سُحبت 01/08/2026). حصة البروتين القياسية = 100 جرام، وكل وجبة مذكور وزنها بالجرام والقيم مضروبة على الوزن. كل يوم: دجاج + لحم، بدون بحري.','Meal values: from the official TFM menu cards (captured 01/08/2026). Standard protein portion = 100 g; every meal lists its gram weight with values scaled to it. Every day: one chicken + one beef, no seafood.')}</li>
+    <li>${A('توقع 4 أسابيع (بداية ~80 كجم): دهون 2-3 كجم + ماء/جلايكوجين 1-1.5 كجم أول أسبوعين → نزول ميزان واقعي 3-4.5 كجم؛ 6 كجم سقف طموح غير مضمون.','4-week expectation (from ~80 kg): 2-3 kg fat + 1-1.5 kg water/glycogen in the first two weeks → realistic scale drop 3-4.5 kg; 6 kg is an ambitious ceiling, not a promise.')}</li>
   </ul>
-  <h3>مراجع علمية</h3>
-  <ul class="sub" style="padding-right:18px;line-height:2">
-    <li>${L('https://bjsm.bmj.com/content/52/6/376','Morton et al., BJSM 2018 — البروتين وتضخم العضلات (~1.6-2.2 غ/كجم)')}</li>
-    <li>${L('https://link.springer.com/10.1007/s40279-025-02344-w','Pelland et al., Sports Medicine 2025 — علاقة الحجم الأسبوعي بالتضخم والقوة')}</li>
-    <li>${L('https://link.springer.com/article/10.1186/s12970-017-0174-y','ISSN Position Stand 2017 — الحميات وتكوين الجسم ومعدل النزول الآمن')}</li>
-    <li>${L('https://jcsm.aasm.org/doi/10.5664/jcsm.4758','AASM/SRS — النوم ≥7 ساعات للبالغين')}</li>
-    <li>${L('https://www.who.int/news-room/fact-sheets/detail/physical-activity','WHO — 150-300 دقيقة نشاط هوائي أسبوعياً')}</li>
+  <h3>${A('مراجع علمية','Scientific references')}</h3>
+  <ul class="sub" style="padding-inline-start:18px;line-height:2">
+    <li>${L('https://bjsm.bmj.com/content/52/6/376','Morton et al., BJSM 2018 — '+A('البروتين وتضخم العضلات (~1.6-2.2 غ/كجم)','protein & hypertrophy (~1.6-2.2 g/kg)'))}</li>
+    <li>${L('https://link.springer.com/10.1007/s40279-025-02344-w','Pelland et al., Sports Medicine 2025 — '+A('علاقة الحجم الأسبوعي بالتضخم والقوة','weekly volume dose-response'))}</li>
+    <li>${L('https://link.springer.com/article/10.1186/s12970-017-0174-y','ISSN Position Stand 2017 — '+A('الحميات وتكوين الجسم','diets & body composition'))}</li>
+    <li>${L('https://jcsm.aasm.org/doi/10.5664/jcsm.4758','AASM/SRS — '+A('النوم ≥7 ساعات للبالغين','≥7h sleep for adults'))}</li>
+    <li>${L('https://www.who.int/news-room/fact-sheets/detail/physical-activity','WHO — '+A('150-300 دقيقة نشاط هوائي أسبوعياً','150-300 min weekly aerobic activity'))}</li>
   </ul>
-  <h3>مصادر Technogym الرسمية</h3>
-  <ul class="sub" style="padding-right:18px;line-height:2">
-    <li>${L(TG_LINKS.selection,'خط Selection (أجهزة الأثقال الموجهة)')}</li>
-    <li>${L(TG_LINKS.pure,'خط Pure Strength (الأطباق الحرة)')}</li>
-    <li>${L(TG_LINKS.excite,'خط Excite للكارديو (Run / Bike / Synchro / Climb)')}</li>
-    <li>${L(TG_LINKS.skill,'خط Skill (Skillmill / Skillrow / Skillbike)')}</li>
-    <li>${L('https://www.technogym.com/en-US/product/dumbbell_A0001-UDB.html','دمبل Technogym الرسمي — الأوزان المتوفرة: 1-10 كجم (درجة 1 كجم) ثم 12-36 كجم (درجة 2 كجم)')}</li>
+  <h3>${A('مصادر Technogym الرسمية','Official Technogym sources')}</h3>
+  <ul class="sub" style="padding-inline-start:18px;line-height:2">
+    <li>${L(TG_LINKS.selection,'Selection '+A('(أجهزة الأثقال الموجهة)','(selectorized strength)'))}</li>
+    <li>${L(TG_LINKS.pure,'Pure Strength '+A('(الأطباق الحرة)','(plate-loaded)'))}</li>
+    <li>${L(TG_LINKS.excite,'Excite '+A('للكارديو','cardio line')+' (Run / Bike / Synchro / Climb)')}</li>
+    <li>${L(TG_LINKS.skill,'Skill (Skillmill / Skillrow / Skillbike)')}</li>
+    <li>${L('https://www.technogym.com/en-US/product/dumbbell_A0001-UDB.html',A('دمبل Technogym الرسمي — 1-10 كجم (درجة 1) ثم 12-36 كجم (درجة 2)','Technogym dumbbells — 1-10 kg (1-kg steps), then 12-36 kg (2-kg steps)'))}</li>
   </ul>
-  <div class="note">🔗 كل تمرين في المكتبة مربوط بأمرين مباشرين: صفحة الجهاز الرسمية على technogym.com (المُتحقق منها في 01/08/2026) + فيديو شرح مباشر مُنتقى. أرسل صور أجهزة ناديك وسأطابق الموديلات الفعلية وأحدث الروابط.</div>
-  <h3>المنيو</h3>
-  <ul class="sub" style="padding-right:18px;line-height:2">
-    <li>${L('https://qrco.de/bbeE4R','منيو وجبات اللياقة TFM (المصدر الرسمي للقيم)')}</li>
-    <li>${L('https://www.instagram.com/tfmksa/','حساب المطعم الرسمي @tfmksa')}</li>
+  <div class="note">🔗 ${A('كل تمرين مربوط بصفحة الجهاز الرسمية + فيديو مباشر مُنتقى (تُحقق منها 01/08/2026). أرسل صور أجهزة ناديك لمطابقة الموديلات.','Every exercise links to the official machine page + a hand-picked direct video (verified 01/08/2026). Send your gym\'s machine photos for exact model matching.')}</div>
+  <h3>${A('المنيو','Menu')}</h3>
+  <ul class="sub" style="padding-inline-start:18px;line-height:2">
+    <li>${L('https://qrco.de/bbeE4R',A('منيو وجبات اللياقة TFM (المصدر الرسمي للقيم)','TFM official menu (source of all values)'))}</li>
+    <li>${L('https://www.instagram.com/tfmksa/','@tfmksa')}</li>
   </ul>
-  <div class="note">⚕️ هذا التطبيق للتخطيط والمتابعة فقط وليس تشخيصاً أو علاجاً طبياً. أوقف أي تمرين يسبب ألماً حاداً أو دواراً أو ضيق تنفس غير معتاد، وارجع لمختص عند الحاجة. لا حاجة لأي مكملات في هذه الخطة، ولا يُنصح بأي منتجات «حارقة للدهون».</div>
+  <div class="note">⚕️ ${A('هذا التطبيق للتخطيط والمتابعة فقط وليس تشخيصاً أو علاجاً طبياً. أوقف أي تمرين يسبب ألماً حاداً أو دواراً أو ضيق تنفس غير معتاد. لا حاجة لأي مكملات، ولا يُنصح بمنتجات «حرق الدهون».','This app is for planning and tracking only — not medical diagnosis or treatment. Stop any exercise causing sharp pain, dizziness, or unusual shortness of breath. No supplements are required, and "fat-burner" products are not recommended.')}</div>
   </div>`;
 }
 
-/* ---------- Onboarding (شاشة تأكيد InBody) ---------- */
+/* ---------- Onboarding ---------- */
 function onboardingHTML(){
   const p=S.profile;
-  return `<h3>👋 يا هلا مهند — دقيقة وحدة قبل البداية</h3>
-  <p class="sub">هذه القيم المبدئية المستخدمة في الحسابات. عدّل ما تعرفه الآن، وبعد فحص InBody غداً حدّثها من الإعدادات — كل الأهداف تُعاد تلقائياً.</p>
+  return `<div class="btnrow" style="margin:0 0 8px;justify-content:flex-end">
+    <button class="btn small ${!isAR()?'primary':''}" onclick="setLang('en')">English</button>
+    <button class="btn small ${isAR()?'primary':''}" onclick="setLang('ar')">عربي</button></div>
+  <h3>👋 ${A('يا هلا مهند — دقيقة وحدة قبل البداية','Welcome Mohanad — one minute before we start')}</h3>
+  <p class="sub">${A('هذه القيم المبدئية المستخدمة في الحسابات. عدّل ما تعرفه الآن، وبعد فحص InBody حدّثها من الإعدادات — كل الأهداف تُعاد تلقائياً.','These starting values drive all calculations. Adjust what you know now; after your InBody test, update them in Settings — every target recalculates automatically.')}</p>
   <div class="inrow3">
-    <div><label class="f">الوزن (كجم)</label><input type="number" step="0.1" id="obW" value="${p.weightKg}"></div>
-    <div><label class="f">الطول (سم)</label><input type="number" id="obH" value="${p.heightCm}"></div>
-    <div><label class="f">العمر</label><input type="number" id="obA" value="${p.age}"></div>
+    <div><label class="f">${A('الوزن (كجم)','Weight (kg)')}</label><input type="number" step="0.1" id="obW" value="${p.weightKg}"></div>
+    <div><label class="f">${A('الطول (سم)','Height (cm)')}</label><input type="number" id="obH" value="${p.heightCm}"></div>
+    <div><label class="f">${A('العمر','Age')}</label><input type="number" id="obA" value="${p.age}"></div>
   </div>
-  <div class="note">الخطة تبدأ الأحد ${fmtDateAr(PLAN_START)}: تدريب الأحد-الخميس (٥ أيام)، راحة الجمعة والسبت. وجباتك محسوبة بالجرام: كل يوم وجبة دجاج ووجبة لحم (بدون بحري) بالأوزان المكتوبة — المطعم يجهزها بالوزن الذي تطلبه.</div>
-  <div class="btnrow"><button class="btn primary big" onclick="finishOnboarding()">اعتمد وابدأ 🚀</button></div>`;
+  <div class="note">${A('الخطة تبدأ الأحد ','The plan starts Sunday ')}${fmtDate(PLAN_START)}${A(': تدريب الأحد-الخميس (٥ أيام)، راحة الجمعة والسبت. وجباتك محسوبة بالجرام: كل يوم وجبة دجاج ووجبة لحم (بدون بحري) — المطعم يجهزها بالوزن الذي تطلبه.',': training Sun-Thu (5 days), rest Fri & Sat. Meals are computed in grams: every day one chicken and one beef meal (no seafood) — the restaurant prepares any weight you order.')}</div>
+  <div class="btnrow"><button class="btn primary big" onclick="finishOnboarding()">${A('اعتمد وابدأ 🚀','Confirm & start 🚀')}</button></div>`;
 }
 function finishOnboarding(){
   const num=id=>{const v=parseFloat(document.getElementById(id).value); return isNaN(v)?null:v;};
@@ -1859,13 +2051,17 @@ function finishOnboarding(){
 
 /* ---------- Init ---------- */
 document.getElementById('btnManualSave').onclick=()=>save(true);
+document.getElementById('btnLang').onclick=()=>setLang(isAR()?'en':'ar');
+document.getElementById('btnTheme').onclick=toggleTheme;
 if(!storageOK) document.getElementById('storageWarn').style.display='block';
 document.addEventListener('click',ensureAudio,{once:true});
+applyChrome();
 showView('today');
+setInterval(()=>{ if(S.settings.theme==='auto'){ const cur=document.documentElement.dataset.theme; if(cur!==themeNow()){ applyChrome(); } } }, 60000);
 if(S.sessionActive){
-  openDlg(`<h3>🏋️ عندك جلسة تمرين مفتوحة</h3><p class="sub">أُغلقت الصفحة أثناء التمرين — تقدر تكمل من حيث وقفت.</p>
-  <div class="btnrow"><button class="btn primary" onclick="dlg.close();SES=S.sessionActive;showSession()">كمّل الجلسة</button>
-  <button class="btn ghost" onclick="S.sessionActive=null;queueSave();dlg.close()">تجاهل وأغلقها</button></div>`);
+  openDlg(`<h3>🏋️ ${A('عندك جلسة تمرين مفتوحة','You have an open workout session')}</h3><p class="sub">${A('أُغلقت الصفحة أثناء التمرين — تقدر تكمل من حيث وقفت.','The page closed mid-workout — you can continue where you stopped.')}</p>
+  <div class="btnrow"><button class="btn primary" onclick="dlg.close();SES=S.sessionActive;showSession()">${A('كمّل الجلسة','Continue session')}</button>
+  <button class="btn ghost" onclick="S.sessionActive=null;queueSave();dlg.close()">${A('تجاهل وأغلقها','Discard & close')}</button></div>`);
 } else if(!S.onboarded){
   openDlg(onboardingHTML());
 }
